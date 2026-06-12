@@ -3,7 +3,7 @@
     name="model" />
   <param
     name="robot_description"
-    textfile="$(find 宇树L6连接001.SLDASM)/urdf/宇树L6连接001.SLDASM.urdf" />
+    textfile="$(find unitree_l6_link_001)/urdf/unitree_l6_link_001.urdf" />
   <node
     name="joint_state_publisher_gui"
     pkg="joint_state_publisher_gui"
@@ -16,5 +16,5 @@
     name="rviz"
     pkg="rviz"
     type="rviz"
-    args="-d $(find 宇树L6连接001.SLDASM)/urdf.rviz" />
+    args="-d $(find unitree_l6_link_001)/urdf.rviz" />
 </launch>

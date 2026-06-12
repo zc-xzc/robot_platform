@@ -10,7 +10,7 @@
     name="spawn_model"
     pkg="gazebo_ros"
     type="spawn_model"
-    args="-file $(find 宇树L6连接001.SLDASM)/urdf/宇树L6连接001.SLDASM.urdf -urdf -model 宇树L6连接001.SLDASM"
+    args="-file $(find unitree_l6_link_001)/urdf/unitree_l6_link_001.urdf -urdf -model unitree_l6_link_001"
     output="screen" />
   <node
     name="fake_joint_calibration"

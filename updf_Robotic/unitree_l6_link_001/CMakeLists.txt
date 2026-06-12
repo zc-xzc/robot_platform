@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 2.8.3)
 
-project(宇树L6连接001.SLDASM)
+project(unitree_l6_link_001)
 
 find_package(catkin REQUIRED)
 

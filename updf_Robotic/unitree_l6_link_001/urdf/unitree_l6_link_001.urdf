@@ -3,22 +3,22 @@
      Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
      For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
 <robot
-  name="宇树L6连接001.SLDASM">
+  name="unitree_l6_link_001">
   <link
     name="base_link">
     <inertial>
       <origin
-        xyz="8.38644193650882 0.98425333099143 -0.321728280503399"
+        xyz="8.38865464397686 0.983682408371226 -0.321922701894235"
         rpy="0 0 0" />
       <mass
-        value="0.0388754856381894" />
+        value="0.040989831193917" />
       <inertia
-        ixx="1.11285813596862E-05"
-        ixy="-1.24675957025975E-07"
-        ixz="-3.59508234957696E-07"
-        iyy="8.36189104764469E-06"
-        iyz="4.29781622877737E-09"
-        izz="6.67987440144183E-06" />
+        ixx="1.07132168943605E-05"
+        ixy="-1.36461663564329E-07"
+        ixz="-3.56868824575279E-07"
+        iyy="8.27780003669262E-06"
+        iyz="1.69028864490761E-08"
+        izz="6.29622534613929E-06" />
     </inertial>
     <visual>
       <origin
@@ -26,12 +26,12 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://宇树L6连接001.SLDASM/meshes/base_link.STL" />
+          filename="package://unitree_l6_link_001/meshes/base_link.STL" />
       </geometry>
       <material
         name="">
         <color
-          rgba="1 1 1 1" />
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
       </material>
     </visual>
     <collision>
@@ -40,7 +40,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://宇树L6连接001.SLDASM/meshes/base_link.STL" />
+          filename="package://unitree_l6_link_001/meshes/base_link.STL" />
       </geometry>
     </collision>
   </link>
