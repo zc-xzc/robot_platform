@@ -26,18 +26,18 @@
   </asset>
 
   <worldbody>
-    <body name="base_link" pos="0.00000000 0.00000000 0.33450000" childclass="robot">
-      <inertial pos="0.317477964520347 -0.330969894003123 0.175977174132142" mass="0.175" diaginertia="0.000583456354562162 0.000640864540576776 0.000161784736864578" />
+    <body name="base_link" pos="0 0 0" childclass="robot">
+      <inertial pos="0 0 0" mass="0.175" diaginertia="0.000583456354562162 0.000640864540576776 0.000161784736864578" />
       <geom name="base_link_collision" type="mesh" mesh="base_link.obj" class="collision" />
       <geom name="base_link_visual" type="mesh" mesh="base_link.obj" material="visualgeom" class="visual" />
       <body name="Empty_Link1" pos="0.31194 -0.10063 -0.3345" quat="-0.32797432617233774 0.6246739242891658 -0.6274251550311 -0.32947382979407475">
         <joint name="joint1" type="hinge" class="motor" axis="0 0 -1" />
-        <inertial pos="0.317477964520347 -0.330969894003123 0.175977174132142" mass="0.175" diaginertia="0.000583456354562162 0.000640864540576776 0.000161784736864578" />
+        <inertial pos="0.0148 -0.0125 -0.0281" mass="0.175" diaginertia="0.000583456354562162 0.000640864540576776 0.000161784736864578" />
         <geom name="Empty_Link1_collision" type="mesh" mesh="Empty_Link1.obj" class="collision" />
         <geom name="Empty_Link1_visual" type="mesh" mesh="Empty_Link1.obj" material="visualgeom" class="visual" />
         <body name="Empty_Link2" pos="0.030254 -0.0087565 -0.070686" quat="-0.20276523400275737 -0.20197027798886577 0.6788520501921232 -0.6762057088185948">
           <joint name="joint2" type="hinge" class="motor" axis="0 0 -1" />
-          <inertial pos="0.317477964520347 -0.330969894003123 0.175977174132142" mass="0.175" diaginertia="0.000583456354562162 0.000640864540576776 0.000161784736864578" />
+          <inertial pos="-0.0271 -0.0003 -0.0080" mass="0.175" diaginertia="0.000583456354562162 0.000640864540576776 0.000161784736864578" />
           <geom name="Empty_Link2_collision" type="mesh" mesh="Empty_Link2.obj" class="collision" />
           <geom name="Empty_Link2_visual" type="mesh" mesh="Empty_Link2.obj" material="visualgeom" class="visual" />
         </body>
