@@ -88,7 +88,7 @@
     name="joint1"
     type="continuous">
     <origin
-      xyz="0.31194 -0.10063 -0.3345"
+      xyz="-0.009349 -0.025641 -0.013045"
       rpy="3.1351 0.967 -1.5786" />
     <parent
       link="base_link" />
