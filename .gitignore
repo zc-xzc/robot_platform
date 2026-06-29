@@ -15,3 +15,11 @@ Miniconda3-*.sh
 
 # IDE
 .vscode/
+
+# Stress test logs & recordings
+stress_test_logs/
+*.avi
+
+# Generator scripts
+_gen_stress.py
+simple_stress.py
