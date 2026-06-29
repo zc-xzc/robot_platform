@@ -1,0 +1,17 @@
+﻿# Python
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Runtime-generated
+gimbal_config.json
+tune_cmd.txt
+
+# Logs
+*.log
+
+# Large binaries (installers)
+Miniconda3-*.sh
+
+# IDE
+.vscode/

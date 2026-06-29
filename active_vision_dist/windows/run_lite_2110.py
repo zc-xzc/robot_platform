@@ -129,7 +129,8 @@ def main():
                 p.start(c); cam = p
                 print("D415 %dx%d @ %dfps" % (w,h,fps)); break
             except: continue
-    except: print("no D415")
+    except ImportError: print("no D415 (pyrealsense2 not installed)")
+    except Exception as e: print(f"no D415 ({e})")
 
     from pico_bridge import PicoBridge
     tracker = Tracker(); pd = PD()

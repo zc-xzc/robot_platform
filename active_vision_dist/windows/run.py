@@ -216,7 +216,8 @@ class Camera:
                     p.start(c); self.pipe = p
                     print("  D415 %dx%d @ %dfps" % (w, h, fps)); break
                 except: continue
-        except: pass
+        except ImportError: pass
+        except Exception as e: print(f"  no D415 ({e})")
         if self.pipe is None: print("  no D415")
 
     def read(self):
