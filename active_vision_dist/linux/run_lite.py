@@ -3,7 +3,7 @@
 import sys, os, time, numpy as np
 
 # ---- fixed config ----
-PORT = "/dev/ttyUSB0"          # change as needed: /dev/ttyUSB0, /dev/ttyACM0, etc.
+PORT = "/dev/ttyACM0"         # change as needed: /dev/ttyUSB0, /dev/ttyACM0, etc.
 H_ID, V_ID = 1, 2
 BAUD = 1000000
 ACC = 80

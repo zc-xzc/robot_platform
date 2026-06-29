@@ -3,7 +3,7 @@
 Run once after hardware assembly/reassembly."""
 import sys, os, time, json
 
-PORT = "COM6"          # Linux: /dev/ttyUSB0
+PORT = "COM8"          # Linux: /dev/ttyUSB0
 H_ID, V_ID = 1, 2
 BAUD = 1000000
 H_FACTOR = 1024        # 90 deg

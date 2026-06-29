@@ -11,12 +11,12 @@ Modes:
 
 Tracking args:
   --kp 2.0 --kd 0.5 --jump-thresh 0.08 --acc 80
-  --port COM6 --baud 1000000   (Windows)
+  --port COM8 --baud 1000000   (Windows)
   --no-camera --no-body --log PATH
 
 Calibration args:
   --calibrate --port /dev/ttyUSB0 --h-id 1 --v-id 2  (Linux)
-  --calibrate --port COM6 --h-id 1 --v-id 2    (Windows)
+  --calibrate --port COM8 --h-id 1 --v-id 2    (Windows)
 
 Keyboard while tracking:
   c = recalibrate   +/- = KP   []=KD   q = quit
@@ -35,7 +35,7 @@ from scservo_sdk import PortHandler, sms_sts, COMM_SUCCESS
 # Default config
 # ============================================================================
 H_ID, V_ID = 1, 2
-PORT, BAUD, ACC = "COM6", 1000000, 80
+PORT, BAUD, ACC = "COM8", 1000000, 80
 YAW_RANGE, PITCH_RANGE = 90.0, 60.0
 INV_YAW, INV_PITCH, SWAP = True, True, False
 LIMIT_H, LIMIT_V = 0.85, 0.85

@@ -3,7 +3,7 @@
 import sys, os, time, numpy as np
 
 # ---- fixed config ----
-PORT = "COM6"          # change to COM5 / /dev/ttyUSB0 as needed
+PORT = "COM5"          # change to COM5 / /dev/ttyUSB0 as needed
 H_ID, V_ID = 1, 2
 BAUD = 1000000
 ACC = 80
