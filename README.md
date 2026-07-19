@@ -71,6 +71,7 @@ Mechanical assembly for the 2-DOF active vision gimbal, designed to mount on hum
 | Part | Description |
 |------|-------------|
 | `Active_Vision_platform_001/` | 3-part gimbal assembly (base, connector, camera bracket) with BOM |
+| `Wheeled_robot_openarm/` | Wheeled-robot OpenArm STL archive: active-vision mounts and hand/L6 adapters |
 | `unitree_l6_joint/` | Unitree L6 joint adapter for robot arm integration |
 
 Assembly instructions and interactive 3D BOM: see [`3d_print_parts/Active_Vision_platform_001/安装说明.md`](3d_print_parts/Active_Vision_platform_001/安装说明.md).
@@ -105,6 +106,7 @@ robot_platform/
 │   └── TECHNICAL_REFERENCE.md / TECHNICAL_REFERENCE_CN.md
 ├── 3d_print_parts/              # Gimbal mechanical design
 │   ├── Active_Vision_platform_001/
+│   ├── Wheeled_robot_openarm/   # OpenArm STL archive and file index
 │   └── unitree_l6_joint/
 └── updf_Robotic/                # Simulation models
     ├── Active_Vision_Platform_001/
