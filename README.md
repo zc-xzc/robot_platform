@@ -19,7 +19,7 @@ Robot Platform combines PICO 4 head tracking, a two-axis STS3032 camera gimbal, 
 | Module | What it contains | Start here |
 | --- | --- | --- |
 | [`active_vision_dist/`](active_vision_dist/) | Windows/Linux control software, calibration, servo tuning, diagnostics, and the bundled Feetech servo SDK | [English guide](active_vision_dist/README.md) · [中文说明](active_vision_dist/README_CN.md) |
-| [`3d_print_parts/`](3d_print_parts/) | 2-DOF gimbal assembly, wheeled-robot/OpenArm STL archive, and Unitree L6 adapters | [Assembly guide](3d_print_parts/Active_Vision_platform_001/installation_guide.md) · [STL index](3d_print_parts/Wheeled_robot_openarm/README.md) |
+| [`3d_print_parts/`](3d_print_parts/) | 2-DOF gimbal packages, wheeled-robot/OpenArm STL archive, and Unitree L6 adapters | [Latest AVP package](3d_print_parts/avp_model/README.md) · [Compact assembly guide](3d_print_parts/Active_Vision_platform_001/installation_guide.md) · [STL index](3d_print_parts/Wheeled_robot_openarm/README.md) |
 | [`updf_Robotic/`](updf_Robotic/) | URDF, MuJoCo XML, meshes, ROS packages, and Gazebo launch files | [Model inventory](#simulation-models--仿真模型) |
 
 The repository contains research and development assets at different levels of maturity. Check the relevant subdirectory documentation before printing, machining, or integrating a model.
@@ -136,7 +136,8 @@ For control parameters, data columns, troubleshooting, and the complete command 
 
 | Asset set | Formats and contents | Status / notes |
 | --- | --- | --- |
-| [`Active_Vision_platform_001`](3d_print_parts/Active_Vision_platform_001/) | Interactive HTML BOM, STEP assembly, spreadsheet BOM, and installation guide | Main documented 2-DOF D415 gimbal assembly; nominal yaw ±90°, pitch ±60° |
+| [`avp_model`](3d_print_parts/avp_model/) | Latest spreadsheet BOM, illustrated full/mechanical installation guides, interactive HTML assembly, and editable STP assembly | Primary documented 2-DOF D415 + 2 × STS3032 assembly package |
+| [`Active_Vision_platform_001`](3d_print_parts/Active_Vision_platform_001/) | Interactive HTML BOM, STEP assembly, spreadsheet BOM, and compact installation guide | Alternate 2-DOF D415 gimbal package; nominal yaw ±90°, pitch ±60° |
 | [`Wheeled_robot_openarm`](3d_print_parts/Wheeled_robot_openarm/) | 39 indexed STL files covering active-vision mounts and hand/L6 connectors | Development archive with dated variants, tests, old designs, and explicitly abandoned concepts; no single production-ready “final” file is declared |
 | [`unitree_l6_joint`](3d_print_parts/unitree_l6_joint/) | STEP and STL adapter model | Unitree L6 integration adapter |
 
@@ -148,11 +149,14 @@ STL files do not encode physical units. Confirm units, scale, hole diameters, pr
 
 | Directory | Model | Formats / intended use |
 | --- | --- | --- |
+| [`avp_model`](updf_Robotic/avp_model/) | Latest AVP geometry/reference assembly | Static URDF/ROS package, static MuJoCo XML viewer, STL/OBJ meshes, and RViz/Gazebo launch files; the current URDF joints are fixed and the MJCF has no actuated joints |
 | [`Active_Vision_Platform_001`](updf_Robotic/Active_Vision_Platform_001/) | Standalone 2-DOF active-vision platform | URDF, MuJoCo XML, STL/OBJ meshes, ROS package metadata, RViz/Gazebo launch files |
-| [`G1_O6_combined_001`](updf_Robotic/G1_O6_combined_001/) | Unitree G1 + O6 hands, with and without the active-vision platform | MuJoCo XML (`g1_avp_o6.xml`, `g1_o6.xml`) and simulation meshes |
+| [`G1_O6_combined_001`](updf_Robotic/G1_O6_combined_001/) | Unitree G1 + O6 hands, with and without the 2-DOF active-vision platform | MuJoCo XML (`g1_avp_o6.xml`, `g1_o6.xml`) and simulation meshes; the AVP-equipped model contains pan and tilt hinge joints |
 | [`unitree_l6_link_001`](updf_Robotic/unitree_l6_link_001/) | Unitree L6 link/adapter | URDF, STL mesh, ROS package metadata, RViz/Gazebo launch files |
 
 There are currently **no standalone SDF model files** in the repository. Gazebo support is provided through the ROS URDF packages and launch files; MuJoCo models use XML/MJCF.
+
+The physical `avp_model` assembly is a 2-DOF yaw/pitch mechanism, but its standalone simulation files currently describe a fixed/static reference assembly. Use `Active_Vision_Platform_001` or the AVP section of `G1_O6_combined_001` when movable pan/tilt joints are required, or update the fixed joints before control simulation.
 
 The directory name `updf_Robotic` is retained for repository compatibility even though the model format is URDF.
 
@@ -170,11 +174,13 @@ robot_platform/
 │   ├── README.md / README_CN.md
 │   └── TECHNICAL_REFERENCE.md / TECHNICAL_REFERENCE_CN.md
 ├── 3d_print_parts/
-│   ├── Active_Vision_platform_001/    # Main gimbal assembly, BOM, guide
+│   ├── avp_model/                     # Latest illustrated AVP package and STP assembly
+│   ├── Active_Vision_platform_001/    # Alternate gimbal assembly, BOM, guide
 │   ├── Wheeled_robot_openarm/         # Indexed development STL archive
 │   └── unitree_l6_joint/              # L6 STEP/STL adapter
 └── updf_Robotic/
-    ├── Active_Vision_Platform_001/    # Standalone URDF + MuJoCo model
+    ├── avp_model/                     # Latest static AVP geometry/reference model
+    ├── Active_Vision_Platform_001/    # Actuated standalone URDF + MuJoCo model
     ├── G1_O6_combined_001/            # Combined G1/O6 MuJoCo models
     └── unitree_l6_link_001/           # L6 URDF/ROS package
 ```
@@ -184,6 +190,7 @@ robot_platform/
 - GitHub Actions checks Python syntax, undefined names, compilation, and Pylint fatal/error-level findings on Python 3.10.
 - CI does not have the physical PICO headset, servos, USB adapter, or D415, so it cannot validate motion direction, cable routing, real-time latency, USB enumeration, or mechanical fit.
 - The wheeled-robot/OpenArm directory is an engineering archive, not a curated release of final production parts. Preserve dated and deprecated paths when comparing design history.
+- The standalone `updf_Robotic/avp_model` files are currently static reference geometry. A physical two-axis mechanism does not automatically mean every exported URDF/MJCF encodes two movable joints.
 - The STL inventory scan found no structurally unreadable files. One L6 flange mesh is documented as containing a small number of degenerate triangles; repair/check it in CAD or slicer software before production use. See the [STL index](3d_print_parts/Wheeled_robot_openarm/README.md) for details.
 - Robot model inertial values, joint limits, collision geometry, and reference frames should be verified against the target hardware before control or safety-critical simulation.
 
@@ -203,4 +210,4 @@ Please keep active-vision terminology consistent: use **2-DOF yaw/pitch** even w
 
 ## License
 
-This repository does not currently include an explicit root license file. Until a license is added, do not assume permission to redistribute, modify, or use the contents commercially; contact the repository owner for authorization.
+This project is distributed under the [MIT License](LICENSE).
