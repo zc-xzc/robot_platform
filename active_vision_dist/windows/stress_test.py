@@ -154,7 +154,7 @@ class PatternGen:
     def update(s,phase_dur,temp=40):
         tf=max(0.3,1.0-(temp-HIGH_TEMP_C)/15.0)if temp>HIGH_TEMP_C else 1.0
         p=s.phase%len(PATTERNS);dur,name,cat=PATTERNS[p]
-        sp,ac=2000,80;yt,pt=float(YAW_CENTER),float(PITCH_CENTER);t=phase_dur
+        sp,ac=2000,80;yt,pt=float(YAW_CENTER),float(PITCH_CENTER);t=phase_dur;sub=0
         if p==0:freq=0.2;yt=YAW_CENTER+(YAW_MAX-YAW_CENTER)*0.4*math.sin(2*math.pi*freq*t);pt=PITCH_CENTER+(PITCH_MAX-PITCH_CENTER)*0.3*math.cos(2*math.pi*freq*t);sp,ac=1000,40
         elif p==1:freq=0.1+(t/dur)*1.9;yt=YAW_CENTER+(YAW_MAX-YAW_CENTER)*0.6*math.sin(2*math.pi*freq*t);sp,ac=int(800+(t/dur)*2700),60
         elif p==2:freq=0.1+(t/dur)*1.9;pt=PITCH_CENTER+(PITCH_MAX-PITCH_CENTER)*0.5*math.sin(2*math.pi*freq*t);sp,ac=int(800+(t/dur)*2700),60
