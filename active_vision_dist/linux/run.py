@@ -261,7 +261,6 @@ _key_queue = []
 
 def _kb_thread():
     '''Background thread: read stdin line by line, push to queue.'''
-    global _key_queue
     while True:
         try:
             line = sys.stdin.readline()
