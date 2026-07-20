@@ -2,14 +2,18 @@
 
 本目录包含主动视觉平台的最新 BOM、总装模型、安装说明及配套图片。
 
+> [!IMPORTANT]
+> 本目录中的主动视觉机构是 **2-DOF**：水平旋转（Yaw/Pan）和垂直俯仰（Pitch/Tilt）。BOM 中 `004_3dof_head` 只是历史遗留文件名，不代表第三个运动自由度。
+
 ## 文件入口
 
 - [完整安装说明](./docs/installation_full.md)：包含机械装配、接线和校准流程。
 - [纯机械安装说明](./docs/installation_mechanical.md)：仅包含零部件安装、紧固和机械验收。
 - [BOM](./bom/avp_model_BOM.xlsx)：最新版零部件清单。
-- [HTML 总装模型](./models/avp_model.html)：可在浏览器中交互查看总装模型。
 - [STEP 总装模型](./models/avp_model.stp)：用于三维设计软件中的装配检查和后续修改。
 - [STL 总装模型](./models/avp_model.stl)：用于快速预览总装外形。
+
+为避免分发来源授权无法核实的第三方内嵌查看器代码，本目录不提供自包含 HTML 预览文件；请使用 STEP/STP 或 STL 模型。
 
 ## 3D 打印零件
 
@@ -26,7 +30,6 @@ avp_model/
 ├── bom/
 │   └── avp_model_BOM.xlsx
 ├── models/
-│   ├── avp_model.html
 │   ├── avp_model.stl
 │   ├── avp_model.stp
 │   └── printable_parts/

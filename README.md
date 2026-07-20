@@ -136,14 +136,16 @@ For control parameters, data columns, troubleshooting, and the complete command 
 
 | Asset set | Formats and contents | Status / notes |
 | --- | --- | --- |
-| [`avp_model`](3d_print_parts/avp_model/) | Latest spreadsheet BOM, illustrated full/mechanical installation guides, interactive HTML assembly, and editable STP assembly | Primary documented 2-DOF D415 + 2 × STS3032 assembly package |
-| [`Active_Vision_platform_001`](3d_print_parts/Active_Vision_platform_001/) | Interactive HTML BOM, STEP assembly, spreadsheet BOM, and compact installation guide | Alternate 2-DOF D415 gimbal package; nominal yaw ±90°, pitch ±60° |
+| [`avp_model`](3d_print_parts/avp_model/) | Latest spreadsheet BOM, illustrated full/mechanical installation guides, editable STEP assembly, assembly STL, and printable-part STL/STEP exports | Primary documented 2-DOF D415 + 2 × STS3032 assembly package |
+| [`Active_Vision_platform_001`](3d_print_parts/Active_Vision_platform_001/) | STEP assembly, spreadsheet BOM, and compact installation guide | Alternate 2-DOF D415 gimbal package; nominal yaw ±90°, pitch ±60° |
 | [`Wheeled_robot_openarm`](3d_print_parts/Wheeled_robot_openarm/) | 39 indexed STL files covering active-vision mounts and hand/L6 connectors | Development archive with dated variants, tests, old designs, and explicitly abandoned concepts; no single production-ready “final” file is declared |
 | [`unitree_l6_joint`](3d_print_parts/unitree_l6_joint/) | STEP and STL adapter model | Unitree L6 integration adapter |
 
 Before printing from `Wheeled_robot_openarm`, read its [file index and model notes](3d_print_parts/Wheeled_robot_openarm/README.md). Exact duplicate files have already been removed, but similarly named files may be intentional geometric revisions. In particular, `3dof` in a filename is only a historical label—the active-vision geometry remains 2-DOF.
 
 STL files do not encode physical units. Confirm units, scale, hole diameters, print orientation, clearances, and robot-specific mounting dimensions in CAD/slicer software before manufacturing.
+
+Self-contained CAD-generated HTML viewers are intentionally not distributed. Use the neutral STEP/STP or STL exports for inspection and downstream work.
 
 ## Simulation models / 仿真模型
 

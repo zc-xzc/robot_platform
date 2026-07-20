@@ -23,11 +23,11 @@
 
 ## 3. 三维装配图
 
-![三维装配图](./装配图.png)
+三维装配关系以本目录中的 `Bom_Active_Vision_platform_001.step` 为准；当前不单独分发装配图图片。
 
-## 4. 3D 交互模型
+## 4. 3D 总装模型
 
-`Bom_Active_Vision_platform_001.html` 用浏览器打开后可以拖拽旋转、缩放模型，并可切换至爆炸图查看各零件的装配关系。
+使用 `Bom_Active_Vision_platform_001.step` 在支持 STEP 的 CAD 或模型查看软件中检查装配关系。仓库不分发包含第三方内嵌查看器代码的自包含 HTML 预览文件。
 
 ## 5. 装配步骤
 
