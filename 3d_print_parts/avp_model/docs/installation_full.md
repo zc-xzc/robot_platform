@@ -6,10 +6,10 @@
 ## 配套工程文件
 
 - [最新版 BOM：avp_model_BOM.xlsx](../bom/avp_model_BOM.xlsx)
-- [总装交互模型：avp_model.html](../models/avp_model.html)
 - [总装 STEP 模型：avp_model.stp](../models/avp_model.stp)
+- [总装 STL 模型：avp_model.stl](../models/avp_model.stl)
 
-其中 `avp_model.html` 可直接在浏览器中查看和旋转总装模型，`avp_model.stp` 用于三维设计软件中的装配检查与后续修改。
+其中 `avp_model.stp` 用于三维设计软件中的装配检查与后续修改，`avp_model.stl` 用于快速预览总装外形。
 
 ## 1. 产品概述
 
@@ -215,4 +215,4 @@ python run.py --calibrate
 - 3D 打印件上的自攻螺钉只需锁到贴合，过度拧紧会导致分层或开裂。
 - 首次运动测试应使用低速、小角度，并准备随时断电。
 - D415 USB 线与舵机电源线尽量分开走线，避免接头受力和信号不稳定。
-- 若实物孔位与文档图片不同，优先核对同批次 [avp_model.html](../models/avp_model.html)、[avp_model.stp](../models/avp_model.stp) 和 [avp_model_BOM.xlsx](../bom/avp_model_BOM.xlsx)，不要强行装配。
+- 若实物孔位与文档图片不同，优先核对同批次 [avp_model.stp](../models/avp_model.stp) 和 [avp_model_BOM.xlsx](../bom/avp_model_BOM.xlsx)，不要强行装配。
