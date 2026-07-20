@@ -8,6 +8,7 @@
 - [最新版 BOM：avp_model_BOM.xlsx](../bom/avp_model_BOM.xlsx)
 - [总装交互模型：avp_model.html](../models/avp_model.html)
 - [总装 STEP 模型：avp_model.stp](../models/avp_model.stp)
+- [总装 STL 模型：avp_model.stl](../models/avp_model.stl)
 
 ## 1. 总成结构
 

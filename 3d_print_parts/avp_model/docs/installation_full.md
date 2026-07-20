@@ -8,8 +8,9 @@
 - [最新版 BOM：avp_model_BOM.xlsx](../bom/avp_model_BOM.xlsx)
 - [总装交互模型：avp_model.html](../models/avp_model.html)
 - [总装 STEP 模型：avp_model.stp](../models/avp_model.stp)
+- [总装 STL 模型：avp_model.stl](../models/avp_model.stl)
 
-其中 `avp_model.html` 可直接在浏览器中查看和旋转总装模型，`avp_model.stp` 用于三维设计软件中的装配检查与后续修改。
+其中 `avp_model.html` 可在浏览器中交互查看总装模型，`avp_model.stp` 用于三维设计软件中的装配检查与后续修改，`avp_model.stl` 用于快速预览总装外形。
 
 ## 1. 产品概述
 
