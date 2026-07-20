@@ -6,7 +6,6 @@
 ## 配套工程文件
 
 - [最新版 BOM：avp_model_BOM.xlsx](../bom/avp_model_BOM.xlsx)
-- [总装交互模型：avp_model.html](../models/avp_model.html)
 - [总装 STEP 模型：avp_model.stp](../models/avp_model.stp)
 - [总装 STL 模型：avp_model.stl](../models/avp_model.stl)
 
@@ -79,7 +78,7 @@
 3. 使用 ST2.2 × 4.5 自攻螺钉按匹配孔位固定，先轻旋定位，再交替锁紧。
 4. 确认转接板没有翘起，紧固件末端没有与相邻结构发生干涉。
 
-> 若打印件实物孔位与示意图存在修订差异，以 [avp_model.html](../models/avp_model.html) 和 [avp_model.stp](../models/avp_model.stp) 中的对应安装面为准。
+> 若打印件实物孔位与示意图存在修订差异，以 [avp_model.stp](../models/avp_model.stp) 和 [avp_model.stl](../models/avp_model.stl) 中的对应安装面为准。
 
 ### 4.3 组装上部俯仰支架
 
@@ -191,4 +190,4 @@
 - D415 固定螺钉不得使用超过 BOM 规定长度的替代件。
 - 装配舵脚时应保证上下结构正向居中，避免初始位置明显偏斜。
 - 若输出轴、零件1和支架孔不同轴，应先检查打印件方向和孔内毛刺，不得强行压装。
-- 若实物孔位与图片存在差异，优先核对 [avp_model.html](../models/avp_model.html)、[avp_model.stp](../models/avp_model.stp) 和 [avp_model_BOM.xlsx](../bom/avp_model_BOM.xlsx)。
+- 若实物孔位与图片存在差异，优先核对 [avp_model.stp](../models/avp_model.stp)、[avp_model.stl](../models/avp_model.stl) 和 [avp_model_BOM.xlsx](../bom/avp_model_BOM.xlsx)。
