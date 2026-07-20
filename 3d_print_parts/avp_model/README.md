@@ -7,6 +7,7 @@
 - [完整安装说明](./docs/installation_full.md)：包含机械装配、接线和校准流程。
 - [纯机械安装说明](./docs/installation_mechanical.md)：仅包含零部件安装、紧固和机械验收。
 - [BOM](./bom/avp_model_BOM.xlsx)：最新版零部件清单。
+- [HTML 总装模型](./models/avp_model.html)：可在浏览器中交互查看总装模型。
 - [STEP 总装模型](./models/avp_model.stp)：用于三维设计软件中的装配检查和后续修改。
 - [STL 总装模型](./models/avp_model.stl)：用于快速预览总装外形。
 
@@ -25,6 +26,7 @@ avp_model/
 ├── bom/
 │   └── avp_model_BOM.xlsx
 ├── models/
+│   ├── avp_model.html
 │   ├── avp_model.stl
 │   ├── avp_model.stp
 │   └── printable_parts/
