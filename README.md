@@ -1,3 +1,7 @@
+<!-- licensing-notice -->
+> [!NOTE]
+> Project-owned assets use the root MIT license; bundled third-party SDKs retain their own licenses. See [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
+
 # Robot Platform
 
 [![Python application](https://github.com/zc-xzc/robot_platform/actions/workflows/python-app.yml/badge.svg)](https://github.com/zc-xzc/robot_platform/actions/workflows/python-app.yml)
