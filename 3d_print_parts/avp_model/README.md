@@ -1,14 +1,13 @@
 # Active Vision Platform（AVP）
 
-本目录包含主动视觉平台的最新 BOM、总装模型、安装说明及配套图片。
+本目录包含主动视觉平台的最新 BOM、总装模型、简明机械安装教程及配套图片。
 
 > [!IMPORTANT]
 > 本目录中的主动视觉机构是 **2-DOF**：水平旋转（Yaw/Pan）和垂直俯仰（Pitch/Tilt）。BOM 中 `004_3dof_head` 只是历史遗留文件名，不代表第三个运动自由度。
 
 ## 文件入口
 
-- [完整安装说明](./docs/installation_full.md)：包含机械装配、接线和校准流程。
-- [纯机械安装说明](./docs/installation_mechanical.md)：仅包含零部件安装、紧固和机械验收。
+- [简明机械安装教程](./docs/installation_mechanical.md)：仅包含零部件安装、紧固和机械验收。
 - [BOM](./bom/avp_model_BOM.xlsx)：最新版零部件清单。
 - [STEP 总装模型](./models/avp_model.stp)：用于三维设计软件中的装配检查和后续修改。
 - [STL 总装模型](./models/avp_model.stl)：用于快速预览总装外形。
@@ -25,7 +24,7 @@
 ## 目录结构
 
 ```text
-avp_model/
+3d_print_parts/
 ├── README.md
 ├── bom/
 │   └── avp_model_BOM.xlsx
@@ -38,7 +37,6 @@ avp_model/
 │       ├── avp_004_camera_support.stl / .stp
 │       └── avp_aux_axis_support.stl / .stp
 └── docs/
-    ├── installation_full.md
     ├── installation_mechanical.md
     └── images/
 ```
