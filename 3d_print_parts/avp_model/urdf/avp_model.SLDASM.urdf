@@ -1,0 +1,602 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="avp_model.SLDASM">
+  <!-- Ground-aligned root frame.  The exported SolidWorks base is XZ-aligned. -->
+  <link
+    name="base_footprint" />
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0.0179747025557226 0.00106423288402507 0.00104914674270117"
+        rpy="0 0 0" />
+      <mass
+        value="0.032239054971032" />
+      <inertia
+        ixx="1.6457050558595E-05"
+        ixy="7.48722673375988E-07"
+        ixz="-5.10425769275586E-06"
+        iyy="5.93156791334592E-05"
+        iyz="1.9908308620803E-07"
+        izz="4.35285299213815E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://avp_model.SLDASM/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0 0.490196078431373 0.658823529411765 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://avp_model.SLDASM/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="base_footprint_to_base_link"
+    type="fixed">
+    <origin
+      xyz="0 0 0.016485291"
+      rpy="-1.5707963267949 0 0" />
+    <parent
+      link="base_footprint" />
+    <child
+      link="base_link" />
+  </joint>
+  <link
+    name="URT-2_Link">
+    <inertial>
+      <origin
+        xyz="5.20417042793042E-18 6.93889390390723E-18 0.0015"
+        rpy="0 0 0" />
+      <mass
+        value="0.00619911611019616" />
+      <inertia
+        ixx="7.25208831226016E-07"
+        ixy="-9.47137957244556E-24"
+        ixz="-3.82571033305775E-23"
+        iyy="1.58012181086552E-06"
+        iyz="-3.30872245021211E-24"
+        izz="2.29603196792625E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://avp_model.SLDASM/meshes/URT-2_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.811764705882353 0.309803921568627 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://avp_model.SLDASM/meshes/URT-2_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="URT-2"
+    type="fixed">
+    <origin
+      xyz="-0.0542010311215888 0.00590498710276921 -0.0116367768942251"
+      rpy="1.59489570828687 1.39840980370097 0.0254438217262353" />
+    <parent
+      link="base_link" />
+    <child
+      link="URT-2_Link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="Adapter_Link">
+    <inertial>
+      <origin
+        xyz="0.176635488317035 0.0946649153320905 0.00201542619854554"
+        rpy="0 0 0" />
+      <mass
+        value="0.000558387372345905" />
+      <inertia
+        ixx="8.98908355797779E-09"
+        ixy="2.50611921899904E-12"
+        ixz="-7.59716091399434E-10"
+        iyy="1.71805171614002E-08"
+        iyz="2.34368071302337E-12"
+        izz="2.29484538192629E-08" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://avp_model.SLDASM/meshes/Adapter_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://avp_model.SLDASM/meshes/Adapter_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Adapter"
+    type="fixed">
+    <origin
+      xyz="-0.0279377385794421 -0.179986381417427 -0.0261586839536122"
+      rpy="2.96925520201041 -0.0041334746017013 1.57249782794138" />
+    <parent
+      link="base_link" />
+    <child
+      link="Adapter_Link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="servo_STS3032_1_Link">
+    <inertial>
+      <origin
+        xyz="-0.000452666736318215 0.0138324553064692 2.36286349097892E-08"
+        rpy="0 0 0" />
+      <mass
+        value="0.00766646977893605" />
+      <inertia
+        ixx="5.89108054587487E-07"
+        ixy="4.82535949068142E-08"
+        ixz="1.95583405658296E-13"
+        iyy="4.45657459174842E-07"
+        iyz="-6.64185273962587E-13"
+        izz="8.52603830135824E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://avp_model.SLDASM/meshes/servo_STS3032_1_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://avp_model.SLDASM/meshes/servo_STS3032_1_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="servo_STS3032_1"
+    type="fixed">
+    <origin
+      xyz="0.0726940913666191 0.0164305627737863 0.0102431176203833"
+      rpy="-0.0240993814919772 -1.39840980370096 -3.11614883186356" />
+    <parent
+      link="base_link" />
+    <child
+      link="servo_STS3032_1_Link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="servo_horn_1_Link">
+    <inertial>
+      <origin
+        xyz="2.87173063107105E-12 0.00105592185674326 -3.1677820089282E-12"
+        rpy="0 0 0" />
+      <mass
+        value="0.000597159394485318" />
+      <inertia
+        ixx="3.14641319040381E-08"
+        ixy="2.28680833494504E-20"
+        ixz="2.06464422895267E-17"
+        iyy="6.25250606694439E-08"
+        iyz="-2.52293188755971E-20"
+        izz="3.14641318999831E-08" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://avp_model.SLDASM/meshes/servo_horn_1_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://avp_model.SLDASM/meshes/servo_horn_1_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="servo_horn_1"
+    type="continuous">
+    <origin
+      xyz="-0.0052 0.033297 0"
+      rpy="3.1416 1.5429 3.1416" />
+    <parent
+      link="servo_STS3032_1_Link" />
+    <child
+      link="servo_horn_1_Link" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="002_2dof_head_Link">
+    <inertial>
+      <origin
+        xyz="-0.0170546439973821 0.0109694932351613 0.00419965986348592"
+        rpy="0 0 0" />
+      <mass
+        value="0.0192908788627653" />
+      <inertia
+        ixx="5.83112741092058E-06"
+        ixy="2.98521752667306E-06"
+        ixz="5.11878552607748E-07"
+        iyy="7.99645275081413E-06"
+        iyz="-7.34822626539718E-07"
+        izz="8.53004880272888E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://avp_model.SLDASM/meshes/002_2dof_head_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://avp_model.SLDASM/meshes/002_2dof_head_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="002_2dof_head"
+    type="fixed">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="servo_horn_1_Link" />
+    <child
+      link="002_2dof_head_Link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="servo_STS3032_2_Link">
+    <inertial>
+      <origin
+        xyz="-0.0428277405123007 -0.0278328903461978 -0.000915880212005293"
+        rpy="0 0 0" />
+      <mass
+        value="0.00766647051805129" />
+      <inertia
+        ixx="5.84232215261487E-07"
+        ixy="5.48041838810421E-08"
+        ixz="-7.74118402628623E-10"
+        iyy="4.50598204513107E-07"
+        iyz="5.10665946555179E-09"
+        izz="8.5253895147225E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://avp_model.SLDASM/meshes/servo_STS3032_2_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://avp_model.SLDASM/meshes/servo_STS3032_2_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="servo_STS3032_2"
+    type="fixed">
+    <origin
+      xyz="0 0.0289104894800578 0"
+      rpy="-1.5707963267949 0 -0.261799387799149" />
+    <parent
+      link="002_2dof_head_Link" />
+    <child
+      link="servo_STS3032_2_Link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="servo_horn_2_Link">
+    <inertial>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.000597159394485318" />
+      <inertia
+        ixx="3.15044315743612E-08"
+        ixy="-1.11747411918945E-09"
+        ixz="-3.70424368680264E-11"
+        iyy="6.24507125273391E-08"
+        iyz="1.0271544638759E-09"
+        izz="3.14981803717647E-08" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0.0175158075294952 0.00756093375856036 -0.0506759456650614"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://avp_model.SLDASM/meshes/servo_horn_2_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0.0175158075294952 0.00756093375856036 -0.0506759456650614"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://avp_model.SLDASM/meshes/servo_horn_2_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="servo_horn_2"
+    type="revolute">
+    <origin
+      xyz="-0.0485394617445045 -0.00756093375856036 -0.00117361822667642"
+      rpy="0 -1.0051 0" />
+    <parent
+      link="servo_STS3032_2_Link" />
+    <child
+      link="servo_horn_2_Link" />
+    <!--
+      The second-stage STL geometry is tilted 2.8043 degrees relative to the
+      exported link Y axis.  Rotate about the measured cylindrical centerline
+      so the servo output, horn, center bracket, and far-side shaft stay
+      coaxial throughout the full joint sweep.
+    -->
+    <axis
+      xyz="-0.0360199767720671 0.998802471712146 0.033108666162308" />
+    <limit
+      lower="-1.5707963267949"
+      upper="1.5707963267949"
+      effort="1.0"
+      velocity="1.0" />
+  </joint>
+  <link
+    name="003_2dof_head_Link">
+    <inertial>
+      <origin
+        xyz="-0.0202920260182456 -0.0067578129279147 0.0677692191600594"
+        rpy="0 0 0" />
+      <mass
+        value="0.00565688203794218" />
+      <inertia
+        ixx="7.95081542806821E-07"
+        ixy="-2.99883970848288E-08"
+        ixz="2.8963534233655E-07"
+        iyy="1.23035331909736E-06"
+        iyz="1.92876563207097E-08"
+        izz="1.05151084904119E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://avp_model.SLDASM/meshes/003_2dof_head_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0 0.490196078431373 0.658823529411765 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://avp_model.SLDASM/meshes/003_2dof_head_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="003_2dof_head"
+    type="fixed">
+    <origin
+      xyz="0.0086816075294952 0.00756093375856036 -0.0602869456650614"
+      rpy="0 0 0" />
+    <parent
+      link="servo_horn_2_Link" />
+    <child
+      link="003_2dof_head_Link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="Part_1_Link">
+    <inertial>
+      <origin
+        xyz="0.0421489408493564 0.0261555741575387 -0.00391252982953607"
+        rpy="0 0 0" />
+      <mass
+        value="0.00202299351097288" />
+      <inertia
+        ixx="1.4678281344451E-07"
+        ixy="5.15881852944759E-09"
+        ixz="-1.74501222720737E-08"
+        iyy="1.45278060501427E-07"
+        iyz="2.13717047430776E-08"
+        izz="6.28134580558421E-08" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://avp_model.SLDASM/meshes/Part_1_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.92156862745098 0.92156862745098 0.92156862745098 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://avp_model.SLDASM/meshes/Part_1_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Part_1"
+    type="fixed">
+    <origin
+      xyz="0.018327 0 0.019938"
+      rpy="1.5708 -1.5708 0" />
+    <parent
+      link="003_2dof_head_Link" />
+    <child
+      link="Part_1_Link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="Camera_D415_Link">
+    <inertial>
+      <origin
+        xyz="0.00788499325434463 0.0339145820824322 -0.0841400281807284"
+        rpy="0 0 0" />
+      <mass
+        value="0.0379853362621373" />
+      <inertia
+        ixx="2.95519795187539E-06"
+        ixy="1.002161943541E-06"
+        ixz="-9.22615993325129E-07"
+        iyy="3.07989013081093E-05"
+        iyz="3.47809493581851E-08"
+        izz="3.08369429678368E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://avp_model.SLDASM/meshes/Camera_D415_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://avp_model.SLDASM/meshes/Camera_D415_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Camera_D415"
+    type="fixed">
+    <origin
+      xyz="0.00065656 0 0.0007143"
+      rpy="3.1416 0 -1.5708" />
+    <parent
+      link="003_2dof_head_Link" />
+    <child
+      link="Camera_D415_Link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+</robot>
