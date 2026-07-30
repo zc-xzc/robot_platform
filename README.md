@@ -144,6 +144,7 @@ For control parameters, data columns, troubleshooting, and the complete command 
 | [`Active_Vision_platform_001`](3d_print_parts/Active_Vision_platform_001/) | STEP assembly, spreadsheet BOM, and compact installation guide | Alternate 2-DOF D415 gimbal package; nominal yaw ±90°, pitch ±60° |
 | [`Wheeled_robot_openarm`](3d_print_parts/Wheeled_robot_openarm/) | 39 indexed STL files covering active-vision mounts and hand/L6 connectors | Development archive with dated variants, tests, old designs, and explicitly abandoned concepts; no single production-ready “final” file is declared |
 | [`unitree_l6_joint`](3d_print_parts/unitree_l6_joint/) | STEP and STL adapter model | Unitree L6 integration adapter |
+| [`zed_mini_avp`](3d_print_parts/zed_mini_avp/) | STL, STEP, and Inventor sources for ZED Mini stereo camera gimbal | ZED Mini 2-DOF mount: camera holder, tilt bracket, adapter plate |
 
 Before printing from `Wheeled_robot_openarm`, read its [file index and model notes](3d_print_parts/Wheeled_robot_openarm/README.md). Exact duplicate files have already been removed, but similarly named files may be intentional geometric revisions. In particular, `3dof` in a filename is only a historical label—the active-vision geometry remains 2-DOF.
 
