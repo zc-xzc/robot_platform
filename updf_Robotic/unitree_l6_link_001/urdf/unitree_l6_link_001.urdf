@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="unitree_l6_link_001">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-0.004981 -0.000887 0.000246"
+        rpy="0 0 0" />
+      <mass
+        value="0.040989831193917" />
+      <inertia
+        ixx="1.07132168943605E-05"
+        ixy="-1.36461663564329E-07"
+        ixz="-3.56868824575279E-07"
+        iyy="8.27780003669262E-06"
+        iyz="1.69028864490761E-08"
+        izz="6.29622534613929E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://unitree_l6_link_001/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://unitree_l6_link_001/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+</robot>

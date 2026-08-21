@@ -1,0 +1,39 @@
+<mujoco model="avp_model.SLDASM">
+  <compiler angle="radian"/>
+
+  <asset>
+    <mesh name="base_link" content_type="model/stl" file="meshes/base_link.STL"/>
+    <mesh name="URT-2_Link" content_type="model/stl" file="meshes/URT-2_Link.STL"/>
+    <mesh name="Adapter_Link" content_type="model/stl" file="meshes/Adapter_Link.STL"/>
+    <mesh name="servo_STS3032_1_Link" content_type="model/stl" file="meshes/servo_STS3032_1_Link.STL"/>
+    <mesh name="servo_horn_1_Link" content_type="model/stl" file="meshes/servo_horn_1_Link.STL"/>
+    <mesh name="002_2dof_head_Link" content_type="model/stl" file="meshes/002_2dof_head_Link.STL"/>
+    <mesh name="servo_STS3032_2_Link" content_type="model/stl" file="meshes/servo_STS3032_2_Link.STL"/>
+    <mesh name="servo_horn_2_Link" content_type="model/stl" file="meshes/servo_horn_2_Link.STL"/>
+    <mesh name="003_2dof_head_Link" content_type="model/stl" file="meshes/003_2dof_head_Link.STL"/>
+    <mesh name="Part_1_Link" content_type="model/stl" file="meshes/Part_1_Link.STL"/>
+    <mesh name="Camera_D415_Link" content_type="model/stl" file="meshes/Camera_D415_Link.STL"/>
+  </asset>
+
+  <worldbody>
+    <geom pos="0 0 0.0164853" quat="0.707107 -0.707107 0 0" type="mesh" rgba="0 0.490196 0.658824 1" mesh="base_link"/>
+    <geom pos="-0.054201 -0.0116368 0.0105803" quat="0.765335 0.00103419 0.00198132 -0.643628" type="mesh" rgba="0.811765 0.309804 0 1" mesh="URT-2_Link"/>
+    <geom pos="-0.0279377 -0.0261587 0.196472" quat="0.539773 0.455845 0.542575 -0.454382" type="mesh" rgba="1 1 1 1" mesh="Adapter_Link"/>
+    <geom pos="0.0726941 0.0102431 5.47282e-05" quat="-0.453713 -0.456515 -0.540443 -0.541905" type="mesh" rgba="1 1 1 1" mesh="servo_STS3032_1_Link"/>
+    <body name="servo_horn_1_Link" pos="0.0736424 0.00498256 0.0333287" quat="0.0711261 0.0702213 -0.70205 -0.705079">
+      <inertial pos="-0.0235158 0.0185843 0.0106841" quat="0.516507 0.713984 0.453822 0.132263" mass="0.0275545" diaginertia="2.22735e-05 1.97365e-05 4.981e-06"/>
+      <joint name="servo_horn_1" pos="0 0 0" axis="0 1 0"/>
+      <geom type="mesh" rgba="1 1 1 1" mesh="servo_horn_1_Link"/>
+      <geom type="mesh" rgba="1 1 1 1" mesh="002_2dof_head_Link"/>
+      <geom pos="0 0.0289105 0" quat="0.701057 -0.701057 0.092296 -0.092296" type="mesh" rgba="1 1 1 1" mesh="servo_STS3032_2_Link"/>
+      <body name="servo_horn_2_Link" pos="-0.0471893 0.0403398 0.00756093" quat="0.658832 -0.658832 -0.256788 0.256788">
+        <inertial pos="-0.0215623 0.000333942 0.0211653" quat="0.646569 0.66071 -0.266118 0.273115" mass="0.0462624" diaginertia="3.71796e-05 3.19313e-05 9.02383e-06"/>
+        <joint name="servo_horn_2" pos="0 0 0" axis="-0.0360199767720671 0.998802471712146 0.033108666162308" range="-1.5708 1.5708" actuatorfrcrange="-1 1"/>
+        <geom pos="0.0175158 0.00756093 -0.0506759" quat="1 0 0 0" type="mesh" rgba="1 1 1 1" mesh="servo_horn_2_Link"/>
+        <geom pos="0.00868161 0.00756093 -0.0602869" quat="1 0 0 0" type="mesh" rgba="0 0.490196 0.658824 1" mesh="003_2dof_head_Link"/>
+        <geom pos="0.0270086 0.00756093 -0.0403489" quat="0.499998 0.5 -0.5 0.500002" type="mesh" rgba="0.921569 0.921569 0.921569 1" mesh="Part_1_Link"/>
+        <geom pos="0.00933817 0.00756093 -0.0595726" quat="-2.59734e-06 0.707105 -0.707108 2.59735e-06" type="mesh" rgba="1 1 1 1" mesh="Camera_D415_Link"/>
+      </body>
+    </body>
+  </worldbody>
+</mujoco>

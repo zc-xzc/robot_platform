@@ -1,0 +1,38 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.egg-info/
+dist/
+build/
+
+# Runtime-generated
+gimbal_config.json
+tune_cmd.txt
+head_tracking_log.csv
+
+# Logs & data
+*.log
+*.csv
+
+# Stress test recordings
+stress_test_logs/
+*.avi
+
+# Generator scripts (not part of the distributed package)
+_gen_stress.py
+simple_stress.py
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Large binaries (installers)
+Miniconda3-*.sh
+
+# Git
+*.orig
