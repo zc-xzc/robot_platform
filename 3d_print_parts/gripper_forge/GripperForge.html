@@ -1,0 +1,2431 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gripper Forge</title>
+<style>
+/* Gripper Forge — a clean, modern look for a parametric part designer.
+   The geometry is the hero: quiet grays, one teal accent, and the two jaws
+   the only saturated colors on the page. */
+
+:root {
+  --bg: #f2f5f4;
+  --panel: #ffffff;
+  --line: #e3e8e6;
+  --line-soft: #eef1f0;
+  --ink: #16211e;
+  --ink-2: #4c5a55;
+  --ink-3: #85918c;
+  --accent: #0f766e;
+  --accent-soft: #e6f2f0;
+  --accent-line: #bcdcd7;
+  --on-accent: #fff;
+  --header: #0f1f1b;
+  --header-ink: #eef4f2;
+  --bad: #c2410c;
+  --bad-bg: #fdf1e7;
+  --note-bg: #f8f6ef;
+  --note-ink: #7a6a35;
+  --sk: #e6eae8;
+  --r: 10px;
+  --shadow: 0 1px 2px rgba(15, 31, 27, .05), 0 2px 10px rgba(15, 31, 27, .04);
+}
+
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+
+html, body {
+  height: 100%;
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font: 13.5px/1.5 ui-sans-serif, -apple-system, "Inter", "Segoe UI", system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+body { display: flex; flex-direction: column; overflow: hidden; }
+.spacer { flex: 1; }
+
+/* ---------------------------------------------------------------- header */
+
+.top {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  height: 56px;
+  padding: 0 18px;
+  background: var(--header);
+  color: var(--header-ink);
+  flex: none;
+}
+.brand { font-weight: 700; font-size: 16px; letter-spacing: -0.02em; color: #fff; }
+.tagline { color: rgba(238, 244, 242, .55); font-size: 12px; }
+.status { color: rgba(238, 244, 242, .8); font-size: 12px; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.status.bad { color: #ffb4a2; }
+
+.tbtn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  height: 30px;
+  padding: 0 12px;
+  border: 1px solid rgba(255, 255, 255, .18);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, .06);
+  color: var(--header-ink);
+  font: inherit;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.tbtn:hover { background: rgba(255, 255, 255, .14); }
+.tbtn.ic { min-width: 34px; justify-content: center; }
+
+/* ------------------------------------------------------------- buttons */
+
+.btn {
+  height: 32px;
+  padding: 0 14px;
+  border: 1px solid var(--line);
+  border-radius: var(--r);
+  background: var(--panel);
+  color: var(--ink);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+}
+.btn:hover { background: #f7faf9; }
+.btn.primary {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--on-accent);
+  box-shadow: none;
+}
+.btn.primary:hover { background: #0c645d; }
+.btn.big { width: 100%; height: 44px; font-size: 14.5px; border-radius: 12px; }
+.btn:disabled { opacity: .5; cursor: default; }
+
+.seg {
+  display: flex;
+  gap: 2px;
+  padding: 3px;
+  background: var(--line-soft);
+  border-radius: 999px;
+}
+.seg button {
+  height: 25px;
+  padding: 0 12px;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--ink-2);
+  font: inherit;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.seg button:hover { color: var(--ink); }
+.seg button.on { background: var(--panel); color: var(--accent); box-shadow: var(--shadow); }
+
+/* ------------------------------------------------------------------ grid */
+
+.grid {
+  flex: 1;
+  min-height: 0;
+  display: grid;
+  grid-template-columns: 340px minmax(0, 1fr) 320px;
+  grid-template-areas: "left stage right";
+}
+.panel {
+  background: var(--panel);
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.panel.left { grid-area: left; border-right: 1px solid var(--line); }
+.panel.right { grid-area: right; border-left: 1px solid var(--line); }
+.stage { grid-area: stage; }
+
+.block { padding: 16px; border-bottom: 1px solid var(--line-soft); }
+.block h2 {
+  margin: 0 0 12px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  color: var(--ink-3);
+}
+
+/* --------------------------------------------------------------- presets */
+
+.presets { display: flex; flex-wrap: wrap; gap: 6px; }
+.preset {
+  padding: 6px 12px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--panel);
+  color: var(--ink-2);
+  font: inherit;
+  cursor: pointer;
+}
+.preset:hover { border-color: var(--accent-line); color: var(--ink); }
+.preset.on { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
+.preset.on.edited {
+  background: var(--accent-soft);
+  color: var(--accent);
+  box-shadow: inset 0 0 0 1px var(--accent);
+}
+.preset b { font-weight: 600; }
+.preset-blurb { margin: 10px 0 0; color: var(--ink-2); font-size: 12px; line-height: 1.45; }
+.preset-blurb:empty { display: none; }
+
+/* ---------------------------------------------------------------- switches */
+
+.switch { display: flex; align-items: center; gap: 10px; cursor: pointer; }
+.switch input { position: absolute; opacity: 0; width: 0; height: 0; }
+.switch .track {
+  position: relative;
+  flex: none;
+  width: 36px;
+  height: 21px;
+  border-radius: 999px;
+  background: #d3dbd8;
+  transition: background .15s ease;
+}
+.switch .knob {
+  position: absolute;
+  top: 2px; left: 2px;
+  width: 17px; height: 17px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, .2);
+  transition: transform .15s ease;
+}
+.switch input:checked + .track { background: var(--accent); }
+.switch input:checked + .track .knob { transform: translateX(15px); }
+.switch input:focus-visible + .track { outline: 2px solid var(--accent); outline-offset: 2px; }
+.switch .txt { font-weight: 600; font-size: 13px; }
+
+.jawtabs { display: flex; gap: 2px; margin-top: 12px; padding: 3px; background: var(--line-soft); border-radius: 999px; }
+.jawtabs button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  flex: 1;
+  height: 26px;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--ink-2);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+.jawtabs button.on { background: var(--panel); color: var(--ink); box-shadow: var(--shadow); }
+.jawtabs .dot { width: 9px; height: 9px; border-radius: 50%; flex: none; }
+
+/* ----------------------------------------------------------------- sliders */
+
+.ctl { margin-bottom: 18px; }
+.ctl:last-child { margin-bottom: 0; }
+.ctl-head { display: flex; align-items: baseline; gap: 8px; margin-bottom: 6px; }
+.ctl-label { font-weight: 600; font-size: 13px; }
+.ctl-val { margin-left: auto; color: var(--ink); font-variant-numeric: tabular-nums; font-weight: 650; }
+.ctl-val::after { content: attr(data-unit); color: var(--ink-3); font-weight: 400; }
+.ctl-hint { margin: 6px 0 0; color: var(--ink-3); font-size: 11.5px; line-height: 1.45; }
+
+.rng {
+  -webkit-appearance: none;
+  appearance: none;
+  display: block;
+  width: 100%;
+  height: 20px;
+  margin: 0;
+  background: transparent;
+  cursor: pointer;
+}
+.rng::-webkit-slider-runnable-track {
+  height: 5px;
+  border-radius: 999px;
+  background: linear-gradient(to right,
+    var(--accent) 0 var(--fill, 0%), #dde3e0 var(--fill, 0%) 100%);
+}
+.rng::-moz-range-track {
+  height: 5px;
+  border-radius: 999px;
+  background: linear-gradient(to right,
+    var(--accent) 0 var(--fill, 0%), #dde3e0 var(--fill, 0%) 100%);
+}
+.rng::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 16px; height: 16px;
+  margin-top: -5.5px;
+  border: 0;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 0 0 2px var(--accent), 0 1px 4px rgba(15, 31, 27, .3);
+}
+.rng::-moz-range-thumb {
+  width: 16px; height: 16px;
+  border: 0;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 0 0 2px var(--accent), 0 1px 4px rgba(15, 31, 27, .3);
+}
+.rng:active::-webkit-slider-thumb, .rng:focus-visible::-webkit-slider-thumb {
+  box-shadow: 0 0 0 2px var(--accent), 0 0 0 6px var(--accent-soft);
+}
+
+/* ------------------------------------------------------------ tools block */
+
+.btnrow { display: flex; flex-wrap: wrap; gap: 6px; }
+.btnrow .btn { flex: 1 1 auto; font-size: 12.5px; height: 30px; padding: 0 6px; }
+
+.ctl-row { display: flex; align-items: center; gap: 8px; margin-top: 12px; font-size: 12.5px; color: var(--ink-2); flex-wrap: wrap; }
+.ctl-row > label { font-weight: 600; color: var(--ink); }
+.ctl-row input[type=number], .ctl-row select {
+  height: 28px;
+  padding: 0 8px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  font: inherit;
+  font-size: 12.5px;
+  background: var(--panel);
+  color: var(--ink);
+}
+.ctl-row input[type=number] { width: 64px; }
+.ctl-row .hint { color: var(--ink-3); font-size: 11px; flex-basis: 100%; }
+
+/* ------------------------------------------------------------------ stage */
+
+.stage { display: flex; flex-direction: column; min-width: 0; background: var(--bg); }
+.stagebar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: 46px;
+  padding: 0 14px;
+  border-bottom: 1px solid var(--line);
+  flex: none;
+}
+.pill {
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  border: 1px solid var(--accent-line);
+  color: var(--accent);
+  font-size: 11px;
+  font-weight: 650;
+}
+.canvaswrap { position: relative; flex: 1; min-height: 0; }
+#cv { position: absolute; inset: 0; width: 100%; height: 100%; display: block; cursor: grab; touch-action: none; }
+#cv.grabbing { cursor: grabbing; }
+.stagemsg { position: absolute; inset: 0; display: grid; place-items: center; color: var(--ink-3); font-size: 12px; pointer-events: none; }
+.hint { position: absolute; left: 0; right: 0; bottom: 14px; text-align: center; color: var(--ink-3); font-size: 11px; pointer-events: none; }
+
+/* --------------------------------------------------------------- summary */
+
+.cards { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; padding: 16px 16px 14px; border-bottom: 1px solid var(--line-soft); }
+.card { padding: 10px; border: 1px solid var(--line); border-radius: var(--r); background: var(--panel); box-shadow: var(--shadow); }
+.card dt { color: var(--ink-3); font-size: 11px; text-transform: uppercase; letter-spacing: .05em; margin-bottom: 3px; }
+.card dd { margin: 0; font-weight: 700; font-size: 17px; font-variant-numeric: tabular-nums; }
+
+.verdict { margin: 16px 16px 0; padding: 12px 14px; border-radius: var(--r); font-weight: 600; }
+.verdict ul { margin: 8px 0 0; padding-left: 18px; }
+.verdict li { margin-bottom: 6px; font-size: 12.5px; line-height: 1.5; }
+.verdict li:last-child { margin-bottom: 0; }
+.verdict.good { background: var(--accent-soft); color: var(--accent); }
+.verdict.bad { background: var(--bad-bg); color: var(--bad); }
+
+.act { padding: 16px 16px 0; }
+.notes { margin: 16px 16px 0; padding: 10px 12px; border-radius: var(--r); background: var(--note-bg); }
+.notes p { margin: 0 0 6px; color: var(--note-ink); font-size: 12px; line-height: 1.5; }
+.notes p:last-child { margin-bottom: 0; }
+.checkhint { margin: 12px 16px 0; color: var(--ink-3); font-size: 11px; line-height: 1.5; }
+
+.files { padding: 16px 16px 0; }
+.files h3, .howto h3 {
+  margin: 0 0 10px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  color: var(--ink-3);
+}
+.dl {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 10px 12px;
+  margin-bottom: 7px;
+  border: 1px solid var(--accent-line);
+  border-radius: var(--r);
+  background: var(--accent-soft);
+  color: var(--ink);
+  text-decoration: none;
+  font-weight: 600;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+.dl:hover { background: #ddeeea; }
+.dl em { margin-left: auto; font-style: normal; font-weight: 500; color: var(--ink-2); font-size: 12px; }
+
+/* ------------------------------------------------------------ loading */
+
+.sk { display: block; height: 12px; border-radius: 6px; background: linear-gradient(90deg, var(--sk) 25%, #f7faf9 50%, var(--sk) 75%); background-size: 240% 100%; animation: sweep 1.2s linear infinite; }
+.sk-card { padding: 10px; display: flex; flex-direction: column; gap: 6px; }
+.sk-card .sk:first-child { width: 60%; }
+.sk-btn { height: 44px; border-radius: 12px; }
+@keyframes sweep { from { background-position: 120% 0; } to { background-position: -120% 0; } }
+@media (prefers-reduced-motion: reduce) { .sk { animation: none; } }
+
+/* ---------------------------------------------------------------- how to */
+
+.howto { padding: 18px 16px 22px; border-top: 1px solid var(--line); }
+.howto p { margin: 0 0 8px; color: var(--ink-2); font-size: 12px; line-height: 1.5; }
+.howto p:last-child { margin-bottom: 0; }
+.howto b { color: var(--ink); }
+.howto a { color: var(--accent); }
+.step { padding: 12px 14px; margin-bottom: 9px; border: 1px solid var(--line); border-radius: var(--r); }
+.step:last-child { margin-bottom: 0; }
+.step-h { display: block; margin-bottom: 5px; font-size: 12.5px; font-weight: 700; }
+.step .dl { margin: 10px 0 8px; }
+.step .credit { margin: 0; font-size: 11px; color: var(--ink-3); }
+
+/* ----------------------------------------------------------------- drawer */
+
+.drawer { position: fixed; inset: 0; z-index: 40; }
+.scrim { position: absolute; inset: 0; background: rgba(10, 20, 17, .32); }
+.drawer-panel {
+  position: absolute;
+  top: 0; right: 0; bottom: 0;
+  width: min(440px, 94vw);
+  background: var(--panel);
+  box-shadow: -14px 0 36px rgba(10, 20, 17, .16);
+  display: flex;
+  flex-direction: column;
+}
+.drawer-head { display: flex; align-items: center; gap: 10px; height: 56px; padding: 0 18px; border-bottom: 1px solid var(--line); flex: none; }
+.drawer-head h2 { margin: 0; font-size: 15px; font-weight: 700; }
+.icon-close { margin-left: auto; width: 32px; height: 32px; padding: 0; border-radius: 9px; font-size: 14px; color: var(--ink-2); }
+.drawer-body { flex: 1; min-height: 0; overflow-y: auto; }
+.drawer .block h3 { margin: 0 0 12px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: var(--ink-3); }
+.drawer .muted { margin: 0 0 14px; color: var(--ink-3); font-size: 12px; line-height: 1.5; }
+
+.field { margin-bottom: 10px; }
+.field:last-child { margin-bottom: 0; }
+.field label { display: block; margin-bottom: 4px; color: var(--ink-2); font-size: 12px; }
+.field input, .field select {
+  width: 100%;
+  height: 32px;
+  padding: 0 10px;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  font: inherit;
+  font-size: 13px;
+  background: var(--panel);
+  color: var(--ink);
+}
+.field input:focus, .field select:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-soft); }
+.cfg .field { display: grid; grid-template-columns: 150px 1fr; gap: 10px; align-items: center; margin-bottom: 8px; }
+.cfg .field label { margin: 0; }
+.cfg .field input[type=number] { text-align: right; font-variant-numeric: tabular-nums; }
+#gripJson {
+  width: 100%;
+  height: 240px;
+  resize: vertical;
+  font: 11.5px/1.45 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  padding: 9px;
+  background: var(--bg);
+  color: var(--ink);
+}
+.drawer .btnrow { margin-top: 12px; }
+.drawer .btnrow .btn { flex: 1; font-size: 12.5px; }
+
+/* -------------------------------------------------------------- scrollbar */
+
+.panel::-webkit-scrollbar, .drawer-body::-webkit-scrollbar { width: 10px; }
+.panel::-webkit-scrollbar-thumb, .drawer-body::-webkit-scrollbar-thumb { background: #d5dcd9; border: 3px solid var(--panel); border-radius: 8px; }
+.panel::-webkit-scrollbar-track, .drawer-body::-webkit-scrollbar-track { background: transparent; }
+
+@media (max-width: 1240px) {
+  .grid { grid-template-columns: 304px minmax(0, 1fr) 288px; }
+  .tagline { display: none; }
+}
+
+/* ----------------------------------------------------------------- mobile */
+
+@media (max-width: 860px) {
+  html, body { height: auto; min-height: 100%; overflow: visible; }
+  body { display: block; }
+  .grid { min-height: 0; grid-template-columns: minmax(0, 1fr); grid-template-areas: "stage" "left" "right"; }
+  .stage { position: sticky; top: 0; z-index: 2; height: 44vh; border-bottom: 1px solid var(--line); }
+  .hint { display: none; }
+  .panel { overflow: visible; }
+  .panel.left { border-right: 0; }
+  .panel.right { border-left: 0; border-top: 1px solid var(--line); }
+  .cards, .notes { display: none; }
+  .verdict { margin-top: 16px; }
+  .act { padding-bottom: 6px; }
+  .files { padding-bottom: 22px; }
+  .howto { padding-bottom: 28px; }
+  .btn.big { height: 48px; }
+  .top { flex-wrap: wrap; height: auto; min-height: 56px; padding-top: 8px; padding-bottom: 8px; gap: 8px; }
+  .status { margin-left: auto; }
+}
+
+</style>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><path fill='%230f766e' d='M6 26L6 6L10 6L10 26zM22 26L22 6L26 6L26 26zM14 16L14 12L18 12L18 16z'/></svg>">
+</head>
+<body>
+
+<header class="top">
+  <div class="brand" data-i18n="appName">Gripper Forge</div>
+  <div class="tagline" data-i18n="tagline">Design printable compliant gripper fingers</div>
+  <div class="spacer"></div>
+  <button class="tbtn" id="langBtn" title="Language">EN / 中</button>
+  <button class="tbtn" id="gripperBtn" title="Gripper profile"></button>
+  <button class="tbtn ic" id="snapBtn" title="Snapshot"></button>
+  <div class="status" id="status"></div>
+</header>
+
+<main class="grid">
+
+  <!-- controls -->
+  <aside class="panel left">
+    <section class="block">
+      <h2 data-i18n="templates">Presets</h2>
+      <div class="presets" id="presets"></div>
+      <p class="preset-blurb" id="presetBlurb"></p>
+    </section>
+
+    <section class="block">
+      <label class="switch">
+        <input type="checkbox" id="symChk" checked>
+        <span class="track"><span class="knob"></span></span>
+        <span class="txt" data-i18n="symmetric">Identical jaws</span>
+      </label>
+      <div class="jawtabs" id="jawTabs" hidden></div>
+    </section>
+
+    <div id="sliders"></div>
+
+    <section class="block">
+      <h2 data-i18n="tools">Tools</h2>
+      <div class="btnrow">
+        <button class="btn" id="saveBtn" data-i18n="save">Save</button>
+        <button class="btn" id="loadBtn" data-i18n="load">Load</button>
+        <button class="btn" id="exportBtn" data-i18n="exportDesign">Export</button>
+        <button class="btn" id="importBtn" data-i18n="importDesign">Import</button>
+      </div>
+      <input type="file" id="importFile" accept=".json,application/json" hidden>
+
+      <div class="ctl-row">
+        <label for="densityInput" data-i18n="density">Density</label>
+        <input type="number" id="densityInput" step="0.01" min="0.5" max="3" value="1.20">
+        <span class="hint" data-i18n="densityHint">g/cm³, for the material estimate</span>
+      </div>
+      <div class="ctl-row">
+        <label for="stlFmt" data-i18n="stlFmt">STL format</label>
+        <select id="stlFmt">
+          <option value="bin" data-i18n="stlBin">Binary</option>
+          <option value="ascii" data-i18n="stlAscii">ASCII</option>
+        </select>
+      </div>
+    </section>
+  </aside>
+
+  <!-- stage -->
+  <section class="stage">
+    <div class="stagebar">
+      <span class="pill" data-i18n="preview">preview</span>
+      <div class="spacer"></div>
+      <div class="seg" id="viewSeg">
+        <button data-v="iso" class="on" data-i18n="vIso">Orbit</button>
+        <button data-v="front" data-i18n="vFront">Front</button>
+        <button data-v="side" data-i18n="vSide">Side</button>
+        <button data-v="top" data-i18n="vTop">Top</button>
+      </div>
+    </div>
+    <div class="canvaswrap">
+      <canvas id="cv"></canvas>
+      <div class="stagemsg" id="stageMsg"></div>
+      <div class="hint" data-i18n="hint">drag to rotate · scroll to zoom · double-click to reset</div>
+    </div>
+  </section>
+
+  <!-- results -->
+  <aside class="panel right">
+    <div id="summary"></div>
+    <section class="howto">
+      <h3 data-i18n="howto">How to print</h3>
+      <div class="step">
+        <b class="step-h" data-i18n="step1h">1 · Fingers</b>
+        <p data-i18n="step1">Print the exported STLs in TPU 95A. Identical jaws are one file printed twice.</p>
+      </div>
+      <div class="step">
+        <b class="step-h" data-i18n="step2h">2 · Mount</b>
+        <p data-i18n="step2">Print a mount for your gripper in PLA and bolt the fingers to it.</p>
+      </div>
+    </section>
+  </aside>
+
+</main>
+
+<!-- gripper profile drawer -->
+<div class="drawer" id="drawer" hidden>
+  <div class="scrim" data-close></div>
+  <aside class="drawer-panel">
+    <div class="drawer-head">
+      <h2 data-i18n="gripperTitle">Gripper profile</h2>
+      <button class="btn icon-close" data-close>✕</button>
+    </div>
+    <div class="drawer-body">
+      <section class="block">
+        <p class="muted" data-i18n="gripperHint">Edit the mounting geometry and frame constants to target a different gripper, then Apply.</p>
+        <div class="field">
+          <label data-i18n="preset">Preset</label>
+          <select id="gripPreset">
+            <option value="custom">Custom</option>
+            <option value="default">Default</option>
+          </select>
+        </div>
+        <div class="field">
+          <label data-i18n="name">Name</label>
+          <input type="text" id="gripName" spellcheck="false">
+        </div>
+        <div class="field" style="margin-top:14px">
+          <label class="switch">
+            <input type="checkbox" id="gripAutoRef" checked>
+            <span class="track"><span class="knob"></span></span>
+            <span class="txt" data-i18n="autoFrame">Derive mount Y from the contact plane</span>
+          </label>
+        </div>
+      </section>
+      <section class="block">
+        <h3 data-i18n="mounting">Mounting</h3>
+        <div class="cfg" id="cfgKeys"></div>
+      </section>
+      <section class="block">
+        <h3 data-i18n="json">Full profile (JSON)</h3>
+        <textarea id="gripJson" spellcheck="false"></textarea>
+        <div class="btnrow">
+          <button class="btn primary" id="gripApply" data-i18n="apply">Apply</button>
+          <button class="btn" id="gripExport" data-i18n="exportProfile">Export</button>
+          <button class="btn" id="gripImport" data-i18n="importProfile">Import</button>
+          <button class="btn" id="gripReset" data-i18n="reset">Reset</button>
+        </div>
+        <input type="file" id="gripImportFile" accept=".json,application/json" hidden>
+      </section>
+    </div>
+  </aside>
+</div>
+
+<script>
+!function(t,e){"object"==typeof exports&&"undefined"!=typeof module?module.exports=e():"function"==typeof define&&define.amd?define(e):(t="undefined"!=typeof globalThis?globalThis:t||self).polygonClipping=e()}(this,(function(){"use strict";
+/**
+     * splaytree v3.1.2
+     * Fast Splay tree for Node and browser
+     *
+     * @author Alexander Milevski <info@w8r.name>
+     * @license MIT
+     * @preserve
+     */
+/*! *****************************************************************************
+    Copyright (c) Microsoft Corporation. All rights reserved.
+    Licensed under the Apache License, Version 2.0 (the "License"); you may not use
+    this file except in compliance with the License. You may obtain a copy of the
+    License at http://www.apache.org/licenses/LICENSE-2.0
+
+    THIS CODE IS PROVIDED ON AN *AS IS* BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+    KIND, EITHER EXPRESS OR IMPLIED, INCLUDING WITHOUT LIMITATION ANY IMPLIED
+    WARRANTIES OR CONDITIONS OF TITLE, FITNESS FOR A PARTICULAR PURPOSE,
+    MERCHANTABLITY OR NON-INFRINGEMENT.
+
+    See the Apache Version 2.0 License for specific language governing permissions
+    and limitations under the License.
+    ***************************************************************************** */function t(t,e){var n,r,i,o,s={label:0,sent:function(){if(1&i[0])throw i[1];return i[1]},trys:[],ops:[]};return o={next:l(0),throw:l(1),return:l(2)},"function"==typeof Symbol&&(o[Symbol.iterator]=function(){return this}),o;function l(o){return function(l){return function(o){if(n)throw new TypeError("Generator is already executing.");for(;s;)try{if(n=1,r&&(i=2&o[0]?r.return:o[0]?r.throw||((i=r.return)&&i.call(r),0):r.next)&&!(i=i.call(r,o[1])).done)return i;switch(r=0,i&&(o=[2&o[0],i.value]),o[0]){case 0:case 1:i=o;break;case 4:return s.label++,{value:o[1],done:!1};case 5:s.label++,r=o[1],o=[0];continue;case 7:o=s.ops.pop(),s.trys.pop();continue;default:if(!(i=s.trys,(i=i.length>0&&i[i.length-1])||6!==o[0]&&2!==o[0])){s=0;continue}if(3===o[0]&&(!i||o[1]>i[0]&&o[1]<i[3])){s.label=o[1];break}if(6===o[0]&&s.label<i[1]){s.label=i[1],i=o;break}if(i&&s.label<i[2]){s.label=i[2],s.ops.push(o);break}i[2]&&s.ops.pop(),s.trys.pop();continue}o=e.call(t,s)}catch(t){o=[6,t],r=0}finally{n=i=0}if(5&o[0])throw o[1];return{value:o[0]?o[1]:void 0,done:!0}}([o,l])}}}var e=function(t,e){this.next=null,this.key=t,this.data=e,this.left=null,this.right=null};function n(t,e){return t>e?1:t<e?-1:0}function r(t,n,r){for(var i=new e(null,null),o=i,s=i;;){var l=r(t,n.key);if(l<0){if(null===n.left)break;if(r(t,n.left.key)<0){var h=n.left;if(n.left=h.right,h.right=n,null===(n=h).left)break}s.left=n,s=n,n=n.left}else{if(!(l>0))break;if(null===n.right)break;if(r(t,n.right.key)>0){h=n.right;if(n.right=h.left,h.left=n,null===(n=h).right)break}o.right=n,o=n,n=n.right}}return o.right=n.left,s.left=n.right,n.left=i.right,n.right=i.left,n}function i(t,n,i,o){var s=new e(t,n);if(null===i)return s.left=s.right=null,s;var l=o(t,(i=r(t,i,o)).key);return l<0?(s.left=i.left,s.right=i,i.left=null):l>=0&&(s.right=i.right,s.left=i,i.right=null),s}function o(t,e,n){var i=null,o=null;if(e){var s=n((e=r(t,e,n)).key,t);0===s?(i=e.left,o=e.right):s<0?(o=e.right,e.right=null,i=e):(i=e.left,e.left=null,o=e)}return{left:i,right:o}}function s(t,e,n,r,i){if(t){r(e+(n?"└── ":"├── ")+i(t)+"\n");var o=e+(n?"    ":"│   ");t.left&&s(t.left,o,!1,r,i),t.right&&s(t.right,o,!0,r,i)}}var l=function(){function l(t){void 0===t&&(t=n),this._root=null,this._size=0,this._comparator=t}return l.prototype.insert=function(t,e){return this._size++,this._root=i(t,e,this._root,this._comparator)},l.prototype.add=function(t,n){var i=new e(t,n);null===this._root&&(i.left=i.right=null,this._size++,this._root=i);var o=this._comparator,s=r(t,this._root,o),l=o(t,s.key);return 0===l?this._root=s:(l<0?(i.left=s.left,i.right=s,s.left=null):l>0&&(i.right=s.right,i.left=s,s.right=null),this._size++,this._root=i),this._root},l.prototype.remove=function(t){this._root=this._remove(t,this._root,this._comparator)},l.prototype._remove=function(t,e,n){var i;return null===e?null:0===n(t,(e=r(t,e,n)).key)?(null===e.left?i=e.right:(i=r(t,e.left,n)).right=e.right,this._size--,i):e},l.prototype.pop=function(){var t=this._root;if(t){for(;t.left;)t=t.left;return this._root=r(t.key,this._root,this._comparator),this._root=this._remove(t.key,this._root,this._comparator),{key:t.key,data:t.data}}return null},l.prototype.findStatic=function(t){for(var e=this._root,n=this._comparator;e;){var r=n(t,e.key);if(0===r)return e;e=r<0?e.left:e.right}return null},l.prototype.find=function(t){return this._root&&(this._root=r(t,this._root,this._comparator),0!==this._comparator(t,this._root.key))?null:this._root},l.prototype.contains=function(t){for(var e=this._root,n=this._comparator;e;){var r=n(t,e.key);if(0===r)return!0;e=r<0?e.left:e.right}return!1},l.prototype.forEach=function(t,e){for(var n=this._root,r=[],i=!1;!i;)null!==n?(r.push(n),n=n.left):0!==r.length?(n=r.pop(),t.call(e,n),n=n.right):i=!0;return this},l.prototype.range=function(t,e,n,r){for(var i=[],o=this._comparator,s=this._root;0!==i.length||s;)if(s)i.push(s),s=s.left;else{if(o((s=i.pop()).key,e)>0)break;if(o(s.key,t)>=0&&n.call(r,s))return this;s=s.right}return this},l.prototype.keys=function(){var t=[];return this.forEach((function(e){var n=e.key;return t.push(n)})),t},l.prototype.values=function(){var t=[];return this.forEach((function(e){var n=e.data;return t.push(n)})),t},l.prototype.min=function(){return this._root?this.minNode(this._root).key:null},l.prototype.max=function(){return this._root?this.maxNode(this._root).key:null},l.prototype.minNode=function(t){if(void 0===t&&(t=this._root),t)for(;t.left;)t=t.left;return t},l.prototype.maxNode=function(t){if(void 0===t&&(t=this._root),t)for(;t.right;)t=t.right;return t},l.prototype.at=function(t){for(var e=this._root,n=!1,r=0,i=[];!n;)if(e)i.push(e),e=e.left;else if(i.length>0){if(e=i.pop(),r===t)return e;r++,e=e.right}else n=!0;return null},l.prototype.next=function(t){var e=this._root,n=null;if(t.right){for(n=t.right;n.left;)n=n.left;return n}for(var r=this._comparator;e;){var i=r(t.key,e.key);if(0===i)break;i<0?(n=e,e=e.left):e=e.right}return n},l.prototype.prev=function(t){var e=this._root,n=null;if(null!==t.left){for(n=t.left;n.right;)n=n.right;return n}for(var r=this._comparator;e;){var i=r(t.key,e.key);if(0===i)break;i<0?e=e.left:(n=e,e=e.right)}return n},l.prototype.clear=function(){return this._root=null,this._size=0,this},l.prototype.toList=function(){return function(t){var n=t,r=[],i=!1,o=new e(null,null),s=o;for(;!i;)n?(r.push(n),n=n.left):r.length>0?n=(n=s=s.next=r.pop()).right:i=!0;return s.next=null,o.next}(this._root)},l.prototype.load=function(t,n,r){void 0===n&&(n=[]),void 0===r&&(r=!1);var i=t.length,o=this._comparator;if(r&&f(t,n,0,i-1,o),null===this._root)this._root=h(t,n,0,i),this._size=i;else{var s=function(t,n,r){var i=new e(null,null),o=i,s=t,l=n;for(;null!==s&&null!==l;)r(s.key,l.key)<0?(o.next=s,s=s.next):(o.next=l,l=l.next),o=o.next;null!==s?o.next=s:null!==l&&(o.next=l);return i.next}(this.toList(),function(t,n){for(var r=new e(null,null),i=r,o=0;o<t.length;o++)i=i.next=new e(t[o],n[o]);return i.next=null,r.next}(t,n),o);i=this._size+i,this._root=u({head:s},0,i)}return this},l.prototype.isEmpty=function(){return null===this._root},Object.defineProperty(l.prototype,"size",{get:function(){return this._size},enumerable:!0,configurable:!0}),Object.defineProperty(l.prototype,"root",{get:function(){return this._root},enumerable:!0,configurable:!0}),l.prototype.toString=function(t){void 0===t&&(t=function(t){return String(t.key)});var e=[];return s(this._root,"",!0,(function(t){return e.push(t)}),t),e.join("")},l.prototype.update=function(t,e,n){var s=this._comparator,l=o(t,this._root,s),h=l.left,u=l.right;s(t,e)<0?u=i(e,n,u,s):h=i(e,n,h,s),this._root=function(t,e,n){return null===e?t:(null===t||((e=r(t.key,e,n)).left=t),e)}(h,u,s)},l.prototype.split=function(t){return o(t,this._root,this._comparator)},l.prototype[Symbol.iterator]=function(){var e,n,r;return t(this,(function(t){switch(t.label){case 0:e=this._root,n=[],r=!1,t.label=1;case 1:return r?[3,6]:null===e?[3,2]:(n.push(e),e=e.left,[3,5]);case 2:return 0===n.length?[3,4]:[4,e=n.pop()];case 3:return t.sent(),e=e.right,[3,5];case 4:r=!0,t.label=5;case 5:return[3,1];case 6:return[2]}}))},l}();function h(t,n,r,i){var o=i-r;if(o>0){var s=r+Math.floor(o/2),l=t[s],u=n[s],f=new e(l,u);return f.left=h(t,n,r,s),f.right=h(t,n,s+1,i),f}return null}function u(t,e,n){var r=n-e;if(r>0){var i=e+Math.floor(r/2),o=u(t,e,i),s=t.head;return s.left=o,t.head=t.head.next,s.right=u(t,i+1,n),s}return null}function f(t,e,n,r,i){if(!(n>=r)){for(var o=t[n+r>>1],s=n-1,l=r+1;;){do{s++}while(i(t[s],o)<0);do{l--}while(i(t[l],o)>0);if(s>=l)break;var h=t[s];t[s]=t[l],t[l]=h,h=e[s],e[s]=e[l],e[l]=h}f(t,e,n,l,i),f(t,e,l+1,r,i)}}const c=(t,e)=>t.ll.x<=e.x&&e.x<=t.ur.x&&t.ll.y<=e.y&&e.y<=t.ur.y,p=(t,e)=>{if(e.ur.x<t.ll.x||t.ur.x<e.ll.x||e.ur.y<t.ll.y||t.ur.y<e.ll.y)return null;const n=t.ll.x<e.ll.x?e.ll.x:t.ll.x,r=t.ur.x<e.ur.x?t.ur.x:e.ur.x;return{ll:{x:n,y:t.ll.y<e.ll.y?e.ll.y:t.ll.y},ur:{x:r,y:t.ur.y<e.ur.y?t.ur.y:e.ur.y}}};let g=Number.EPSILON;void 0===g&&(g=Math.pow(2,-52));const a=g*g,y=(t,e)=>{if(-g<t&&t<g&&-g<e&&e<g)return 0;const n=t-e;return n*n<a*t*e?0:t<e?-1:1};class x{constructor(){this.tree=new l,this.round(0)}round(t){const e=this.tree.add(t),n=this.tree.prev(e);if(null!==n&&0===y(e.key,n.key))return this.tree.remove(t),n.key;const r=this.tree.next(e);return null!==r&&0===y(e.key,r.key)?(this.tree.remove(t),r.key):t}}const b=new class{constructor(){this.reset()}reset(){this.xRounder=new x,this.yRounder=new x}round(t,e){return{x:this.xRounder.round(t),y:this.yRounder.round(e)}}},v=11102230246251565e-32,d=134217729,m=(3+8*v)*v;function E(t,e,n,r,i){let o,s,l,h,u=e[0],f=r[0],c=0,p=0;f>u==f>-u?(o=u,u=e[++c]):(o=f,f=r[++p]);let g=0;if(c<t&&p<n)for(f>u==f>-u?(s=u+o,l=o-(s-u),u=e[++c]):(s=f+o,l=o-(s-f),f=r[++p]),o=s,0!==l&&(i[g++]=l);c<t&&p<n;)f>u==f>-u?(s=o+u,h=s-o,l=o-(s-h)+(u-h),u=e[++c]):(s=o+f,h=s-o,l=o-(s-h)+(f-h),f=r[++p]),o=s,0!==l&&(i[g++]=l);for(;c<t;)s=o+u,h=s-o,l=o-(s-h)+(u-h),u=e[++c],o=s,0!==l&&(i[g++]=l);for(;p<n;)s=o+f,h=s-o,l=o-(s-h)+(f-h),f=r[++p],o=s,0!==l&&(i[g++]=l);return 0===o&&0!==g||(i[g++]=o),g}function S(t){return new Float64Array(t)}const _=22204460492503146e-32,w=11093356479670487e-47,k=S(4),R=S(8),I=S(12),P=S(16),N=S(4);function A(t,e,n,r,i,o){const s=(e-o)*(n-i),l=(t-i)*(r-o),h=s-l,u=Math.abs(s+l);return Math.abs(h)>=33306690738754716e-32*u?h:-function(t,e,n,r,i,o,s){let l,h,u,f,c,p,g,a,y,x,b,v,S,A,O,L,$,M;const z=t-i,B=n-i,G=e-o,T=r-o;A=z*T,p=d*z,g=p-(p-z),a=z-g,p=d*T,y=p-(p-T),x=T-y,O=a*x-(A-g*y-a*y-g*x),L=G*B,p=d*G,g=p-(p-G),a=G-g,p=d*B,y=p-(p-B),x=B-y,$=a*x-(L-g*y-a*y-g*x),b=O-$,c=O-b,k[0]=O-(b+c)+(c-$),v=A+b,c=v-A,S=A-(v-c)+(b-c),b=S-L,c=S-b,k[1]=S-(b+c)+(c-L),M=v+b,c=M-v,k[2]=v-(M-c)+(b-c),k[3]=M;let q=function(t,e){let n=e[0];for(let r=1;r<t;r++)n+=e[r];return n}(4,k),C=_*s;if(q>=C||-q>=C)return q;if(c=t-z,l=t-(z+c)+(c-i),c=n-B,u=n-(B+c)+(c-i),c=e-G,h=e-(G+c)+(c-o),c=r-T,f=r-(T+c)+(c-o),0===l&&0===h&&0===u&&0===f)return q;if(C=w*s+m*Math.abs(q),q+=z*f+T*l-(G*u+B*h),q>=C||-q>=C)return q;A=l*T,p=d*l,g=p-(p-l),a=l-g,p=d*T,y=p-(p-T),x=T-y,O=a*x-(A-g*y-a*y-g*x),L=h*B,p=d*h,g=p-(p-h),a=h-g,p=d*B,y=p-(p-B),x=B-y,$=a*x-(L-g*y-a*y-g*x),b=O-$,c=O-b,N[0]=O-(b+c)+(c-$),v=A+b,c=v-A,S=A-(v-c)+(b-c),b=S-L,c=S-b,N[1]=S-(b+c)+(c-L),M=v+b,c=M-v,N[2]=v-(M-c)+(b-c),N[3]=M;const F=E(4,k,4,N,R);A=z*f,p=d*z,g=p-(p-z),a=z-g,p=d*f,y=p-(p-f),x=f-y,O=a*x-(A-g*y-a*y-g*x),L=G*u,p=d*G,g=p-(p-G),a=G-g,p=d*u,y=p-(p-u),x=u-y,$=a*x-(L-g*y-a*y-g*x),b=O-$,c=O-b,N[0]=O-(b+c)+(c-$),v=A+b,c=v-A,S=A-(v-c)+(b-c),b=S-L,c=S-b,N[1]=S-(b+c)+(c-L),M=v+b,c=M-v,N[2]=v-(M-c)+(b-c),N[3]=M;const j=E(F,R,4,N,I);A=l*f,p=d*l,g=p-(p-l),a=l-g,p=d*f,y=p-(p-f),x=f-y,O=a*x-(A-g*y-a*y-g*x),L=h*u,p=d*h,g=p-(p-h),a=h-g,p=d*u,y=p-(p-u),x=u-y,$=a*x-(L-g*y-a*y-g*x),b=O-$,c=O-b,N[0]=O-(b+c)+(c-$),v=A+b,c=v-A,S=A-(v-c)+(b-c),b=S-L,c=S-b,N[1]=S-(b+c)+(c-L),M=v+b,c=M-v,N[2]=v-(M-c)+(b-c),N[3]=M;const U=E(j,I,4,N,P);return P[U-1]}(t,e,n,r,i,o,u)}const O=(t,e)=>t.x*e.y-t.y*e.x,L=(t,e)=>t.x*e.x+t.y*e.y,$=(t,e,n)=>{const r=A(t.x,t.y,e.x,e.y,n.x,n.y);return r>0?-1:r<0?1:0},M=t=>Math.sqrt(L(t,t)),z=(t,e,n)=>{const r={x:e.x-t.x,y:e.y-t.y},i={x:n.x-t.x,y:n.y-t.y};return O(i,r)/M(i)/M(r)},B=(t,e,n)=>{const r={x:e.x-t.x,y:e.y-t.y},i={x:n.x-t.x,y:n.y-t.y};return L(i,r)/M(i)/M(r)},G=(t,e,n)=>0===e.y?null:{x:t.x+e.x/e.y*(n-t.y),y:n},T=(t,e,n)=>0===e.x?null:{x:n,y:t.y+e.y/e.x*(n-t.x)};class q{static compare(t,e){const n=q.comparePoints(t.point,e.point);return 0!==n?n:(t.point!==e.point&&t.link(e),t.isLeft!==e.isLeft?t.isLeft?1:-1:F.compare(t.segment,e.segment))}static comparePoints(t,e){return t.x<e.x?-1:t.x>e.x?1:t.y<e.y?-1:t.y>e.y?1:0}constructor(t,e){void 0===t.events?t.events=[this]:t.events.push(this),this.point=t,this.isLeft=e}link(t){if(t.point===this.point)throw new Error("Tried to link already linked events");const e=t.point.events;for(let t=0,n=e.length;t<n;t++){const n=e[t];this.point.events.push(n),n.point=this.point}this.checkForConsuming()}checkForConsuming(){const t=this.point.events.length;for(let e=0;e<t;e++){const n=this.point.events[e];if(void 0===n.segment.consumedBy)for(let r=e+1;r<t;r++){const t=this.point.events[r];void 0===t.consumedBy&&(n.otherSE.point.events===t.otherSE.point.events&&n.segment.consume(t.segment))}}}getAvailableLinkedEvents(){const t=[];for(let e=0,n=this.point.events.length;e<n;e++){const n=this.point.events[e];n!==this&&!n.segment.ringOut&&n.segment.isInResult()&&t.push(n)}return t}getLeftmostComparator(t){const e=new Map,n=n=>{const r=n.otherSE;e.set(n,{sine:z(this.point,t.point,r.point),cosine:B(this.point,t.point,r.point)})};return(t,r)=>{e.has(t)||n(t),e.has(r)||n(r);const{sine:i,cosine:o}=e.get(t),{sine:s,cosine:l}=e.get(r);return i>=0&&s>=0?o<l?1:o>l?-1:0:i<0&&s<0?o<l?-1:o>l?1:0:s<i?-1:s>i?1:0}}}let C=0;class F{static compare(t,e){const n=t.leftSE.point.x,r=e.leftSE.point.x,i=t.rightSE.point.x,o=e.rightSE.point.x;if(o<n)return 1;if(i<r)return-1;const s=t.leftSE.point.y,l=e.leftSE.point.y,h=t.rightSE.point.y,u=e.rightSE.point.y;if(n<r){if(l<s&&l<h)return 1;if(l>s&&l>h)return-1;const n=t.comparePoint(e.leftSE.point);if(n<0)return 1;if(n>0)return-1;const r=e.comparePoint(t.rightSE.point);return 0!==r?r:-1}if(n>r){if(s<l&&s<u)return-1;if(s>l&&s>u)return 1;const n=e.comparePoint(t.leftSE.point);if(0!==n)return n;const r=t.comparePoint(e.rightSE.point);return r<0?1:r>0?-1:1}if(s<l)return-1;if(s>l)return 1;if(i<o){const n=e.comparePoint(t.rightSE.point);if(0!==n)return n}if(i>o){const n=t.comparePoint(e.rightSE.point);if(n<0)return 1;if(n>0)return-1}if(i!==o){const t=h-s,e=i-n,f=u-l,c=o-r;if(t>e&&f<c)return 1;if(t<e&&f>c)return-1}return i>o?1:i<o||h<u?-1:h>u?1:t.id<e.id?-1:t.id>e.id?1:0}constructor(t,e,n,r){this.id=++C,this.leftSE=t,t.segment=this,t.otherSE=e,this.rightSE=e,e.segment=this,e.otherSE=t,this.rings=n,this.windings=r}static fromRing(t,e,n){let r,i,o;const s=q.comparePoints(t,e);if(s<0)r=t,i=e,o=1;else{if(!(s>0))throw new Error(`Tried to create degenerate segment at [${t.x}, ${t.y}]`);r=e,i=t,o=-1}const l=new q(r,!0),h=new q(i,!1);return new F(l,h,[n],[o])}replaceRightSE(t){this.rightSE=t,this.rightSE.segment=this,this.rightSE.otherSE=this.leftSE,this.leftSE.otherSE=this.rightSE}bbox(){const t=this.leftSE.point.y,e=this.rightSE.point.y;return{ll:{x:this.leftSE.point.x,y:t<e?t:e},ur:{x:this.rightSE.point.x,y:t>e?t:e}}}vector(){return{x:this.rightSE.point.x-this.leftSE.point.x,y:this.rightSE.point.y-this.leftSE.point.y}}isAnEndpoint(t){return t.x===this.leftSE.point.x&&t.y===this.leftSE.point.y||t.x===this.rightSE.point.x&&t.y===this.rightSE.point.y}comparePoint(t){if(this.isAnEndpoint(t))return 0;const e=this.leftSE.point,n=this.rightSE.point,r=this.vector();if(e.x===n.x)return t.x===e.x?0:t.x<e.x?1:-1;const i=(t.y-e.y)/r.y,o=e.x+i*r.x;if(t.x===o)return 0;const s=(t.x-e.x)/r.x,l=e.y+s*r.y;return t.y===l?0:t.y<l?-1:1}getIntersection(t){const e=this.bbox(),n=t.bbox(),r=p(e,n);if(null===r)return null;const i=this.leftSE.point,o=this.rightSE.point,s=t.leftSE.point,l=t.rightSE.point,h=c(e,s)&&0===this.comparePoint(s),u=c(n,i)&&0===t.comparePoint(i),f=c(e,l)&&0===this.comparePoint(l),g=c(n,o)&&0===t.comparePoint(o);if(u&&h)return g&&!f?o:!g&&f?l:null;if(u)return f&&i.x===l.x&&i.y===l.y?null:i;if(h)return g&&o.x===s.x&&o.y===s.y?null:s;if(g&&f)return null;if(g)return o;if(f)return l;const a=((t,e,n,r)=>{if(0===e.x)return T(n,r,t.x);if(0===r.x)return T(t,e,n.x);if(0===e.y)return G(n,r,t.y);if(0===r.y)return G(t,e,n.y);const i=O(e,r);if(0==i)return null;const o={x:n.x-t.x,y:n.y-t.y},s=O(o,e)/i,l=O(o,r)/i;return{x:(t.x+l*e.x+(n.x+s*r.x))/2,y:(t.y+l*e.y+(n.y+s*r.y))/2}})(i,this.vector(),s,t.vector());return null===a?null:c(r,a)?b.round(a.x,a.y):null}split(t){const e=[],n=void 0!==t.events,r=new q(t,!0),i=new q(t,!1),o=this.rightSE;this.replaceRightSE(i),e.push(i),e.push(r);const s=new F(r,o,this.rings.slice(),this.windings.slice());return q.comparePoints(s.leftSE.point,s.rightSE.point)>0&&s.swapEvents(),q.comparePoints(this.leftSE.point,this.rightSE.point)>0&&this.swapEvents(),n&&(r.checkForConsuming(),i.checkForConsuming()),e}swapEvents(){const t=this.rightSE;this.rightSE=this.leftSE,this.leftSE=t,this.leftSE.isLeft=!0,this.rightSE.isLeft=!1;for(let t=0,e=this.windings.length;t<e;t++)this.windings[t]*=-1}consume(t){let e=this,n=t;for(;e.consumedBy;)e=e.consumedBy;for(;n.consumedBy;)n=n.consumedBy;const r=F.compare(e,n);if(0!==r){if(r>0){const t=e;e=n,n=t}if(e.prev===n){const t=e;e=n,n=t}for(let t=0,r=n.rings.length;t<r;t++){const r=n.rings[t],i=n.windings[t],o=e.rings.indexOf(r);-1===o?(e.rings.push(r),e.windings.push(i)):e.windings[o]+=i}n.rings=null,n.windings=null,n.consumedBy=e,n.leftSE.consumedBy=e.leftSE,n.rightSE.consumedBy=e.rightSE}}prevInResult(){return void 0!==this._prevInResult||(this.prev?this.prev.isInResult()?this._prevInResult=this.prev:this._prevInResult=this.prev.prevInResult():this._prevInResult=null),this._prevInResult}beforeState(){if(void 0!==this._beforeState)return this._beforeState;if(this.prev){const t=this.prev.consumedBy||this.prev;this._beforeState=t.afterState()}else this._beforeState={rings:[],windings:[],multiPolys:[]};return this._beforeState}afterState(){if(void 0!==this._afterState)return this._afterState;const t=this.beforeState();this._afterState={rings:t.rings.slice(0),windings:t.windings.slice(0),multiPolys:[]};const e=this._afterState.rings,n=this._afterState.windings,r=this._afterState.multiPolys;for(let t=0,r=this.rings.length;t<r;t++){const r=this.rings[t],i=this.windings[t],o=e.indexOf(r);-1===o?(e.push(r),n.push(i)):n[o]+=i}const i=[],o=[];for(let t=0,r=e.length;t<r;t++){if(0===n[t])continue;const r=e[t],s=r.poly;if(-1===o.indexOf(s))if(r.isExterior)i.push(s);else{-1===o.indexOf(s)&&o.push(s);const t=i.indexOf(r.poly);-1!==t&&i.splice(t,1)}}for(let t=0,e=i.length;t<e;t++){const e=i[t].multiPoly;-1===r.indexOf(e)&&r.push(e)}return this._afterState}isInResult(){if(this.consumedBy)return!1;if(void 0!==this._isInResult)return this._isInResult;const t=this.beforeState().multiPolys,e=this.afterState().multiPolys;switch(H.type){case"union":{const n=0===t.length,r=0===e.length;this._isInResult=n!==r;break}case"intersection":{let n,r;t.length<e.length?(n=t.length,r=e.length):(n=e.length,r=t.length),this._isInResult=r===H.numMultiPolys&&n<r;break}case"xor":{const n=Math.abs(t.length-e.length);this._isInResult=n%2==1;break}case"difference":{const n=t=>1===t.length&&t[0].isSubject;this._isInResult=n(t)!==n(e);break}default:throw new Error(`Unrecognized operation type found ${H.type}`)}return this._isInResult}}class j{constructor(t,e,n){if(!Array.isArray(t)||0===t.length)throw new Error("Input geometry is not a valid Polygon or MultiPolygon");if(this.poly=e,this.isExterior=n,this.segments=[],"number"!=typeof t[0][0]||"number"!=typeof t[0][1])throw new Error("Input geometry is not a valid Polygon or MultiPolygon");const r=b.round(t[0][0],t[0][1]);this.bbox={ll:{x:r.x,y:r.y},ur:{x:r.x,y:r.y}};let i=r;for(let e=1,n=t.length;e<n;e++){if("number"!=typeof t[e][0]||"number"!=typeof t[e][1])throw new Error("Input geometry is not a valid Polygon or MultiPolygon");let n=b.round(t[e][0],t[e][1]);n.x===i.x&&n.y===i.y||(this.segments.push(F.fromRing(i,n,this)),n.x<this.bbox.ll.x&&(this.bbox.ll.x=n.x),n.y<this.bbox.ll.y&&(this.bbox.ll.y=n.y),n.x>this.bbox.ur.x&&(this.bbox.ur.x=n.x),n.y>this.bbox.ur.y&&(this.bbox.ur.y=n.y),i=n)}r.x===i.x&&r.y===i.y||this.segments.push(F.fromRing(i,r,this))}getSweepEvents(){const t=[];for(let e=0,n=this.segments.length;e<n;e++){const n=this.segments[e];t.push(n.leftSE),t.push(n.rightSE)}return t}}class U{constructor(t,e){if(!Array.isArray(t))throw new Error("Input geometry is not a valid Polygon or MultiPolygon");this.exteriorRing=new j(t[0],this,!0),this.bbox={ll:{x:this.exteriorRing.bbox.ll.x,y:this.exteriorRing.bbox.ll.y},ur:{x:this.exteriorRing.bbox.ur.x,y:this.exteriorRing.bbox.ur.y}},this.interiorRings=[];for(let e=1,n=t.length;e<n;e++){const n=new j(t[e],this,!1);n.bbox.ll.x<this.bbox.ll.x&&(this.bbox.ll.x=n.bbox.ll.x),n.bbox.ll.y<this.bbox.ll.y&&(this.bbox.ll.y=n.bbox.ll.y),n.bbox.ur.x>this.bbox.ur.x&&(this.bbox.ur.x=n.bbox.ur.x),n.bbox.ur.y>this.bbox.ur.y&&(this.bbox.ur.y=n.bbox.ur.y),this.interiorRings.push(n)}this.multiPoly=e}getSweepEvents(){const t=this.exteriorRing.getSweepEvents();for(let e=0,n=this.interiorRings.length;e<n;e++){const n=this.interiorRings[e].getSweepEvents();for(let e=0,r=n.length;e<r;e++)t.push(n[e])}return t}}class Y{constructor(t,e){if(!Array.isArray(t))throw new Error("Input geometry is not a valid Polygon or MultiPolygon");try{"number"==typeof t[0][0][0]&&(t=[t])}catch(t){}this.polys=[],this.bbox={ll:{x:Number.POSITIVE_INFINITY,y:Number.POSITIVE_INFINITY},ur:{x:Number.NEGATIVE_INFINITY,y:Number.NEGATIVE_INFINITY}};for(let e=0,n=t.length;e<n;e++){const n=new U(t[e],this);n.bbox.ll.x<this.bbox.ll.x&&(this.bbox.ll.x=n.bbox.ll.x),n.bbox.ll.y<this.bbox.ll.y&&(this.bbox.ll.y=n.bbox.ll.y),n.bbox.ur.x>this.bbox.ur.x&&(this.bbox.ur.x=n.bbox.ur.x),n.bbox.ur.y>this.bbox.ur.y&&(this.bbox.ur.y=n.bbox.ur.y),this.polys.push(n)}this.isSubject=e}getSweepEvents(){const t=[];for(let e=0,n=this.polys.length;e<n;e++){const n=this.polys[e].getSweepEvents();for(let e=0,r=n.length;e<r;e++)t.push(n[e])}return t}}class V{static factory(t){const e=[];for(let n=0,r=t.length;n<r;n++){const r=t[n];if(!r.isInResult()||r.ringOut)continue;let i=null,o=r.leftSE,s=r.rightSE;const l=[o],h=o.point,u=[];for(;i=o,o=s,l.push(o),o.point!==h;)for(;;){const t=o.getAvailableLinkedEvents();if(0===t.length){const t=l[0].point,e=l[l.length-1].point;throw new Error(`Unable to complete output ring starting at [${t.x}, ${t.y}]. Last matching segment found ends at [${e.x}, ${e.y}].`)}if(1===t.length){s=t[0].otherSE;break}let n=null;for(let t=0,e=u.length;t<e;t++)if(u[t].point===o.point){n=t;break}if(null!==n){const t=u.splice(n)[0],r=l.splice(t.index);r.unshift(r[0].otherSE),e.push(new V(r.reverse()));continue}u.push({index:l.length,point:o.point});const r=o.getLeftmostComparator(i);s=t.sort(r)[0].otherSE;break}e.push(new V(l))}return e}constructor(t){this.events=t;for(let e=0,n=t.length;e<n;e++)t[e].segment.ringOut=this;this.poly=null}getGeom(){let t=this.events[0].point;const e=[t];for(let n=1,r=this.events.length-1;n<r;n++){const r=this.events[n].point,i=this.events[n+1].point;0!==$(r,t,i)&&(e.push(r),t=r)}if(1===e.length)return null;const n=e[0],r=e[1];0===$(n,t,r)&&e.shift(),e.push(e[0]);const i=this.isExteriorRing()?1:-1,o=this.isExteriorRing()?0:e.length-1,s=this.isExteriorRing()?e.length:-1,l=[];for(let t=o;t!=s;t+=i)l.push([e[t].x,e[t].y]);return l}isExteriorRing(){if(void 0===this._isExteriorRing){const t=this.enclosingRing();this._isExteriorRing=!t||!t.isExteriorRing()}return this._isExteriorRing}enclosingRing(){return void 0===this._enclosingRing&&(this._enclosingRing=this._calcEnclosingRing()),this._enclosingRing}_calcEnclosingRing(){let t=this.events[0];for(let e=1,n=this.events.length;e<n;e++){const n=this.events[e];q.compare(t,n)>0&&(t=n)}let e=t.segment.prevInResult(),n=e?e.prevInResult():null;for(;;){if(!e)return null;if(!n)return e.ringOut;if(n.ringOut!==e.ringOut)return n.ringOut.enclosingRing()!==e.ringOut?e.ringOut:e.ringOut.enclosingRing();e=n.prevInResult(),n=e?e.prevInResult():null}}}class X{constructor(t){this.exteriorRing=t,t.poly=this,this.interiorRings=[]}addInterior(t){this.interiorRings.push(t),t.poly=this}getGeom(){const t=[this.exteriorRing.getGeom()];if(null===t[0])return null;for(let e=0,n=this.interiorRings.length;e<n;e++){const n=this.interiorRings[e].getGeom();null!==n&&t.push(n)}return t}}class Q{constructor(t){this.rings=t,this.polys=this._composePolys(t)}getGeom(){const t=[];for(let e=0,n=this.polys.length;e<n;e++){const n=this.polys[e].getGeom();null!==n&&t.push(n)}return t}_composePolys(t){const e=[];for(let n=0,r=t.length;n<r;n++){const r=t[n];if(!r.poly)if(r.isExteriorRing())e.push(new X(r));else{const t=r.enclosingRing();t.poly||e.push(new X(t)),t.poly.addInterior(r)}}return e}}class W{constructor(t){let e=arguments.length>1&&void 0!==arguments[1]?arguments[1]:F.compare;this.queue=t,this.tree=new l(e),this.segments=[]}process(t){const e=t.segment,n=[];if(t.consumedBy)return t.isLeft?this.queue.remove(t.otherSE):this.tree.remove(e),n;const r=t.isLeft?this.tree.add(e):this.tree.find(e);if(!r)throw new Error(`Unable to find segment #${e.id} [${e.leftSE.point.x}, ${e.leftSE.point.y}] -> [${e.rightSE.point.x}, ${e.rightSE.point.y}] in SweepLine tree.`);let i,o,s=r,l=r;for(;void 0===i;)s=this.tree.prev(s),null===s?i=null:void 0===s.key.consumedBy&&(i=s.key);for(;void 0===o;)l=this.tree.next(l),null===l?o=null:void 0===l.key.consumedBy&&(o=l.key);if(t.isLeft){let r=null;if(i){const t=i.getIntersection(e);if(null!==t&&(e.isAnEndpoint(t)||(r=t),!i.isAnEndpoint(t))){const e=this._splitSafely(i,t);for(let t=0,r=e.length;t<r;t++)n.push(e[t])}}let s=null;if(o){const t=o.getIntersection(e);if(null!==t&&(e.isAnEndpoint(t)||(s=t),!o.isAnEndpoint(t))){const e=this._splitSafely(o,t);for(let t=0,r=e.length;t<r;t++)n.push(e[t])}}if(null!==r||null!==s){let t=null;if(null===r)t=s;else if(null===s)t=r;else{t=q.comparePoints(r,s)<=0?r:s}this.queue.remove(e.rightSE),n.push(e.rightSE);const i=e.split(t);for(let t=0,e=i.length;t<e;t++)n.push(i[t])}n.length>0?(this.tree.remove(e),n.push(t)):(this.segments.push(e),e.prev=i)}else{if(i&&o){const t=i.getIntersection(o);if(null!==t){if(!i.isAnEndpoint(t)){const e=this._splitSafely(i,t);for(let t=0,r=e.length;t<r;t++)n.push(e[t])}if(!o.isAnEndpoint(t)){const e=this._splitSafely(o,t);for(let t=0,r=e.length;t<r;t++)n.push(e[t])}}}this.tree.remove(e)}return n}_splitSafely(t,e){this.tree.remove(t);const n=t.rightSE;this.queue.remove(n);const r=t.split(e);return r.push(n),void 0===t.consumedBy&&this.tree.add(t),r}}const Z="undefined"!=typeof process&&process.env.POLYGON_CLIPPING_MAX_QUEUE_SIZE||1e6,D="undefined"!=typeof process&&process.env.POLYGON_CLIPPING_MAX_SWEEPLINE_SEGMENTS||1e6;const H=new class{run(t,e,n){H.type=t,b.reset();const r=[new Y(e,!0)];for(let t=0,e=n.length;t<e;t++)r.push(new Y(n[t],!1));if(H.numMultiPolys=r.length,"difference"===H.type){const t=r[0];let e=1;for(;e<r.length;)null!==p(r[e].bbox,t.bbox)?e++:r.splice(e,1)}if("intersection"===H.type)for(let t=0,e=r.length;t<e;t++){const e=r[t];for(let n=t+1,i=r.length;n<i;n++)if(null===p(e.bbox,r[n].bbox))return[]}const i=new l(q.compare);for(let t=0,e=r.length;t<e;t++){const e=r[t].getSweepEvents();for(let t=0,n=e.length;t<n;t++)if(i.insert(e[t]),i.size>Z)throw new Error("Infinite loop when putting segment endpoints in a priority queue (queue size too big).")}const o=new W(i);let s=i.size,h=i.pop();for(;h;){const t=h.key;if(i.size===s){const e=t.segment;throw new Error(`Unable to pop() ${t.isLeft?"left":"right"} SweepEvent [${t.point.x}, ${t.point.y}] from segment #${e.id} [${e.leftSE.point.x}, ${e.leftSE.point.y}] -> [${e.rightSE.point.x}, ${e.rightSE.point.y}] from queue.`)}if(i.size>Z)throw new Error("Infinite loop when passing sweep line over endpoints (queue size too big).");if(o.segments.length>D)throw new Error("Infinite loop when passing sweep line over endpoints (too many sweep line segments).");const e=o.process(t);for(let t=0,n=e.length;t<n;t++){const n=e[t];void 0===n.consumedBy&&i.insert(n)}s=i.size,h=i.pop()}b.reset();const u=V.factory(o.segments);return new Q(u).getGeom()}};var J={union:function(t){for(var e=arguments.length,n=new Array(e>1?e-1:0),r=1;r<e;r++)n[r-1]=arguments[r];return H.run("union",t,n)},intersection:function(t){for(var e=arguments.length,n=new Array(e>1?e-1:0),r=1;r<e;r++)n[r-1]=arguments[r];return H.run("intersection",t,n)},xor:function(t){for(var e=arguments.length,n=new Array(e>1?e-1:0),r=1;r<e;r++)n[r-1]=arguments[r];return H.run("xor",t,n)},difference:function(t){for(var e=arguments.length,n=new Array(e>1?e-1:0),r=1;r<e;r++)n[r-1]=arguments[r];return H.run("difference",t,n)}};return J}));
+//# sourceMappingURL=polygon-clipping.umd.min.js.map
+
+</script>
+<script>
+!function(e){"object"==typeof exports&&"undefined"!=typeof module?module.exports=e():"function"==typeof define&&define.amd?define([],e):("undefined"!=typeof window?window:"undefined"!=typeof global?global:"undefined"!=typeof self?self:this).earcut=e()}(function(){return function r(x,i,u){function f(n,e){if(!i[n]){if(!x[n]){var t="function"==typeof require&&require;if(!e&&t)return t(n,!0);if(o)return o(n,!0);throw(e=new Error("Cannot find module '"+n+"'")).code="MODULE_NOT_FOUND",e}t=i[n]={exports:{}},x[n][0].call(t.exports,function(e){return f(x[n][1][e]||e)},t,t.exports,r,x,i,u)}return i[n].exports}for(var o="function"==typeof require&&require,e=0;e<u.length;e++)f(u[e]);return f}({1:[function(e,n,t){"use strict";function r(e,n,t){t=t||2;var r,x,i,u,f,o=n&&n.length,v=o?n[0]*t:e.length,p=s(e,0,v,t,!0),y=[];if(p&&p.next!==p.prev){if(o&&(p=function(e,n,t,r){var x,i,u,f,o=[];for(x=0,i=n.length;x<i;x++)f=n[x]*r,u=x<i-1?n[x+1]*r:e.length,(f=s(e,f,u,r,!1))===f.next&&(f.steiner=!0),o.push(function(e){var n=e,t=e;for(;(n.x<t.x||n.x===t.x&&n.y<t.y)&&(t=n),n=n.next,n!==e;);return t}(f));for(o.sort(c),x=0;x<o.length;x++)t=function(e,n){var t=function(e,n){var t,r=n,x=e.x,i=e.y,u=-1/0;do{if(i<=r.y&&i>=r.next.y&&r.next.y!==r.y){var f=r.x+(i-r.y)*(r.next.x-r.x)/(r.next.y-r.y);if(f<=x&&u<f&&(u=f,t=r.x<r.next.x?r:r.next,f===x))return t}}while(r=r.next,r!==n);if(!t)return null;var o,v=t,p=t.x,y=t.y,a=1/0;r=t;for(;x>=r.x&&r.x>=p&&x!==r.x&&D(i<y?x:u,i,p,y,i<y?u:x,i,r.x,r.y)&&(o=Math.abs(i-r.y)/(x-r.x),_(r,e)&&(o<a||o===a&&(r.x>t.x||r.x===t.x&&function(e,n){return E(e.prev,e,n.prev)<0&&E(n.next,e,e.next)<0}(t,r)))&&(t=r,a=o)),r=r.next,r!==v;);return t}(e,n);if(!t)return n;n=j(t,e);return q(n,n.next),q(t,t.next)}(o[x],t);return t}(e,n,p,t)),e.length>80*t){for(var a=r=e[0],l=x=e[1],h=t;h<v;h+=t)(i=e[h])<a&&(a=i),(u=e[h+1])<l&&(l=u),r<i&&(r=i),x<u&&(x=u);f=0!==(f=Math.max(r-a,x-l))?32767/f:0}O(p,y,t,a,l,f,0)}return y}function s(e,n,t,r,x){var i,u;if(x===0<d(e,n,t,r))for(i=n;i<t;i+=r)u=f(i,e[i],e[i+1],u);else for(i=t-r;n<=i;i-=r)u=f(i,e[i],e[i+1],u);return u&&N(u,u.next)&&(C(u),u=u.next),u}function q(e,n){if(!e)return e;n=n||e;var t,r=e;do{if(t=!1,r.steiner||!N(r,r.next)&&0!==E(r.prev,r,r.next))r=r.next;else{if(C(r),(r=n=r.prev)===r.next)break;t=!0}}while(t||r!==n);return n}function O(e,n,t,r,x,i,u){if(e){if(!u&&i){for(var f=e,o=r,v=x,p=i,y=f;0===y.z&&(y.z=k(y.x,y.y,o,v,p)),y.prevZ=y.prev,y.nextZ=y.next,(y=y.next)!==f;);y.prevZ.nextZ=null,y.prevZ=null;var a,l,h,s,c,d,Z,g,w=y,M=1;do{for(l=w,c=w=null,d=0;l;){for(d++,h=l,a=Z=0;a<M&&(Z++,h=h.nextZ);a++);for(g=M;0<Z||0<g&&h;)0!==Z&&(0===g||!h||l.z<=h.z)?(l=(s=l).nextZ,Z--):(h=(s=h).nextZ,g--),c?c.nextZ=s:w=s,s.prevZ=c,c=s;l=h}}while(c.nextZ=null,M*=2,1<d)}for(var b,m,z=e;e.prev!==e.next;)if(b=e.prev,m=e.next,i?function(e,n,t,r){var x=e.prev,i=e,u=e.next;if(0<=E(x,i,u))return;var f=x.x,o=i.x,v=u.x,p=x.y,y=i.y,a=u.y,l=f<o?f<v?f:v:o<v?o:v,h=p<y?p<a?p:a:y<a?y:a,s=o<f?v<f?f:v:v<o?o:v,c=y<p?a<p?p:a:a<y?y:a,d=k(l,h,n,t,r),Z=k(s,c,n,t,r),g=e.prevZ,w=e.nextZ;for(;g&&g.z>=d&&w&&w.z<=Z;){if(g.x>=l&&g.x<=s&&g.y>=h&&g.y<=c&&g!==x&&g!==u&&D(f,p,o,y,v,a,g.x,g.y)&&0<=E(g.prev,g,g.next))return;if(g=g.prevZ,w.x>=l&&w.x<=s&&w.y>=h&&w.y<=c&&w!==x&&w!==u&&D(f,p,o,y,v,a,w.x,w.y)&&0<=E(w.prev,w,w.next))return;w=w.nextZ}for(;g&&g.z>=d;){if(g.x>=l&&g.x<=s&&g.y>=h&&g.y<=c&&g!==x&&g!==u&&D(f,p,o,y,v,a,g.x,g.y)&&0<=E(g.prev,g,g.next))return;g=g.prevZ}for(;w&&w.z<=Z;){if(w.x>=l&&w.x<=s&&w.y>=h&&w.y<=c&&w!==x&&w!==u&&D(f,p,o,y,v,a,w.x,w.y)&&0<=E(w.prev,w,w.next))return;w=w.nextZ}return 1}(e,r,x,i):function(e){var n=e.prev,t=e,e=e.next;if(0<=E(n,t,e))return;var r=n.x,x=t.x,i=e.x,u=n.y,f=t.y,o=e.y,v=r<x?r<i?r:i:x<i?x:i,p=u<f?u<o?u:o:f<o?f:o,y=x<r?i<r?r:i:i<x?x:i,a=f<u?o<u?u:o:o<f?f:o,l=e.next;for(;l!==n;){if(l.x>=v&&l.x<=y&&l.y>=p&&l.y<=a&&D(r,u,x,f,i,o,l.x,l.y)&&0<=E(l.prev,l,l.next))return;l=l.next}return 1}(e))n.push(b.i/t|0),n.push(e.i/t|0),n.push(m.i/t|0),C(e),e=m.next,z=m.next;else if((e=m)===z){u?1===u?O(e=function(e,n,t){var r=e;do{var x=r.prev,i=r.next.next}while(!N(x,i)&&U(x,r,r.next,i)&&_(x,i)&&_(i,x)&&(n.push(x.i/t|0),n.push(r.i/t|0),n.push(i.i/t|0),C(r),C(r.next),r=e=i),r=r.next,r!==e);return q(r)}(q(e),n,t),n,t,r,x,i,2):2===u&&function(e,n,t,r,x,i){var u=e;do{for(var f,o=u.next.next;o!==u.prev;){if(u.i!==o.i&&function(e,n){return e.next.i!==n.i&&e.prev.i!==n.i&&!function(e,n){var t=e;do{if(t.i!==e.i&&t.next.i!==e.i&&t.i!==n.i&&t.next.i!==n.i&&U(t,t.next,e,n))return 1}while(t=t.next,t!==e);return}(e,n)&&(_(e,n)&&_(n,e)&&function(e,n){var t=e,r=!1,x=(e.x+n.x)/2,i=(e.y+n.y)/2;for(;t.y>i!=t.next.y>i&&t.next.y!==t.y&&x<(t.next.x-t.x)*(i-t.y)/(t.next.y-t.y)+t.x&&(r=!r),t=t.next,t!==e;);return r}(e,n)&&(E(e.prev,e,n.prev)||E(e,n.prev,n))||N(e,n)&&0<E(e.prev,e,e.next)&&0<E(n.prev,n,n.next))}(u,o))return f=j(u,o),u=q(u,u.next),f=q(f,f.next),O(u,n,t,r,x,i,0),O(f,n,t,r,x,i,0);o=o.next}}while(u=u.next,u!==e)}(e,n,t,r,x,i):O(q(e),n,t,r,x,i,1);break}}}function c(e,n){return e.x-n.x}function k(e,n,t,r,x){return(e=1431655765&((e=858993459&((e=252645135&((e=16711935&((e=(e-t)*x|0)|e<<8))|e<<4))|e<<2))|e<<1))|(n=1431655765&((n=858993459&((n=252645135&((n=16711935&((n=(n-r)*x|0)|n<<8))|n<<4))|n<<2))|n<<1))<<1}function D(e,n,t,r,x,i,u,f){return(e-u)*(i-f)<=(x-u)*(n-f)&&(t-u)*(n-f)<=(e-u)*(r-f)&&(x-u)*(r-f)<=(t-u)*(i-f)}function E(e,n,t){return(n.y-e.y)*(t.x-n.x)-(n.x-e.x)*(t.y-n.y)}function N(e,n){return e.x===n.x&&e.y===n.y}function U(e,n,t,r){var x=v(E(e,n,t)),i=v(E(e,n,r)),u=v(E(t,r,e)),f=v(E(t,r,n));return x!==i&&u!==f||(0===x&&o(e,t,n)||(0===i&&o(e,r,n)||(0===u&&o(t,e,r)||!(0!==f||!o(t,n,r)))))}function o(e,n,t){return n.x<=Math.max(e.x,t.x)&&n.x>=Math.min(e.x,t.x)&&n.y<=Math.max(e.y,t.y)&&n.y>=Math.min(e.y,t.y)}function v(e){return 0<e?1:e<0?-1:0}function _(e,n){return E(e.prev,e,e.next)<0?0<=E(e,n,e.next)&&0<=E(e,e.prev,n):E(e,n,e.prev)<0||E(e,e.next,n)<0}function j(e,n){var t=new u(e.i,e.x,e.y),r=new u(n.i,n.x,n.y),x=e.next,i=n.prev;return(e.next=n).prev=e,(t.next=x).prev=t,(r.next=t).prev=r,(i.next=r).prev=i,r}function f(e,n,t,r){e=new u(e,n,t);return r?(e.next=r.next,(e.prev=r).next.prev=e,r.next=e):(e.prev=e).next=e,e}function C(e){e.next.prev=e.prev,e.prev.next=e.next,e.prevZ&&(e.prevZ.nextZ=e.nextZ),e.nextZ&&(e.nextZ.prevZ=e.prevZ)}function u(e,n,t){this.i=e,this.x=n,this.y=t,this.prev=null,this.next=null,this.z=0,this.prevZ=null,this.nextZ=null,this.steiner=!1}function d(e,n,t,r){for(var x=0,i=n,u=t-r;i<t;i+=r)x+=(e[u]-e[i])*(e[i+1]+e[u+1]),u=i;return x}n.exports=r,(n.exports.default=r).deviation=function(e,n,t,r){var x=n&&n.length,i=x?n[0]*t:e.length,u=Math.abs(d(e,0,i,t));if(x)for(var f=0,o=n.length;f<o;f++){var v=n[f]*t,p=f<o-1?n[f+1]*t:e.length;u-=Math.abs(d(e,v,p,t))}for(var y=0,f=0;f<r.length;f+=3){var a=r[f]*t,l=r[f+1]*t,h=r[f+2]*t;y+=Math.abs((e[a]-e[h])*(e[1+l]-e[1+a])-(e[a]-e[l])*(e[1+h]-e[1+a]))}return 0===u&&0===y?0:Math.abs((y-u)/u)},r.flatten=function(e){for(var n=e[0][0].length,t={vertices:[],holes:[],dimensions:n},r=0,x=0;x<e.length;x++){for(var i=0;i<e[x].length;i++)for(var u=0;u<n;u++)t.vertices.push(e[x][i][u]);0<x&&(r+=e[x-1].length,t.holes.push(r))}return t}},{}]},{},[1])(1)});
+
+</script>
+<script type="module">
+// Gripper Forge — bundled module.
+// The two libraries below (MIT / ISC) are loaded as globals by the UMD scripts.
+const clip = globalThis.polygonClipping;
+const triangulate = globalThis.earcut;
+
+// ---------------- src/data.js ----------------
+// data.js — the design space: parameters, presets, language strings, and the
+// gripper profiles (mounting + frame constants). The default profile's numbers
+// are measurements of a small two-jaw gripper, included so the tool works out
+// of the box; the panel lets you re-tune them for any other gripper.
+
+// ------------------------------------------------------------------ strings
+
+const STR = {
+  en: {
+    appName: 'Gripper Forge',
+    tagline: 'Design printable compliant gripper fingers',
+    preview: 'preview',
+    vIso: 'Orbit', vFront: 'Front', vSide: 'Side', vTop: 'Top',
+    hint: 'drag to rotate · scroll to zoom · double-click to reset',
+    templates: 'Presets',
+    symmetric: 'Identical jaws',
+    gShape: 'Profile', gFlex: 'Flexure', gCup: 'Cup', gGrip: 'Grip', gNail: 'Nail',
+    opening: 'Opening', reach: 'Reach', plastic: 'Material',
+    ready: 'Ready to print',
+    problem1: '1 issue to fix',
+    problemN: '{count} issues to fix',
+    files: 'Files',
+    build: 'Export STL', building: 'Exporting…',
+    tools: 'Tools', gripper: 'Gripper', lang: 'EN / 中',
+    save: 'Save', load: 'Load', exportDesign: 'Export', importDesign: 'Import',
+    snapshot: 'Snapshot',
+    density: 'Density', densityHint: 'g/cm³, for the material estimate',
+    stlFmt: 'STL format', stlBin: 'Binary', stlAscii: 'ASCII',
+    quickChecks: 'In-browser quick checks',
+    checksNote: 'lightweight heuristics — always confirm in your slicer',
+    gripperTitle: 'Gripper profile',
+    gripperHint: 'Edit the mounting geometry and frame constants to target a different gripper, then Apply.',
+    preset: 'Preset', name: 'Name',
+    mounting: 'Mounting', json: 'Full profile (JSON)',
+    apply: 'Apply', exportProfile: 'Export', importProfile: 'Import', reset: 'Reset',
+    applied: 'Gripper profile applied.',
+    autoFrame: 'Derive mount Y from the contact plane',
+    noSaved: 'No saved design.',
+    saved: 'Design saved.', loaded: 'Design loaded.',
+    importFail: 'Could not read that file.',
+    built: 'STL generated in your browser',
+    howto: 'How to print',
+    step1h: '1 · Fingers',
+    step1: 'Print the exported STLs in TPU 95A. Identical jaws are one file printed twice.',
+    step2h: '2 · Mount',
+    step2: 'Print a mount for your gripper in PLA and bolt the fingers to it.',
+    madeFor: 'gripper profile',
+    noGrip: 'Custom',
+  },
+  zh: {
+    appName: '夹爪工坊',
+    tagline: '设计可打印的柔性夹爪手指',
+    preview: '预览',
+    vIso: '环绕', vFront: '正面', vSide: '侧面', vTop: '俯视',
+    hint: '拖拽旋转 · 滚轮缩放 · 双击复位',
+    templates: '预设',
+    symmetric: '两只相同',
+    gShape: '外形', gFlex: '柔性', gCup: '凹槽', gGrip: '防滑', gNail: '指甲',
+    opening: '开口', reach: '前伸', plastic: '耗材',
+    ready: '可以打印',
+    problem1: '有 1 个问题需要修复',
+    problemN: '有 {count} 个问题需要修复',
+    files: '文件',
+    build: '导出 STL', building: '导出中…',
+    tools: '工具', gripper: '夹爪', lang: 'EN / 中',
+    save: '保存', load: '读取', exportDesign: '导出', importDesign: '导入',
+    snapshot: '截图',
+    density: '密度', densityHint: 'g/cm³，用于耗材估算',
+    stlFmt: 'STL 格式', stlBin: '二进制', stlAscii: 'ASCII',
+    quickChecks: '浏览器内快速检查',
+    checksNote: '启发式规则——打印前请在切片器里确认',
+    gripperTitle: '夹爪配置',
+    gripperHint: '修改安装几何与坐标系常量即可适配其他夹爪，改完点应用。',
+    preset: '预设', name: '名称',
+    mounting: '安装参数', json: '完整配置（JSON）',
+    apply: '应用', exportProfile: '导出', importProfile: '导入', reset: '重置',
+    applied: '夹爪配置已应用。',
+    autoFrame: '根据接触平面自动推导安装 Y',
+    noSaved: '没有已保存的设计。',
+    saved: '设计已保存。', loaded: '设计已读取。',
+    importFail: '无法读取该文件。',
+    built: '已在浏览器中生成 STL',
+    howto: '如何打印',
+    step1h: '1 · 手指',
+    step1: '用 TPU 95A 打印导出的 STL。两只相同则一个文件打印两次。',
+    step2h: '2 · 安装座',
+    step2: '用 PLA 打印你所用夹爪的安装座，将手指固定上去。',
+    madeFor: '夹爪配置',
+    noGrip: '自定义',
+  },
+};
+
+// ----------------------------------------------------------- parameter model
+
+const SHAPE = 'shape', FLEX = 'flex', CUP = 'cup', GRIP = 'grip', NAIL = 'nail';
+
+const PARAMS = {
+  finger_length_mm:  { min: 25,  max: 85,  step: 0.5,  group: SHAPE, int: false },
+  tip_width_mm:      { min: 5,   max: 25,  step: 0.1,  group: SHAPE, int: false },
+  tip_lip_mm:        { min: 0,   max: 7,   step: 0.05, group: SHAPE, int: false },
+  wall_thickness_mm: { min: 0.7, max: 3.0, step: 0.05, group: SHAPE, int: false },
+  rib_count:         { min: 3,   max: 24,  step: 1,    group: FLEX,  int: true },
+  rib_thickness_mm:  { min: 0.7, max: 2.5, step: 0.05, group: FLEX,  int: false },
+  cradle_radius_mm:  { min: 3,   max: 45,  step: 0.5,  group: CUP,   int: false },
+  cradle_pos:        { min: 0,   max: 1,   step: 0.01, group: CUP,   int: false },
+  cradle_lift_mm:    { min: 0,   max: 9,   step: 0.1,  group: CUP,   int: false },
+  slot_count:        { min: 0,   max: 16,  step: 1,    group: GRIP,  int: true },
+  slot_height_mm:    { min: 0,   max: 2.5, step: 0.05, group: GRIP,  int: false },
+  nail_len_mm:       { min: 0,   max: 14,  step: 0.1,  group: NAIL,  int: false },
+  nail_thickness_mm: { min: 0.3, max: 4.5, step: 0.05, group: NAIL,  int: false },
+};
+
+const TOGGLE_PARAMS = {
+  slot_round: { group: GRIP },
+};
+
+const L = (en, zh) => ({ en, zh });
+const PARAM_LABEL = {
+  finger_length_mm: L('Length', '长度'),
+  tip_width_mm: L('Tip width', '指尖宽度'),
+  tip_lip_mm: L('Tip lip', '尖端凸缘'),
+  wall_thickness_mm: L('Wall', '壁厚'),
+  rib_count: L('Ribs', '肋条数'),
+  rib_thickness_mm: L('Rib thickness', '肋条厚度'),
+  cradle_radius_mm: L('Cup radius', '凹槽半径'),
+  cradle_pos: L('Cup position', '凹槽位置'),
+  cradle_lift_mm: L('Cup depth', '凹槽深度'),
+  slot_count: L('Bars', '防滑条数'),
+  slot_height_mm: L('Bar height', '防滑条高度'),
+  nail_len_mm: L('Nail length', '指甲长度'),
+  nail_thickness_mm: L('Nail thickness', '指甲厚度'),
+  slot_round: L('Rounded bars', '圆顶防滑条'),
+};
+const PARAM_HINT = {
+  tip_width_mm: L('Narrow tips reach into gaps; wide tips hold big objects.', '窄指尖可伸入缝隙，宽指尖适合抓大物体。'),
+  tip_lip_mm: L('A small ridge near the tip keeps objects from sliding off.', '指尖附近的小凸缘，防止物体滑落。'),
+  wall_thickness_mm: L('Thicker = stiffer and stronger; thinner = softer.', '越厚越硬越结实，越薄越柔软。'),
+  rib_count: L('More ribs wrap an object more smoothly.', '肋条越多，包裹物体越平滑。'),
+  rib_thickness_mm: L('Thin ribs bend easily; thick ribs push back.', '细肋易弯，粗肋回弹强。'),
+  cradle_radius_mm: L('Match the radius of the object you hold.', '尽量接近要抓取物体的半径。'),
+  cradle_lift_mm: L('The dish sits on a pad that shrinks the opening. Zero disables it.', '凹槽位于凸起上，会减小开口；设零则关闭。'),
+  slot_height_mm: L('Tall bars grip soft objects harder but shrink the opening.', '高防滑条抓软物更牢，但会减小开口。'),
+  nail_len_mm: L('A flat shelf past the tip, to get under flat objects.', '伸出指尖的薄片，用于伸到扁平物下方。'),
+  slot_round: L('Square bars key into edges; round bars let objects turn.', '方条嵌入边缘，圆条让物体可转动。'),
+};
+
+const GROUPS = [
+  { key: SHAPE, en: 'Profile', zh: '外形' },
+  { key: FLEX,  en: 'Flexure', zh: '柔性' },
+  { key: CUP,   en: 'Cup',     zh: '凹槽' },
+  { key: GRIP,  en: 'Grip',    zh: '防滑' },
+  { key: NAIL,  en: 'Nail',    zh: '指甲' },
+];
+
+// --------------------------------------------------------------- presets
+
+const jaw = (o) => ({
+  finger_length_mm: 60, tip_width_mm: 12, tip_lip_mm: 2.0, wall_thickness_mm: 1.6,
+  rib_count: 13, rib_thickness_mm: 1.3, cradle_radius_mm: 18, cradle_pos: 0.6,
+  cradle_lift_mm: 0, slot_count: 0, slot_height_mm: 0.9, slot_round: false,
+  nail_len_mm: 0, nail_thickness_mm: 1.6, ...o,
+});
+
+const PRESETS = {
+  universal: {
+    en: 'Universal', zh: '通用',
+    blurbEn: 'A balanced everyday finger', blurbZh: '均衡的日常手指',
+    design: { symmetric: true, a: jaw({}) },
+  },
+  heavy: {
+    en: 'Heavy', zh: '重载',
+    blurbEn: 'Thick walls and tall bars for heavy or smooth objects',
+    blurbZh: '厚壁 + 高防滑条，适合重物或光滑物',
+    design: { symmetric: true, a: jaw({ finger_length_mm: 62, tip_width_mm: 16, tip_lip_mm: 1.2,
+      wall_thickness_mm: 2.2, rib_count: 8, rib_thickness_mm: 1.9, slot_count: 8, slot_height_mm: 1.1 }) },
+  },
+  bottle: {
+    en: 'Bottle', zh: '瓶罐',
+    blurbEn: 'A rounded dish for cans and jars', blurbZh: '适合罐子/瓶子的弧形凹槽',
+    design: { symmetric: true, a: jaw({ finger_length_mm: 64, tip_width_mm: 15, tip_lip_mm: 2.0,
+      wall_thickness_mm: 1.7, rib_count: 11, rib_thickness_mm: 1.5,
+      cradle_radius_mm: 24, cradle_pos: 0.62, cradle_lift_mm: 2.6, slot_count: 0, slot_height_mm: 0 }) },
+  },
+  flatpick: {
+    en: 'Flat pick', zh: '平取',
+    blurbEn: 'A short nail jaw lifts plates and cards', blurbZh: '短指甲手指伸入板/卡片下方',
+    design: { symmetric: false,
+      a: jaw({ finger_length_mm: 52, tip_width_mm: 13, tip_lip_mm: 0, wall_thickness_mm: 2.2,
+        rib_count: 7, rib_thickness_mm: 2.0, slot_count: 7, slot_height_mm: 0.8,
+        nail_len_mm: 8, nail_thickness_mm: 0.65 }),
+      b: jaw({ finger_length_mm: 68, tip_width_mm: 12, tip_lip_mm: 1.4, wall_thickness_mm: 1.6,
+        rib_count: 15, rib_thickness_mm: 1.4, slot_count: 6, slot_height_mm: 1.0 }) },
+  },
+};
+
+const DEFAULT_PRESET = 'universal';
+
+// --------------------------------------------------------- gripper profiles
+
+// Default mounting facts for a small two-jaw gripper.
+// `frame` feeds the geometry engine; `keys` are the human-friendly subset.
+const GRIPPER_DEFAULT = {
+  id: 'default',
+  name: 'Default',
+  density: 1.20,
+  maxOpen: 65.0,
+  contactPlaneY: 9.913999999999998,
+  autoFrame: true,
+  keys: {
+    BOLT_HOLE_D_MM: 3.4, BOLT_Y: [7.699, 17.699], BOLT_INSET_MM: 2.503,
+    BASE_LEN_MM: 5.2, CONTACT_Y_MM: 21.705, FINGER_THICKNESS_MM: 24.087,
+    BACK_ROOT_Y_MM: 0.0, FAN_FOCUS_X_MM: 10.6, REF_LENGTH_MM: 65.718,
+    TIP_BLUNT_MM: 0.8,
+  },
+  frame: {
+    thickness: 24.087, baseLen: 5.2, contactY: 21.705, rootY: 0.0,
+    backBulge: 0.0702, wallScale: 1.4, wallMin: 1.2, wallMax: 3.5, wallTipRatio: 0.4697,
+    tipBlunt: 0.8, fanX: 10.6, fanHeightRatio: 0.402,
+    ribTipMargin: 3.5, cavityGrowth: 1.126, maxRake: 58.0, minCavity: 0.8, refLen: 65.718,
+    lipRootRatio: 0.2315, lipApexRatio: 0.2225,
+    boltHoleD: 3.4, boltY: [7.699, 17.699], boltInset: 2.503,
+    cradleFloor: 1.0, cradleRamp: 55.0, cradleShoulder: 1.0, slotSegments: 32, overcut: 40.0,
+    mountOffset: [9.504, -11.791, 11.918], contactPlaneY: 9.913999999999998, maxOpen: 65.0,
+  },
+};
+
+const GRIPPER_FIELDS = [
+  ['maxOpen', 'Max opening', '最大开口', 'mm'],
+  ['contactPlaneY', 'Contact plane Y', '接触平面 Y', 'mm'],
+  ['density', 'Density', '密度', 'g/cm³'],
+  ['BOLT_HOLE_D_MM', 'Bolt hole Ø', '螺栓孔径', 'mm'],
+  ['BOLT_INSET_MM', 'Bolt inset X', '螺栓内缩 X', 'mm'],
+  ['BASE_LEN_MM', 'Base length', '基座长度', 'mm'],
+  ['CONTACT_Y_MM', 'Contact face Y', '接触面 Y', 'mm'],
+  ['FINGER_THICKNESS_MM', 'Jaw thickness', '手指厚度', 'mm'],
+  ['BACK_ROOT_Y_MM', 'Back root Y', '背部根部 Y', 'mm'],
+  ['FAN_FOCUS_X_MM', 'Rib focus X', '肋扇焦点 X', 'mm'],
+  ['REF_LENGTH_MM', 'Reference length', '参考长度', 'mm'],
+  ['TIP_BLUNT_MM', 'Tip blunt', '尖端钝化', 'mm'],
+];
+
+/** Turn a gripper profile into the engine frame constants. */
+function buildFrame(g) {
+  const frame = JSON.parse(JSON.stringify(g.frame));
+  if (g.autoFrame !== false) {
+    frame.mountOffset = [
+      frame.mountOffset[0],
+      g.contactPlaneY - g.keys.CONTACT_Y_MM,
+      frame.mountOffset[2],
+    ];
+    frame.contactPlaneY = g.contactPlaneY;
+  }
+  frame.maxOpen = g.maxOpen;
+  return frame;
+}
+
+/** The display name of a gripper profile. */
+function gripperName(g) { return g.name || g.id || 'custom'; }
+
+
+// ---------------- src/geo.js ----------------
+// geo.js — the finger as a solid, built from first principles for "Gripper Forge".
+//
+// Design: a compliant Fin-Ray style gripper finger for a two-jaw gripper.
+// A 2D section in the XY plane (x = along the finger, y = height, contact face
+// on top) is swept in Z with a linear taper so the tip is thinner than the
+// base. Every feature is prismatic along Z, so the whole solid is
+//   { (x,y,z) : (x,y) in S, |z| <= halfThickness(x) }
+// and a triangulated section extrudes exactly to a closed mesh.
+//
+// The section is assembled with boolean polygon operations (polygon-clipping,
+// MIT): outline minus rib cavities minus bolt holes, plus grip bars and an
+// optional cradle dish. All dimensions come from the active gripper config,
+// which the app exposes for editing.
+//
+// This module is an independent implementation of the underlying geometry
+// model; it shares no code with any third-party tool.
+
+// Current gripper configuration (the editable frame constants).
+let FRAME = null;
+function setFrame(cfg) { FRAME = cfg; }
+
+// ---- small helpers ----------------------------------------------------------
+
+const closed = (pts) =>
+  pts.length > 1 && pts[0][0] === pts[pts.length - 1][0] &&
+                     pts[0][1] === pts[pts.length - 1][1];
+
+const ringOf = (pts) => {
+  const r = pts.map(([x, y]) => [x, y]);
+  const a = r[0], b = r[r.length - 1];
+  if (a[0] !== b[0] || a[1] !== b[1]) r.push([a[0], a[1]]);
+  return r;
+};
+
+/** polygon-clipping polygon (one outer ring, no holes). */
+const poly = (pts) => [ringOf(pts)];
+
+function circleRing(cx, cy, r, segments = 64) {
+  const pts = [];
+  for (let i = 0; i < segments; i++) {
+    const t = (i / segments) * 2 * Math.PI;
+    pts.push([cx + r * Math.cos(t), cy + r * Math.sin(t)]);
+  }
+  return poly(pts);
+}
+
+const rectRing = (x0, y0, x1, y1) =>
+  poly([[x0, y0], [x1, y0], [x1, y1], [x0, y1]]);
+
+const clamp = (v, lo, hi) => Math.min(hi, Math.max(lo, v));
+
+// ---- derived wall values ----------------------------------------------------
+
+/** The contact skin (top) thickness — one slider drives both skins. */
+const topWall = (g) => +g.wall_thickness_mm;
+
+/** Back wall thickness, clamped so short fingers do not get walls too thin. */
+function backWall(g) {
+  return clamp(topWall(g) * FRAME.wallScale, FRAME.wallMin, FRAME.wallMax);
+}
+
+// ---- the back beam ----------------------------------------------------------
+
+/**
+ * A circular arc from the base root to the tip point, bulging away from the
+ * body. The bulge is a fixed fraction of the chord, so longer fingers are
+ * proportionally more curved.
+ */
+function backArc(len, tipY, steps = 64) {
+  const x0 = 0, y0 = FRAME.rootY, x1 = len, y1 = tipY;
+  const dx = x1 - x0, dy = y1 - y0;
+  const chord = Math.hypot(dx, dy);
+  if (chord < 1e-6) return [[x0, y0], [x1, y1]];
+
+  const sag = FRAME.backBulge * chord;
+  const radius = (chord * chord / 4 + sag * sag) / (2 * sag);
+  const ux = dx / chord, uy = dy / chord;
+  const nx = uy, ny = -ux;                       // normal pointing away from the body
+  const mx = (x0 + x1) / 2, my = (y0 + y1) / 2;
+  const cx = mx - nx * (radius - sag);
+  const cy = my - ny * (radius - sag);
+
+  let a0 = Math.atan2(y0 - cy, x0 - cx);
+  let a1 = Math.atan2(y1 - cy, x1 - cx);
+  while (a1 - a0 > Math.PI) a1 -= 2 * Math.PI;   // take the short way round
+  while (a0 - a1 > Math.PI) a1 += 2 * Math.PI;
+
+  const out = [];
+  for (let i = 0; i <= steps; i++) {
+    const a = a0 + (a1 - a0) * i / steps;
+    out.push([cx + radius * Math.cos(a), cy + radius * Math.sin(a)]);
+  }
+  return out;
+}
+
+/** The back surface polyline (with an integral fingernail if requested). */
+function backOutline(g) {
+  const len = +g.finger_length_mm;
+  const nail = +(g.nail_len_mm || 0);
+  if (nail <= 0) return backArc(len, FRAME.contactY - FRAME.tipBlunt);
+  const t = +g.nail_thickness_mm;
+  const pts = backArc(len, FRAME.contactY - t);
+  pts.push([len + nail, FRAME.contactY - t]);
+  return pts;
+}
+
+/** The contact face, from the tip back to the base. */
+function faceOutline(g) {
+  const len = +g.finger_length_mm;
+  const lip = +g.tip_lip_mm;
+  const cy = FRAME.contactY;
+  let pts;
+  if (lip <= 0.02) {
+    pts = [[len, cy], [0, cy]];
+  } else {
+    const root = len - FRAME.lipRootRatio * len;
+    const apex = len - FRAME.lipApexRatio * len;
+    pts = [[len, cy], [apex, cy + lip], [root, cy], [0, cy]];
+  }
+  const nail = +(g.nail_len_mm || 0);
+  return nail > 0 ? [[len + nail, cy], ...pts] : pts;
+}
+
+/** The inner face of the back beam: the back arc pushed into the material. */
+function backInner(pts, g) {
+  const w0 = backWall(g);
+  const w1 = w0 * FRAME.wallTipRatio;
+  const n = pts.length;
+  const out = [];
+  for (let i = 0; i < n; i++) {
+    const [x, y] = pts[i];
+    const t = i / Math.max(n - 1, 1);
+    const w = w0 + (w1 - w0) * t;
+    const prev = pts[Math.max(i - 1, 0)];
+    const next = pts[Math.min(i + 1, n - 1)];
+    const tx = next[0] - prev[0], ty = next[1] - prev[1];
+    const m = Math.hypot(tx, ty) || 1;
+    let nx = -ty / m, ny = tx / m;
+    if (ny < 0) { nx = -nx; ny = -ny; }
+    out.push([x + nx * w, y + ny * w]);
+  }
+  return out;
+}
+
+// ---- ribs -------------------------------------------------------------------
+
+/** X stations of the rib centerlines. Cavities grow toward the tip. */
+function ribStations(g) {
+  const len = +g.finger_length_mm;
+  const ribT = +g.rib_thickness_mm;
+  const x0 = FRAME.baseLen + ribT / 2;
+  const x1 = len - FRAME.ribTipMargin * (len / FRAME.refLen);
+  const n = Math.max(0, Math.min(Math.trunc(+g.rib_count),
+    Math.floor((x1 - x0) / (ribT + FRAME.minCavity))));
+  const span = (x1 - x0) - n * ribT;
+  if (n < 1 || span <= 0) return [];
+
+  const q = FRAME.cavityGrowth;
+  const w0 = span * (q - 1) / (Math.pow(q, n) - 1);
+  const stations = [x0];
+  let x = x0;
+  for (let k = 0; k < n; k++) { x += w0 * Math.pow(q, k) + ribT; stations.push(x); }
+  return stations;
+}
+
+/** The point all ribs aim at (the "fan focus"). */
+function fanPoint(g) {
+  return [FRAME.fanX, FRAME.contactY + FRAME.fanHeightRatio * (+g.finger_length_mm)];
+}
+
+/** Unit direction of a rib: from the contact skin toward the fan point. */
+function ribDirection(g, x) {
+  const [fx, fy] = fanPoint(g);
+  const top = FRAME.contactY - topWall(g);
+  let rake = Math.atan2(x - fx, fy - top);
+  rake = clamp(rake, 0, FRAME.maxRake * Math.PI / 180);
+  return [Math.sin(rake), -Math.cos(rake)];
+}
+
+/** Where a ray (origin, dir) first meets a polyline, or null. */
+function rayHit(origin, dir, polyline) {
+  let best = null;
+  for (let i = 0; i < polyline.length - 1; i++) {
+    const [x1, y1] = polyline[i];
+    const [x2, y2] = polyline[i + 1];
+    const ex = x2 - x1, ey = y2 - y1;
+    const den = dir[0] * ey - dir[1] * ex;
+    if (Math.abs(den) < 1e-12) continue;
+    const t = ((x1 - origin[0]) * ey - (y1 - origin[1]) * ex) / den;
+    const u = ((x1 - origin[0]) * dir[1] - (y1 - origin[1]) * dir[0]) / -den;
+    if (t > 1e-9 && u >= -1e-9 && u <= 1 + 1e-9) {
+      if (best === null || t < best[0]) best = [t, [origin[0] + t * dir[0], origin[1] + t * dir[1]]];
+    }
+  }
+  return best ? best[1] : null;
+}
+
+/**
+ * The cavities between ribs: bounded by the skin above, the back beam below,
+ * and the two adjacent rib flanks. Returns a list of quads to cut out.
+ */
+function ribCavities(g) {
+  const stations = ribStations(g);
+  if (stations.length < 2) return [];
+  const dirs = stations.map((x) => ribDirection(g, x));
+  const ribT = +g.rib_thickness_mm;
+  const top = FRAME.contactY - topWall(g);
+  const inner = backInner(backOutline(g), g);
+
+  const quads = [];
+  for (let k = 0; k < stations.length - 1; k++) {
+    const corners = [];
+    let ok = true;
+    for (const [idx, sign] of [[k, 1], [k + 1, -1]]) {
+      const [dx, dy] = dirs[idx];
+      let px = -dy, py = dx;
+      if (px < 0) { px = -px; py = -py; }
+      let footX = stations[idx] + sign * ribT / 2 * px;
+      let footY = top + sign * ribT / 2 * py;
+      if (Math.abs(dy) > 1e-9) {               // slide the foot onto the skin line
+        const s = (top - footY) / dy;
+        footX += s * dx; footY = top;
+      }
+      const hit = rayHit([footX, footY], [dx, dy], inner);
+      if (hit === null || hit[1] >= footY - 0.4) { ok = false; break; }
+      corners.push([[footX, footY], hit]);
+    }
+    if (!ok) continue;
+    const [[aTop, aBottom], [bTop, bBottom]] = corners;
+    if (bTop[0] - aTop[0] < FRAME.minCavity * 0.5) continue;   // too thin to slice
+    quads.push([aTop, bTop, bBottom, aBottom]);
+  }
+  return quads;
+}
+
+// ---- contact-face features --------------------------------------------------
+
+/** The stretch of contact face that grip bars may occupy. */
+function barSpan(g) {
+  const len = +g.finger_length_mm;
+  const lip = +g.tip_lip_mm;
+  const x1 = lip > 0.02 ? (len - FRAME.lipRootRatio * len - 1.5) : (len - 2.0);
+  return [FRAME.baseLen + 3.0, x1];
+}
+
+/** Section of one raised bar (half-disc when rounded, else a square). */
+function barSection(cx, halfW, height, roundTop) {
+  const cy = FRAME.contactY;
+  if (!roundTop) {
+    return poly([[cx + halfW, cy], [cx + halfW, cy + height],
+                 [cx - halfW, cy + height], [cx - halfW, cy]]);
+  }
+  const n = FRAME.slotSegments;
+  const pts = [];
+  for (let i = 0; i <= n; i++) {
+    const a = Math.PI * i / n;
+    pts.push([cx + halfW * Math.cos(a), cy + halfW * Math.sin(a)]);
+  }
+  return poly(pts);
+}
+
+/** Add raised grip bars across the slip direction. */
+function addGripBars(region, g) {
+  const count = Math.trunc(+g.slot_count);
+  const height = +g.slot_height_mm;
+  if (count < 1 || height <= 0.05) return region;
+  const [x0, x1] = barSpan(g);
+  if (x1 - x0 < 2.0) return region;
+  const pitch = (x1 - x0) / (count + 1);
+  const halfW = Math.min(height, pitch * 0.45);
+  if (halfW < 0.1) return region;
+  const round = !!g.slot_round;
+  for (let i = 1; i <= count; i++) {
+    region = clip.union(region, barSection(x0 + i * pitch, halfW, height, round));
+  }
+  return region;
+}
+
+/** Geometry of the cradle dish, or null when disabled. */
+function cradleData(g) {
+  const radius = +g.cradle_radius_mm;
+  let depth = +g.cradle_lift_mm;
+  if (depth < 0.05 || radius <= 0) return null;
+  depth = Math.min(depth, radius);
+
+  const mouth = 2 * Math.sqrt(Math.max(radius * radius - (radius - depth) ** 2, 0.25));
+  const padH = depth + FRAME.cradleFloor;
+  const ramp = padH / Math.tan(FRAME.cradleRamp * Math.PI / 180);
+  const shoulder = ramp + FRAME.cradleShoulder;
+
+  const len = +g.finger_length_mm;
+  const u0 = FRAME.baseLen + 2.0;
+  const u1 = Math.max(len - 2.0, u0 + 2.0);
+  const span = Math.min(Math.max(mouth + 2 * shoulder, 2.0), u1 - u0);
+  const centre = u0 + (+g.cradle_pos) * (u1 - u0);
+  const x0 = clamp(centre - span / 2, u0, u1 - span);
+  const x1 = x0 + span;
+  const floorY = FRAME.contactY + FRAME.cradleFloor;
+  return {
+    x0, x1, padH, ramp, radius, depth, mouth,
+    cx: (x0 + x1) / 2, cy: floorY + radius,
+    floorY, faceY: FRAME.contactY + padH,
+  };
+}
+
+/** A raised pad with a cylindrical dish cut out of it. */
+function addCradle(region, g) {
+  const c = cradleData(g);
+  if (!c) return region;
+  const ramp = Math.min(c.padH / Math.tan(FRAME.cradleRamp * Math.PI / 180), (c.x1 - c.x0) / 2.5);
+  region = clip.union(region, poly([
+    [c.x0, FRAME.contactY],
+    [c.x0 + ramp, FRAME.contactY + c.padH],
+    [c.x1 - ramp, FRAME.contactY + c.padH],
+    [c.x1, FRAME.contactY],
+  ]));
+  const dish = clip.intersection(
+    circleRing(c.cx, c.cy, c.radius),
+    rectRing(c.x0, c.floorY, c.x1, c.faceY + FRAME.overcut));
+  return clip.difference(region, dish);
+}
+
+// ---- the whole section ------------------------------------------------------
+
+/**
+ * The finger's 2D section as a polygon-clipping multipolygon:
+ * outline − rib cavities − bolt holes + grip bars + cradle + base block.
+ */
+function fingerSection(genes) {
+  const outline = [[0, FRAME.rootY], ...backOutline(genes), ...faceOutline(genes)];
+  let region = poly(outline);
+
+  for (const quad of ribCavities(genes)) region = clip.difference(region, poly(quad));
+
+  region = addGripBars(region, genes);
+  region = addCradle(region, genes);
+  region = clip.union(region, rectRing(0, 0, FRAME.baseLen, FRAME.contactY));
+
+  for (const y of FRAME.boltY) {
+    region = clip.difference(region, circleRing(FRAME.boltInset, y, FRAME.boltHoleD / 2));
+  }
+  return region;
+}
+
+// ---- extrusion to a solid ---------------------------------------------------
+
+/** Half the thickness at a given x (linear taper, extrapolated past both ends). */
+function halfThicknessAt(x, genes) {
+  const len = Math.max(+genes.finger_length_mm, 1e-6);
+  const k = (FRAME.thickness - (+genes.tip_width_mm)) / 2 / len;
+  return FRAME.thickness / 2 - k * x;
+}
+
+/** Positive area means counter-clockwise. */
+function signedArea(ringPts) {
+  let a = 0;
+  for (let i = 0; i < ringPts.length - 1; i++) {
+    a += ringPts[i][0] * ringPts[i + 1][1] - ringPts[i + 1][0] * ringPts[i][1];
+  }
+  if (!closed(ringPts)) {
+    const n = ringPts.length - 1;
+    a += ringPts[n][0] * ringPts[0][1] - ringPts[0][0] * ringPts[n][1];
+  }
+  return a / 2;
+}
+
+/**
+ * Extrude a section into a closed triangle mesh. Each polygon ring becomes a
+ * cap (earcut) plus a wall for every edge (two triangles per edge), so holes
+ * (bolt holes, rib cavities) become real through-holes.
+ *
+ * @returns {{ positions: Float32Array, normals: Float32Array, tris: number,
+ *             min:number[], max:number[], size:number[], center:number[],
+ *             radius:number }}
+ */
+function extrude(region, genes) {
+  const pos = [], nrm = [];
+
+  const tri = (ax, ay, az, bx, by, bz, cx, cy, cz) => {
+    const ux = bx - ax, uy = by - ay, uz = bz - az;
+    const vx = cx - ax, vy = cy - ay, vz = cz - az;
+    let nx = uy * vz - uz * vy, ny = uz * vx - ux * vz, nz = ux * vy - uy * vx;
+    const l = Math.hypot(nx, ny, nz) || 1;
+    nx /= l; ny /= l; nz /= l;
+    pos.push(ax, ay, az, bx, by, bz, cx, cy, cz);
+    nrm.push(nx, ny, nz, nx, ny, nz, nx, ny, nz);
+  };
+
+  for (const polygon of region) {
+    if (!polygon.length) continue;
+
+    // Flatten rings for earcut (holes first-index marked).
+    const verts = [];
+    const holeIdx = [];
+    polygon.forEach((r, i) => {
+      const ringPts = closed(r) ? r.slice(0, -1) : r;
+      if (i > 0) holeIdx.push(verts.length / 2);
+      for (const [x, y] of ringPts) verts.push(x, y);
+    });
+    if (verts.length < 6) continue;
+
+    // earcut follows the outer ring's winding; one sign settles all faces.
+    const ccw = signedArea(polygon[0]) > 0;
+    const idx = triangulate(verts, holeIdx, 2);
+    for (let i = 0; i < idx.length; i += 3) {
+      const a = idx[i] * 2, b = idx[i + 1] * 2, c = idx[i + 2] * 2;
+      const ax = verts[a], ay = verts[a + 1];
+      const bx = verts[b], by = verts[b + 1];
+      const cx = verts[c], cy = verts[c + 1];
+      const za = halfThicknessAt(ax, genes);
+      const zb = halfThicknessAt(bx, genes);
+      const zc = halfThicknessAt(cx, genes);
+      if (ccw) {
+        tri(ax, ay, +za, bx, by, +zb, cx, cy, +zc);
+        tri(ax, ay, -za, cx, cy, -zc, bx, by, -zb);
+      } else {
+        tri(ax, ay, +za, cx, cy, +zc, bx, by, +zb);
+        tri(ax, ay, -za, bx, by, -zb, cx, cy, -zc);
+      }
+    }
+
+    // Walls: two triangles per edge, material on the left of the traversal.
+    for (const r of polygon) {
+      const ringPts = closed(r) ? r : [...r, r[0]];
+      for (let i = 0; i < ringPts.length - 1; i++) {
+        const [x0, y0] = ringPts[i];
+        const [x1, y1] = ringPts[i + 1];
+        if (x0 === x1 && y0 === y1) continue;
+        const t0 = halfThicknessAt(x0, genes), b0 = -t0;
+        const t1 = halfThicknessAt(x1, genes), b1 = -t1;
+        if (ccw) {
+          tri(x0, y0, t0, x1, y1, b1, x1, y1, t1);
+          tri(x0, y0, t0, x0, y0, b0, x1, y1, b1);
+        } else {
+          tri(x0, y0, t0, x1, y1, t1, x1, y1, b1);
+          tri(x0, y0, t0, x1, y1, b1, x0, y0, b0);
+        }
+      }
+    }
+  }
+
+  const positions = new Float32Array(pos);
+  const normals = new Float32Array(nrm);
+  return { ...boundsOf(positions), positions, normals, tris: pos.length / 9 };
+}
+
+function boundsOf(positions) {
+  const min = [Infinity, Infinity, Infinity];
+  const max = [-Infinity, -Infinity, -Infinity];
+  for (let i = 0; i < positions.length; i += 3) {
+    for (let a = 0; a < 3; a++) {
+      const v = positions[i + a];
+      if (v < min[a]) min[a] = v;
+      if (v > max[a]) max[a] = v;
+    }
+  }
+  const size = max.map((v, i) => v - min[i]);
+  return { min, max, size, center: max.map((v, i) => (v + min[i]) / 2),
+           radius: Math.hypot(...size) / 2 || 1 };
+}
+
+/** Signed volume by the divergence theorem (valid for a closed, outward mesh). */
+function meshVolume(mesh) {
+  const p = mesh.positions;
+  let v = 0;
+  for (let i = 0; i < p.length; i += 9) {
+    const ax = p[i], ay = p[i + 1], az = p[i + 2];
+    const bx = p[i + 3], by = p[i + 4], bz = p[i + 5];
+    const cx = p[i + 6], cy = p[i + 7], cz = p[i + 8];
+    v += (ax * (by * cz - bz * cy) - ay * (bx * cz - bz * cx) + az * (bx * cy - by * cx)) / 6;
+  }
+  return Math.abs(v);
+}
+
+/**
+ * Move the part into the mounting frame the app displays. Both jaws of a pair
+ * are expressed in this frame; the viewer reflects one about the contact plane
+ * to stand them face to face.
+ */
+function toMountFrame(mesh) {
+  const [ox, oy, oz] = FRAME.mountOffset;
+  const p = new Float32Array(mesh.positions);
+  const n = new Float32Array(mesh.normals);
+  for (let i = 0; i < p.length; i += 3) {
+    p[i] = ox - p[i];        // 180° turn about Y: (x, y, z) -> (-x, y, -z)
+    p[i + 1] = oy + p[i + 1];
+    p[i + 2] = oz - p[i + 2];
+    n[i] = -n[i];
+    n[i + 2] = -n[i + 2];
+  }
+  return { ...boundsOf(p), positions: p, normals: n, tris: mesh.tris };
+}
+
+
+// ---------------- src/viewer3d.js ----------------
+// viewer3d.js — a small dependency-free WebGL viewer for the jaws.
+//
+// Orbit camera (drag), wheel zoom, preset straight-on views (orthographic so
+// the pair stays measurable), flat shading with a fixed studio light, and an
+// optional reflection of a layer about a plane so the two jaws of a pair can
+// be stood face to face. Written from scratch for Gripper Forge.
+
+const M4 = {
+  mul(a, b) {
+    const o = new Float32Array(16);
+    for (let c = 0; c < 4; c++)
+      for (let r = 0; r < 4; r++)
+        o[c * 4 + r] = a[r] * b[c * 4] + a[4 + r] * b[c * 4 + 1] +
+                       a[8 + r] * b[c * 4 + 2] + a[12 + r] * b[c * 4 + 3];
+    return o;
+  },
+  perspective(fovy, aspect, near, far) {
+    const f = 1 / Math.tan(fovy / 2), nf = 1 / (near - far);
+    return new Float32Array([
+      f / aspect, 0, 0, 0, 0, f, 0, 0,
+      0, 0, (far + near) * nf, -1, 0, 0, 2 * far * near * nf, 0,
+    ]);
+  },
+  ortho(halfH, aspect, near, far) {
+    const nf = 1 / (near - far);
+    return new Float32Array([
+      1 / (halfH * aspect), 0, 0, 0, 0, 1 / halfH, 0, 0,
+      0, 0, 2 * nf, 0, 0, 0, (far + near) * nf, 1,
+    ]);
+  },
+  lookAt(eye, target, up) {
+    const z = norm(sub(eye, target));
+    const x = norm(cross(up, z));
+    const y = cross(z, x);
+    return new Float32Array([
+      x[0], y[0], z[0], 0, x[1], y[1], z[1], 0, x[2], y[2], z[2], 0,
+      -dot(x, eye), -dot(y, eye), -dot(z, eye), 1,
+    ]);
+  },
+};
+
+const sub = (a, b) => [a[0] - b[0], a[1] - b[1], a[2] - b[2]];
+const cross = (a, b) => [a[1] * b[2] - a[2] * b[1], a[2] * b[0] - a[0] * b[2], a[0] * b[1] - a[1] * b[0]];
+const norm = (a) => { const l = Math.hypot(...a) || 1; return [a[0] / l, a[1] / l, a[2] / l]; };
+const dot = (a, b) => a[0] * b[0] + a[1] * b[1] + a[2] * b[2];
+
+const VERT = `
+attribute vec3 aPos;
+attribute vec3 aNormal;
+uniform mat4 uProj, uView;
+uniform vec3 uOffset;
+uniform vec3 uReflect;   // (planeY, flipSign, shiftY) or (0,1,0)
+uniform float uScale;
+varying vec3 vNormal;
+varying vec3 vViewDir;
+void main() {
+  vec3 p = aPos;
+  p.y = uReflect.y * (p.y - uReflect.x) + uReflect.x + uReflect.z;
+  vec3 n = vec3(aNormal.x, aNormal.y * uReflect.y, aNormal.z);
+  vec4 w = uView * vec4((p - uOffset) * uScale, 1.0);
+  vNormal = mat3(uView) * n;
+  vViewDir = -w.xyz;
+  gl_Position = uProj * w;
+}`;
+
+const FRAG = `
+precision highp float;
+uniform vec3 uColor;
+uniform float uAlpha;
+varying vec3 vNormal;
+varying vec3 vViewDir;
+void main() {
+  vec3 n = normalize(vNormal);
+  // A reflected layer has reversed winding; light it from the flipped normal.
+  bool front = vNormal.y < -0.0 ? false : gl_FrontFacing;
+  if (!front) n = -n;
+  vec3 v = normalize(vViewDir);
+  vec3 key = normalize(vec3(-0.45, 0.8, 0.6));
+  vec3 fill = normalize(vec3(0.7, -0.3, 0.4));
+  float diffuse = 0.55 * max(dot(n, key), 0.0) + 0.25 * max(dot(n, fill), 0.0);
+  float ambient = 0.28 + 0.18 * (0.5 + 0.5 * n.y);
+  float rim = pow(1.0 - max(dot(n, v), 0.0), 2.6);
+  vec3 c = uColor * (ambient + diffuse) + vec3(0.9, 0.95, 1.0) * rim * 0.16;
+  gl_FragColor = vec4(c, uAlpha);
+}`;
+
+const HOME = { theta: -Math.PI / 2, phi: Math.PI / 2, dist: 3.1, ortho: false };
+
+function compile(gl, type, src) {
+  const s = gl.createShader(type);
+  gl.shaderSource(s, src);
+  gl.compileShader(s);
+  if (!gl.getShaderParameter(s, gl.COMPILE_STATUS)) throw new Error(gl.getShaderInfoLog(s));
+  return s;
+}
+
+function program(gl) {
+  const p = gl.createProgram();
+  gl.attachShader(p, compile(gl, gl.VERTEX_SHADER, VERT));
+  gl.attachShader(p, compile(gl, gl.FRAGMENT_SHADER, FRAG));
+  gl.linkProgram(p);
+  if (!gl.getProgramParameter(p, gl.LINK_STATUS)) throw new Error(gl.getProgramInfoLog(p));
+  return p;
+}
+
+const hexToRgb = (hex) => {
+  const n = parseInt(hex.replace('#', ''), 16);
+  return [(n >> 16 & 255) / 255, (n >> 8 & 255) / 255, (n & 255) / 255];
+};
+
+class Viewer3D {
+  constructor(canvas) {
+    this.canvas = canvas;
+    this.gl = canvas.getContext('webgl', { antialias: true, alpha: true, premultipliedAlpha: false });
+    if (!this.gl) throw new Error('WebGL unavailable');
+    const gl = this.gl;
+    this.prog = program(gl);
+    this.loc = {
+      aPos: gl.getAttribLocation(this.prog, 'aPos'),
+      aNormal: gl.getAttribLocation(this.prog, 'aNormal'),
+      uProj: gl.getUniformLocation(this.prog, 'uProj'),
+      uView: gl.getUniformLocation(this.prog, 'uView'),
+      uOffset: gl.getUniformLocation(this.prog, 'uOffset'),
+      uReflect: gl.getUniformLocation(this.prog, 'uReflect'),
+      uScale: gl.getUniformLocation(this.prog, 'uScale'),
+      uColor: gl.getUniformLocation(this.prog, 'uColor'),
+      uAlpha: gl.getUniformLocation(this.prog, 'uAlpha'),
+    };
+    this.layers = [];
+    this.cam = { ...HOME };
+    this._raf = null;
+    this._bindInput();
+    new ResizeObserver(() => this.draw()).observe(canvas);
+  }
+
+  _bindInput() {
+    const c = this.canvas;
+    let drag = null;
+    c.addEventListener('pointerdown', (e) => {
+      drag = { x: e.clientX, y: e.clientY };
+      try { c.setPointerCapture(e.pointerId); } catch {}
+      c.classList.add('grabbing');
+    });
+    c.addEventListener('pointermove', (e) => {
+      if (!drag) return;
+      const dx = e.clientX - drag.x, dy = e.clientY - drag.y;
+      drag = { x: e.clientX, y: e.clientY };
+      this.cam.theta += dx * 0.008;
+      this.cam.phi = Math.min(Math.PI - 0.05, Math.max(0.05, this.cam.phi - dy * 0.008));
+      this.draw();
+    });
+    const up = (e) => { drag = null; c.classList.remove('grabbing'); try { c.releasePointerCapture(e.pointerId); } catch {} };
+    c.addEventListener('pointerup', up);
+    c.addEventListener('pointercancel', up);
+    c.addEventListener('contextmenu', (e) => e.preventDefault());
+    c.addEventListener('wheel', (e) => {
+      e.preventDefault();
+      this.cam.dist = Math.min(12, Math.max(0.6, this.cam.dist * Math.exp(e.deltaY * 0.0012)));
+      this.draw();
+    }, { passive: false });
+    c.addEventListener('dblclick', () => this.home());
+  }
+
+  home() { this.cam = { ...HOME }; this.draw(); }
+
+  setView(name) {
+    const presets = {
+      front: [-Math.PI / 2, Math.PI / 2],
+      side: [0, -Math.PI / 2],
+      top: [-Math.PI / 2, 0],
+      iso: [HOME.theta, HOME.phi],
+    };
+    const [theta, phi] = presets[name] || presets.iso;
+    this.cam.theta = theta;
+    this.cam.phi = phi;
+    this.cam.ortho = name !== 'iso';
+    this.draw();
+  }
+
+  /**
+   * layers: [{ mesh, color, alpha, oppose }]
+   * oppose is an optional { planeY, gap } that reflects the layer about the
+   * contact plane and lifts it, standing it against its partner.
+   */
+  setLayers(layers) {
+    const gl = this.gl;
+    for (const l of this.layers) {
+      gl.deleteBuffer(l.bufPos);
+      gl.deleteBuffer(l.bufNrm);
+    }
+    this.layers = layers.filter(Boolean).map((l) => {
+      const bufPos = gl.createBuffer();
+      gl.bindBuffer(gl.ARRAY_BUFFER, bufPos);
+      gl.bufferData(gl.ARRAY_BUFFER, l.mesh.positions, gl.STATIC_DRAW);
+      const bufNrm = gl.createBuffer();
+      gl.bindBuffer(gl.ARRAY_BUFFER, bufNrm);
+      gl.bufferData(gl.ARRAY_BUFFER, l.mesh.normals, gl.STATIC_DRAW);
+      const o = l.oppose;
+      return { ...l, bufPos, bufNrm, reflect: o ? [o.planeY, -1, o.gap] : [0, 1, 0] };
+    });
+    if (this.layers.length) {
+      const boxes = this.layers.map((l) => {
+        const [planeY, flip, shift] = l.reflect;
+        const ys = [l.mesh.min[1], l.mesh.max[1]]
+          .map((y) => flip * (y - planeY) + planeY + shift).sort((a, b) => a - b);
+        return { min: [l.mesh.min[0], ys[0], l.mesh.min[2]], max: [l.mesh.max[0], ys[1], l.mesh.max[2]] };
+      });
+      const min = [0, 1, 2].map((a) => Math.min(...boxes.map((b) => b.min[a])));
+      const max = [0, 1, 2].map((a) => Math.max(...boxes.map((b) => b.max[a])));
+      this.offset = [0, 1, 2].map((a) => (min[a] + max[a]) / 2);
+      this.scale = 1 / (Math.hypot(...[0, 1, 2].map((a) => max[a] - min[a])) / 2 || 1);
+    }
+    this.draw();
+  }
+
+  /** Render synchronously now (used for snapshots). */
+  renderNow() { this._render(); }
+
+  draw() {
+    if (this._raf) return;
+    this._raf = requestAnimationFrame(() => { this._raf = null; this._render(); });
+  }
+
+  _render() {
+    const gl = this.gl, c = this.canvas;
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    const w = Math.max(1, Math.round(c.clientWidth * dpr));
+    const h = Math.max(1, Math.round(c.clientHeight * dpr));
+    if (c.width !== w || c.height !== h) { c.width = w; c.height = h; }
+    gl.viewport(0, 0, w, h);
+    gl.clearColor(0, 0, 0, 0);
+    gl.enable(gl.DEPTH_TEST);
+    gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
+    if (!this.layers.length) return;
+
+    const { theta, phi, dist } = this.cam;
+    const dir = [
+      Math.sin(phi) * Math.cos(theta),
+      Math.cos(phi),
+      Math.sin(phi) * Math.sin(theta),
+    ];
+    const eye = [0, 1, 2].map((i) => dir[i] * dist);
+    const fovy = 0.62;
+    const proj = this.cam.ortho
+      ? M4.ortho(dist * Math.tan(fovy / 2), w / h, -100, 100)
+      : M4.perspective(fovy, w / h, 0.05, 100);
+    const up = Math.abs(dir[1]) > 0.999 ? [0, 0, -1] : [0, 1, 0];
+    const view = M4.lookAt(eye, [0, 0, 0], up);
+
+    gl.useProgram(this.prog);
+    gl.uniformMatrix4fv(this.loc.uProj, false, proj);
+    gl.uniformMatrix4fv(this.loc.uView, false, view);
+    gl.uniform3fv(this.loc.uOffset, this.offset);
+    gl.uniform1f(this.loc.uScale, this.scale);
+    gl.enableVertexAttribArray(this.loc.aPos);
+    gl.enableVertexAttribArray(this.loc.aNormal);
+    gl.enable(gl.BLEND);
+    gl.blendFunc(gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA);
+
+    const order = [...this.layers].sort((a, b) => (b.alpha ?? 1) - (a.alpha ?? 1));
+    for (const l of order) {
+      if (l.visible === false) continue;
+      const alpha = l.alpha ?? 1;
+      gl.depthMask(alpha >= 1);
+      gl.bindBuffer(gl.ARRAY_BUFFER, l.bufPos);
+      gl.vertexAttribPointer(this.loc.aPos, 3, gl.FLOAT, false, 0, 0);
+      gl.bindBuffer(gl.ARRAY_BUFFER, l.bufNrm);
+      gl.vertexAttribPointer(this.loc.aNormal, 3, gl.FLOAT, false, 0, 0);
+      gl.uniform3fv(this.loc.uReflect, l.reflect);
+      gl.uniform3fv(this.loc.uColor, hexToRgb(l.color || '#88b5a6'));
+      gl.uniform1f(this.loc.uAlpha, alpha);
+      gl.drawArrays(gl.TRIANGLES, 0, l.mesh.positions.length / 3);
+    }
+    gl.depthMask(true);
+  }
+}
+
+
+// ---------------- src/stl.js ----------------
+// stl.js — turn a triangle mesh into an STL file (binary or ASCII).
+// The binary layout is the standard 80-byte header + u32 count + 50-byte tris.
+
+function meshToSTL(mesh, format, name) {
+  return format === 'ascii' ? ascii(mesh, name) : binary(mesh);
+}
+
+function binary(mesh) {
+  const p = mesh.positions;
+  const n = p.length / 9;
+  const buf = new ArrayBuffer(84 + n * 50);
+  const dv = new DataView(buf);
+  const head = 'Gripper Forge - generated in your browser';
+  for (let i = 0; i < 80; i++) dv.setUint8(i, i < head.length ? head.charCodeAt(i) : 32);
+  dv.setUint32(80, n, true);
+  let o = 84;
+  for (let i = 0; i < n; i++) {
+    const ax = p[i * 9], ay = p[i * 9 + 1], az = p[i * 9 + 2];
+    const bx = p[i * 9 + 3], by = p[i * 9 + 4], bz = p[i * 9 + 5];
+    const cx = p[i * 9 + 6], cy = p[i * 9 + 7], cz = p[i * 9 + 8];
+    const ux = bx - ax, uy = by - ay, uz = bz - az;
+    const vx = cx - ax, vy = cy - ay, vz = cz - az;
+    let nx = uy * vz - uz * vy, ny = uz * vx - ux * vz, nz = ux * vy - uy * vx;
+    const l = Math.hypot(nx, ny, nz) || 1; nx /= l; ny /= l; nz /= l;
+    dv.setFloat32(o, nx, true); dv.setFloat32(o + 4, ny, true); dv.setFloat32(o + 8, nz, true); o += 12;
+    dv.setFloat32(o, ax, true); dv.setFloat32(o + 4, ay, true); dv.setFloat32(o + 8, az, true); o += 12;
+    dv.setFloat32(o, bx, true); dv.setFloat32(o + 4, by, true); dv.setFloat32(o + 8, bz, true); o += 12;
+    dv.setFloat32(o, cx, true); dv.setFloat32(o + 4, cy, true); dv.setFloat32(o + 8, cz, true); o += 12;
+    dv.setUint16(o, 0, true); o += 2;
+  }
+  return new Blob([buf], { type: 'model/stl' });
+}
+
+function ascii(mesh, name) {
+  const p = mesh.positions, n = mesh.normals;
+  const count = p.length / 9;
+  let s = `solid ${name}\n`;
+  for (let i = 0; i < count; i++) {
+    s += `facet normal ${n[i * 9]} ${n[i * 9 + 1]} ${n[i * 9 + 2]}\n outer loop\n`;
+    for (let v = 0; v < 3; v++) {
+      s += `  vertex ${p[i * 9 + v * 3]} ${p[i * 9 + v * 3 + 1]} ${p[i * 9 + v * 3 + 2]}\n`;
+    }
+    s += ' endloop\nendfacet\n';
+  }
+  return new Blob([s + `endsolid ${name}\n`], { type: 'model/stl' });
+}
+
+function download(blob, filename) {
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = filename;
+  document.body.appendChild(a);
+  a.click();
+  setTimeout(() => { URL.revokeObjectURL(a.href); a.remove(); }, 2000);
+}
+
+
+// ---------------- src/app.js ----------------
+// app.js — application logic for Gripper Forge.
+//
+// A parametric designer for compliant gripper fingers that runs entirely in
+// the browser: sliders edit a "design", the geometry is rebuilt live, and the
+// STL files are generated locally. Written from scratch; the geometry model is
+// an independent implementation (see geo.js).
+
+const $ = (id) => document.getElementById(id);
+
+const LS_LANG = 'gf.lang', LS_DESIGN = 'gf.design.v1', LS_GRIPPER = 'gf.gripper.v1';
+const JAW_COLORS = ['#f6a21c', '#17a2a0'];        // amber jaw + teal jaw
+const FACE_GAP = 10;                               // mm gap between jaws on stage
+
+const state = {
+  lang: 'en',
+  gripper: null,        // editable gripper profile
+  design: null,         // { symmetric, a: genes, b: genes }
+  preset: null,
+  editing: 'a',
+  viewer: null,
+  meshCache: new Map(),
+  stats: null,
+  exported: false,
+  exporting: false,
+  str: null,            // language strings for the current language
+  label: null,          // param label dict
+  hint: null,           // param hint dict
+};
+
+// ------------------------------------------------------------- tiny helpers
+
+const esc = (s) => String(s).replace(/[&<>"]/g, (c) =>
+  ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+
+const bi = (en, zh) => state.lang === 'zh' ? zh : en;
+
+function t(key) { return state.str?.[key] ?? key; }
+
+function status(text, cls = '') {
+  const el = $('status');
+  el.textContent = text;
+  el.className = 'status ' + cls;
+}
+
+const num = (v, d = 1) => (v === null || v === undefined ? '—' : (+v).toFixed(d));
+
+// ------------------------------------------------------------ language & i18n
+
+function applyLang() {
+  state.str = STR[state.lang];
+  const L = state.lang === 'zh';
+  // static [data-i18n] elements
+  for (const el of document.querySelectorAll('[data-i18n]')) {
+    el.textContent = state.str[el.dataset.i18n] ?? el.textContent;
+  }
+  // dynamic label dicts
+  state.label = {};
+  state.hint = {};
+  for (const k of Object.keys(PARAM_LABEL)) {
+    state.label[k] = L ? PARAM_LABEL[k].zh : PARAM_LABEL[k].en;
+    state.hint[k] = PARAM_HINT[k] ? (L ? PARAM_HINT[k].zh : PARAM_HINT[k].en) : '';
+  }
+}
+
+// -------------------------------------------------------------- gripper
+
+function setGripper(g, persist = true) {
+  state.gripper = JSON.parse(JSON.stringify(g));
+  if (persist) {
+    try { localStorage.setItem(LS_GRIPPER, JSON.stringify(state.gripper)); } catch {}
+  }
+  state.frame = buildFrame(state.gripper);
+  setFrame(state.frame);
+  state.meshCache.clear();
+  renderAll();
+  refreshPreview();
+  refreshStats();
+}
+
+// ------------------------------------------------------------ design
+
+function parts() {
+  return state.design.symmetric
+    ? [{ role: 'finger', genes: state.design.a }]
+    : ['a', 'b'].map((role) => ({ role, genes: state.design[role] }));
+}
+
+const editedGenes = () => state.design[state.editing];
+
+function setParam(name, value) {
+  editedGenes()[name] = value;
+  if (state.design.symmetric) state.design.b = { ...state.design.a };
+  markPreset();
+  refreshPreview();
+  scheduleStats();
+}
+
+function applyPreset(name) {
+  const p = PRESETS[name];
+  if (!p) return;
+  state.preset = name;
+  state.design = JSON.parse(JSON.stringify(p.design));
+  state.editing = 'a';
+  renderAll();
+  refreshPreview();
+  scheduleStats();
+}
+
+function setSymmetric(on) {
+  state.design.symmetric = on;
+  if (on) state.design.b = { ...state.design.a };
+  state.editing = 'a';
+  renderAll();
+  markPreset();
+  refreshPreview();
+  scheduleStats();
+}
+
+function markPreset() {
+  if (!state.preset) return;
+  const clean = JSON.stringify(PRESETS[state.preset].design) === JSON.stringify(state.design);
+  document.querySelector('.preset.on')?.classList.toggle('edited', !clean);
+}
+
+// ------------------------------------------------------------ panel render
+
+function renderPresets() {
+  const box = $('presets');
+  box.innerHTML = '';
+  const L = state.lang === 'zh';
+  for (const name of Object.keys(PRESETS)) {
+    const b = document.createElement('button');
+    b.className = 'preset' + (name === state.preset ? ' on' : '');
+    b.innerHTML = `<b>${esc(L ? PRESETS[name].zh : PRESETS[name].en)}</b>`;
+    b.onclick = () => applyPreset(name);
+    box.append(b);
+  }
+  $('presetBlurb').textContent = state.preset
+    ? (L ? PRESETS[state.preset].blurbZh : PRESETS[state.preset].blurbEn) : '';
+}
+
+function renderSymmetry() {
+  $('symChk').checked = state.design.symmetric;
+  const tabs = $('jawTabs');
+  tabs.hidden = state.design.symmetric;
+  tabs.innerHTML = '';
+  if (state.design.symmetric) return;
+  ['a', 'b'].forEach((role, i) => {
+    const b = document.createElement('button');
+    b.className = role === state.editing ? 'on' : '';
+    b.innerHTML = `<span class="dot" style="background:${JAW_COLORS[i]}"></span>` +
+                  esc(role === 'a' ? (state.lang === 'zh' ? '夹爪 A' : 'Jaw A')
+                                   : (state.lang === 'zh' ? '夹爪 B' : 'Jaw B'));
+    b.onclick = () => { state.editing = role; renderSymmetry(); renderSliders(); };
+    tabs.append(b);
+  });
+}
+
+function renderSliders() {
+  const host = $('sliders');
+  host.innerHTML = '';
+  const genes = editedGenes();
+  const L = state.lang === 'zh';
+
+  for (const group of GROUPS) {
+    const names = Object.keys(PARAMS).filter((k) => PARAMS[k].group === group.key);
+    const toggles = Object.keys(TOGGLE_PARAMS).filter((k) => TOGGLE_PARAMS[k].group === group.key);
+    if (!names.length && !toggles.length) continue;
+    const sec = document.createElement('section');
+    sec.className = 'block';
+    sec.innerHTML = `<h2>${esc(L ? group.zh : group.en)}</h2>`;
+    for (const n of names) sec.append(sliderRow(n, genes));
+    for (const n of toggles) sec.append(toggleRow(n, genes));
+    host.append(sec);
+  }
+}
+
+function sliderRow(name, genes) {
+  const spec = PARAMS[name];
+  const row = document.createElement('div');
+  row.className = 'ctl';
+  row.innerHTML = `
+    <div class="ctl-head">
+      <span class="ctl-label">${esc(state.label[name])}</span>
+      <span class="ctl-val"></span>
+    </div>
+    <input type="range" class="rng" min="${spec.min}" max="${spec.max}"
+           step="${spec.step}" value="${genes[name]}" aria-label="${esc(state.label[name])}">
+    ${state.hint[name] ? `<p class="ctl-hint">${esc(state.hint[name])}</p>` : ''}`;
+  const input = row.querySelector('input');
+  const val = row.querySelector('.ctl-val');
+  const show = () => {
+    const v = +input.value;
+    val.textContent = spec.int ? String(v) : v.toFixed(spec.step < 0.1 ? 2 : 1);
+    val.dataset.unit = spec.int || name.endsWith('_pos') ? '' : ' mm';
+    input.style.setProperty('--fill', (100 * (v - spec.min) / (spec.max - spec.min)).toFixed(2) + '%');
+  };
+  input.addEventListener('input', () => {
+    show();
+    setParam(name, spec.int ? Math.round(+input.value) : +input.value);
+  });
+  show();
+  return row;
+}
+
+function toggleRow(name, genes) {
+  const row = document.createElement('div');
+  row.className = 'ctl ctl-bool';
+  row.innerHTML = `
+    <label class="switch">
+      <input type="checkbox" ${genes[name] ? 'checked' : ''}>
+      <span class="track"><span class="knob"></span></span>
+      <span class="txt">${esc(state.label[name])}</span>
+    </label>
+    ${state.hint[name] ? `<p class="ctl-hint">${esc(state.hint[name])}</p>` : ''}`;
+  row.querySelector('input').addEventListener('change', (e) => setParam(name, e.target.checked));
+  return row;
+}
+
+function renderAll() {
+  renderPresets();
+  renderSymmetry();
+  renderSliders();
+}
+
+// ---------------------------------------------------------------- geometry
+
+function mountMesh(genes) {
+  const key = JSON.stringify(genes);
+  let m = state.meshCache.get(key);
+  if (!m) {
+    m = toMountFrame(extrude(fingerSection(genes), genes));
+    if (state.meshCache.size > 24) state.meshCache.clear();
+    state.meshCache.set(key, m);
+  }
+  return m;
+}
+
+function shownParts() {
+  const p = parts();
+  return p.length > 1 ? p : [p[0], p[0]];
+}
+
+function refreshPreview() {
+  const geoms = shownParts().map((p) => mountMesh(p.genes));
+  const planeY = state.frame.contactPlaneY;
+  const proud = geoms.reduce((s, g) => s + Math.max(0, g.max[1] - planeY), 0);
+  state.viewer.setLayers(geoms.map((mesh, i) => ({
+    mesh,
+    color: JAW_COLORS[i % 2],
+    oppose: i === 1 ? { planeY, gap: proud + FACE_GAP } : null,
+  })));
+}
+
+// ------------------------------------------------------------------ stats
+
+function computeStats() {
+  const p = parts();
+  let proud = 0, volume = 0, reach = 0;
+  const per = {};
+  for (const { role, genes } of p) {
+    const m = mountMesh(genes);
+    const vol = meshVolume(m);
+    proud += Math.max(0, m.max[1] - state.frame.contactPlaneY);
+    reach = Math.max(reach, m.max[0] - m.min[0]);
+    volume += vol;
+    per[role] = { mesh: m, plastic: vol / 1000 * state.gripper.density };
+  }
+  const multiplicity = state.design.symmetric ? 2 : 1;
+  return {
+    opening: state.frame.maxOpen - proud,
+    reach,
+    plastic: volume / 1000 * state.gripper.density * multiplicity,
+    multiplicity,
+    per,
+  };
+}
+
+function runChecks() {
+  const d = state.design;
+  const both = d.symmetric ? [d.a, d.a] : [d.a, d.b];
+  const max = (k) => Math.max(...both.map((x) => +x[k]));
+  const min = (k) => Math.min(...both.map((x) => +x[k]));
+  const problems = [], notes = [];
+
+  const wall = min('wall_thickness_mm');
+  if (wall < 0.9) problems.push(bi('Walls under 0.9 mm are fragile and hard to print in TPU.',
+    '壁厚低于 0.9 mm 会过脆，TPU 打印困难。'));
+  const cupD = max('cradle_lift_mm'), cupR = max('cradle_radius_mm');
+  if (cupD > 0 && cupR <= cupD) problems.push(bi('The cup dish is deeper than its radius.',
+    '凹槽深度超过了半径。'));
+  const nailL = max('nail_len_mm'), nailT = min('nail_thickness_mm');
+  if (nailL > 0 && nailT < 0.5) problems.push(bi('The fingernail is under 0.5 mm and will be fragile.',
+    '指甲厚度低于 0.5 mm，会很脆弱。'));
+
+  const opening = state.stats?.opening ?? null;
+  if (opening !== null && opening < 20) notes.push(bi(
+    `Small usable opening (${num(opening, 0)} mm): only small objects will fit.`,
+    `有效开口较小（${num(opening, 0)} mm）：只能容纳小物体。`));
+  if (wall > 2.4) notes.push(bi('Very thick walls: the jaw will be stiff.', '壁厚很大：夹爪会比较硬。'));
+  if (max('rib_count') >= 18 && min('finger_length_mm') < 50) notes.push(bi(
+    'Many ribs in a short jaw: cavities get very thin.', '短夹爪上肋条过多：肋间空腔会很薄。'));
+  if (max('slot_height_mm') > 0 && max('slot_height_mm') > wall * 1.8) notes.push(bi(
+    'Bars much taller than the wall may peel off while printing.', '防滑条高度远大于壁厚，打印时可能脱落。'));
+  return { problems, notes };
+}
+
+function scheduleStats() {
+  clearTimeout(state._statsTimer);
+  state._statsTimer = setTimeout(refreshStats, 60);
+}
+
+function refreshStats() {
+  state.stats = computeStats();
+  const { problems, notes } = runChecks();
+  state.problems = problems;
+  state.notes = notes;
+  renderSummary();
+}
+
+// ----------------------------------------------------------------- summary
+
+function renderSummary() {
+  const out = $('summary');
+  const s = state.stats;
+  if (!s) return void (out.innerHTML = skeleton());
+  const problems = state.problems || [], notes = state.notes || [];
+
+  let html = `
+    <section class="cards">
+      ${card(t('opening'), num(s.opening, 0) + ' mm')}
+      ${card(t('reach'), num(s.reach, 0) + ' mm')}
+      ${card(t('plastic'), num(s.plastic, 0) + ' g')}
+    </section>`;
+
+  html += problems.length
+    ? `<section class="verdict bad">
+         <b>⚠ ${esc(problems.length === 1 ? t('problem1') : t('problemN', { count: problems.length }))}</b>
+         <ul>${problems.map((x) => `<li>${esc(x)}</li>`).join('')}</ul>
+       </section>`
+    : `<section class="verdict good"><b>✓ ${esc(t('ready'))}</b></section>`;
+
+  if (state.exported) {
+    html += `<section class="files">
+      <h3>${esc(t('files'))}</h3>
+      ${Object.entries(s.per).map(([role, f]) => `
+        <button class="dl" data-role="${esc(role)}" title="Download again">
+          <span>${esc(exportName(role))}</span>
+          <em>${num(f.plastic, 0)} g${s.multiplicity === 2 ? ' × 2' : ''}</em>
+        </button>`).join('')}
+    </section>`;
+  }
+
+  html += `<section class="act">
+      <button class="btn primary big" id="buildBtn" ${state.exporting ? 'disabled' : ''}>
+        ${esc(state.exporting ? t('building') : t('build'))}</button>
+    </section>`;
+
+  if (notes.length) html += `<section class="notes">${notes.map((x) => `<p>${esc(x)}</p>`).join('')}</section>`;
+
+  html += `<p class="checkhint">${esc(t('quickChecks'))} — ${esc(t('checksNote'))}</p>`;
+
+  out.innerHTML = html;
+}
+
+const card = (k, v) => `<div class="card"><dt>${esc(k)}</dt><dd>${esc(v)}</dd></div>`;
+
+const skeleton = () => `
+  <section class="cards">
+    ${[0, 1, 2].map(() => '<div class="card sk-card"><i class="sk"></i><i class="sk"></i></div>').join('')}
+  </section>
+  <section class="act"><i class="sk sk-btn"></i></section>`;
+
+function exportName(role) {
+  const id = String(state.gripper.id || 'jaw').replace(/[^a-z0-9-_]/gi, '');
+  return role === 'finger' ? `${id}-finger.stl` : `${id}-finger-${role}.stl`;
+}
+
+// ------------------------------------------------------------------ export
+
+function buildSTLs() {
+  if (state.exporting) return;
+  state.exporting = true;
+  renderSummary();
+  const fmt = $('stlFmt')?.value || 'bin';
+  try {
+    for (const { role, genes } of parts()) {
+      const m = mountMesh(genes);
+      download(meshToSTL(m, fmt, exportName(role)), exportName(role));
+    }
+    state.exported = true;
+    refreshStats();
+    status(t('built'));
+  } catch (e) {
+    status(e.message, 'bad');
+  } finally {
+    state.exporting = false;
+    renderSummary();
+  }
+}
+
+// ------------------------------------------------------------ design tools
+
+function saveDesign() {
+  try {
+    localStorage.setItem(LS_DESIGN, JSON.stringify({ design: state.design, preset: state.preset }));
+    status(t('saved'));
+  } catch (e) { status(e.message, 'bad'); }
+}
+
+function loadDesign() {
+  try {
+    const raw = localStorage.getItem(LS_DESIGN);
+    if (!raw) return status(t('noSaved'));
+    const d = JSON.parse(raw);
+    state.design = d.design;
+    state.preset = d.preset || null;
+    state.editing = 'a';
+    renderAll();
+    refreshPreview();
+    scheduleStats();
+    status(t('loaded'));
+  } catch (e) { status(e.message, 'bad'); }
+}
+
+function exportDesign() {
+  download(new Blob([JSON.stringify({
+    app: 'gripper-forge', version: 1,
+    gripper: state.gripper, design: state.design, preset: state.preset,
+  }, null, 2)], { type: 'application/json' }), 'gripper-design.json');
+}
+
+function importDesign(file) {
+  const r = new FileReader();
+  r.onload = () => {
+    try {
+      const d = JSON.parse(r.result);
+      if (d.gripper && d.gripper.keys && d.gripper.frame) setGripper(d.gripper);
+      if (d.design) {
+        state.design = d.design;
+        state.preset = d.preset || null;
+        state.editing = 'a';
+        renderAll();
+        refreshPreview();
+        scheduleStats();
+      }
+      status(t('loaded'));
+    } catch { status(t('importFail'), 'bad'); }
+  };
+  r.readAsText(file);
+}
+
+function snapshot() {
+  state.viewer.renderNow();
+  const a = document.createElement('a');
+  a.href = state.viewer.canvas.toDataURL('image/png');
+  a.download = 'gripper-preview.png';
+  a.click();
+}
+
+// ------------------------------------------------------------ gripper panel
+
+function buildCfgForm() {
+  const host = $('cfgKeys');
+  host.innerHTML = '';
+  for (const [key, en, zh, unit] of GRIPPER_FIELDS) {
+    const f = document.createElement('div');
+    f.className = 'field';
+    f.innerHTML = `<label>${esc(bi(en, zh))}</label>` +
+      `<input type="number" id="cfg_${key}" step="any" spellcheck="false">`;
+    host.append(f);
+  }
+  for (const [id, en, zh] of [['cfg_BOLT_Y0', 'Bolt Y 1', '螺栓孔 Y1'], ['cfg_BOLT_Y1', 'Bolt Y 2', '螺栓孔 Y2']]) {
+    const f = document.createElement('div');
+    f.className = 'field';
+    f.innerHTML = `<label>${esc(bi(en, zh))} (mm)</label><input type="number" id="${id}" step="any">`;
+    host.append(f);
+  }
+}
+
+function populateGripForm() {
+  const g = state.gripper;
+  $('gripName').value = g.name || '';
+  $('gripAutoRef').checked = g.autoFrame !== false;
+  $('gripPreset').value = 'custom';
+  for (const [key] of GRIPPER_FIELDS) {
+    const el = $('cfg_' + key);
+    if (!el) continue;
+    const v = key === 'density' ? g.density
+      : key === 'maxOpen' ? g.maxOpen
+      : key === 'contactPlaneY' ? g.contactPlaneY
+      : g.keys[key];
+    el.value = fmtNum(v ?? 0);
+  }
+  const by = g.keys.BOLT_Y || [];
+  $('cfg_BOLT_Y0').value = fmtNum(by[0] ?? 0);
+  $('cfg_BOLT_Y1').value = fmtNum(by[1] ?? 0);
+  syncGripJson();
+}
+
+const fmtNum = (v) => (+v).toFixed(4).replace(/\.?0+$/, '');
+
+function readGripForm() {
+  const g = JSON.parse(JSON.stringify(state.gripper));
+  g.name = $('gripName').value;
+  g.autoFrame = $('gripAutoRef').checked;
+  g.density = parseFloat($('cfg_density').value) || 1.2;
+  g.maxOpen = parseFloat($('cfg_maxOpen').value) || 0;
+  g.contactPlaneY = parseFloat($('cfg_contactPlaneY').value) || 0;
+  for (const [key] of GRIPPER_FIELDS) {
+    if (key === 'density' || key === 'maxOpen' || key === 'contactPlaneY') continue;
+    const v = parseFloat($('cfg_' + key).value);
+    if (Number.isFinite(v)) { g.keys[key] = v; g.frame[key] = frameKey(key); }
+  }
+  const y0 = parseFloat($('cfg_BOLT_Y0').value), y1 = parseFloat($('cfg_BOLT_Y1').value);
+  if (Number.isFinite(y0) && Number.isFinite(y1)) {
+    g.keys.BOLT_Y = [y0, y1];
+    g.frame.boltY = [y0, y1];
+  }
+  return g;
+}
+
+/** Map a human-facing key back to its frame field name. */
+function frameKey(k) {
+  return ({
+    BOLT_HOLE_D_MM: 'boltHoleD', BOLT_INSET_MM: 'boltInset',
+    BASE_LEN_MM: 'baseLen', CONTACT_Y_MM: 'contactY',
+    FINGER_THICKNESS_MM: 'thickness', BACK_ROOT_Y_MM: 'rootY',
+    FAN_FOCUS_X_MM: 'fanX', REF_LENGTH_MM: 'refLen', TIP_BLUNT_MM: 'tipBlunt',
+  })[k] || k;
+}
+
+function syncGripJson() { $('gripJson').value = JSON.stringify(state.gripper, null, 1); }
+
+function applyGripForm() {
+  readGripForm();
+  try {
+    const parsed = JSON.parse($('gripJson').value);
+    if (!parsed || !parsed.keys || !parsed.frame) throw new Error('bad profile');
+    setGripper(parsed);
+    populateGripForm();
+    status(t('applied'));
+  } catch { status(t('importFail'), 'bad'); }
+}
+
+function exportGrip() {
+  readGripForm();
+  syncGripJson();
+  download(new Blob([JSON.stringify(state.gripper, null, 2)], { type: 'application/json' }),
+    (state.gripper.id || 'gripper') + '-profile.json');
+}
+
+function importGrip(file) {
+  const r = new FileReader();
+  r.onload = () => {
+    try {
+      const g = JSON.parse(r.result);
+      if (!g.keys || !g.frame) throw new Error('bad profile');
+      setGripper(g);
+      populateGripForm();
+      status(t('applied'));
+    } catch { status(t('importFail'), 'bad'); }
+  };
+  r.readAsText(file);
+}
+
+// ------------------------------------------------------------------ wiring
+
+function bindEvents() {
+  $('langBtn').onclick = () => setLang(state.lang === 'zh' ? 'en' : 'zh');
+  $('gripperBtn').onclick = () => { populateGripForm(); $('drawer').hidden = false; };
+  $('snapBtn').onclick = snapshot;
+  $('saveBtn').onclick = saveDesign;
+  $('loadBtn').onclick = loadDesign;
+  $('exportBtn').onclick = exportDesign;
+  $('importBtn').onclick = () => $('importFile').click();
+  $('importFile').onchange = (e) => { const f = e.target.files?.[0]; if (f) importDesign(f); e.target.value = ''; };
+  $('densityInput').onchange = (e) => {
+    const v = parseFloat(e.target.value);
+    if (Number.isFinite(v) && v > 0) { state.gripper.density = v; try { localStorage.setItem(LS_GRIPPER, JSON.stringify(state.gripper)); } catch {} refreshStats(); }
+  };
+  $('symChk').onchange = (e) => setSymmetric(e.target.checked);
+
+  $('viewSeg').onclick = (e) => {
+    const b = e.target.closest('button');
+    if (!b) return;
+    [...e.currentTarget.children].forEach((c) => c.classList.toggle('on', c === b));
+    state.viewer.setView(b.dataset.v);
+  };
+
+  $('summary').addEventListener('click', (e) => {
+    if (e.target.closest('#buildBtn')) buildSTLs();
+    const dl = e.target.closest('.dl[data-role]');
+    if (dl) {
+      const f = state.stats?.per?.[dl.dataset.role];
+      if (f) download(meshToSTL(f.mesh, $('stlFmt').value, exportName(dl.dataset.role)), exportName(dl.dataset.role));
+    }
+  });
+
+  $('drawer').addEventListener('click', (e) => { if (e.target.closest('[data-close]')) $('drawer').hidden = true; });
+  $('gripReset').onclick = () => { state.gripper = JSON.parse(JSON.stringify(GRIPPER_DEFAULT)); populateGripForm(); };
+  $('gripPreset').onchange = (e) => { if (e.target.value === 'default') { state.gripper = JSON.parse(JSON.stringify(GRIPPER_DEFAULT)); populateGripForm(); } };
+  $('gripApply').onclick = applyGripForm;
+  $('gripExport').onclick = exportGrip;
+  $('gripImport').onclick = () => $('gripImportFile').click();
+  $('gripImportFile').onchange = (e) => { const f = e.target.files?.[0]; if (f) importGrip(f); e.target.value = ''; };
+  $('cfgKeys').addEventListener('input', () => { readGripForm(); syncGripJson(); });
+  $('gripAutoRef').addEventListener('change', () => { readGripForm(); syncGripJson(); });
+
+  document.addEventListener('keydown', (e) => {
+    if ((e.metaKey || e.ctrlKey) && e.key === 'Enter') { e.preventDefault(); buildSTLs(); }
+    if (e.key === 'Escape' && !$('drawer').hidden) $('drawer').hidden = true;
+  });
+}
+
+function setLang(lang) {
+  state.lang = lang;
+  try { localStorage.setItem(LS_LANG, lang); } catch {}
+  applyLang();
+  renderAll();
+  refreshStats();
+}
+
+// ------------------------------------------------------------------- boot
+
+function boot() {
+  state.viewer = new Viewer3D($('cv'));
+
+  // load persisted gripper, else the built-in default profile
+  let g = null;
+  try {
+    const raw = localStorage.getItem(LS_GRIPPER);
+    if (raw) { const j = JSON.parse(raw); if (j.keys && j.frame) g = j; }
+  } catch {}
+  state.gripper = g || JSON.parse(JSON.stringify(GRIPPER_DEFAULT));
+
+  state.lang = localStorage.getItem(LS_LANG) === 'zh' ? 'zh' : 'en';
+  state.frame = buildFrame(state.gripper);
+  setFrame(state.frame);
+  // Chrome icons + labels first, so applyLang() translates the data-i18n bits.
+  $('gripperBtn').innerHTML = '⚙ <span data-i18n="gripper">Gripper</span>';
+  $('snapBtn').textContent = '◧';
+  applyLang();
+
+  buildCfgForm();
+  bindEvents();
+
+  // restore a saved design, else the default preset
+  let restored = false;
+  try {
+    const raw = localStorage.getItem(LS_DESIGN);
+    if (raw) {
+      const d = JSON.parse(raw);
+      state.design = d.design;
+      state.preset = d.preset || null;
+      restored = true;
+    }
+  } catch {}
+  if (!restored) applyPreset(DEFAULT_PRESET);
+  else { renderAll(); refreshPreview(); scheduleStats(); }
+
+  renderSummary();
+  window.gripperForge = { state, setParam, applyPreset, setSymmetric, setGripper, setLang };
+}
+
+boot();
+
+
+</script>
+</body>
+</html>
