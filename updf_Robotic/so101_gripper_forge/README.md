@@ -18,6 +18,8 @@ the URDF's finger links.
 | `so101_gripper_forge.urdf` | Complete arm + gripper model. Fingers are real Gripper Forge geometry. |
 | `meshes/so101_finger_universal.stl` | Example left jaw, exported from the Gripper Forge *Universal* preset. |
 | `meshes/so101_finger_universal_right.stl` | Mirrored copy used by the right jaw. |
+| `meshes/so101_gripper_mount_A.stl` | The rigid gripper mount (PLA) — main body, split for printing. |
+| `meshes/so101_gripper_mount_B_A.stl` / `_B_B.stl` | The mount's two remaining split parts. |
 | `inject_gripper_forge.py` | Re-point any arm URDF at your own Gripper Forge fingers. |
 
 ## Quick start
