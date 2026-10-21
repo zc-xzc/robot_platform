@@ -1,0 +1,8 @@
+edge-profile/
+video-browser/
+check.cjs
+record.cjs
+frame-*.jpg
+video-preview.png
+deploy_key
+deploy_key.pub
