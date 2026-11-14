@@ -40,9 +40,9 @@
     "sha256": "704501069134c80796c4c9ae0e5163bdd8d7c46593df3885d319f0499adf1960"
   },
   {
-    "path": "simulation/figures/assembly/X3_5mm_screw_and_large_recess_V2R1.png",
-    "size_bytes": 203373,
-    "sha256": "68a1d54dbae04843d3aa21f170782ee6122296a6ae5f2ebf8f6e76d58b2d3476"
+    "path": "simulation/figures/assembly/X3_5mm_screw_and_large_recess_V2R1.jpg",
+    "size_bytes": 108406,
+    "sha256": "5ba27afe93e406151964caf7ce4e8f1a60af40d775ade884778101f7267a3e92"
   },
   {
     "path": "simulation/figures/contact_compatibility/contact_bottom_nodes_1g_3g.svg",
@@ -75,34 +75,34 @@
     "sha256": "d9bc251d54814402cc5649797f6adc93e97c1b8752ddce06afebb842e9d62bed"
   },
   {
-    "path": "simulation/figures/fea/base_plusX_3g_stress.png",
-    "size_bytes": 209817,
-    "sha256": "1f7587db821c014d75fb87de77cd95c36e00c46810fb61ab86cc1b36edbff0d4"
+    "path": "simulation/figures/fea/base_plusX_3g_stress.jpg",
+    "size_bytes": 106441,
+    "sha256": "fc62edd3b181ea94e74ba771b417f26dd22aa9f6633ffb86e17212a68c49ba81"
   },
   {
-    "path": "simulation/figures/fea/camera_mode1.png",
-    "size_bytes": 139213,
-    "sha256": "a2f7a43f84d3f2d9d8f307fd2f5cb19058c2d243fba6d7b20402e90afab8c5ed"
+    "path": "simulation/figures/fea/camera_mode1.jpg",
+    "size_bytes": 63281,
+    "sha256": "a939e3e6f57c44783f3d361a9041f070c65cc150e7b748789263aa81f0a86d5d"
   },
   {
-    "path": "simulation/figures/fea/camera_plusZ_3g_stress.png",
-    "size_bytes": 98586,
-    "sha256": "c6cc0e7ff22e564a0ec29ceab323fe3af8f9c31f5766b0b19cbd2b27e0b0d6c8"
+    "path": "simulation/figures/fea/camera_plusZ_3g_stress.jpg",
+    "size_bytes": 61783,
+    "sha256": "1c5804ba434b9d2c52bb9baf2993ddfa46f50b4d96b8ec0995a3f0be511ccc45"
   },
   {
-    "path": "simulation/figures/fea/cartridge_plusZ_3g_stress.png",
-    "size_bytes": 142943,
-    "sha256": "93d829a25235f1c643f560d525720df2778cbf3261db48ed864342870e69cd5a"
+    "path": "simulation/figures/fea/cartridge_plusZ_3g_stress.jpg",
+    "size_bytes": 75213,
+    "sha256": "ef09de7a1ef5c373b89eac3d7ddd12554d0867ba7c6aa7511a4f289e7478d61b"
   },
   {
-    "path": "simulation/figures/fea/pin_transverse_X_1N.png",
-    "size_bytes": 81289,
-    "sha256": "5acf0d34647f774e50e0eb8a5560de1ce6f931baf1536bf592b56e4f506ef247"
+    "path": "simulation/figures/fea/pin_transverse_X_1N.jpg",
+    "size_bytes": 53457,
+    "sha256": "5320f3c00931666f02ac50b905a8f57ad7a8164f14e0e41757445eece3393edf"
   },
   {
-    "path": "simulation/figures/fea/postbreak_lug_plusZ_1N.png",
-    "size_bytes": 111331,
-    "sha256": "5af8bff77bbc768a451f79b8e2753b579879a24a8d6fec2aee71ca3cf76ecf09"
+    "path": "simulation/figures/fea/postbreak_lug_plusZ_1N.jpg",
+    "size_bytes": 68063,
+    "sha256": "22b206ed89f71a3d3d797834c5b6eb5ecc94cbd21570a1d811a6b1f3e1e79c7f"
   },
   {
     "path": "simulation/figures/system_review/01_tether_energy_h_stop_sensitivity.svg",
