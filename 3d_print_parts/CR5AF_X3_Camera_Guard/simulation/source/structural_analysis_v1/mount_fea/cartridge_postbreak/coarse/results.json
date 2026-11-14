@@ -1,0 +1,737 @@
+{
+  "part": "02_Fuse_Cartridge_D8",
+  "revision": "V2R1_reconstructed",
+  "source_sha256": "7856917e070c34f9ab04f5dc9718c8766f943a605d720650ff11424fd87cd6ca",
+  "mesh": {
+    "source": "<redacted-workspace-path>",
+    "source_sha256": "7856917e070c34f9ab04f5dc9718c8766f943a605d720650ff11424fd87cd6ca",
+    "mesh": "<redacted-workspace-path>",
+    "mesh_sha256": "2339cd728392eeae8a24b6a2677a7bf15e4a97be4af2f16804b6e000955fdf91",
+    "hmax_mm": 2.4,
+    "hmin_mm": 0.6,
+    "curvature_segments": 20,
+    "refinement_boxes": [
+      [
+        -24.1,
+        52.9,
+        10.4,
+        -14.9,
+        60.1,
+        13.1,
+        0.75
+      ],
+      [
+        -6.1,
+        40.9,
+        6.6,
+        6.1,
+        53.1,
+        10.6,
+        1.32
+      ]
+    ],
+    "cad_volume_mm3": 3605.1315379444877,
+    "element_type_counts": {
+      "11": 11884
+    },
+    "meshing_seconds": 0.31311011199977656
+  },
+  "mesh_info": {
+    "tetrahedra": 11884,
+    "geometry_nodes": 21542,
+    "displacement_dofs": 64626,
+    "integration_order": 5,
+    "integration_points": 14,
+    "volume_mm3": 3605.1292939317686,
+    "folded_elements": 0,
+    "min_abs_mapping_determinant": 0.050680425756753335,
+    "E_MPa": 2000.0,
+    "nu": 0.35,
+    "density_tonne_per_mm3": 1.24e-09,
+    "mass_kg": 0.004470360324475393,
+    "length_unit": "mm",
+    "force_unit": "N",
+    "stress_unit": "MPa=N/mm2",
+    "time_unit": "s"
+  },
+  "load_path_state": "POST_BREAK_local_lug",
+  "volume_relative_error": -6.224496098550247e-07,
+  "assumptions": {
+    "E_MPa": 2000,
+    "nu": 0.35,
+    "density_tonne_per_mm3": 1.24e-09,
+    "material": "Hypothetical homogeneous isotropic linear elastic print baseline, not measured PETG properties",
+    "fixed_support": "POST_BREAK equivalent local lug submodel: lower dovetail is completely free; carrier/stud interface fixed instead as an idealized camera-side inertial reaction. Original uncut CAD is retained; no fracture/contact process is simulated. Fixed interface replaces the remaining moving assembly; unused lower geometry bears no imposed support reaction.",
+    "small_displacement": true,
+    "load_type": "Static consistent surface traction; unit resultant/wrench",
+    "contact_limitations": "No contact opening, gaps, plasticity, fatigue, creep, fracture or collision release simulation"
+  },
+  "support": {
+    "facets": 1481,
+    "area_mm2": 573.622333841987,
+    "centroid_mm": [
+      -1.4865953124933085,
+      48.62514057421845,
+      13.540384497614623
+    ],
+    "constrained_dofs": 9162
+  },
+  "load_patches": {
+    "carrier_stud_interface": {
+      "facets": 1481,
+      "area_mm2": 573.622333841987,
+      "centroid_mm": [
+        -1.4865953124933085,
+        48.62514057421845,
+        13.540384497614623
+      ],
+      "constrained_dofs": 9162
+    },
+    "tether_hole": {
+      "facets": 190,
+      "area_mm2": 32.98652515800141,
+      "centroid_mm": [
+        -20.9999987468237,
+        56.50000006947062,
+        11.75000000403364
+      ],
+      "constrained_dofs": 1260
+    },
+    "tether_minusX_half_hole": {
+      "facets": 84,
+      "area_mm2": 16.10297577884269,
+      "centroid_mm": [
+        -22.365247618066032,
+        56.464733023640875,
+        11.761336308385797
+      ],
+      "constrained_dofs": 597
+    }
+  },
+  "cases": {
+    "tether_minusX_1N": {
+      "load": {
+        "area_mm2": 32.98652515800141,
+        "centroid_mm": [
+          -20.9999987468237,
+          56.50000006947062,
+          11.75000000403364
+        ],
+        "target_force_N": [
+          -1.0,
+          0.0,
+          0.0
+        ],
+        "target_moment_Nmm": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "moment_reference_mm": [
+          -21.0,
+          56.5,
+          11.75
+        ],
+        "traction_constant_N_per_mm2": [
+          -0.030315408949870365,
+          0.0,
+          0.0
+        ],
+        "traction_rotation_coefficient": [
+          1.3407423067617941e-17,
+          4.486065459601768e-11,
+          -4.775636528465875e-10
+        ],
+        "assembled_wrench": {
+          "force_N": [
+            -1.0,
+            1.5302841332231012e-23,
+            1.4475660719677984e-24
+          ],
+          "moment_Nmm": [
+            4.3600951626614606e-24,
+            1.2026263852677554e-15,
+            -8.292956736746564e-16
+          ]
+        }
+      },
+      "solution": {
+        "solve_seconds": 6.7336695110006985,
+        "iterations": 113,
+        "relative_free_residual": 8.176499009293227e-10,
+        "strain_energy_Nmm": 0.0001919636142941483,
+        "compliance_Nmm": 0.00038392722858829337,
+        "applied_wrench": {
+          "force_N": [
+            -1.0,
+            1.5302841332231012e-23,
+            1.4475660719677984e-24
+          ],
+          "moment_Nmm": [
+            -9.089701480380684e-23,
+            -11.749999999999988,
+            56.49999999999998
+          ]
+        },
+        "support_reaction_wrench": {
+          "force_N": [
+            1.0000000000017875,
+            1.53854359807859e-12,
+            -1.1430238699983164e-11
+          ],
+          "moment_Nmm": [
+            -5.866906574274189e-10,
+            11.749999999942325,
+            -56.50000000012564
+          ]
+        },
+        "force_balance_error_N": [
+          1.787459069646502e-12,
+          1.5385435980938928e-12,
+          -1.1430238699981716e-11
+        ],
+        "moment_balance_error_Nmm": [
+          -5.866906574275098e-10,
+          -5.766231936377153e-11,
+          -1.2565948281917372e-10
+        ]
+      },
+      "response": {
+        "max_displacement_mm": 0.0008756001380779775,
+        "max_von_mises_MPa": 0.2319631993736046,
+        "volume_weighted_p95_von_mises_MPa": 0.027720376300933103,
+        "volume_weighted_p99_von_mises_MPa": 0.07820694213315417,
+        "mean_von_mises_MPa": 0.0037672713315053505,
+        "max_stress_location_mm": [
+          -21.163684395295224,
+          58.593611095389214,
+          10.795549103177738
+        ],
+        "raw_peak_warning": "Raw integration-point peaks near sharp/reentrant corners and ideal clamps may be singular; no failure or release force is inferred.",
+        "regions": {
+          "neck": {
+            "volume_mm3": 247.3549209540243,
+            "max_von_mises_MPa": 0.0013564593857560295,
+            "p95_MPa": 0.00022041530282326086,
+            "p99_MPa": 0.00041028372293321655
+          },
+          "minimum_D8_neck": {
+            "volume_mm3": 50.43763009442883,
+            "max_von_mises_MPa": 0.00021793639918695645,
+            "p95_MPa": 0.0001040062290193507,
+            "p99_MPa": 0.00013116628974242664
+          },
+          "moving_tether_lug": {
+            "volume_mm3": 122.88745937153317,
+            "max_von_mises_MPa": 0.2319631993736046,
+            "p95_MPa": 0.11196017229867794,
+            "p99_MPa": 0.1666688820083074
+          },
+          "lug_thin_outer_edge": {
+            "volume_mm3": 15.67424437767766,
+            "max_von_mises_MPa": 0.19993854871561734,
+            "p95_MPa": 0.11463375371914548,
+            "p99_MPa": 0.15980937718921215
+          },
+          "lug_root": {
+            "volume_mm3": 35.09747953889705,
+            "max_von_mises_MPa": 0.15000812488082013,
+            "p95_MPa": 0.08681659599959984,
+            "p99_MPa": 0.10577988866914681
+          },
+          "latch_beam": {
+            "volume_mm3": 193.6051063906496,
+            "max_von_mises_MPa": 4.38085926664937e-05,
+            "p95_MPa": 1.3588604776364484e-07,
+            "p99_MPa": 1.4932234356045517e-06
+          },
+          "studs": {
+            "volume_mm3": 221.40172441806132,
+            "max_von_mises_MPa": 0.22014303022535428,
+            "p95_MPa": 0.0008136388477092718,
+            "p99_MPa": 0.021852596664762355
+          }
+        }
+      }
+    },
+    "tether_plusZ_1N": {
+      "load": {
+        "area_mm2": 32.98652515800141,
+        "centroid_mm": [
+          -20.9999987468237,
+          56.50000006947062,
+          11.75000000403364
+        ],
+        "target_force_N": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "target_moment_Nmm": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "moment_reference_mm": [
+          -21.0,
+          56.5,
+          11.75
+        ],
+        "traction_constant_N_per_mm2": [
+          0.0,
+          0.0,
+          0.030315408949870365
+        ],
+        "traction_rotation_coefficient": [
+          -7.726261540187403e-10,
+          1.3937351972420247e-08,
+          -8.488116653260332e-16
+        ],
+        "assembled_wrench": {
+          "force_N": [
+            -5.591740940858467e-22,
+            -3.166550782429559e-23,
+            0.9999999999999999
+          ],
+          "moment_Nmm": [
+            -7.1629058288790415e-16,
+            6.102973499525312e-16,
+            -7.567383629426674e-23
+          ]
+        }
+      },
+      "solution": {
+        "solve_seconds": 7.553640383999664,
+        "iterations": 116,
+        "relative_free_residual": 8.626603403233777e-10,
+        "strain_energy_Nmm": 0.004275423435329183,
+        "compliance_Nmm": 0.00855084687066527,
+        "applied_wrench": {
+          "force_N": [
+            -5.591740940858467e-22,
+            -3.166550782429559e-23,
+            0.9999999999999999
+          ],
+          "moment_Nmm": [
+            56.49999999999998,
+            21.0,
+            3.302541414524052e-20
+          ]
+        },
+        "support_reaction_wrench": {
+          "force_N": [
+            1.0448308884747348e-12,
+            -6.187272916235997e-13,
+            -0.9999999999908467
+          ],
+          "moment_Nmm": [
+            -56.49999999956463,
+            -21.000000000067562,
+            -3.3929747900174334e-11
+          ]
+        },
+        "force_balance_error_N": [
+          1.0448308879155607e-12,
+          -6.187272916552652e-13,
+          9.153233726522103e-12
+        ],
+        "moment_balance_error_Nmm": [
+          4.353495342002134e-10,
+          -6.756195602974913e-11,
+          -3.392974786714892e-11
+        ]
+      },
+      "response": {
+        "max_displacement_mm": 0.01451240656082111,
+        "max_von_mises_MPa": 1.6509982659882545,
+        "volume_weighted_p95_von_mises_MPa": 0.11369580721682991,
+        "volume_weighted_p99_von_mises_MPa": 0.3572263508562654,
+        "mean_von_mises_MPa": 0.016951196274793523,
+        "max_stress_location_mm": [
+          -14.646379841116332,
+          57.51493057941534,
+          12.876396627806349
+        ],
+        "raw_peak_warning": "Raw integration-point peaks near sharp/reentrant corners and ideal clamps may be singular; no failure or release force is inferred.",
+        "regions": {
+          "neck": {
+            "volume_mm3": 247.3549209540243,
+            "max_von_mises_MPa": 0.007019043181319938,
+            "p95_MPa": 0.0009261917800393355,
+            "p99_MPa": 0.0018701214764158469
+          },
+          "minimum_D8_neck": {
+            "volume_mm3": 50.43763009442883,
+            "max_von_mises_MPa": 0.0010082363886594833,
+            "p95_MPa": 0.0004417284121177408,
+            "p99_MPa": 0.0005865048501860029
+          },
+          "moving_tether_lug": {
+            "volume_mm3": 122.88745937153317,
+            "max_von_mises_MPa": 1.344315909138103,
+            "p95_MPa": 0.513937093960325,
+            "p99_MPa": 0.6324716822255182
+          },
+          "lug_thin_outer_edge": {
+            "volume_mm3": 15.67424437767766,
+            "max_von_mises_MPa": 0.410478565712564,
+            "p95_MPa": 0.23804001673100778,
+            "p99_MPa": 0.30449258737878776
+          },
+          "lug_root": {
+            "volume_mm3": 35.09747953889705,
+            "max_von_mises_MPa": 1.344315909138103,
+            "p95_MPa": 0.6099928819091379,
+            "p99_MPa": 0.7221604072656284
+          },
+          "latch_beam": {
+            "volume_mm3": 193.6051063906496,
+            "max_von_mises_MPa": 0.00013154799046392995,
+            "p95_MPa": 5.156642022553351e-07,
+            "p99_MPa": 5.918831168380841e-06
+          },
+          "studs": {
+            "volume_mm3": 221.40172441806132,
+            "max_von_mises_MPa": 1.5762585931813433,
+            "p95_MPa": 0.004172697601649262,
+            "p99_MPa": 0.08503301633514883
+          }
+        }
+      }
+    },
+    "tether_minusZ_1N": {
+      "load": {
+        "area_mm2": 32.98652515800141,
+        "centroid_mm": [
+          -20.9999987468237,
+          56.50000006947062,
+          11.75000000403364
+        ],
+        "target_force_N": [
+          0.0,
+          0.0,
+          -1.0
+        ],
+        "target_moment_Nmm": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "moment_reference_mm": [
+          -21.0,
+          56.5,
+          11.75
+        ],
+        "traction_constant_N_per_mm2": [
+          0.0,
+          0.0,
+          -0.030315408949870365
+        ],
+        "traction_rotation_coefficient": [
+          7.726261540187403e-10,
+          -1.3937351972420247e-08,
+          8.488116653260332e-16
+        ],
+        "assembled_wrench": {
+          "force_N": [
+            5.591740940858467e-22,
+            3.166550782429559e-23,
+            -0.9999999999999999
+          ],
+          "moment_Nmm": [
+            7.1629058288790415e-16,
+            -6.102973499525312e-16,
+            7.567383629426674e-23
+          ]
+        }
+      },
+      "solution": {
+        "solution_method": "Sign reversal in linear elasticity",
+        "solve_seconds": 0,
+        "iterations": 0,
+        "relative_free_residual": 8.626603403233777e-10,
+        "strain_energy_Nmm": 0.004275423435329183,
+        "compliance_Nmm": 0.00855084687066527,
+        "applied_wrench": {
+          "force_N": [
+            5.591740940858467e-22,
+            3.166550782429559e-23,
+            -0.9999999999999999
+          ],
+          "moment_Nmm": [
+            -56.49999999999998,
+            -21.0,
+            -3.302541414524052e-20
+          ]
+        },
+        "support_reaction_wrench": {
+          "force_N": [
+            -1.0448308884747348e-12,
+            6.187272916235997e-13,
+            0.9999999999908467
+          ],
+          "moment_Nmm": [
+            56.49999999956463,
+            21.000000000067562,
+            3.3929747900174334e-11
+          ]
+        },
+        "force_balance_error_N": [
+          -1.0448308879155607e-12,
+          6.187272916552652e-13,
+          -9.153233726522103e-12
+        ],
+        "moment_balance_error_Nmm": [
+          -4.353495342002134e-10,
+          6.756195602974913e-11,
+          3.392974786714892e-11
+        ]
+      },
+      "response": {
+        "max_displacement_mm": 0.01451240656082111,
+        "max_von_mises_MPa": 1.6509982659882545,
+        "volume_weighted_p95_von_mises_MPa": 0.11369580721682991,
+        "volume_weighted_p99_von_mises_MPa": 0.3572263508562654,
+        "mean_von_mises_MPa": 0.016951196274793523,
+        "max_stress_location_mm": [
+          -14.646379841116332,
+          57.51493057941534,
+          12.876396627806349
+        ],
+        "raw_peak_warning": "Raw integration-point peaks near sharp/reentrant corners and ideal clamps may be singular; no failure or release force is inferred.",
+        "regions": {
+          "neck": {
+            "volume_mm3": 247.3549209540243,
+            "max_von_mises_MPa": 0.007019043181319938,
+            "p95_MPa": 0.0009261917800393355,
+            "p99_MPa": 0.0018701214764158469
+          },
+          "minimum_D8_neck": {
+            "volume_mm3": 50.43763009442883,
+            "max_von_mises_MPa": 0.0010082363886594833,
+            "p95_MPa": 0.0004417284121177408,
+            "p99_MPa": 0.0005865048501860029
+          },
+          "moving_tether_lug": {
+            "volume_mm3": 122.88745937153317,
+            "max_von_mises_MPa": 1.344315909138103,
+            "p95_MPa": 0.513937093960325,
+            "p99_MPa": 0.6324716822255182
+          },
+          "lug_thin_outer_edge": {
+            "volume_mm3": 15.67424437767766,
+            "max_von_mises_MPa": 0.410478565712564,
+            "p95_MPa": 0.23804001673100778,
+            "p99_MPa": 0.30449258737878776
+          },
+          "lug_root": {
+            "volume_mm3": 35.09747953889705,
+            "max_von_mises_MPa": 1.344315909138103,
+            "p95_MPa": 0.6099928819091379,
+            "p99_MPa": 0.7221604072656284
+          },
+          "latch_beam": {
+            "volume_mm3": 193.6051063906496,
+            "max_von_mises_MPa": 0.00013154799046392995,
+            "p95_MPa": 5.156642022553351e-07,
+            "p99_MPa": 5.918831168380841e-06
+          },
+          "studs": {
+            "volume_mm3": 221.40172441806132,
+            "max_von_mises_MPa": 1.5762585931813433,
+            "p95_MPa": 0.004172697601649262,
+            "p99_MPa": 0.08503301633514883
+          }
+        }
+      }
+    },
+    "tether_minusX_bearing_half_1N": {
+      "load": {
+        "area_mm2": 16.10297577884269,
+        "centroid_mm": [
+          -22.365247618066032,
+          56.464733023640875,
+          11.761336308385797
+        ],
+        "target_force_N": [
+          -1.0,
+          0.0,
+          0.0
+        ],
+        "target_moment_Nmm": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "moment_reference_mm": [
+          -21.0,
+          56.5,
+          11.75
+        ],
+        "traction_constant_N_per_mm2": [
+          -0.062100323178395124,
+          0.0,
+          0.0
+        ],
+        "traction_rotation_coefficient": [
+          -8.79686329414271e-06,
+          0.0007552583047834966,
+          0.0008560248281398021
+        ],
+        "assembled_wrench": {
+          "force_N": [
+            -0.9999999999999999,
+            -8.613986260397333e-17,
+            7.518942066186973e-17
+          ],
+          "moment_Nmm": [
+            -2.7647155398380363e-18,
+            -3.0956140428806123e-15,
+            8.998010669891698e-15
+          ]
+        }
+      },
+      "solution": {
+        "solve_seconds": 7.380341190999388,
+        "iterations": 113,
+        "relative_free_residual": 6.371949746123034e-10,
+        "strain_energy_Nmm": 0.00046657062040868897,
+        "compliance_Nmm": 0.0009331412408174075,
+        "applied_wrench": {
+          "force_N": [
+            -0.9999999999999999,
+            -8.613986260397333e-17,
+            7.518942066186973e-17
+          ],
+          "moment_Nmm": [
+            5.250411650586928e-15,
+            -11.750000000000002,
+            56.50000000000002
+          ]
+        },
+        "support_reaction_wrench": {
+          "force_N": [
+            0.999999999999423,
+            1.4109755031022075e-12,
+            -1.0193790256352031e-11
+          ],
+          "moment_Nmm": [
+            -5.397860116784087e-10,
+            11.749999999885132,
+            -56.500000000009955
+          ]
+        },
+        "force_balance_error_N": [
+          -5.768718835952313e-13,
+          1.4108893632396036e-12,
+          -1.019371506693137e-11
+        ],
+        "moment_balance_error_Nmm": [
+          -5.397807612667581e-10,
+          -1.148698913766566e-10,
+          -9.9333874459262e-12
+        ]
+      },
+      "response": {
+        "max_displacement_mm": 0.0014451396968406867,
+        "max_von_mises_MPa": 0.5630597495579199,
+        "volume_weighted_p95_von_mises_MPa": 0.02828097007223265,
+        "volume_weighted_p99_von_mises_MPa": 0.12006495949424213,
+        "mean_von_mises_MPa": 0.0049361783661328205,
+        "max_stress_location_mm": [
+          -21.163684395295224,
+          58.593611095389214,
+          10.795549103177738
+        ],
+        "raw_peak_warning": "Raw integration-point peaks near sharp/reentrant corners and ideal clamps may be singular; no failure or release force is inferred.",
+        "regions": {
+          "neck": {
+            "volume_mm3": 247.3549209540243,
+            "max_von_mises_MPa": 0.0013874482645138781,
+            "p95_MPa": 0.00022617739286999867,
+            "p99_MPa": 0.00041898685071663894
+          },
+          "minimum_D8_neck": {
+            "volume_mm3": 50.43763009442883,
+            "max_von_mises_MPa": 0.00022417755292655076,
+            "p95_MPa": 0.0001069990703772651,
+            "p99_MPa": 0.00013512703941887997
+          },
+          "moving_tether_lug": {
+            "volume_mm3": 122.88745937153317,
+            "max_von_mises_MPa": 0.5630597495579199,
+            "p95_MPa": 0.21061422587620945,
+            "p99_MPa": 0.3560153721746562
+          },
+          "lug_thin_outer_edge": {
+            "volume_mm3": 15.67424437767766,
+            "max_von_mises_MPa": 0.41585826958643307,
+            "p95_MPa": 0.23793060336311989,
+            "p99_MPa": 0.32920074049555814
+          },
+          "lug_root": {
+            "volume_mm3": 35.09747953889705,
+            "max_von_mises_MPa": 0.18898019548431216,
+            "p95_MPa": 0.12060519333174383,
+            "p99_MPa": 0.15056568938942497
+          },
+          "latch_beam": {
+            "volume_mm3": 193.6051063906496,
+            "max_von_mises_MPa": 4.497650335221214e-05,
+            "p95_MPa": 1.3897182831723895e-07,
+            "p99_MPa": 1.5235132886071628e-06
+          },
+          "studs": {
+            "volume_mm3": 221.40172441806132,
+            "max_von_mises_MPa": 0.49969676011146086,
+            "p95_MPa": 0.0008317233502578006,
+            "p99_MPa": 0.023010585639788122
+          }
+        }
+      }
+    }
+  },
+  "assembly": {
+    "assembly_seconds": 13.161408466000466,
+    "preconditioner_seconds": 2.955704197000159,
+    "free_dofs": 55464,
+    "fixed_dofs": 9162,
+    "K_nnz": 4678617
+  },
+  "generalized_compliance": {
+    "case_names": [
+      "tether_minusX_1N",
+      "tether_plusZ_1N",
+      "tether_minusZ_1N",
+      "tether_minusX_bearing_half_1N"
+    ],
+    "matrix": [
+      [
+        0.0003839272285882933,
+        0.00023898356232996014,
+        -0.00023898356232996014,
+        0.0005594028430483516
+      ],
+      [
+        0.0002389835623292768,
+        0.008550846870665268,
+        -0.008550846870665268,
+        0.00023496526895715455
+      ],
+      [
+        -0.0002389835623292768,
+        -0.008550846870665268,
+        0.008550846870665268,
+        -0.00023496526895715455
+      ],
+      [
+        0.0005594028430477427,
+        0.00023496526895819614,
+        -0.00023496526895819614,
+        0.0009331412408174075
+      ]
+    ],
+    "max_symmetry_error": 1.0415930271068241e-15
+  },
+  "complete": true
+}
