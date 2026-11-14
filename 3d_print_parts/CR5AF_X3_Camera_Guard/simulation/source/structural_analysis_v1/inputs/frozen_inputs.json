@@ -1,0 +1,32 @@
+{
+  "assembly_revision": "V2R1_reconstructed",
+  "assembly_step_sha256": "4ff69b7ea39653468c1949370bb3b173e500666c5146343548b2dc498fc4582f",
+  "assembly_manifest_sha256": "921adacbf737331cd045d41e7c2477f54a01bb1806446f50c9e8dd79d16ec72a",
+  "critical_inputs": [
+    {
+      "source_path": "recovery_v2/mount/01_Direct_Base.brep",
+      "analysis_copy": "inputs/01_Direct_Base.brep",
+      "bytes": 57377,
+      "sha256": "9dcf662a3aaa9255a787e54e102e2afc089d1f95c0fd694f5c75996adf7f22df"
+    },
+    {
+      "source_path": "recovery_v2/mount/02_Fuse_Cartridge_D8.brep",
+      "analysis_copy": "inputs/02_Fuse_Cartridge_D8.brep",
+      "bytes": 39746,
+      "sha256": "7856917e070c34f9ab04f5dc9718c8766f943a605d720650ff11424fd87cd6ca"
+    },
+    {
+      "source_path": "recovery_v2/mount/03_Cartridge_Retaining_Pin.brep",
+      "analysis_copy": "inputs/03_Cartridge_Retaining_Pin.brep",
+      "bytes": 13665,
+      "sha256": "ca6ec19d860b428681eed5b09e7b5715c12e760299a35d2acc0977f4f5494976"
+    },
+    {
+      "source_path": "recovery_v2/camera/04_Camera_Module_Short45_F.brep",
+      "analysis_copy": "inputs/04_Camera_Module_Short45_F.brep",
+      "bytes": 112098,
+      "sha256": "60ad2070bb2afdbc100a668c3bd0c13e970ca3707dcdc82e22a27777375d27a6"
+    }
+  ],
+  "source_cad_changed": false
+}
