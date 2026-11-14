@@ -1,0 +1,71 @@
+{
+  "excitation_amplitude_g": 0.1,
+  "damping_ratios_assumed": [
+    0.02,
+    0.05,
+    0.1
+  ],
+  "frequency_span_Hz": [
+    0,
+    335.94416646374754
+  ],
+  "retained_modes": 12,
+  "peaks": [
+    {
+      "input_axis": "X",
+      "assumed_damping_ratio": 0.02,
+      "frequency_Hz": 25.720633680673263,
+      "camera_CoG_peak_vector_displacement_mm": 0.6944962548158115
+    },
+    {
+      "input_axis": "Y",
+      "assumed_damping_ratio": 0.02,
+      "frequency_Hz": 12.672676250432405,
+      "camera_CoG_peak_vector_displacement_mm": 0.6499489373859973
+    },
+    {
+      "input_axis": "Z",
+      "assumed_damping_ratio": 0.02,
+      "frequency_Hz": 12.672676250432405,
+      "camera_CoG_peak_vector_displacement_mm": 2.6209430432789365
+    },
+    {
+      "input_axis": "X",
+      "assumed_damping_ratio": 0.05,
+      "frequency_Hz": 25.61574269286075,
+      "camera_CoG_peak_vector_displacement_mm": 0.27802841306296916
+    },
+    {
+      "input_axis": "Y",
+      "assumed_damping_ratio": 0.05,
+      "frequency_Hz": 12.672676250432405,
+      "camera_CoG_peak_vector_displacement_mm": 0.25998694542041356
+    },
+    {
+      "input_axis": "Z",
+      "assumed_damping_ratio": 0.05,
+      "frequency_Hz": 12.672676250432405,
+      "camera_CoG_peak_vector_displacement_mm": 1.048375361089379
+    },
+    {
+      "input_axis": "X",
+      "assumed_damping_ratio": 0.1,
+      "frequency_Hz": 25.405777588820907,
+      "camera_CoG_peak_vector_displacement_mm": 0.13959704687479257
+    },
+    {
+      "input_axis": "Y",
+      "assumed_damping_ratio": 0.1,
+      "frequency_Hz": 12.597906242390533,
+      "camera_CoG_peak_vector_displacement_mm": 0.13057488268019748
+    },
+    {
+      "input_axis": "Z",
+      "assumed_damping_ratio": 0.1,
+      "frequency_Hz": 12.597906242390533,
+      "camera_CoG_peak_vector_displacement_mm": 0.5263705672681787
+    }
+  ],
+  "interpretation": "Linear modal steady harmonic base/effective-acceleration sensitivity. Peak vector amplitude includes relative component phase. No measured excitation spectrum, damping, joint contact dynamics or transient impact is claimed.",
+  "truncation": "Frequency range is limited below the last resolved mode; omitted high modes/residual flexibility remain a limitation."
+}
