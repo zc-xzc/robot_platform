@@ -1,0 +1,6 @@
+{
+  "source": "<redacted-workspace-path>",
+  "source_sha256": "22af37d864e740790c8f768b38d84122aba32bb0779f922964a5f4bc488bfd81",
+  "scale": 3.0,
+  "basis": "Exact linear postprocessing of completed +Z total-effective-1g displacement and stress fields; no extra 1g added. No nonlinear or contact solution is implied."
+}
