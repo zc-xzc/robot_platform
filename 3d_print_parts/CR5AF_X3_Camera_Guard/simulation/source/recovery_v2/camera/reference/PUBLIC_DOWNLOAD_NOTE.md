@@ -1,0 +1,3 @@
+# External X3 reference model (not bundled)
+
+The analysis used a community reference STEP by OngXeno. It is intentionally excluded from this public archive because the exact CC Attribution license version was not independently confirmed. Download it from https://www.printables.com/model/361256-insta360-x3-reference-3d-model and follow the author attribution and license shown on the source page. Place the file at `analysis/recovery_v2/camera/reference/Insta360_X3_OngXeno_v6.step` before running the camera mesh-generation scripts. It is a community reference model, not an Insta360 manufacturing drawing or tolerance specification.

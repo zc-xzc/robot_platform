@@ -1,0 +1,213 @@
+{
+  "revision": "V2R1_RECOVERED_FROM_CONFIRMED_PARAMETERS",
+  "recovery_basis": "Recorded confirmed V2 geometry and coordinate summary; not a byte-identical recovered original",
+  "parameters": {
+    "camera_official_width": 46.0,
+    "camera_official_depth": 33.1,
+    "camera_official_height": 114.0,
+    "camera_translation_F": [
+      0.0,
+      72.0,
+      -15.0
+    ],
+    "pocket_width": 47.4,
+    "pocket_depth": 35.1,
+    "outer_width": 54.4,
+    "outer_depth": 43.1,
+    "tray_total_thickness": 8.0,
+    "screw_bearing_thickness": 2.0,
+    "rear_access_width": 44.0,
+    "rear_access_depth": 32.0,
+    "rear_access_corner_radius": 4.0,
+    "screw_clearance_diameter": 6.7,
+    "assumed_screw_underhead_length": 5.0,
+    "axial_contact_pad_thickness": 0.0,
+    "head_washer_thickness": 0.0,
+    "nominal_screw_projection": 3.0,
+    "foot_x": [
+      -14.0,
+      14.0
+    ],
+    "foot_y": [
+      39.0,
+      58.0
+    ],
+    "foot_z": [
+      13.0,
+      16.0
+    ],
+    "keyhole_centres_x": [
+      -8.0,
+      8.0
+    ],
+    "keyhole_entry_y": 44.0,
+    "keyhole_entry_diameter": 7.4,
+    "keyhole_slot_width": 4.2,
+    "keyhole_working_y": 50.0,
+    "side_pad_pocket_depth": 0.6,
+    "side_pad_free_thickness": 1.4,
+    "side_pad_target_compression": 0.1,
+    "side_pad_Cz": [
+      4.2,
+      7.2
+    ],
+    "side_pad_print_dimensions": [
+      13.4,
+      3.0,
+      1.4
+    ]
+  },
+  "camera_C_to_flange_F": [
+    [
+      -1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      -0.7071067811865476,
+      0.7071067811865476,
+      72.0
+    ],
+    [
+      0.0,
+      0.7071067811865476,
+      0.7071067811865476,
+      -15.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "module": {
+    "valid": true,
+    "solids": 1,
+    "volume_mm3": 28790.3251376937,
+    "bbox_mm": [
+      [
+        -27.200000000000003,
+        39.0,
+        -35.895005384062486
+      ],
+      [
+        27.200000000000006,
+        148.36753236814712,
+        80.45941546018392
+      ]
+    ],
+    "extents_mm": [
+      54.400000000000006,
+      109.36753236814712,
+      116.3544208442464
+    ]
+  },
+  "foot": {
+    "valid": true,
+    "solids": 1,
+    "volume_mm3": 1233.1452740652567,
+    "bbox_mm": [
+      [
+        -14.0,
+        39.0,
+        13.0
+      ],
+      [
+        14.0,
+        58.0,
+        16.0
+      ]
+    ],
+    "extents_mm": [
+      28.0,
+      19.0,
+      3.0
+    ]
+  },
+  "official_camera_envelope_overlap_volume_mm3": 0.0,
+  "recorded_V2_main_volume_mm3": 28790.325137693708,
+  "reconstructed_minus_recorded_main_volume_mm3": -7.275957614183426e-12,
+  "nominal_screw_stack": {
+    "camera_bottom_Cz": 0,
+    "underhead_seat_Cz": -2,
+    "underhead_length_mm": 5,
+    "hard_seat_thickness_mm": 2,
+    "axial_pad_mm": 0,
+    "head_washer_mm": 0,
+    "nominal_projection_mm": 3,
+    "allowed_camera_insertion_depth": "Unverified; physical measurement or official drawing required"
+  },
+  "camera_retention": "short camera screw; no camera spring latch",
+  "root_retention": "keyholes plus root cartridge mushroom studs and short latch supplied by root",
+  "caveats": [
+    "No physical fit/strength/torque/life validation",
+    "Bare-camera assumption; USB plug and lens accessory envelope unverified",
+    "Side pad compression is nominal only; low body curvature can leave a gap",
+    "Print pose requires removable supports under the recess and offset root features"
+  ],
+  "pads": [
+    {
+      "name": "L",
+      "C": {
+        "valid": true,
+        "solids": 1,
+        "volume_mm3": 56.280000000000086,
+        "bbox_mm": [
+          [
+            -24.3,
+            -6.7,
+            4.2
+          ],
+          [
+            -22.9,
+            6.7,
+            7.2
+          ]
+        ],
+        "extents_mm": [
+          1.4000000000000021,
+          13.4,
+          3.0
+        ]
+      },
+      "print_dimensions_mm": [
+        13.4,
+        3.0,
+        1.4
+      ]
+    },
+    {
+      "name": "R",
+      "C": {
+        "valid": true,
+        "solids": 1,
+        "volume_mm3": 56.280000000000086,
+        "bbox_mm": [
+          [
+            22.9,
+            -6.7,
+            4.2
+          ],
+          [
+            24.3,
+            6.7,
+            7.2
+          ]
+        ],
+        "extents_mm": [
+          1.4000000000000021,
+          13.4,
+          3.0
+        ]
+      },
+      "print_dimensions_mm": [
+        13.4,
+        3.0,
+        1.4
+      ]
+    }
+  ]
+}
