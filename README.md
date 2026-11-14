@@ -141,6 +141,7 @@ For control parameters, data columns, troubleshooting, and the complete command 
 | Asset set | Formats and contents | Status / notes |
 | --- | --- | --- |
 | [`avp_model`](3d_print_parts/avp_model/) | Latest spreadsheet BOM, illustrated full/mechanical installation guides, editable STEP assembly, assembly STL, and printable-part STL/STEP exports | Primary documented 2-DOF D415 + 2 × STS3032 assembly package |
+| [`CR5AF_X3_Camera_Guard`](3d_print_parts/CR5AF_X3_Camera_Guard/) | CR5AF end-effector camera guard, replaceable fuse / quick-release concept, structural analysis and reproducibility package | [Project guide](3d_print_parts/CR5AF_X3_Camera_Guard/README.md) · [Simulation summary](3d_print_parts/CR5AF_X3_Camera_Guard/simulation/DESIGN_VALIDATION_SUMMARY_EN.md) |
 | [`Active_Vision_platform_001`](3d_print_parts/Active_Vision_platform_001/) | STEP assembly, spreadsheet BOM, and compact installation guide | Alternate 2-DOF D415 gimbal package; nominal yaw ±90°, pitch ±60° |
 | [`Wheeled_robot_openarm`](3d_print_parts/Wheeled_robot_openarm/) | 39 indexed STL files covering active-vision mounts and hand/L6 connectors | Development archive with dated variants, tests, old designs, and explicitly abandoned concepts; no single production-ready “final” file is declared |
 | [`unitree_l6_joint`](3d_print_parts/unitree_l6_joint/) | STEP and STL adapter model | Unitree L6 integration adapter |

@@ -4,7 +4,7 @@
 
 > **状态：工程样机 / 分析版本。尚未取得安全认证，也未完成真实碰撞试验。**
 >
-> 本目录首批提交为文档与来源说明。当前完整 CAD 资料包含有第三方参考几何；在核清来源和再分发许可前，不公开上传这些第三方模型或混合装配文件。
+> 本仓库现已加入精选仿真资料：精简 Markdown 工程分析摘要、关键图、结果数据表、项目自有有限元源代码、冻结的自有 BREP 输入及复现说明。原始 28 页 PDF、完整内部归档、厂家 CAD 和第三方 X3 参考 STEP 不公开再分发。
 
 ## 设计目标
 
@@ -35,7 +35,7 @@
 - 实际打印材料性能、切片参数、螺钉预紧力、相机螺纹有效啮合、释放力和冲击响应均需实测。
 - 线性静力或谐响应模型不能替代非线性瞬态碰撞试验。
 
-请阅读 [VALIDATION_STATUS.md](VALIDATION_STATUS.md)，了解证据边界和建议验收步骤。
+请阅读 [VALIDATION_STATUS.md](VALIDATION_STATUS.md)，了解证据边界和建议验收步骤。仿真细节见 [simulation/](simulation/)，从[精简分析摘要](simulation/DESIGN_VALIDATION_SUMMARY_CN.md)和[复现说明](simulation/reproducibility/README_CN.md)开始。
 
 ## 计划目录结构
 
@@ -47,10 +47,14 @@ CR5AF_X3_Camera_Guard/
 ├── CAD/                 # 仅放来源和许可已核实的项目自有 CAD
 ├── drawings/            # 尺寸图和配合说明
 ├── BOM/                 # 紧固件及打印件 BOM
-├── simulation/          # 报告、脚本、输入快照和结果表
+├── simulation/          # 精简分析、关键图表、结果数据、有限元源码与复现说明
 ├── validation/          # 网格、干涉、试装和实物测试记录
 └── images/              # 项目自有渲染图和照片
 ```
+
+## 仿真与复现
+
+公开仿真资料采用精简 Markdown 分析摘要，不上传原始 28 页内部 PDF。公开内容包括精选应力/模态/响应图、关键 CSV/JSON、有限元源代码、冻结的项目自有 BREP 输入和复现命令。第三方参考 CAD 不随仓库分发，详见 `simulation/source/recovery_v2/camera/reference/`。
 
 ## 制造提示
 
