@@ -1,0 +1,30 @@
+<PARSED TEXT FOR SHEET: 1 / 1 TABS
+TAB NAME: simulation__source__structural_analysis_v1__final_plot_helpers__outputs__02_03_mesh_sensitivity_data.csv>
+index,part,level,case,axis,tetrahedra,displacement_dofs,quantity,response_value,raw_peak_von_mises_MPa,volume_weighted_p99_von_mises_MPa
+0,base,coarse,motor_FX_1N_at_z100,X,15261,84903,"Generalized compliance 2U/P^2 mm/N, P=1N",0.0174697987774451,0.2503771248132017,0.0887449107773754
+1,base,coarse,motor_FY_1N_at_z100,Y,15261,84903,"Generalized compliance 2U/P^2 mm/N, P=1N",0.0175188274901433,0.2782697159461045,0.0883513160560968
+2,base,coarse,motor_FZ_1N_at_z100,Z,15261,84903,"Generalized compliance 2U/P^2 mm/N, P=1N",0.0003111606202242,0.0308107789155411,0.0120672740902336
+3,base,medium,motor_FX_1N_at_z100,X,23847,128487,"Generalized compliance 2U/P^2 mm/N, P=1N",0.0177923303216588,0.2851473417065516,0.0888525628620928
+4,base,medium,motor_FY_1N_at_z100,Y,23847,128487,"Generalized compliance 2U/P^2 mm/N, P=1N",0.0177607284369999,0.2763704356281325,0.0891945399729906
+5,base,medium,motor_FZ_1N_at_z100,Z,23847,128487,"Generalized compliance 2U/P^2 mm/N, P=1N",0.0003172543225131,0.031353464243109,0.0120766204401272
+6,base,fine,motor_FX_1N_at_z100,X,52326,267279,"Generalized compliance 2U/P^2 mm/N, P=1N",0.0180316594964137,0.3187258951906169,0.0893715520278611
+7,base,fine,motor_FY_1N_at_z100,Y,52326,267279,"Generalized compliance 2U/P^2 mm/N, P=1N",0.0180145430396289,0.3197393496082072,0.0894460962422755
+8,base,fine,motor_FZ_1N_at_z100,Z,52326,267279,"Generalized compliance 2U/P^2 mm/N, P=1N",0.0003214461390347,0.0416116189426991,0.0120451053238081
+9,cartridge,coarse,cameraCoG_FX_1N,X,11884,64626,"Generalized compliance 2U/P^2 mm/N, P=1N",0.0657293435884858,2.011982943023169,0.9091172041110788
+10,cartridge,coarse,cameraCoG_FY_1N,Y,11884,64626,"Generalized compliance 2U/P^2 mm/N, P=1N",0.0055923817036346,0.5419384004384872,0.1751314629210559
+11,cartridge,coarse,cameraCoG_FZ_1N,Z,11884,64626,"Generalized compliance 2U/P^2 mm/N, P=1N",0.0970100330609651,2.387445951353989,0.7499576543426838
+12,cartridge,medium,cameraCoG_FX_1N,X,26837,137481,"Generalized compliance 2U/P^2 mm/N, P=1N",0.0665779759662869,1.9974771944378955,0.912295879610085
+13,cartridge,medium,cameraCoG_FY_1N,Y,26837,137481,"Generalized compliance 2U/P^2 mm/N, P=1N",0.0056675553788108,0.6519377669979404,0.1756081887373277
+14,cartridge,medium,cameraCoG_FZ_1N,Z,26837,137481,"Generalized compliance 2U/P^2 mm/N, P=1N",0.0981825975737236,2.5727455324816257,0.7431647246415899
+15,cartridge,fine,cameraCoG_FX_1N,X,68193,329091,"Generalized compliance 2U/P^2 mm/N, P=1N",0.0670285759406584,2.916699205050391,0.9124972376608884
+16,cartridge,fine,cameraCoG_FY_1N,Y,68193,329091,"Generalized compliance 2U/P^2 mm/N, P=1N",0.0057096979157559,0.6360553440695094,0.1751287715979688
+17,cartridge,fine,cameraCoG_FZ_1N,Z,68193,329091,"Generalized compliance 2U/P^2 mm/N, P=1N",0.0986787204320238,2.79273942007736,0.7445165935745058
+18,camera,coarse,camera_CoG_plusX_total1g,X,14050,83667,Camera CoG translation magnitude mm at total 1g,0.2798968341537357,3.254040689211508,0.6581145378924378
+19,camera,coarse,camera_CoG_plusY_total1g,Y,14050,83667,Camera CoG translation magnitude mm at total 1g,0.2677659680512209,1.5054104487183089,0.4889306708910796
+20,camera,coarse,camera_CoG_plusZ_total1g,Z,14050,83667,Camera CoG translation magnitude mm at total 1g,1.0478952364573442,7.777971287065741,1.7876663398493406
+21,camera,medium,camera_CoG_plusX_total1g,X,25258,144804,Camera CoG translation magnitude mm at total 1g,0.2853336341315842,3.2757712383278106,0.6674403010771364
+22,camera,medium,camera_CoG_plusY_total1g,Y,25258,144804,Camera CoG translation magnitude mm at total 1g,0.2736188875425165,1.7196950137060416,0.4962797610880898
+23,camera,medium,camera_CoG_plusZ_total1g,Z,25258,144804,Camera CoG translation magnitude mm at total 1g,1.074716211605318,7.860268872008064,1.838617863658788
+24,camera,fine,camera_CoG_plusX_total1g,X,45630,248673,Camera CoG translation magnitude mm at total 1g,0.2874938110202082,3.7653648173164576,0.6719715590240457
+25,camera,fine,camera_CoG_plusY_total1g,Y,45630,248673,Camera CoG translation magnitude mm at total 1g,0.2756140449031488,1.7757420995580944,0.4964073948206738
+26,camera,fine,camera_CoG_plusZ_total1g,Z,45630,248673,Camera CoG translation magnitude mm at total 1g,1.0837634909572742,9.035968049986684,1.8296264883419504
