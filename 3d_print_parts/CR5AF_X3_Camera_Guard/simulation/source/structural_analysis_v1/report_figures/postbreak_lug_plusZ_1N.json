@@ -1,0 +1,10 @@
+{
+  "source_vtu": "structural_analysis_v1/mount_fea/cartridge_postbreak/medium/tether_plusZ_1N.vtu",
+  "quantity": "stress",
+  "surface_triangles": 39704,
+  "surface_numeric_max": 1.1942731047764075,
+  "color_scale_max": 0.6925249525682529,
+  "color_scale_percentile": 99.5,
+  "deformation_scale": 0.0,
+  "note": "Stress is element averaged and is not the raw integration-point peak reported in JSON."
+}
