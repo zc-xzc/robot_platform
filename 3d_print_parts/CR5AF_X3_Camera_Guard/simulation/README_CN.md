@@ -2,16 +2,18 @@
 
 **报告标识：SA-V1｜几何版本：V2R1｜分析日期：2026-11-12**
 
-本目录发布项目自有有限元计算源代码、冻结 BREP 输入、关键结果数据和精选分析图。**不上传原始 28 页 PDF、完整报告文本提取或完整内部归档。** 公开摘要见 [DESIGN_VALIDATION_SUMMARY_CN.md](DESIGN_VALIDATION_SUMMARY_CN.md)。
+本目录发布项目自有有限元计算源代码、冻结 BREP 输入、精选结果数据和少量工程图。**不上传原始 28 页 PDF、完整报告文本提取或完整内部归档。** 公开摘要见 [DESIGN_VALIDATION_SUMMARY_CN.md](DESIGN_VALIDATION_SUMMARY_CN.md)。
 
 ## 目录
 
 - `DESIGN_VALIDATION_SUMMARY_CN.md` / `DESIGN_VALIDATION_SUMMARY_EN.md`：精简技术分析摘要，不是原报告全文。
-- `data/`：关键结果、网格等级、模态/谐响应及敏感性 CSV。
-- `figures/`：静力云图、模态图、FRF、网格敏感性、螺钉预紧和防坠能量分析。
-- `source/structural_analysis_v1/`：有限元源代码、结果 JSON/CSV、冻结自有 BREP、依赖与验证记录。
+- `data/`：精选关键结果、网格等级、相机模态/谐响应 CSV。
+- `figures/fea/`：静力应力云图和模态形态图；`figures/assembly/` 包含相机螺钉与背槽示意图。
+- `source/structural_analysis_v1/`：有限元源代码、部分验证记录、冻结自有 BREP、依赖与运行环境。
 - `source/recovery_v2/`：复算所需的项目自有 BREP 及 X3 外部参考模型来源说明。
 - `reproducibility/README_CN.md`：复算环境、命令和边界条件。
+
+部分大型原始 JSON/CSV 场数据和矢量图未纳入公开版本，因为文本提取流程无法可靠保留其原始字节。公开结果以精选 CSV 和 Markdown 摘要为准；完整原始数据仍保留在私有工程归档中。
 
 ## 关键限制
 
@@ -28,4 +30,4 @@
 
 ## 复现
 
-先阅读 [复现说明](reproducibility/README_CN.md) 和 [原始工程方法说明](source/structural_analysis_v1/delivery_meta/README_zh.md)。大型稀疏求解按部件顺序串行执行。结果状态以 `camera_fea/scope_completion.json` 和各 `results.json` 为准；命令是复算入口，不代表每个可选工况都已经完成。
+先阅读 [复现说明](reproducibility/README_CN.md) 和 [原始工程方法说明](source/structural_analysis_v1/delivery_meta/README_zh.md)。大型稀疏求解按部件顺序串行执行。结果状态以 `camera_fea/scope_completion.json` 和各结果 JSON 为准；命令是复算入口，不代表每个可选工况都已经完成。

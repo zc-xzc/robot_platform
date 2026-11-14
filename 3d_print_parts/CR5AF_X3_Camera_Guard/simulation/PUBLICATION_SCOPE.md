@@ -1,23 +1,23 @@
 # Public release scope and provenance
 
-## Included in this repository update
+## Included
 
-- Project-authored finite-element core and component analysis scripts.
-- Four frozen project-owned BREP input solids (direct base, D8 cartridge, retaining pin, short 45-degree camera frame), with recorded source hashes.
-- Selected result JSON/CSV, mesh metadata, method validation records and runtime requirements.
-- Selected finite-element cloudplots and vector plots for modal/FRF, mesh sensitivity, fastener sensitivity, tether energy and interface clearance.
-- A concise Markdown engineering summary and reproduction notes.
+- Project-authored FEM source modules and component analysis scripts.
+- Four frozen project-owned BREP input solids (direct base, D8 cartridge, retaining pin, short 45-degree camera frame).
+- Selected small validation records, runtime requirements, curated result CSVs and concise Markdown analysis summaries.
+- Selected raster FEA renders and the camera screw/recess assembly illustration.
 
 ## Deliberately excluded
 
 - The original 28-page SA-V1 PDF and its full text extraction.
-- The full internal simulation archive, report-data snapshot, packaging logs, temporary checkpoints, raw full-field VTU/NPZ caches and nonessential intermediate logs.
+- The full internal simulation archive, large raw result snapshots, packaging logs, temporary checkpoints and full-field VTU/NPZ caches.
+- Large extracted JSON/CSV result files and SVG plots that could not be byte-preserved reliably through the text-export route; the public CSV tables are curated summaries, not substitutes for those raw fields.
 - The Insta360 X3 community STEP by OngXeno. The original listing indicated Creative Commons Attribution, but the exact license version was not independently confirmed; the STEP is therefore not redistributed. See `simulation/source/recovery_v2/camera/reference/PROVENANCE_AND_LIMITS.md`.
 - Manufacturer robot, actuator and camera CAD, and manufacturer PDF manuals.
 
 ## Integrity and privacy
 
-The four project-owned BREP inputs are retained unchanged and checked against `frozen_inputs.json`. Machine-specific workspace prefixes and nonessential local caches are not published. A text scan of the source archive did not identify obvious user home paths or credentials; this is not a substitute for the maintainer's own final review.
+The four project-owned BREP inputs are retained as frozen geometry. Machine-specific workspace prefixes and nonessential local caches are not published. A text scan of the source archive did not identify obvious user home paths or credentials; this is not a substitute for the maintainer's own final review.
 
 ## Evidence boundary
 
