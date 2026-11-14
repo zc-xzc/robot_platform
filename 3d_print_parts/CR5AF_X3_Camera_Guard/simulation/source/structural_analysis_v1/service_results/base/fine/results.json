@@ -1,0 +1,528 @@
+{
+  "part": "base",
+  "mesh_level": "fine",
+  "source_sha256": "9dcf662a3aaa9255a787e54e102e2afc089d1f95c0fd694f5c75996adf7f22df",
+  "mesh_info": {
+    "tetrahedra": 52326,
+    "geometry_nodes": 89093,
+    "displacement_dofs": 267279,
+    "integration_order": 5,
+    "integration_points": 14,
+    "volume_mm3": 53484.7826773856,
+    "folded_elements": 0,
+    "min_abs_mapping_determinant": 0.08628219761415465,
+    "E_MPa": 2000.0,
+    "nu": 0.35,
+    "density_tonne_per_mm3": 1.24e-09,
+    "mass_kg": 0.06632113051995814,
+    "length_unit": "mm",
+    "force_unit": "N",
+    "stress_unit": "MPa=N/mm2",
+    "time_unit": "s"
+  },
+  "material_assumptions": {
+    "E_MPa": 2000,
+    "nu": 0.35,
+    "density_tonne_per_mm3": 1.24e-09,
+    "material": "Hypothetical homogeneous isotropic linear elastic print baseline, not measured PETG properties",
+    "fixed_support": "Rigidly fixed all three translations on bottom z=0 annular pad facets whose centroids are within radius6mm of the four PCD50 M6 axes. All other mounting surfaces are free. No bolt preload/contact/friction.",
+    "small_displacement": true,
+    "load_type": "Static consistent surface traction; unit resultant/wrench",
+    "contact_limitations": "No contact opening, gaps, plasticity, fatigue, creep, fracture or collision release simulation"
+  },
+  "load_definition": {
+    "g_m_s2": 9.80665,
+    "effective_acceleration_definition": "Each X/Y/Z case has total effective acceleration 1g or 3g along that axis, including gravity. The three axes are separate cases, not simultaneous 3g each.",
+    "motor_gripper_object_branch_mass_kg_assumed": 2.0,
+    "motor_branch_CoG_F_mm_assumed": [
+      0,
+      0,
+      100
+    ],
+    "camera_mass_kg": 0.18,
+    "camera_CoG_F_mm_assumed": [
+      0.0,
+      112.3050865276,
+      25.3050865276
+    ],
+    "camera_and_frame_mass_kg": 0.21570000317074017,
+    "camera_and_frame_CoG_F_mm": [
+      2.509648764662971e-16,
+      107.31977292803235,
+      21.24670250857536
+    ],
+    "total_camera_side_mass_kg": 0.22038860942774136,
+    "total_camera_side_CoG_F_mm": [
+      -0.0570866540833769,
+      106.06918816017834,
+      20.97170155863935
+    ],
+    "additional_note": "Printed geometry is assumed fully dense at 1.24g/cm3; camera CoG is a uniform-envelope assumption, not measured."
+  },
+  "q_camera_1g_columns_XYZ": [
+    [
+      0.02210523888082956,
+      -0.004453179912432467,
+      0.016523900129111212
+    ],
+    [
+      -0.004426849587685617,
+      0.05147229888942536,
+      -0.1910145494446886
+    ],
+    [
+      0.014611151121875537,
+      -0.1566903369259765,
+      0.5971520144693171
+    ],
+    [
+      0.00020656549469586966,
+      -0.0021946928842710703,
+      0.008236287315939731
+    ],
+    [
+      0.00044032821542186663,
+      -0.0003734822632471018,
+      0.0012752964324769668
+    ],
+    [
+      -0.00015279688340453682,
+      -7.219694191395642e-05,
+      0.000226406681098056
+    ]
+  ],
+  "q_definition": "First 3 rows: work-conjugate virtual camera CoG displacement in mm; last 3 rows: rotation in radians. This part contribution only, using the equivalent interface load distributor.",
+  "cases": {
+    "plusX_3g": {
+      "max_displacement_mm": 0.5112684139112865,
+      "max_von_mises_MPa": 18.75286438239266,
+      "volume_weighted_p95_von_mises_MPa": 3.1352199421036704,
+      "volume_weighted_p99_von_mises_MPa": 5.259590118550125,
+      "mean_von_mises_MPa": 0.9042625404285846,
+      "max_stress_location_mm": [
+        11.929655485852315,
+        1.2974282210873005,
+        22.0
+      ],
+      "raw_peak_warning": "Raw integration-point peaks near sharp/reentrant corners and ideal clamps may be singular; no failure or release force is inferred.",
+      "regions": {
+        "central_post": {
+          "volume_mm3": 5425.365723473135,
+          "max_von_mises_MPa": 18.75286438239266,
+          "p95_MPa": 3.958095046889578,
+          "p99_MPa": 5.911256967906893
+        },
+        "motor_platform": {
+          "volume_mm3": 9355.851665611644,
+          "max_von_mises_MPa": 18.75286438239266,
+          "p95_MPa": 5.107111450134579,
+          "p99_MPa": 7.043475591500898
+        },
+        "receiver": {
+          "volume_mm3": 3563.1934643263708,
+          "max_von_mises_MPa": 2.4418539439305094,
+          "p95_MPa": 0.7383174806933404,
+          "p99_MPa": 1.1191345925522311
+        }
+      },
+      "max_principal_tension_MPa": 23.650470559695922,
+      "most_compressive_principal_MPa": -25.29242700561594,
+      "p99_positive_principal_MPa": 4.757285340233577,
+      "camera_virtual_translation_mm": [
+        0.06631571664248868,
+        -0.013280548763056852,
+        0.04383345336562661
+      ],
+      "camera_virtual_rotation_rad": [
+        0.000619696484087609,
+        0.0013209846462656,
+        -0.00045839065021361047
+      ],
+      "strain_energy_Nmm": 31.430171844080707
+    },
+    "plusY_3g": {
+      "max_displacement_mm": 0.5106472495849195,
+      "max_von_mises_MPa": 18.811522613405458,
+      "volume_weighted_p95_von_mises_MPa": 3.140184220473582,
+      "volume_weighted_p99_von_mises_MPa": 5.263137802080858,
+      "mean_von_mises_MPa": 0.9078370636745627,
+      "max_stress_location_mm": [
+        1.941383958633173,
+        -11.841918270498315,
+        22.0
+      ],
+      "raw_peak_warning": "Raw integration-point peaks near sharp/reentrant corners and ideal clamps may be singular; no failure or release force is inferred.",
+      "regions": {
+        "central_post": {
+          "volume_mm3": 5425.365723473135,
+          "max_von_mises_MPa": 18.811522613405458,
+          "p95_MPa": 3.9489334625955923,
+          "p99_MPa": 5.960683943124057
+        },
+        "motor_platform": {
+          "volume_mm3": 9355.851665611644,
+          "max_von_mises_MPa": 18.811522613405458,
+          "p95_MPa": 5.108235451012189,
+          "p99_MPa": 7.0340428682187985
+        },
+        "receiver": {
+          "volume_mm3": 3563.1934643263708,
+          "max_von_mises_MPa": 3.932644073682658,
+          "p95_MPa": 1.3350421060518673,
+          "p99_MPa": 2.1236031634718304
+        }
+      },
+      "max_principal_tension_MPa": 32.336902391395974,
+      "most_compressive_principal_MPa": -25.386290825516646,
+      "p99_positive_principal_MPa": 4.766332752566022,
+      "camera_virtual_translation_mm": [
+        -0.0133595397372974,
+        0.15441689666827607,
+        -0.4700710107779295
+      ],
+      "camera_virtual_rotation_rad": [
+        -0.006584078652813211,
+        -0.0011204467897413055,
+        -0.00021659082574186926
+      ],
+      "strain_energy_Nmm": 31.599541152380237
+    },
+    "plusZ_3g": {
+      "max_displacement_mm": 0.6555987246093503,
+      "max_von_mises_MPa": 13.302085607986015,
+      "volume_weighted_p95_von_mises_MPa": 1.0210602023238773,
+      "volume_weighted_p99_von_mises_MPa": 2.935844110770352,
+      "mean_von_mises_MPa": 0.30567769136891054,
+      "max_stress_location_mm": [
+        -15.68144077670609,
+        41.037009161575185,
+        0.0
+      ],
+      "raw_peak_warning": "Raw integration-point peaks near sharp/reentrant corners and ideal clamps may be singular; no failure or release force is inferred.",
+      "regions": {
+        "central_post": {
+          "volume_mm3": 5425.365723473135,
+          "max_von_mises_MPa": 2.0840441397811085,
+          "p95_MPa": 0.4048697886868316,
+          "p99_MPa": 0.7212028916826473
+        },
+        "motor_platform": {
+          "volume_mm3": 9355.851665611644,
+          "max_von_mises_MPa": 2.0840441397811085,
+          "p95_MPa": 0.7066871163203706,
+          "p99_MPa": 0.9078309295455981
+        },
+        "receiver": {
+          "volume_mm3": 3563.1934643263708,
+          "max_von_mises_MPa": 13.302085607986015,
+          "p95_MPa": 4.510723372009133,
+          "p99_MPa": 7.223177769734252
+        }
+      },
+      "max_principal_tension_MPa": 14.894363813273717,
+      "most_compressive_principal_MPa": -17.98815324241176,
+      "p99_positive_principal_MPa": 1.9007716398248513,
+      "camera_virtual_translation_mm": [
+        0.049571700387333634,
+        -0.5730436483340657,
+        1.7914560434079512
+      ],
+      "camera_virtual_rotation_rad": [
+        0.024708861947819193,
+        0.0038258892974309,
+        0.0006792200432941681
+      ],
+      "strain_energy_Nmm": 5.864572372986997
+    }
+  },
+  "motor_branch_mass_sweep": [
+    {
+      "motor_branch_mass_kg": 0.5,
+      "acceleration_g": 1.0,
+      "axis": "X",
+      "max_displacement_mm": 0.042638545892686765,
+      "camera_virtual_translation_mm": [
+        0.02280996338371973,
+        -0.0041734599094093135,
+        0.013867035609273217
+      ],
+      "strain_energy_Nmm": 0.23896749668682835
+    },
+    {
+      "motor_branch_mass_kg": 0.5,
+      "acceleration_g": 1.0,
+      "axis": "Y",
+      "max_displacement_mm": 0.06250583274323253,
+      "camera_virtual_translation_mm": [
+        -0.004397817066604557,
+        0.05424635693325747,
+        -0.16693356784964536
+      ],
+      "strain_energy_Nmm": 0.26455245940584793
+    },
+    {
+      "motor_branch_mass_kg": 0.5,
+      "acceleration_g": 1.0,
+      "axis": "Z",
+      "max_displacement_mm": 0.21905692960367368,
+      "camera_virtual_translation_mm": [
+        0.01652363435543566,
+        -0.19142164028101566,
+        0.598737751348311
+      ],
+      "strain_energy_Nmm": 0.5961743696493348
+    },
+    {
+      "motor_branch_mass_kg": 0.5,
+      "acceleration_g": 3.0,
+      "axis": "X",
+      "max_displacement_mm": 0.12791563767806027,
+      "camera_virtual_translation_mm": [
+        0.06842989015115919,
+        -0.012520379728227943,
+        0.04160110682781965
+      ],
+      "strain_energy_Nmm": 2.150707470181455
+    },
+    {
+      "motor_branch_mass_kg": 0.5,
+      "acceleration_g": 3.0,
+      "axis": "Y",
+      "max_displacement_mm": 0.1875174982296976,
+      "camera_virtual_translation_mm": [
+        -0.01319345119981367,
+        0.1627390707997724,
+        -0.5008007035489361
+      ],
+      "strain_energy_Nmm": 2.3809721346526316
+    },
+    {
+      "motor_branch_mass_kg": 0.5,
+      "acceleration_g": 3.0,
+      "axis": "Z",
+      "max_displacement_mm": 0.6571707888110212,
+      "camera_virtual_translation_mm": [
+        0.04957090306630699,
+        -0.5742649208430469,
+        1.7962132540449327
+      ],
+      "strain_energy_Nmm": 5.365569326844014
+    },
+    {
+      "motor_branch_mass_kg": 1.0,
+      "acceleration_g": 1.0,
+      "axis": "X",
+      "max_displacement_mm": 0.08523329502561355,
+      "camera_virtual_translation_mm": [
+        0.02257505521608967,
+        -0.004257923135501415,
+        0.01411507411347399
+      ],
+      "strain_energy_Nmm": 0.8898641976426912
+    },
+    {
+      "motor_branch_mass_kg": 1.0,
+      "acceleration_g": 1.0,
+      "axis": "Y",
+      "max_displacement_mm": 0.08505307488762598,
+      "camera_virtual_translation_mm": [
+        -0.004416271348547193,
+        0.053321670918646764,
+        -0.16351915754175575
+      ],
+      "strain_energy_Nmm": 0.9136053008561781
+    },
+    {
+      "motor_branch_mass_kg": 1.0,
+      "acceleration_g": 1.0,
+      "axis": "Z",
+      "max_displacement_mm": 0.2188822467388226,
+      "camera_virtual_translation_mm": [
+        0.016523722946660845,
+        -0.1912859433355733,
+        0.5982091723886463
+      ],
+      "strain_energy_Nmm": 0.6069275642764729
+    },
+    {
+      "motor_branch_mass_kg": 1.0,
+      "acceleration_g": 3.0,
+      "axis": "X",
+      "max_displacement_mm": 0.25569988507684066,
+      "camera_virtual_translation_mm": [
+        0.06772516564826903,
+        -0.012773769406504246,
+        0.04234522234042198
+      ],
+      "strain_energy_Nmm": 8.00877777878422
+    },
+    {
+      "motor_branch_mass_kg": 1.0,
+      "acceleration_g": 3.0,
+      "axis": "Y",
+      "max_displacement_mm": 0.25515922466287794,
+      "camera_virtual_translation_mm": [
+        -0.013248814045641578,
+        0.15996501275594027,
+        -0.49055747262526733
+      ],
+      "strain_energy_Nmm": 8.222447707705603
+    },
+    {
+      "motor_branch_mass_kg": 1.0,
+      "acceleration_g": 3.0,
+      "axis": "Z",
+      "max_displacement_mm": 0.6566467402164679,
+      "camera_virtual_translation_mm": [
+        0.04957116883998254,
+        -0.5738578300067199,
+        1.794627517165939
+      ],
+      "strain_energy_Nmm": 5.462348078488256
+    },
+    {
+      "motor_branch_mass_kg": 2.0,
+      "acceleration_g": 1.0,
+      "axis": "X",
+      "max_displacement_mm": 0.1704228046370955,
+      "camera_virtual_translation_mm": [
+        0.022105238880829558,
+        -0.004426849587685618,
+        0.014611151121875537
+      ],
+      "strain_energy_Nmm": 3.4922413160089683
+    },
+    {
+      "motor_branch_mass_kg": 2.0,
+      "acceleration_g": 1.0,
+      "axis": "Y",
+      "max_displacement_mm": 0.17021574986163984,
+      "camera_virtual_translation_mm": [
+        -0.004453179912432467,
+        0.05147229888942536,
+        -0.1566903369259765
+      ],
+      "strain_energy_Nmm": 3.511060128042248
+    },
+    {
+      "motor_branch_mass_kg": 2.0,
+      "acceleration_g": 1.0,
+      "axis": "Z",
+      "max_displacement_mm": 0.21853290820311672,
+      "camera_virtual_translation_mm": [
+        0.016523900129111212,
+        -0.1910145494446886,
+        0.5971520144693172
+      ],
+      "strain_energy_Nmm": 0.6516191525541106
+    },
+    {
+      "motor_branch_mass_kg": 2.0,
+      "acceleration_g": 3.0,
+      "axis": "X",
+      "max_displacement_mm": 0.5112684139112864,
+      "camera_virtual_translation_mm": [
+        0.06631571664248868,
+        -0.013280548763056855,
+        0.043833453365626614
+      ],
+      "strain_energy_Nmm": 31.430171844080707
+    },
+    {
+      "motor_branch_mass_kg": 2.0,
+      "acceleration_g": 3.0,
+      "axis": "Y",
+      "max_displacement_mm": 0.5106472495849195,
+      "camera_virtual_translation_mm": [
+        -0.013359539737297399,
+        0.15441689666827607,
+        -0.4700710107779296
+      ],
+      "strain_energy_Nmm": 31.599541152380237
+    },
+    {
+      "motor_branch_mass_kg": 2.0,
+      "acceleration_g": 3.0,
+      "axis": "Z",
+      "max_displacement_mm": 0.6555987246093503,
+      "camera_virtual_translation_mm": [
+        0.04957170038733365,
+        -0.5730436483340657,
+        1.7914560434079514
+      ],
+      "strain_energy_Nmm": 5.864572372986997
+    },
+    {
+      "motor_branch_mass_kg": 3.0,
+      "acceleration_g": 1.0,
+      "axis": "X",
+      "max_displacement_mm": 0.25561231677198776,
+      "camera_virtual_translation_mm": [
+        0.021635422545569445,
+        -0.00459577603986982,
+        0.015107228130277085
+      ],
+      "strain_energy_Nmm": 7.828730056314649
+    },
+    {
+      "motor_branch_mass_kg": 3.0,
+      "acceleration_g": 1.0,
+      "axis": "Y",
+      "max_displacement_mm": 0.2553784331383692,
+      "camera_virtual_translation_mm": [
+        -0.00449008847631774,
+        0.04962292686020395,
+        -0.14986151631019726
+      ],
+      "strain_energy_Nmm": 7.840980480942197
+    },
+    {
+      "motor_branch_mass_kg": 3.0,
+      "acceleration_g": 1.0,
+      "axis": "Z",
+      "max_displacement_mm": 0.21818360607120701,
+      "camera_virtual_translation_mm": [
+        0.01652407731156158,
+        -0.1907431555538039,
+        0.5960948565499881
+      ],
+      "strain_energy_Nmm": 0.7272243395295639
+    },
+    {
+      "motor_branch_mass_kg": 3.0,
+      "acceleration_g": 3.0,
+      "axis": "X",
+      "max_displacement_mm": 0.7668369503159632,
+      "camera_virtual_translation_mm": [
+        0.06490626763670834,
+        -0.013787328119609464,
+        0.04532168439083125
+      ],
+      "strain_energy_Nmm": 70.45857050683182
+    },
+    {
+      "motor_branch_mass_kg": 3.0,
+      "acceleration_g": 3.0,
+      "axis": "Y",
+      "max_displacement_mm": 0.7661352994151076,
+      "camera_virtual_translation_mm": [
+        -0.013470265428953219,
+        0.14886878058061184,
+        -0.4495845489305919
+      ],
+      "strain_energy_Nmm": 70.56882432847978
+    },
+    {
+      "motor_branch_mass_kg": 3.0,
+      "acceleration_g": 3.0,
+      "axis": "Z",
+      "max_displacement_mm": 0.6545508182136213,
+      "camera_virtual_translation_mm": [
+        0.049572231934684755,
+        -0.5722294666614116,
+        1.7882845696499639
+      ],
+      "strain_energy_Nmm": 6.545019055766074
+    }
+  ]
+}
