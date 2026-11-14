@@ -1,0 +1,15 @@
+{
+  "source": "<redacted-workspace-path>",
+  "source_sha256": "ca6ec19d860b428681eed5b09e7b5715c12e760299a35d2acc0977f4f5494976",
+  "mesh": "<redacted-workspace-path>",
+  "mesh_sha256": "be43e2e31942294642145bf9d898fc4cf3318c19e177d327747d4690c7303b96",
+  "hmax_mm": 1.2,
+  "hmin_mm": 0.42,
+  "curvature_segments": 16,
+  "refinement_boxes": [],
+  "cad_volume_mm3": 176.00254028227795,
+  "element_type_counts": {
+    "11": 2075
+  },
+  "meshing_seconds": 0.1103864849992533
+}
