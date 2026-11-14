@@ -1,0 +1,19 @@
+{
+  "gravity_m_s2": 9.80665,
+  "energy_at_engagement": "E0=m*g*h+0.5*m*v0^2",
+  "average_net_retarding_force": "E0/s",
+  "average_tether_tension_for_vertical_downward_stop": "E0/s+m*g",
+  "ideal_zero_initial_tension_linear_spring_peak": "2*(E0/s+m*g)",
+  "initial_velocity_definition": "v0 is speed before the slack drop; if supplied measured engagement velocity, use E0=0.5*m*v_engage^2 and do not also add m*g*h.",
+  "assumptions": [
+    "Point mass, all initial translation aligned with eventual tether extension; vertical gravity during drop and arrest.",
+    "Stopping distance is externally specified, not derived from cord stiffness, knot tightening or lug compliance.",
+    "No fracture energy, damping or rotational energy modeled; add 0.5*omega^T*I*omega for a validated rotating-body model.",
+    "Ideal linear-spring peak is one illustrative force history, not an upper bound or predicted real peak.",
+    "For a slanted/horizontal tether, project gravity/displacement and solve actual motion.",
+    "Rope route CAD is only a 1.5mm diameter envelope; no cord rating, slack, knot efficiency, stroke or catch validation exists."
+  ],
+  "nominal_lug_stress_model": "Shear-out screen tau=T/(2*e*t), shortest edge direction. No shear allowable available; cannot infer pass/fail from tensile strength.",
+  "model_type": "Algebraic energy and nominal-section sensitivity, not transient impact simulation",
+  "rows": 81
+}

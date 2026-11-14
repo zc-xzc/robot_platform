@@ -1,0 +1,938 @@
+{
+  "freeze_time_UTC": "2026-11-12T05:37:29.308878+00:00",
+  "source_revision": "V2R1_reconstructed",
+  "frame": "F: physical robot flange Z0; motor +Z",
+  "instance_count": 95,
+  "native_solids_from_manifest": 103,
+  "all_instance_hashes_match_manifest": true,
+  "instance_categories": {
+    "robot_purchased": 7,
+    "gripper_source": 56,
+    "custom_rigid": 4,
+    "compliant_pad": 2,
+    "camera_reference": 8,
+    "standard_fastener": 16,
+    "user_fastener_envelope": 1,
+    "soft_tether_reference": 1
+  },
+  "files": [
+    {
+      "file": "recovery_v2/deliverable/assembly_manifest.json",
+      "bytes": 84092,
+      "sha256": "921adacbf737331cd045d41e7c2477f54a01bb1806446f50c9e8dd79d16ec72a"
+    },
+    {
+      "file": "recovery_v2/deliverable/CR5AF_DM4310_X3_V2R1_COMPLETE.step",
+      "bytes": 61379698,
+      "sha256": "4ff69b7ea39653468c1949370bb3b173e500666c5146343548b2dc498fc4582f"
+    },
+    {
+      "file": "recovery_v2/deliverable/V2R1_END_EFFECTOR_COMPLETE_F_FRAME.step",
+      "bytes": 47139357,
+      "sha256": "5075e943f7665703981816f2e52ee9f84e2065cd62e3e7c06257e473cb06931f"
+    },
+    {
+      "file": "recovery_v2/deliverable/BOM.csv",
+      "bytes": 6172,
+      "sha256": "7231d9126fbc0ae4e4a61dbea5b717777f36534a2614a9f8ec15a63c0e401e5b"
+    },
+    {
+      "file": "recovery_v2/build_mount.py",
+      "bytes": 5834,
+      "sha256": "3271976fdf0cb392a089dd2979bf23d00a652bb96ea0f92d8f09a711c582fff2"
+    },
+    {
+      "file": "recovery_v2/camera/build_camera_module.py",
+      "bytes": 8069,
+      "sha256": "f8554157faca82437255baa72853d7b28a47f94e3c86fe21be7fccce601a54f2"
+    },
+    {
+      "file": "recovery_v2/assemble_complete.py",
+      "bytes": 10653,
+      "sha256": "d12e581cb9b9cca386c7be9eecbd916f410c9d6b8c109a834e490ba4e320f724"
+    },
+    {
+      "file": "recovery_v2/validation/export_readback.json",
+      "bytes": 60828,
+      "sha256": "19990f6d969ae7317292ee5ce2c16517e3ac585ad58f85e3c237a619a5d23bb9"
+    },
+    {
+      "file": "recovery_v2/validation/current_interfaces.json",
+      "bytes": 417642,
+      "sha256": "cf4f0e398943f6461ba7565b9d9721be463d22ab9cc9862ef923b9988b51bedc"
+    },
+    {
+      "file": "recovery_v2/validation/robot_pairs.json",
+      "bytes": 298941,
+      "sha256": "fcada33a1cffb2e3b4a15834b9d346fdc29634195a4b5a15dd3f44370d0de32b"
+    },
+    {
+      "file": "recovery_v2/validation/current_gripper_external_clearance.json",
+      "bytes": 188943,
+      "sha256": "313a115a00ef96fdce2deca51e77e44fb5ba77503a90f090dcd892936b8e2171"
+    },
+    {
+      "file": "recovery_v2/gripper/known_source_issues_HISTORICAL_NOT_RERUN.json",
+      "bytes": 2587,
+      "sha256": "7650ffa049d4f2790a6a435d7b6b8743afc3e18bfb5455b500a6da7e2fa213f9"
+    }
+  ],
+  "instances": [
+    {
+      "name": "R00_BASE_CR5AF",
+      "category": "robot_purchased",
+      "file": "recovery_v2/assembly_instances_brep/R00_BASE_CR5AF.brep",
+      "bytes": 1182603,
+      "sha256": "56a8cf7ccb135e4123a97db41ec36488ca3d095537bfeb9095f9ed7b4c608e9d",
+      "matches_manifest": true,
+      "native_solids_manifest": 1
+    },
+    {
+      "name": "R01_LINK1_CR5AF",
+      "category": "robot_purchased",
+      "file": "recovery_v2/assembly_instances_brep/R01_LINK1_CR5AF.brep",
+      "bytes": 714969,
+      "sha256": "8a66d377946fd984ac77a0e081370eccc570f87330e290eb32fdffebf8bd1faa",
+      "matches_manifest": true,
+      "native_solids_manifest": 1
+    },
+    {
+      "name": "R02_LINK2_CR5AF",
+      "category": "robot_purchased",
+      "file": "recovery_v2/assembly_instances_brep/R02_LINK2_CR5AF.brep",
+      "bytes": 1636646,
+      "sha256": "011ce8f36ad90523e6e2fb063172a1b0e5bdb981264d5e6b9b3b69e5e9415ef2",
+      "matches_manifest": true,
+      "native_solids_manifest": 1
+    },
+    {
+      "name": "R03_LINK3_CR5AF",
+      "category": "robot_purchased",
+      "file": "recovery_v2/assembly_instances_brep/R03_LINK3_CR5AF.brep",
+      "bytes": 716070,
+      "sha256": "cbb2ff990dba4e2da9a58b1d3e345264a3fefc7f5f8e18f4bcec56fb1c81b718",
+      "matches_manifest": true,
+      "native_solids_manifest": 1
+    },
+    {
+      "name": "R04_LINK4_CR5AF",
+      "category": "robot_purchased",
+      "file": "recovery_v2/assembly_instances_brep/R04_LINK4_CR5AF.brep",
+      "bytes": 428297,
+      "sha256": "363713cb27f44d2d5aad695d791bdbd119673cb88a982c139857ccf40c706663",
+      "matches_manifest": true,
+      "native_solids_manifest": 1
+    },
+    {
+      "name": "R05_LINK5_CR5AF",
+      "category": "robot_purchased",
+      "file": "recovery_v2/assembly_instances_brep/R05_LINK5_CR5AF.brep",
+      "bytes": 1477682,
+      "sha256": "0ea032fa7362e5c883eef2398640dd04b000dc3e03875bba6718586a6e233714",
+      "matches_manifest": true,
+      "native_solids_manifest": 1
+    },
+    {
+      "name": "R06_LINK6_CR5AF",
+      "category": "robot_purchased",
+      "file": "recovery_v2/assembly_instances_brep/R06_LINK6_CR5AF.brep",
+      "bytes": 554313,
+      "sha256": "66f4d29680b23e7ac008e7760b7c11c2b023bbf35bc27421b27be08b3b3b866f",
+      "matches_manifest": true,
+      "native_solids_manifest": 1
+    },
+    {
+      "name": "G_001_01_Joint6_7_Cable_Restraint_B_1",
+      "category": "gripper_source",
+      "file": "recovery_v2/assembly_instances_brep/G_001_01_Joint6_7_Cable_Restraint_B_1.brep",
+      "bytes": 226392,
+      "sha256": "b70206a8961057f76064e5c7f45cbbc0357dd92d1fa47c2d829b7605582010e4",
+      "matches_manifest": true,
+      "native_solids_manifest": 1
+    },
+    {
+      "name": "G_002_01_Joint6_7_Cable_Restraint_A_1",
+      "category": "gripper_source",
+      "file": "recovery_v2/assembly_instances_brep/G_002_01_Joint6_7_Cable_Restraint_A_1.brep",
+      "bytes": 501325,
+      "sha256": "7eaad4a24fe86a8bd0c74bbd542db54752e9555eb0b89f4b6a0f2a61f7ba9a02",
+      "matches_manifest": true,
+      "native_solids_manifest": 1
+    },
+    {
+      "name": "G_003_KA3_12_53",
+      "category": "gripper_source",
+      "file": "recovery_v2/assembly_instances_brep/G_003_KA3_12_53.brep",
+      "bytes": 16754,
+      "sha256": "7dd2740bb3a7d7642aef75f70e614ecc7577331d8948a5fa761f099db5f7a2e6",
+      "matches_manifest": true,
+      "native_solids_manifest": 1
+    },
+    {
+      "name": "G_004_KA3_12_54",
+      "category": "gripper_source",
+      "file": "recovery_v2/assembly_instances_brep/G_004_KA3_12_54.brep",
+      "bytes": 16753,
+      "sha256": "091f53de9bed01768fe32be0dd2891f83376e06f8ca83a27e60a5249a42a0f29",
+      "matches_manifest": true,
+      "native_solids_manifest": 1
+    },
+    {
+      "name": "G_005_KA3_12_55",
+      "category": "gripper_source",
+      "file": "recovery_v2/assembly_instances_brep/G_005_KA3_12_55.brep",
+      "bytes": 16726,
+      "sha256": "208aa35b9ffc555dee3479db24a1597480f25edde10198d079b3b09ee1268b41",
+      "matches_manifest": true,
+      "native_solids_manifest": 1
+    },
+    {
+      "name": "G_006_KA3_12_56",
+      "category": "gripper_source",
+      "file": "recovery_v2/assembly_instances_brep/G_006_KA3_12_56.brep",
+      "bytes": 16738,
+      "sha256": "354e15c221b911a0b0744297d65e0ca2afd2e7c7a0bde43cd2aefd15318cc5cc",
+      "matches_manifest": true,
+      "native_solids_manifest": 1
+    },
+    {
+      "name": "G_007_DM_J4310_3",
+      "category": "gripper_source",
+      "file": "recovery_v2/assembly_instances_brep/G_007_DM_J4310_3.brep",
+      "bytes": 15542517,
+      "sha256": "eeb1a3a3ca007816539736e1675bb8c468f0d2258402b0785fd680044a2244a9",
+      "matches_manifest": true,
+      "native_solids_manifest": 1
+    },
+    {
+      "name": "G_008_HM3_26_1",
+      "category": "gripper_source",
+      "file": "recovery_v2/assembly_instances_brep/G_008_HM3_26_1.brep",
+      "bytes": 10536,
+      "sha256": "3abefbcca97ad675a803e5a94063f082fa88ee74881bbf96624cf2ddab343861",
+      "matches_manifest": true,
+      "native_solids_manifest": 1
+    },
+    {
+      "name": "G_009_S_M4_5_JIMI_1",
+      "category": "gripper_source",
+      "file": "recovery_v2/assembly_instances_brep/G_009_S_M4_5_JIMI_1.brep",
+      "bytes": 11761,
+      "sha256": "bd024945f51911952e815b60457d2ffc2ef36f2144fa02c44ad774795989b216",
+      "matches_manifest": true,
+      "native_solids_manifest": 1
+    },
+    {
+      "name": "G_010_RAIL_170_1",
+      "category": "gripper_source",
+      "file": "recovery_v2/assembly_instances_brep/G_010_RAIL_170_1.brep",
+      "bytes": 43549,
+      "sha256": "2370504e4881576f5b415091762a57259d5dddca8dc8fc46faa65e570d8befba",
+      "matches_manifest": true,
+      "native_solids_manifest": 1
+    },
+    {
+      "name": "G_011_SLIDER_1",
+      "category": "gripper_source",
+      "file": "recovery_v2/assembly_instances_brep/G_011_SLIDER_1.brep",
+      "bytes": 3164073,
+      "sha256": "e174dccc50c334bdb982b3dbe896225363eec83e7cbf3adfc500cf68f2a00107",
+      "matches_manifest": true,
+      "native_solids_manifest": 5
+    },
+    {
+      "name": "G_012_GEAR_1M16C_1",
+      "category": "gripper_source",
+      "file": "recovery_v2/assembly_instances_brep/G_012_GEAR_1M16C_1.brep",
+      "bytes": 548441,
+      "sha256": "3f7872a8a68fd0f54fd367416a091359903068fe93dc63e9c78cd384984ccecf",
+      "matches_manifest": true,
+      "native_solids_manifest": 1
+    },
+    {
+      "name": "G_013_KM3_7_1",
+      "category": "gripper_source",
+      "file": "recovery_v2/assembly_instances_brep/G_013_KM3_7_1.brep",
+      "bytes": 12001,
+      "sha256": "ef55cca42d8ee524571603c87d184d40b5dd754418ee255eef482068d129de91",
+      "matches_manifest": true,
+      "native_solids_manifest": 1
+    },
+    {
+      "name": "G_014_KM3_16_7",
+      "category": "gripper_source",
+      "file": "recovery_v2/assembly_instances_brep/G_014_KM3_16_7.brep",
+      "bytes": 12176,
+      "sha256": "a6a6fb7fe7b826fc69c54e01b367d317b9a1c6b5c44295a4c9e327df577e4e80",
+      "matches_manifest": true,
+      "native_solids_manifest": 1
+    },
+    {
+      "name": "G_015_KM3_16_8",
+      "category": "gripper_source",
+      "file": "recovery_v2/assembly_instances_brep/G_015_KM3_16_8.brep",
+      "bytes": 12089,
+      "sha256": "6053775f3bd2427fcce2167a48126b43cf06973d5ed500973be25d45324e0d06",
+      "matches_manifest": true,
+      "native_solids_manifest": 1
+    },
+    {
+      "name": "G_016_KM3_16_9",
+      "category": "gripper_source",
+      "file": "recovery_v2/assembly_instances_brep/G_016_KM3_16_9.brep",
+      "bytes": 12136,
+      "sha256": "d6497e76ee19211b993dd94e3e92bd79cbd1d2bd62751083ae9bd96cdafcf4e2",
+      "matches_manifest": true,
+      "native_solids_manifest": 1
+    },
+    {
+      "name": "G_017_HM3_6_1",
+      "category": "gripper_source",
+      "file": "recovery_v2/assembly_instances_brep/G_017_HM3_6_1.brep",
+      "bytes": 10586,
+      "sha256": "6af638dea8b5c6e43ede186e43f801625ac18249980acc24d0f50c502b8c63eb",
+      "matches_manifest": true,
+      "native_solids_manifest": 1
+    },
+    {
+      "name": "G_018_KM3_16_10",
+      "category": "gripper_source",
+      "file": "recovery_v2/assembly_instances_brep/G_018_KM3_16_10.brep",
+      "bytes": 12208,
+      "sha256": "24ec2f8e31a1ae5659966267a98a79edbe0a6d0b1532b21a2b03798283e21c4a",
+      "matches_manifest": true,
+      "native_solids_manifest": 1
+    },
+    {
+      "name": "G_019_HM3_6_2",
+      "category": "gripper_source",
+      "file": "recovery_v2/assembly_instances_brep/G_019_HM3_6_2.brep",
+      "bytes": 10608,
+      "sha256": "07b5925098ee66eb68f2e5db2c052542f21a479f772b9284ffdd37eb90051ce8",
+      "matches_manifest": true,
+      "native_solids_manifest": 1
+    },
+    {
+      "name": "G_020_KM3_16_11",
+      "category": "gripper_source",
+      "file": "recovery_v2/assembly_instances_brep/G_020_KM3_16_11.brep",
+      "bytes": 12101,
+      "sha256": "5479b19cbf6a58ed229c41b4a09f8cfcfa960ca2c2ab3d9c27db559a583e51fe",
+      "matches_manifest": true,
+      "native_solids_manifest": 1
+    },
+    {
+      "name": "G_021_KM3_16_12",
+      "category": "gripper_source",
+      "file": "recovery_v2/assembly_instances_brep/G_021_KM3_16_12.brep",
+      "bytes": 12138,
+      "sha256": "ca1bd1bfd481321c70d617c14ded33403e366d2cb94dbf7fc6449b2b0ffedf4d",
+      "matches_manifest": true,
+      "native_solids_manifest": 1
+    },
+    {
+      "name": "G_022_HM3_6_3",
+      "category": "gripper_source",
+      "file": "recovery_v2/assembly_instances_brep/G_022_HM3_6_3.brep",
+      "bytes": 10586,
+      "sha256": "3317fa63a5e96589009304051b2dcadfdd4372fdb9e7ab60cc9ea6ee9fb35218",
+      "matches_manifest": true,
+      "native_solids_manifest": 1
+    },
+    {
+      "name": "G_023_HM3_6_4",
+      "category": "gripper_source",
+      "file": "recovery_v2/assembly_instances_brep/G_023_HM3_6_4.brep",
+      "bytes": 10616,
+      "sha256": "e978e241197f031ba1cbde70149785eae2340f3a7cfff8d02de49f7b8ba280f1",
+      "matches_manifest": true,
+      "native_solids_manifest": 1
+    },
+    {
+      "name": "G_024_KM3_16_13",
+      "category": "gripper_source",
+      "file": "recovery_v2/assembly_instances_brep/G_024_KM3_16_13.brep",
+      "bytes": 12227,
+      "sha256": "b3ca482e1f1ed0989efb9e6b34d625fec4941007bf4ee7216828eef288553011",
+      "matches_manifest": true,
+      "native_solids_manifest": 1
+    },
+    {
+      "name": "G_025_KM3_16_14",
+      "category": "gripper_source",
+      "file": "recovery_v2/assembly_instances_brep/G_025_KM3_16_14.brep",
+      "bytes": 12170,
+      "sha256": "df2d17d8cfa18f6b1bd7c0532c7df9fd35119f21c0bae5e7f8e82c847a6e33cc",
+      "matches_manifest": true,
+      "native_solids_manifest": 1
+    },
+    {
+      "name": "G_026_KA3_12_3",
+      "category": "gripper_source",
+      "file": "recovery_v2/assembly_instances_brep/G_026_KA3_12_3.brep",
+      "bytes": 16793,
+      "sha256": "a9eba9f9fa291002b764f97356897506c656387dc584b475eca9f561d82b165c",
+      "matches_manifest": true,
+      "native_solids_manifest": 1
+    },
+    {
+      "name": "G_027_KM3_7_2",
+      "category": "gripper_source",
+      "file": "recovery_v2/assembly_instances_brep/G_027_KM3_7_2.brep",
+      "bytes": 12035,
+      "sha256": "ab6e3a345a25904d440e370d2b826df84fbfc2ac33c325322af8be80379da98f",
+      "matches_manifest": true,
+      "native_solids_manifest": 1
+    },
+    {
+      "name": "G_028_HM3_26_2",
+      "category": "gripper_source",
+      "file": "recovery_v2/assembly_instances_brep/G_028_HM3_26_2.brep",
+      "bytes": 10547,
+      "sha256": "5c7801a345e5f5f54e09e400a42dbfdd8a282f004617554b8e2efb6197543905",
+      "matches_manifest": true,
+      "native_solids_manifest": 1
+    },
+    {
+      "name": "G_029_HM3_26_3",
+      "category": "gripper_source",
+      "file": "recovery_v2/assembly_instances_brep/G_029_HM3_26_3.brep",
+      "bytes": 10435,
+      "sha256": "2fea17fbd9faf4de42ef062b21e54c998a105e50899b24aca259bee9ccb21f98",
+      "matches_manifest": true,
+      "native_solids_manifest": 1
+    },
+    {
+      "name": "G_030_KM3_7_3",
+      "category": "gripper_source",
+      "file": "recovery_v2/assembly_instances_brep/G_030_KM3_7_3.brep",
+      "bytes": 12031,
+      "sha256": "4af022021fa831b86de2288947df4ad9777ed657cad84c9485ca0eb01fd7c944",
+      "matches_manifest": true,
+      "native_solids_manifest": 1
+    },
+    {
+      "name": "G_031_KM3_7_4",
+      "category": "gripper_source",
+      "file": "recovery_v2/assembly_instances_brep/G_031_KM3_7_4.brep",
+      "bytes": 11987,
+      "sha256": "510fb3983b36b38e9256fb30cd6714840e75f5a1bfad518ec4116c09d99f5ea3",
+      "matches_manifest": true,
+      "native_solids_manifest": 1
+    },
+    {
+      "name": "G_032_KM3_7_5",
+      "category": "gripper_source",
+      "file": "recovery_v2/assembly_instances_brep/G_032_KM3_7_5.brep",
+      "bytes": 11990,
+      "sha256": "230b3d9a7c95fa4b739a4eb9e8d6de0a5ea7a5c1734c1e796f1ecc62f2af6a98",
+      "matches_manifest": true,
+      "native_solids_manifest": 1
+    },
+    {
+      "name": "G_033_KM3_7_6",
+      "category": "gripper_source",
+      "file": "recovery_v2/assembly_instances_brep/G_033_KM3_7_6.brep",
+      "bytes": 12033,
+      "sha256": "98ab411f22ccc2d3f261da1fe0e3ba00c930fbe40be544cc2741ffdbe8b69749",
+      "matches_manifest": true,
+      "native_solids_manifest": 1
+    },
+    {
+      "name": "G_034_KA3_12_4",
+      "category": "gripper_source",
+      "file": "recovery_v2/assembly_instances_brep/G_034_KA3_12_4.brep",
+      "bytes": 16659,
+      "sha256": "3aab5065953dc06e498b76c12c67f4401f2709094528a7525a20fb3a088585a7",
+      "matches_manifest": true,
+      "native_solids_manifest": 1
+    },
+    {
+      "name": "G_035_KM3_7_7",
+      "category": "gripper_source",
+      "file": "recovery_v2/assembly_instances_brep/G_035_KM3_7_7.brep",
+      "bytes": 11979,
+      "sha256": "49dec732bc844d0e62e6183d651609c88eeea326e99a8e8d546e7303cc93f84c",
+      "matches_manifest": true,
+      "native_solids_manifest": 1
+    },
+    {
+      "name": "G_036_KA3_12_5",
+      "category": "gripper_source",
+      "file": "recovery_v2/assembly_instances_brep/G_036_KA3_12_5.brep",
+      "bytes": 16662,
+      "sha256": "9a290e049a91eda14b696d07b763e98ac0ff1c58ff3a297084aaeb45c3a72aab",
+      "matches_manifest": true,
+      "native_solids_manifest": 1
+    },
+    {
+      "name": "G_037_KA3_12_6",
+      "category": "gripper_source",
+      "file": "recovery_v2/assembly_instances_brep/G_037_KA3_12_6.brep",
+      "bytes": 16788,
+      "sha256": "ee1d905c7bb43566b325b7d0f5e4dc439f483e070b0896cf9054913360901698",
+      "matches_manifest": true,
+      "native_solids_manifest": 1
+    },
+    {
+      "name": "G_038_HM3_26_4",
+      "category": "gripper_source",
+      "file": "recovery_v2/assembly_instances_brep/G_038_HM3_26_4.brep",
+      "bytes": 10436,
+      "sha256": "d20bdb2d5ba48287e1011d160164db12a75f982457e6699c447053a7e5aa59c9",
+      "matches_manifest": true,
+      "native_solids_manifest": 1
+    },
+    {
+      "name": "G_039_KM3_7_8",
+      "category": "gripper_source",
+      "file": "recovery_v2/assembly_instances_brep/G_039_KM3_7_8.brep",
+      "bytes": 12038,
+      "sha256": "a5733719b77a2398fa59836b7711357e5d2aab5c0834d71ce88941849279760c",
+      "matches_manifest": true,
+      "native_solids_manifest": 1
+    },
+    {
+      "name": "G_040_S_M4_5_JIMI_2",
+      "category": "gripper_source",
+      "file": "recovery_v2/assembly_instances_brep/G_040_S_M4_5_JIMI_2.brep",
+      "bytes": 11801,
+      "sha256": "b6cd9ddf7373fb6e01cee6928fc16f572f379e563b008b2907fa6cf06c651e1d",
+      "matches_manifest": true,
+      "native_solids_manifest": 1
+    },
+    {
+      "name": "G_041_KM3_7_9",
+      "category": "gripper_source",
+      "file": "recovery_v2/assembly_instances_brep/G_041_KM3_7_9.brep",
+      "bytes": 12042,
+      "sha256": "cec10cd43c38edaddb595d6f4ccd64f134f74170d25e1296ef008a01cbb8d360",
+      "matches_manifest": true,
+      "native_solids_manifest": 1
+    },
+    {
+      "name": "G_042_KM3_7_10",
+      "category": "gripper_source",
+      "file": "recovery_v2/assembly_instances_brep/G_042_KM3_7_10.brep",
+      "bytes": 12047,
+      "sha256": "53023d611ac80e41a70f661249c09f01f1740199a1a8f10e3195a2871638c2aa",
+      "matches_manifest": true,
+      "native_solids_manifest": 1
+    },
+    {
+      "name": "G_043_KM3_7_11",
+      "category": "gripper_source",
+      "file": "recovery_v2/assembly_instances_brep/G_043_KM3_7_11.brep",
+      "bytes": 11919,
+      "sha256": "1a0109d4c5ea0e023aa8795bb3d48802b0dec0c4ddd189d3c0c94c5bf6bb4891",
+      "matches_manifest": true,
+      "native_solids_manifest": 1
+    },
+    {
+      "name": "G_044_HM3_26_5",
+      "category": "gripper_source",
+      "file": "recovery_v2/assembly_instances_brep/G_044_HM3_26_5.brep",
+      "bytes": 10541,
+      "sha256": "c776a49bcf5a2685e936cde8aec465536acfe78f579f9802fd98fc23082cc8b1",
+      "matches_manifest": true,
+      "native_solids_manifest": 1
+    },
+    {
+      "name": "G_045_KM3_7_12",
+      "category": "gripper_source",
+      "file": "recovery_v2/assembly_instances_brep/G_045_KM3_7_12.brep",
+      "bytes": 11951,
+      "sha256": "326b51ae931afce958644aa1a6c20b78829ebeed0f279cfde3e2ad33399cb96c",
+      "matches_manifest": true,
+      "native_solids_manifest": 1
+    },
+    {
+      "name": "G_046_HM3_26_6",
+      "category": "gripper_source",
+      "file": "recovery_v2/assembly_instances_brep/G_046_HM3_26_6.brep",
+      "bytes": 10431,
+      "sha256": "9f94f9b3fed40a7c22229d245c5e94ef06ab91ade8a3f61f6a3389e97c967c11",
+      "matches_manifest": true,
+      "native_solids_manifest": 1
+    },
+    {
+      "name": "G_047_SLIDER_2",
+      "category": "gripper_source",
+      "file": "recovery_v2/assembly_instances_brep/G_047_SLIDER_2.brep",
+      "bytes": 3165151,
+      "sha256": "a0a08698ec68951b1aa6b096e42ab8084067c1b0b6894b1051c8251626dd6601",
+      "matches_manifest": true,
+      "native_solids_manifest": 5
+    },
+    {
+      "name": "G_048_02_Slider_Extension_1",
+      "category": "gripper_source",
+      "file": "recovery_v2/assembly_instances_brep/G_048_02_Slider_Extension_1.brep",
+      "bytes": 22761,
+      "sha256": "53afefb402001bf55ad4199b39cac4599cbed8019feecaf60e49bc508bec8ce8",
+      "matches_manifest": true,
+      "native_solids_manifest": 1
+    },
+    {
+      "name": "G_049_02_Rack_1",
+      "category": "gripper_source",
+      "file": "recovery_v2/assembly_instances_brep/G_049_02_Rack_1.brep",
+      "bytes": 289658,
+      "sha256": "b40becda177c8598888d0998da86d61a0b85b887475d766f58fef7c1859aa642",
+      "matches_manifest": true,
+      "native_solids_manifest": 1
+    },
+    {
+      "name": "G_050_02_Slider_Bracket_1",
+      "category": "gripper_source",
+      "file": "recovery_v2/assembly_instances_brep/G_050_02_Slider_Bracket_1.brep",
+      "bytes": 67498,
+      "sha256": "7bd7bac232ceed6d931eb5e52d21b5248aaff7807b048a08d835ea404b8a846b",
+      "matches_manifest": true,
+      "native_solids_manifest": 1
+    },
+    {
+      "name": "G_051_02_Gear_Connector_1",
+      "category": "gripper_source",
+      "file": "recovery_v2/assembly_instances_brep/G_051_02_Gear_Connector_1.brep",
+      "bytes": 53936,
+      "sha256": "746ecf4fe2f64b236d75d1adb17888f1658e030d17b708e300f4a0f1c17bffa4",
+      "matches_manifest": true,
+      "native_solids_manifest": 1
+    },
+    {
+      "name": "G_052_02_Slider_Extension_2",
+      "category": "gripper_source",
+      "file": "recovery_v2/assembly_instances_brep/G_052_02_Slider_Extension_2.brep",
+      "bytes": 22829,
+      "sha256": "462afdeb1cb33a7bb9098b4cccf10398e80b90198eeca15671a1f0e6dd8aab0d",
+      "matches_manifest": true,
+      "native_solids_manifest": 1
+    },
+    {
+      "name": "G_053_02_Rack_2",
+      "category": "gripper_source",
+      "file": "recovery_v2/assembly_instances_brep/G_053_02_Rack_2.brep",
+      "bytes": 289656,
+      "sha256": "22eb786124990bb5f72dbda71efe9f337c15257736d490bcbb83411594f785df",
+      "matches_manifest": true,
+      "native_solids_manifest": 1
+    },
+    {
+      "name": "G_054_01_Rail_Bracket_1",
+      "category": "gripper_source",
+      "file": "recovery_v2/assembly_instances_brep/G_054_01_Rail_Bracket_1.brep",
+      "bytes": 68170,
+      "sha256": "da3b7064bd4ea81bc3a330730aa6e0eb1acde56091f309b7c9d274e008acfbdc",
+      "matches_manifest": true,
+      "native_solids_manifest": 1
+    },
+    {
+      "name": "G_055_01_Finger_1",
+      "category": "gripper_source",
+      "file": "recovery_v2/assembly_instances_brep/G_055_01_Finger_1.brep",
+      "bytes": 116125,
+      "sha256": "05590c8cda42d883abd493d2d50eac9cbd3b11595712daefcc87d774b5a3b663",
+      "matches_manifest": true,
+      "native_solids_manifest": 1
+    },
+    {
+      "name": "G_056_01_Finger_2",
+      "category": "gripper_source",
+      "file": "recovery_v2/assembly_instances_brep/G_056_01_Finger_2.brep",
+      "bytes": 115957,
+      "sha256": "c1524847397c510233576c05ea678f60bb1edb4ac5da06ec5afd86f140d396e5",
+      "matches_manifest": true,
+      "native_solids_manifest": 1
+    },
+    {
+      "name": "01_Direct_Base",
+      "category": "custom_rigid",
+      "file": "recovery_v2/assembly_instances_brep/01_Direct_Base.brep",
+      "bytes": 57401,
+      "sha256": "caa41fb3a043ec8358829e146e6edabea1413dd8cb5cd53acceff3d88051bb9e",
+      "matches_manifest": true,
+      "native_solids_manifest": 1
+    },
+    {
+      "name": "02_Fuse_Cartridge_D8",
+      "category": "custom_rigid",
+      "file": "recovery_v2/assembly_instances_brep/02_Fuse_Cartridge_D8.brep",
+      "bytes": 39804,
+      "sha256": "2f0989d260c548bd0ba3e070597b87f5603662a5dacac4cc767d9b57d692bde4",
+      "matches_manifest": true,
+      "native_solids_manifest": 1
+    },
+    {
+      "name": "03_Cartridge_Retaining_Pin",
+      "category": "custom_rigid",
+      "file": "recovery_v2/assembly_instances_brep/03_Cartridge_Retaining_Pin.brep",
+      "bytes": 13667,
+      "sha256": "7bad53ceb7d573e24a2c83e5f80169bf37396b207a197cbfa64d6dee8e7dd4d2",
+      "matches_manifest": true,
+      "native_solids_manifest": 1
+    },
+    {
+      "name": "04_Camera_Module_Short45",
+      "category": "custom_rigid",
+      "file": "recovery_v2/assembly_instances_brep/04_Camera_Module_Short45.brep",
+      "bytes": 112098,
+      "sha256": "d5320ffbbbe2d4a643958fe39b1b9103084fde44c333e191961b45504e0dc837",
+      "matches_manifest": true,
+      "native_solids_manifest": 1
+    },
+    {
+      "name": "05_Side_Pad_L",
+      "category": "compliant_pad",
+      "file": "recovery_v2/assembly_instances_brep/05_Side_Pad_L.brep",
+      "bytes": 4696,
+      "sha256": "e9e16c688f76002b65abccbd3623632de399ef65970d5a0257159f524acaf932",
+      "matches_manifest": true,
+      "native_solids_manifest": 1
+    },
+    {
+      "name": "05_Side_Pad_R",
+      "category": "compliant_pad",
+      "file": "recovery_v2/assembly_instances_brep/05_Side_Pad_R.brep",
+      "bytes": 4717,
+      "sha256": "bbd33d4a5823185a701f4a845d86a09417b064ee243bf33338591e63833f431b",
+      "matches_manifest": true,
+      "native_solids_manifest": 1
+    },
+    {
+      "name": "C00_X3_Battery_Cap",
+      "category": "camera_reference",
+      "file": "recovery_v2/assembly_instances_brep/C00_X3_Battery_Cap.brep",
+      "bytes": 35119,
+      "sha256": "ddf1cb3264704dee32012d3df1fa99a923eee74e9591812bf416c24c84610338",
+      "matches_manifest": true,
+      "native_solids_manifest": 1
+    },
+    {
+      "name": "C01_X3_Battery",
+      "category": "camera_reference",
+      "file": "recovery_v2/assembly_instances_brep/C01_X3_Battery.brep",
+      "bytes": 6788,
+      "sha256": "34b93c4f88ba859b1aa610759bb97d17195466cc34e64637d018c58441e1b99a",
+      "matches_manifest": true,
+      "native_solids_manifest": 1
+    },
+    {
+      "name": "C02_X3_USB_C_Cap",
+      "category": "camera_reference",
+      "file": "recovery_v2/assembly_instances_brep/C02_X3_USB_C_Cap.brep",
+      "bytes": 29728,
+      "sha256": "573fb679fdd825a1d47193b3a03ee6091c1b2471c013bb629a479bce65eb5a16",
+      "matches_manifest": true,
+      "native_solids_manifest": 1
+    },
+    {
+      "name": "C03_X3_Lens",
+      "category": "camera_reference",
+      "file": "recovery_v2/assembly_instances_brep/C03_X3_Lens.brep",
+      "bytes": 4171,
+      "sha256": "c6fa4bcbce2e1a9650c6e8e6fdf47265f312cfde909886a80378481e93cee8ea",
+      "matches_manifest": true,
+      "native_solids_manifest": 1
+    },
+    {
+      "name": "C04_X3_Screen",
+      "category": "camera_reference",
+      "file": "recovery_v2/assembly_instances_brep/C04_X3_Screen.brep",
+      "bytes": 8238,
+      "sha256": "747b6b69927bf590027345ace19f2e7cf9d39241b91db22a8a8fc3e756d4603c",
+      "matches_manifest": true,
+      "native_solids_manifest": 1
+    },
+    {
+      "name": "C05_X3_Body",
+      "category": "camera_reference",
+      "file": "recovery_v2/assembly_instances_brep/C05_X3_Body.brep",
+      "bytes": 164494,
+      "sha256": "44ee8d3145df4946296c857cd62ebe26e53a4bd7748213dc044a5b9b0b517096",
+      "matches_manifest": true,
+      "native_solids_manifest": 1
+    },
+    {
+      "name": "C06_X3_USB_C_Anchor",
+      "category": "camera_reference",
+      "file": "recovery_v2/assembly_instances_brep/C06_X3_USB_C_Anchor.brep",
+      "bytes": 2331,
+      "sha256": "e240aacea9e94925f7b6aeab1d1fd869fdf00fe71bf49207afda61d9f6335105",
+      "matches_manifest": true,
+      "native_solids_manifest": 1
+    },
+    {
+      "name": "C07_X3_Threaded_Insert",
+      "category": "camera_reference",
+      "file": "recovery_v2/assembly_instances_brep/C07_X3_Threaded_Insert.brep",
+      "bytes": 116332,
+      "sha256": "7389669423253b8fa45636545f4746dc607984798021d724c19d8be26e0a3d74",
+      "matches_manifest": true,
+      "native_solids_manifest": 1
+    },
+    {
+      "name": "H_M6_Bolt_1",
+      "category": "standard_fastener",
+      "file": "recovery_v2/assembly_instances_brep/H_M6_Bolt_1.brep",
+      "bytes": 6776,
+      "sha256": "cc7dc3a2b663ab1c0ec3bba050d26af09f601ecfe45e986cc910dce84d5e6708",
+      "matches_manifest": true,
+      "native_solids_manifest": 1
+    },
+    {
+      "name": "H_M6_Washer_1",
+      "category": "standard_fastener",
+      "file": "recovery_v2/assembly_instances_brep/H_M6_Washer_1.brep",
+      "bytes": 2851,
+      "sha256": "538e047ed74a0fca39918c1f9a3511a559dffefe4707f2bc6ab70c17f1eaeaac",
+      "matches_manifest": true,
+      "native_solids_manifest": 1
+    },
+    {
+      "name": "H_M6_Bolt_2",
+      "category": "standard_fastener",
+      "file": "recovery_v2/assembly_instances_brep/H_M6_Bolt_2.brep",
+      "bytes": 6832,
+      "sha256": "45a47f6a388d9fc748aa91476cec092a136982ee8f77c1f1505b8533fcb7f8e5",
+      "matches_manifest": true,
+      "native_solids_manifest": 1
+    },
+    {
+      "name": "H_M6_Washer_2",
+      "category": "standard_fastener",
+      "file": "recovery_v2/assembly_instances_brep/H_M6_Washer_2.brep",
+      "bytes": 2877,
+      "sha256": "e81f68f63106e6c9c381a53550791013cbcaeb0af9fc0de3afcb31836834b68d",
+      "matches_manifest": true,
+      "native_solids_manifest": 1
+    },
+    {
+      "name": "H_M6_Bolt_3",
+      "category": "standard_fastener",
+      "file": "recovery_v2/assembly_instances_brep/H_M6_Bolt_3.brep",
+      "bytes": 6878,
+      "sha256": "6d4bf714df63072d6a9466609661244301b989340bce038a01acd78fa36d43e9",
+      "matches_manifest": true,
+      "native_solids_manifest": 1
+    },
+    {
+      "name": "H_M6_Washer_3",
+      "category": "standard_fastener",
+      "file": "recovery_v2/assembly_instances_brep/H_M6_Washer_3.brep",
+      "bytes": 2890,
+      "sha256": "e7135441748b674c8ff810e0be1f6a14d3986bcb281f59a1512254980d050569",
+      "matches_manifest": true,
+      "native_solids_manifest": 1
+    },
+    {
+      "name": "H_M6_Bolt_4",
+      "category": "standard_fastener",
+      "file": "recovery_v2/assembly_instances_brep/H_M6_Bolt_4.brep",
+      "bytes": 6830,
+      "sha256": "e96384a45301674076e2060af7853d84861c79ec9cb452d23739fc3fcd5a5233",
+      "matches_manifest": true,
+      "native_solids_manifest": 1
+    },
+    {
+      "name": "H_M6_Washer_4",
+      "category": "standard_fastener",
+      "file": "recovery_v2/assembly_instances_brep/H_M6_Washer_4.brep",
+      "bytes": 2864,
+      "sha256": "154322803b540afb97d72dd826b15b811b05a719d9152cb92b34f5d2eddfa7fd",
+      "matches_manifest": true,
+      "native_solids_manifest": 1
+    },
+    {
+      "name": "H_M3_Bolt_1",
+      "category": "standard_fastener",
+      "file": "recovery_v2/assembly_instances_brep/H_M3_Bolt_1.brep",
+      "bytes": 6596,
+      "sha256": "0270bf65285f4d0171ea878e916f79572113e6d838879fa9c51243f056e42998",
+      "matches_manifest": true,
+      "native_solids_manifest": 1
+    },
+    {
+      "name": "H_M3_Washer_1",
+      "category": "standard_fastener",
+      "file": "recovery_v2/assembly_instances_brep/H_M3_Washer_1.brep",
+      "bytes": 1936,
+      "sha256": "6177d77425863c891ef4b297333a10d589112be6a71e138b50f52d8b56a05ae9",
+      "matches_manifest": true,
+      "native_solids_manifest": 1
+    },
+    {
+      "name": "H_M3_Bolt_2",
+      "category": "standard_fastener",
+      "file": "recovery_v2/assembly_instances_brep/H_M3_Bolt_2.brep",
+      "bytes": 6482,
+      "sha256": "732d38e55abc22159f542c019000cb3d9f65a7791ca0ec55c28ea94f1e4529af",
+      "matches_manifest": true,
+      "native_solids_manifest": 1
+    },
+    {
+      "name": "H_M3_Washer_2",
+      "category": "standard_fastener",
+      "file": "recovery_v2/assembly_instances_brep/H_M3_Washer_2.brep",
+      "bytes": 1996,
+      "sha256": "74d3651128c4c935d8c43f8f47987df1adf8a4a3d6fc2f51d782a44d3b501634",
+      "matches_manifest": true,
+      "native_solids_manifest": 1
+    },
+    {
+      "name": "H_M3_Bolt_3",
+      "category": "standard_fastener",
+      "file": "recovery_v2/assembly_instances_brep/H_M3_Bolt_3.brep",
+      "bytes": 6983,
+      "sha256": "4fdcf960a4c6b7b0ec5a967ee99a67ec1a6c8f4f8bd64834206086f312dddad1",
+      "matches_manifest": true,
+      "native_solids_manifest": 1
+    },
+    {
+      "name": "H_M3_Washer_3",
+      "category": "standard_fastener",
+      "file": "recovery_v2/assembly_instances_brep/H_M3_Washer_3.brep",
+      "bytes": 2103,
+      "sha256": "feb98defa09a51a972683d4ffb1e0b16637b54b0d6c49a3162cab6e5d36baf9f",
+      "matches_manifest": true,
+      "native_solids_manifest": 1
+    },
+    {
+      "name": "H_M3_Bolt_4",
+      "category": "standard_fastener",
+      "file": "recovery_v2/assembly_instances_brep/H_M3_Bolt_4.brep",
+      "bytes": 6544,
+      "sha256": "c314d3306488d7ab6b33c560f243756ecd8b5264f0942d6a0fac987432c05adf",
+      "matches_manifest": true,
+      "native_solids_manifest": 1
+    },
+    {
+      "name": "H_M3_Washer_4",
+      "category": "standard_fastener",
+      "file": "recovery_v2/assembly_instances_brep/H_M3_Washer_4.brep",
+      "bytes": 2018,
+      "sha256": "3cb288f3841f1a57786c478e2466031d21f712aee766cf489161cd4e5bb1f50f",
+      "matches_manifest": true,
+      "native_solids_manifest": 1
+    },
+    {
+      "name": "H_Camera_Screw_1_4x5_ENVELOPE",
+      "category": "user_fastener_envelope",
+      "file": "recovery_v2/assembly_instances_brep/H_Camera_Screw_1_4x5_ENVELOPE.brep",
+      "bytes": 8544,
+      "sha256": "976e7b6ef426a14e295affd475c58b5a63862533a7e875afe3daf10c10253e25",
+      "matches_manifest": true,
+      "native_solids_manifest": 1
+    },
+    {
+      "name": "H_Soft_Tether_ROUTING_ONLY",
+      "category": "soft_tether_reference",
+      "file": "recovery_v2/assembly_instances_brep/H_Soft_Tether_ROUTING_ONLY.brep",
+      "bytes": 73368,
+      "sha256": "541ef90132016048f7fa0e0d578d778c9aec7f1925b920c124a9f591c0255703",
+      "matches_manifest": true,
+      "native_solids_manifest": 1
+    }
+  ],
+  "scope": "Read-only source snapshot hashes; no new full STEP Boolean audit or FEM; historical/current audit distinctions retained."
+}
