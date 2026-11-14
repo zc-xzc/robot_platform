@@ -1,0 +1,322 @@
+{
+  "retrieved_UTC": "2026-11-12T05:47:11.795858+00:00",
+  "policy": "Only official/manufacturer or NASA primary sources used for engineering inputs. Source claims separated from review calculations.",
+  "sources": [
+    {
+      "id": "S1",
+      "title": "DOBOT CRA系列硬件使用手册 V3.3 (2026-08-06)",
+      "url": "https://dobot-cloud-1256299428.cos.ap-guangzhou.myqcloud.com/pro/20260806/Dobot%20CRA%E7%B3%BB%E5%88%97%E7%A1%AC%E4%BB%B6%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C_V3.3_20260806_cn.pdf",
+      "local_file": "sources/Dobot_CRA_hardware_V3_3_cn.pdf",
+      "pages": {
+        "flange": "PDF69 / printed57 / Figure4.43",
+        "CoG_envelope": "PDF70 / printed58 / Figure4.44",
+        "tool_mounting": "PDF109 / printed97 section7.3.5",
+        "metal_torque_table": "PDF116 / printed104 Table8.2",
+        "CR5AF_specifications": "PDF126-127 / printed114-115 Table5"
+      },
+      "key_facts": {
+        "model": "CR5AF, not CR5A",
+        "payload_kg": 5,
+        "working_radius_mm": 900,
+        "flange": "4M6 depth8, PCD50 ±0.1, locating hole Ø6+0.012/0 depth6, spigotØ63±0.03",
+        "CoG_plot_axes": "r=sqrt(X²+Y²) in cm, Z in cm, origin actual flange center",
+        "CoG_labelled_intercepts_cm": [
+          {
+            "mass_kg": 1,
+            "r_axis": 38.0,
+            "Z_axis": 57.0
+          },
+          {
+            "mass_kg": 2,
+            "r_axis": 26.9,
+            "Z_axis": 37.2
+          },
+          {
+            "mass_kg": 3,
+            "r_axis": 22,
+            "Z_axis": 28.5
+          },
+          {
+            "mass_kg": 4,
+            "r_axis": 19,
+            "Z_axis": 23.2
+          },
+          {
+            "mass_kg": 5,
+            "r_axis": 15.7,
+            "Z_axis": 19.5
+          }
+        ],
+        "metal_table_M6_external_hex_Nm": 15,
+        "metal_table_M6_internal_hex_grade12p9_Nm": 18,
+        "installation": "upright",
+        "force_sensor_range_N": 150,
+        "force_sensor_range_Nm": 15
+      },
+      "limits": [
+        "Axis intercepts are not a rectangular envelope or simultaneous CoG limits; use actual curve.",
+        "Independent allowable payload inertia not found in the reviewed manual/public official sources.",
+        "Metal torque table and force sensor range are not printed-joint allowables."
+      ],
+      "web_ref": "turn58view1 (fetch failed; verified downloaded official PDF and rendered pages)",
+      "supplemental_product_url": "https://www.dobot.cn/products/cra-series/dobot-craf-series.html",
+      "supplemental_web_refs": [
+        "turn59search2",
+        "turn62search1"
+      ],
+      "download_sha256": "d2ee5fc6b023f05c468d8208518b453b28602c74fc992fa5cecef686096c5936",
+      "download_bytes": 14719771
+    },
+    {
+      "id": "S2",
+      "title": "Insta360 X3 official product specifications",
+      "url": "https://www.insta360.com/product/insta360-x3",
+      "pages": {
+        "section": "Specs / Weight / Dimensions"
+      },
+      "key_facts": {
+        "camera_weight_g": 180,
+        "width_height_depth_mm": [
+          46.0,
+          114.0,
+          33.1
+        ]
+      },
+      "limits": [
+        "Not complete module mass.",
+        "Actual mass distribution and maximum allowable mounting thread insertion not given here."
+      ],
+      "web_refs": [
+        "turn58view3",
+        "turn59view2"
+      ]
+    },
+    {
+      "id": "S3",
+      "title": "DAMIAO DM-J4310-2EC V1.1 Gear Motor Instruction Manual V1.0 (2023-11-16)",
+      "url": "https://files.seeedstudio.com/products/Damiao/DM-J4310-en.pdf",
+      "local_file": "sources/DM_J4310_Seeed_datasheet.pdf",
+      "pages": {
+        "mounting": 5,
+        "characteristics": 13
+      },
+      "key_facts": {
+        "motor_mass_g_approx": 300,
+        "rated_torque_Nm": 3,
+        "peak_torque_Nm": 7,
+        "rear_mount": "4M3 depth4 PCD38",
+        "drawing_outside_diameter_mm": 57,
+        "parameter_table_diameter_mm": 56
+      },
+      "limits": [
+        "Confirm physical motor revision and weigh actual assembly.",
+        "Motor torque/inertia are not allowable payload inertia for the CR5AF.",
+        "Motor mass excludes the rest of the gripper."
+      ],
+      "web_refs": [
+        "turn58view2",
+        "turn59view3"
+      ],
+      "supplemental_url": "https://wiki.seeedstudio.com/damiao_series/",
+      "supplemental_web_ref": "turn57view1",
+      "download_sha256": "ee371c9197935544d62eb6249ffc449fffad5fc6d687100cda066c49eb131cd5",
+      "download_bytes": 536972
+    },
+    {
+      "id": "S4",
+      "title": "Seeed-Projects/reBot-DevArm official DM URDF and hardware BOM",
+      "url": "https://raw.githubusercontent.com/Seeed-Projects/reBot-DevArm/main/Rebot_Arm_description/DM/urdf/ReBot_Arm_DM.urdf",
+      "local_file": "../../recovery_v2/gripper/official_arm.urdf",
+      "pages": {
+        "xml_nodes": [
+          "link6/inertial",
+          "end_link/inertial"
+        ]
+      },
+      "key_facts": {
+        "published_URDF_link6_mass_kg": 0.3663,
+        "published_URDF_end_link_mass_kg": 0.5,
+        "type": "simulation inertial parameters, not measurement of selected56leaf subassembly"
+      },
+      "limits": [
+        "Do not add these blindly to the motor mass; source hierarchy differs from selected CAD leaves.",
+        "No verified complete mass for actual selected gripper found."
+      ],
+      "additional_urls": [
+        "https://raw.githubusercontent.com/Seeed-Projects/reBot-DevArm/main/hardware/reBot_B601_DM/readme.md",
+        "https://www.seeedstudio.com/reBot-Arm-B601-DM-Gripper-Kit-p-6751.html"
+      ],
+      "web_refs": [
+        "turn66view0",
+        "turn64search11"
+      ]
+    },
+    {
+      "id": "S5",
+      "title": "Bambu PLA Basic Technical Data Sheet V3.0",
+      "url": "https://store.bblcdn.com/6bd7b337c4234e7d8a72997824d01bcc.pdf",
+      "local_file": "sources/Bambu_PLA_Basic_TDS_V3_0.pdf",
+      "pages": {
+        "properties": 2,
+        "specimen_conditions": 3
+      },
+      "key_facts": {
+        "tensile_E_XY_Z_MPa": [
+          2580,
+          2060
+        ],
+        "tensile_strength_XY_Z_MPa": [
+          35,
+          31
+        ],
+        "flexural_E_XY_Z_MPa": [
+          2750,
+          2370
+        ],
+        "flexural_strength_XY_Z_MPa": [
+          76,
+          59
+        ],
+        "density_g_cm3": 1.24,
+        "specimen_infill_percent": 100,
+        "specimen_nozzle_bed_C": [
+          220,
+          35
+        ],
+        "specimen_speed_mm_s": 200,
+        "pretest_condition": "annealed and dried55C8h"
+      },
+      "web_refs": [
+        "turn58view0"
+      ],
+      "download_sha256": "44c00d8398cba7fbdb8fdcd13886ab904f78826d9eefa531a95118b6891201b3",
+      "download_bytes": 373688,
+      "limits": [
+        "Typical printed specimen properties, not actual design allowables.",
+        "Tensile and flexural properties are distinct.",
+        "No actual user material assignment.",
+        "Complete orthotropic, compression/shear, creep/fatigue and fracture data unavailable."
+      ]
+    },
+    {
+      "id": "S6",
+      "title": "Bambu PETG HF Technical Data Sheet V1.0",
+      "url": "https://store.bblcdn.com/3a230e260a3a47c2b0db0156e07eef91.pdf",
+      "local_file": "sources/Bambu_PETG_HF_TDS_V1_0.pdf",
+      "pages": {
+        "properties": 2,
+        "specimen_conditions": 3
+      },
+      "key_facts": {
+        "tensile_E_XY_Z_MPa": [
+          1810,
+          1540
+        ],
+        "tensile_strength_XY_Z_MPa": [
+          34,
+          23
+        ],
+        "flexural_E_XY_Z_MPa": [
+          2050,
+          1810
+        ],
+        "flexural_strength_XY_Z_MPa": [
+          64,
+          48
+        ],
+        "density_g_cm3": 1.28,
+        "specimen_infill_percent": 100,
+        "specimen_nozzle_bed_C": [
+          255,
+          70
+        ],
+        "specimen_speed_mm_s": 200,
+        "pretest_condition": "annealed and dried75C8h"
+      },
+      "web_refs": [
+        "turn55view1"
+      ],
+      "download_sha256": "51981f734b941947f3fe696cc370c1a4b7419f4eb4cffa77ea97c3d5d4b53ab4",
+      "download_bytes": 246760,
+      "limits": [
+        "Typical printed specimen properties, not actual design allowables.",
+        "Tensile and flexural properties are distinct.",
+        "No actual user material assignment.",
+        "Complete orthotropic, compression/shear, creep/fatigue and fracture data unavailable."
+      ]
+    },
+    {
+      "id": "S7",
+      "title": "Bambu PETG Basic Technical Data Sheet V3.0",
+      "url": "https://store.bblcdn.com/s1/default/cb94589bf7994fdcbfa833badefae9cd/Bambu_PETG_Basic_Technical_Data_Sheet.pdf",
+      "local_file": "sources/Bambu_PETG_Basic_TDS_V3_0.pdf",
+      "pages": {
+        "properties": 2,
+        "specimen_conditions": 3
+      },
+      "key_facts": {
+        "tensile_E_XY_Z_MPa": [
+          2780,
+          2550
+        ],
+        "tensile_strength_XY_Z_MPa": [
+          51,
+          35
+        ],
+        "flexural_E_XY_Z_MPa": [
+          1950,
+          1740
+        ],
+        "flexural_strength_XY_Z_MPa": [
+          75,
+          56
+        ],
+        "density_g_cm3": 1.25,
+        "specimen_infill_percent": 100,
+        "specimen_printer": "X1-Carbon",
+        "specimen_nozzle_bed_C": [
+          255,
+          70
+        ],
+        "specimen_speed_mm_s": 150,
+        "pretest_condition": "annealing not stated for specimens"
+      },
+      "web_refs": [
+        "turn63view0"
+      ],
+      "download_sha256": "fc23b725a4632bd931f28d0076461180e0ba87b7c2ddb6b1f16478ad5c5db6c6",
+      "download_bytes": 400518,
+      "limits": [
+        "Typical printed specimen properties, not actual design allowables.",
+        "Tensile and flexural properties are distinct.",
+        "No actual user material assignment.",
+        "Complete orthotropic, compression/shear, creep/fatigue and fracture data unavailable."
+      ]
+    },
+    {
+      "id": "S8",
+      "title": "NASA RP-1228 Fastener Design Manual (1990), Richard T. Barrett",
+      "url": "https://ntrs.nasa.gov/api/citations/19900009424/downloads/19900009424.pdf",
+      "local_file": "sources/NASA_RP_1228_1990.pdf",
+      "pages": {
+        "torque_formula": "PDF21 / printed17",
+        "TableVI": "PDF22 / printed18"
+      },
+      "key_facts": {
+        "formula": "T=K F d",
+        "K_context": "Common assumed0.2 not blindly valid; typical steel on steel0.15; TableVI listsK0.25 for both friction coefficients0.2"
+      },
+      "limits": [
+        "K0.15-0.25 is the review sensitivity assumption, not a measured joint interval.",
+        "K is torque coefficient, not coefficient of friction.",
+        "No torque recommendation for these printed joints."
+      ],
+      "web_refs": [
+        "turn57view0",
+        "turn59view1"
+      ],
+      "download_sha256": "7942e1937732b71a8a86b10b9c9454ea434220ffef7214cdb22696a5cc494602",
+      "download_bytes": 5345208
+    }
+  ]
+}
