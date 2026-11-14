@@ -1,0 +1,1000 @@
+{
+  "level": "medium",
+  "mesh": {
+    "tetrahedra": 25258,
+    "geometry_nodes": 48268,
+    "displacement_dofs": 144804,
+    "integration_order": 5,
+    "integration_points": 14,
+    "volume_mm3": 28790.337764205382,
+    "folded_elements": 0,
+    "min_abs_mapping_determinant": 0.11066439249595958,
+    "E_MPa": 2000.0,
+    "nu": 0.35,
+    "density_tonne_per_mm3": 1.24e-09,
+    "mass_kg": 0.03570001882761467,
+    "length_unit": "mm",
+    "force_unit": "N",
+    "stress_unit": "MPa=N/mm2",
+    "time_unit": "s"
+  },
+  "boundary_conditions": {
+    "root_support": {
+      "facets": 456,
+      "area_mm2": 350.4715590504873,
+      "centroid_mm": [
+        -2.1039280956368565,
+        49.217593342287934,
+        13.000000000000002
+      ],
+      "constrained_dofs": 3018
+    },
+    "camera_top_contact": {
+      "facets": 372,
+      "area_mm2": 313.9765953374253,
+      "centroid_mm": [
+        0.06331612596777202,
+        72.0378213358619,
+        -15.037821335861908
+      ],
+      "constrained_dofs": 2502
+    },
+    "nominal_head_underside_contact": {
+      "facets": 350,
+      "area_mm2": 277.2109392708453,
+      "centroid_mm": [
+        -0.10076632834171417,
+        70.58097836077367,
+        -16.40940548551985
+      ],
+      "constrained_dofs": 2340
+    },
+    "combined_camera_load_patch": {
+      "facets": 722,
+      "area_mm2": 591.1875346082705,
+      "centroid_mm": [
+        -0.013622998445832979,
+        71.3547000150412,
+        -15.680964345748984
+      ],
+      "constrained_dofs": 4842
+    }
+  },
+  "mapping_validation": {
+    "unit_wrenches": [
+      {
+        "area_mm2": 591.1875346082705,
+        "centroid_mm": [
+          -0.013622998445832979,
+          71.3547000150412,
+          -15.680964345748984
+        ],
+        "target_force_N": [
+          1.0,
+          0.0,
+          0.0
+        ],
+        "target_moment_Nmm": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "moment_reference_mm": [
+          0.0,
+          112.30508652763322,
+          25.305086527633215
+        ],
+        "traction_constant_N_per_mm2": [
+          0.001691510631499723,
+          0.0,
+          0.0
+        ],
+        "traction_rotation_coefficient": [
+          1.9245192715624024e-06,
+          0.0011430411426441964,
+          -0.0011413993873762636
+        ],
+        "assembled_wrench": {
+          "force_N": [
+            0.9999999999999926,
+            2.255140518769849e-16,
+            1.5612511283791264e-16
+          ],
+          "moment_Nmm": [
+            -5.745404152435185e-15,
+            1.3500311979441904e-13,
+            -1.2079226507921703e-13
+          ]
+        }
+      },
+      {
+        "area_mm2": 591.1875346082705,
+        "centroid_mm": [
+          -0.013622998445832979,
+          71.3547000150412,
+          -15.680964345748984
+        ],
+        "target_force_N": [
+          0.0,
+          1.0,
+          0.0
+        ],
+        "target_moment_Nmm": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "moment_reference_mm": [
+          0.0,
+          112.30508652763322,
+          25.305086527633215
+        ],
+        "traction_constant_N_per_mm2": [
+          0.0,
+          0.001691510631499723,
+          0.0
+        ],
+        "traction_rotation_coefficient": [
+          -0.0034691069311422675,
+          -3.553884506090277e-06,
+          -1.2510740111726342e-06
+        ],
+        "assembled_wrench": {
+          "force_N": [
+            -1.465155240513126e-17,
+            1.0000000000000049,
+            2.7877873620685278e-14
+          ],
+          "moment_Nmm": [
+            -9.627854069549358e-13,
+            1.4016565685892601e-15,
+            -2.71657696337968e-15
+          ]
+        }
+      },
+      {
+        "area_mm2": 591.1875346082705,
+        "centroid_mm": [
+          -0.013622998445832979,
+          71.3547000150412,
+          -15.680964345748984
+        ],
+        "target_force_N": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "target_moment_Nmm": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "moment_reference_mm": [
+          0.0,
+          112.30508652763322,
+          25.305086527633215
+        ],
+        "traction_constant_N_per_mm2": [
+          0.0,
+          0.0,
+          0.001691510631499723
+        ],
+        "traction_rotation_coefficient": [
+          0.003466087618564012,
+          3.1708665183974947e-06,
+          1.629365234527875e-06
+        ],
+        "assembled_wrench": {
+          "force_N": [
+            1.7317376848377357e-17,
+            -4.477321291496139e-15,
+            0.9999999999999724
+          ],
+          "moment_Nmm": [
+            8.277822871605167e-13,
+            -1.8145207558717402e-15,
+            6.661338147750939e-16
+          ]
+        }
+      },
+      {
+        "area_mm2": 591.1875346082705,
+        "centroid_mm": [
+          -0.013622998445832979,
+          71.3547000150412,
+          -15.680964345748984
+        ],
+        "target_force_N": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "target_moment_Nmm": [
+          1.0,
+          0.0,
+          0.0
+        ],
+        "moment_reference_mm": [
+          0.0,
+          112.30508652763322,
+          25.305086527633215
+        ],
+        "traction_constant_N_per_mm2": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "traction_rotation_coefficient": [
+          8.464117388258085e-05,
+          8.564980662325586e-08,
+          3.872803641318612e-08
+        ],
+        "assembled_wrench": {
+          "force_N": [
+            4.1894381920095703e-19,
+            -1.1671436386806455e-16,
+            -6.771384668258218e-16
+          ],
+          "moment_Nmm": [
+            1.0000000000000222,
+            -7.24247051220317e-17,
+            7.741203511546502e-17
+          ]
+        }
+      },
+      {
+        "area_mm2": 591.1875346082705,
+        "centroid_mm": [
+          -0.013622998445832979,
+          71.3547000150412,
+          -15.680964345748984
+        ],
+        "target_force_N": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "target_moment_Nmm": [
+          0.0,
+          1.0,
+          0.0
+        ],
+        "moment_reference_mm": [
+          0.0,
+          112.30508652763322,
+          25.305086527633215
+        ],
+        "traction_constant_N_per_mm2": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "traction_rotation_coefficient": [
+          8.564980662325583e-08,
+          2.4702797177264113e-05,
+          -3.1885179101266204e-06
+        ],
+        "assembled_wrench": {
+          "force_N": [
+            7.006656539687572e-18,
+            3.6591823321385775e-19,
+            4.580754178751256e-18
+          ],
+          "moment_Nmm": [
+            -8.550018332220688e-16,
+            0.9999999999999948,
+            8.743006318923108e-16
+          ]
+        }
+      },
+      {
+        "area_mm2": 591.1875346082705,
+        "centroid_mm": [
+          -0.013622998445832979,
+          71.3547000150412,
+          -15.680964345748984
+        ],
+        "target_force_N": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "target_moment_Nmm": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "moment_reference_mm": [
+          0.0,
+          112.30508652763322,
+          25.305086527633215
+        ],
+        "traction_constant_N_per_mm2": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "traction_rotation_coefficient": [
+          3.872803641318611e-08,
+          -3.188517910126621e-06,
+          2.4681442989319146e-05
+        ],
+        "assembled_wrench": {
+          "force_N": [
+            1.922832552903042e-16,
+            -4.743384504624082e-18,
+            -1.5856456772600502e-18
+          ],
+          "moment_Nmm": [
+            3.465652244349915e-16,
+            -6.467049118441537e-15,
+            1.0000000000000044
+          ]
+        }
+      }
+    ],
+    "G_transpose_times_rigid_modes": [
+      [
+        0.9999999999999927,
+        -1.4007892068512717e-16,
+        2.0903417885520525e-16,
+        1.8457457784393227e-15,
+        1.9695356456850277e-13,
+        -1.9817480989559044e-13
+      ],
+      [
+        -1.4955213716721927e-17,
+        1.0000000000000047,
+        2.7956803538842223e-14,
+        -8.628653347386717e-13,
+        7.216449660063518e-16,
+        -5.218048215738236e-15
+      ],
+      [
+        1.768604793866979e-17,
+        -4.3021142204224816e-15,
+        0.9999999999999731,
+        8.810729923425242e-13,
+        2.3869795029440866e-15,
+        3.941291737419306e-15
+      ],
+      [
+        4.1441086944416644e-19,
+        -1.1351596745923231e-16,
+        -6.797947621484113e-16,
+        1.0000000000000215,
+        -6.071532165918825e-17,
+        6.158268339717665e-17
+      ],
+      [
+        7.589415207398531e-18,
+        7.453889935837843e-20,
+        2.6020852139652106e-18,
+        -6.50196042839557e-16,
+        0.9999999999999973,
+        5.048045315092509e-16
+      ],
+      [
+        1.9293377659379551e-16,
+        -4.628188023797497e-18,
+        -1.827050067227526e-18,
+        -3.2699537522162814e-16,
+        -7.797582024515748e-15,
+        1.0000000000000058
+      ]
+    ],
+    "rigid_motion_duality_max_error": 8.810729923425242e-13,
+    "interpretation": "q=G.T u is the work-conjugate least-squares rigid motion of the loaded surface about the stated camera CoG."
+  },
+  "camera_CoG_F_mm": [
+    0.0,
+    112.30508652763322,
+    25.305086527633215
+  ],
+  "camera_mass_kg": 0.18,
+  "material_assumptions": {
+    "E_MPa": 2000.0,
+    "nu": 0.35,
+    "density_tonne_mm3": 1.24e-09
+  },
+  "positive_axis_1g_solutions": [
+    {
+      "axis": "X",
+      "acceleration_F_mm_s2": [
+        9806.65,
+        0.0,
+        0.0
+      ],
+      "camera_rigid_motion_about_CoG": [
+        0.28528848945928065,
+        0.0006617028328681692,
+        -0.0050321663465804556,
+        -8.61439337666473e-05,
+        0.00197239097958562,
+        -0.0045547539757322
+      ],
+      "camera_CoG_displacement_mm": 0.28533363413158425,
+      "camera_rotation_rad": 0.004964225088885857,
+      "solver": {
+        "solve_seconds": 26.029706054999224,
+        "iterations": 169,
+        "relative_free_residual": 9.895116639728296e-10,
+        "strain_energy_Nmm": 0.2651031535813043,
+        "compliance_Nmm": 0.530206307149651,
+        "applied_wrench": {
+          "force_N": [
+            2.1152945896358144,
+            3.920475055707584e-16,
+            3.677613769070831e-16
+          ],
+          "moment_Nmm": [
+            2.930988785010413e-14,
+            44.94303211052002,
+            -227.01292674801016
+          ]
+        },
+        "support_reaction_wrench": {
+          "force_N": [
+            -2.115294589555982,
+            9.486411656212113e-12,
+            1.033431673569396e-11
+          ],
+          "moment_Nmm": [
+            2.19623846886563e-10,
+            -44.94303211065272,
+            227.01292673993947
+          ]
+        },
+        "force_balance_error_N": [
+          7.98325849871162e-11,
+          9.486803703717683e-12,
+          1.0334684497070867e-11
+        ],
+        "moment_balance_error_Nmm": [
+          2.196531567744131e-10,
+          -1.327009613305563e-10,
+          -8.070685453276383e-09
+        ]
+      },
+      "summary": {
+        "max_displacement_mm": 0.4253405280549925,
+        "max_von_mises_MPa": 3.2757712383278106,
+        "volume_weighted_p95_von_mises_MPa": 0.41364286569567116,
+        "volume_weighted_p99_von_mises_MPa": 0.6674403010771364,
+        "mean_von_mises_MPa": 0.12196049450761279,
+        "max_stress_location_mm": [
+          -13.249999999999996,
+          58.0,
+          15.5
+        ],
+        "raw_peak_warning": "Raw integration-point peaks near sharp/reentrant corners and ideal clamps may be singular; no failure or release force is inferred.",
+        "regions": {
+          "2mm_bearing_web": {
+            "volume_mm3": 2745.8461103141217,
+            "max_von_mises_MPa": 1.3202282857102496,
+            "p95_MPa": 0.5291519597985191,
+            "p99_MPa": 0.6738728398551588
+          },
+          "tray_perimeter": {
+            "volume_mm3": 7516.702400708149,
+            "max_von_mises_MPa": 0.8199862088218794,
+            "p95_MPa": 0.3233964754469574,
+            "p99_MPa": 0.43479161868017957
+          },
+          "short_45deg_arms": {
+            "volume_mm3": 1904.3967881609153,
+            "max_von_mises_MPa": 3.2757712383278106,
+            "p95_MPa": 0.8709110854303012,
+            "p99_MPa": 1.257497232227513
+          },
+          "root_mounting_foot": {
+            "volume_mm3": 1233.5751778934714,
+            "max_von_mises_MPa": 3.2757712383278106,
+            "p95_MPa": 0.5548419594679309,
+            "p99_MPa": 0.9901955533799174
+          },
+          "guard_posts": {
+            "volume_mm3": 9646.601571713198,
+            "max_von_mises_MPa": 2.222434738158433,
+            "p95_MPa": 0.0871914042028848,
+            "p99_MPa": 0.5348690950705896
+          }
+        }
+      },
+      "total_resultant_g_scalings": [
+        {
+          "total_effective_acceleration_g": 1,
+          "camera_CoG_displacement_mm": 0.28533363413158425,
+          "max_displacement_mm": 0.4253405280549925,
+          "p95_von_mises_MPa": 0.41364286569567116,
+          "p99_von_mises_MPa": 0.6674403010771364,
+          "raw_peak_von_mises_MPa": 3.2757712383278106,
+          "strain_energy_Nmm": 0.2651031535813043
+        },
+        {
+          "total_effective_acceleration_g": 3,
+          "camera_CoG_displacement_mm": 0.8560009023947528,
+          "max_displacement_mm": 1.2760215841649776,
+          "p95_von_mises_MPa": 1.2409285970870134,
+          "p99_von_mises_MPa": 2.002320903231409,
+          "raw_peak_von_mises_MPa": 9.827313714983433,
+          "strain_energy_Nmm": 2.385928382231739
+        },
+        {
+          "total_effective_acceleration_g": 10,
+          "camera_CoG_displacement_mm": 2.8533363413158424,
+          "max_displacement_mm": 4.253405280549925,
+          "p95_von_mises_MPa": 4.136428656956712,
+          "p99_von_mises_MPa": 6.674403010771364,
+          "raw_peak_von_mises_MPa": 32.757712383278104,
+          "strain_energy_Nmm": 26.51031535813043
+        }
+      ]
+    },
+    {
+      "axis": "Y",
+      "acceleration_F_mm_s2": [
+        0.0,
+        9806.65,
+        0.0
+      ],
+      "camera_rigid_motion_about_CoG": [
+        0.0004503999554650257,
+        0.12340408328291086,
+        -0.2442100018201319,
+        -0.005112392207565649,
+        3.255455961013533e-05,
+        -4.182678100193013e-06
+      ],
+      "camera_CoG_displacement_mm": 0.2736188875425165,
+      "camera_rotation_rad": 0.005112497567542254,
+      "solver": {
+        "solve_seconds": 24.65824253199935,
+        "iterations": 166,
+        "relative_free_residual": 9.372863265231648e-10,
+        "strain_energy_Nmm": 0.10347323773416109,
+        "compliance_Nmm": 0.2069464754730295,
+        "applied_wrench": {
+          "force_N": [
+            -2.614367191700398e-17,
+            2.115294589635836,
+            4.879256720879965e-14
+          ],
+          "moment_Nmm": [
+            -44.94303211051671,
+            1.8596235662471372e-15,
+            1.7181632991358775e-09
+          ]
+        },
+        "support_reaction_wrench": {
+          "force_N": [
+            -3.831818196076142e-11,
+            -2.1152945896625264,
+            1.4310774787418268e-11
+          ],
+          "moment_Nmm": [
+            44.94303211221957,
+            -1.1264826432766384e-09,
+            9.723459815091928e-10
+          ]
+        },
+        "force_balance_error_N": [
+          -3.831820810443334e-11,
+          -2.6690205601198613e-11,
+          1.4359567354627067e-11
+        ],
+        "moment_balance_error_Nmm": [
+          1.7028582988132257e-09,
+          -1.1264807836530721e-09,
+          2.6905092806450703e-09
+        ]
+      },
+      "summary": {
+        "max_displacement_mm": 0.3957028960326157,
+        "max_von_mises_MPa": 1.7196950137060416,
+        "volume_weighted_p95_von_mises_MPa": 0.2338913449993933,
+        "volume_weighted_p99_von_mises_MPa": 0.49627976108808985,
+        "mean_von_mises_MPa": 0.06790485108905082,
+        "max_stress_location_mm": [
+          13.859149133249792,
+          64.80738017740778,
+          8.960632931583628
+        ],
+        "raw_peak_warning": "Raw integration-point peaks near sharp/reentrant corners and ideal clamps may be singular; no failure or release force is inferred.",
+        "regions": {
+          "2mm_bearing_web": {
+            "volume_mm3": 2745.8461103141217,
+            "max_von_mises_MPa": 1.4638313822777016,
+            "p95_MPa": 0.5381034612171102,
+            "p99_MPa": 0.7265873254763634
+          },
+          "tray_perimeter": {
+            "volume_mm3": 7516.702400708149,
+            "max_von_mises_MPa": 0.6676220673406558,
+            "p95_MPa": 0.1723944812682197,
+            "p99_MPa": 0.22862041085222254
+          },
+          "short_45deg_arms": {
+            "volume_mm3": 1904.3967881609153,
+            "max_von_mises_MPa": 1.7196950137060416,
+            "p95_MPa": 0.5169906926720332,
+            "p99_MPa": 0.7209053947895259
+          },
+          "root_mounting_foot": {
+            "volume_mm3": 1233.5751778934714,
+            "max_von_mises_MPa": 0.8512726811778719,
+            "p95_MPa": 0.1762840477439752,
+            "p99_MPa": 0.33343379361813286
+          },
+          "guard_posts": {
+            "volume_mm3": 9646.601571713198,
+            "max_von_mises_MPa": 0.8215810828704424,
+            "p95_MPa": 0.03644137867653527,
+            "p99_MPa": 0.21877547418857035
+          }
+        }
+      },
+      "total_resultant_g_scalings": [
+        {
+          "total_effective_acceleration_g": 1,
+          "camera_CoG_displacement_mm": 0.2736188875425165,
+          "max_displacement_mm": 0.3957028960326157,
+          "p95_von_mises_MPa": 0.2338913449993933,
+          "p99_von_mises_MPa": 0.49627976108808985,
+          "raw_peak_von_mises_MPa": 1.7196950137060416,
+          "strain_energy_Nmm": 0.10347323773416109
+        },
+        {
+          "total_effective_acceleration_g": 3,
+          "camera_CoG_displacement_mm": 0.8208566626275495,
+          "max_displacement_mm": 1.1871086880978472,
+          "p95_von_mises_MPa": 0.7016740349981798,
+          "p99_von_mises_MPa": 1.4888392832642696,
+          "raw_peak_von_mises_MPa": 5.159085041118125,
+          "strain_energy_Nmm": 0.9312591396074498
+        },
+        {
+          "total_effective_acceleration_g": 10,
+          "camera_CoG_displacement_mm": 2.736188875425165,
+          "max_displacement_mm": 3.957028960326157,
+          "p95_von_mises_MPa": 2.338913449993933,
+          "p99_von_mises_MPa": 4.962797610880899,
+          "raw_peak_von_mises_MPa": 17.196950137060416,
+          "strain_energy_Nmm": 10.34732377341611
+        }
+      ]
+    },
+    {
+      "axis": "Z",
+      "acceleration_F_mm_s2": [
+        0.0,
+        0.0,
+        9806.65
+      ],
+      "camera_rigid_motion_about_CoG": [
+        -0.0059661946200918435,
+        -0.3037009391159251,
+        1.0308952806125107,
+        0.02027923358497619,
+        -0.00025651659089046376,
+        6.391977179448078e-05
+      ],
+      "camera_CoG_displacement_mm": 1.074716211605318,
+      "camera_rotation_rad": 0.020280956616803226,
+      "solver": {
+        "solve_seconds": 25.766196489000322,
+        "iterations": 167,
+        "relative_free_residual": 2.177767777469134e-09,
+        "strain_energy_Nmm": 0.9809236300260015,
+        "compliance_Nmm": 1.9618472597747176,
+        "applied_wrench": {
+          "force_N": [
+            3.060922961492865e-17,
+            -8.458511668862911e-15,
+            2.115294589635779
+          ],
+          "moment_Nmm": [
+            227.01292674800789,
+            -1.7181797720700054e-09,
+            2.1996293675385914e-15
+          ]
+        },
+        "support_reaction_wrench": {
+          "force_N": [
+            3.7120972962156884e-11,
+            1.0690259788503909e-10,
+            -2.1152945895837902
+          ],
+          "moment_Nmm": [
+            -227.01292674820442,
+            5.774102640465628e-09,
+            -4.763371919125348e-09
+          ]
+        },
+        "force_balance_error_N": [
+          3.71210035713865e-11,
+          1.0689413937337022e-10,
+          5.198863561872713e-11
+        ],
+        "moment_balance_error_Nmm": [
+          -1.965361207112437e-10,
+          4.055922868395623e-09,
+          -4.76336971949598e-09
+        ]
+      },
+      "summary": {
+        "max_displacement_mm": 2.002313583479774,
+        "max_von_mises_MPa": 7.8602688720080645,
+        "volume_weighted_p95_von_mises_MPa": 0.5500187846807373,
+        "volume_weighted_p99_von_mises_MPa": 1.838617863658788,
+        "mean_von_mises_MPa": 0.14800305197199842,
+        "max_stress_location_mm": [
+          8.750000000000004,
+          58.0,
+          15.5
+        ],
+        "raw_peak_warning": "Raw integration-point peaks near sharp/reentrant corners and ideal clamps may be singular; no failure or release force is inferred.",
+        "regions": {
+          "2mm_bearing_web": {
+            "volume_mm3": 2745.8461103141217,
+            "max_von_mises_MPa": 1.5201916886950464,
+            "p95_MPa": 0.5724620226915191,
+            "p99_MPa": 0.7565671457257678
+          },
+          "tray_perimeter": {
+            "volume_mm3": 7516.702400708149,
+            "max_von_mises_MPa": 0.8836529647941106,
+            "p95_MPa": 0.24613535545919282,
+            "p99_MPa": 0.3256748328289557
+          },
+          "short_45deg_arms": {
+            "volume_mm3": 1904.3967881609153,
+            "max_von_mises_MPa": 7.8602688720080645,
+            "p95_MPa": 2.6118650844642226,
+            "p99_MPa": 3.482716898773175
+          },
+          "root_mounting_foot": {
+            "volume_mm3": 1233.5751778934714,
+            "max_von_mises_MPa": 7.8602688720080645,
+            "p95_MPa": 1.4500023306967038,
+            "p99_MPa": 2.669505849578511
+          },
+          "guard_posts": {
+            "volume_mm3": 9646.601571713198,
+            "max_von_mises_MPa": 4.898851119799506,
+            "p95_MPa": 0.05461798466248176,
+            "p99_MPa": 1.7334858489406597
+          }
+        }
+      },
+      "total_resultant_g_scalings": [
+        {
+          "total_effective_acceleration_g": 1,
+          "camera_CoG_displacement_mm": 1.074716211605318,
+          "max_displacement_mm": 2.002313583479774,
+          "p95_von_mises_MPa": 0.5500187846807373,
+          "p99_von_mises_MPa": 1.838617863658788,
+          "raw_peak_von_mises_MPa": 7.8602688720080645,
+          "strain_energy_Nmm": 0.9809236300260015
+        },
+        {
+          "total_effective_acceleration_g": 3,
+          "camera_CoG_displacement_mm": 3.224148634815954,
+          "max_displacement_mm": 6.0069407504393215,
+          "p95_von_mises_MPa": 1.6500563540422117,
+          "p99_von_mises_MPa": 5.515853590976364,
+          "raw_peak_von_mises_MPa": 23.580806616024194,
+          "strain_energy_Nmm": 8.828312670234013
+        },
+        {
+          "total_effective_acceleration_g": 10,
+          "camera_CoG_displacement_mm": 10.747162116053179,
+          "max_displacement_mm": 20.02313583479774,
+          "p95_von_mises_MPa": 5.500187846807373,
+          "p99_von_mises_MPa": 18.38617863658788,
+          "raw_peak_von_mises_MPa": 78.60268872008065,
+          "strain_energy_Nmm": 98.09236300260015
+        }
+      ]
+    }
+  ],
+  "negative_axis_cases": "By exact linearity, displacement/stress tensor sign reverses; strain energy and von Mises values are unchanged. Six signed axes are thereby covered, not six independent nonlinear contact solves.",
+  "worst_CoG_unit_resultant_direction_F": [
+    -0.006305576275636331,
+    -0.24336472611484677,
+    0.9699143517810621
+  ],
+  "worst_CoG_displacement_mm_at_total_1g": 1.1079865416502293,
+  "worst_CoG_direction_summary_at_1g": {
+    "max_displacement_mm": 2.0389061310481704,
+    "max_von_mises_MPa": 7.7976881999618675,
+    "volume_weighted_p95_von_mises_MPa": 0.6008322379934574,
+    "volume_weighted_p99_von_mises_MPa": 1.8480115540627369,
+    "mean_von_mises_MPa": 0.1593171712003934,
+    "max_stress_location_mm": [
+      8.750000000000004,
+      58.0,
+      15.5
+    ],
+    "raw_peak_warning": "Raw integration-point peaks near sharp/reentrant corners and ideal clamps may be singular; no failure or release force is inferred.",
+    "regions": {
+      "2mm_bearing_web": {
+        "volume_mm3": 2745.8461103141217,
+        "max_von_mises_MPa": 1.830043011799496,
+        "p95_MPa": 0.6839592787218328,
+        "p99_MPa": 0.8984519274844049
+      },
+      "tray_perimeter": {
+        "volume_mm3": 7516.702400708149,
+        "max_von_mises_MPa": 0.9724636236758318,
+        "p95_MPa": 0.2789320138040818,
+        "p99_MPa": 0.36962049249787476
+      },
+      "short_45deg_arms": {
+        "volume_mm3": 1904.3967881609153,
+        "max_von_mises_MPa": 7.7976881999618675,
+        "p95_MPa": 2.639818752510745,
+        "p99_MPa": 3.523102773076405
+      },
+      "root_mounting_foot": {
+        "volume_mm3": 1233.5751778934714,
+        "max_von_mises_MPa": 7.7976881999618675,
+        "p95_MPa": 1.4422273228041782,
+        "p99_MPa": 2.6593629013861224
+      },
+      "guard_posts": {
+        "volume_mm3": 9646.601571713198,
+        "max_von_mises_MPa": 4.864194126185603,
+        "p95_MPa": 0.06233006078779126,
+        "p99_MPa": 1.7274979721411434
+      }
+    }
+  },
+  "worst_CoG_direction_energy_Nmm_at_1g": 1.0370312872449103,
+  "unit_external_force_cases": [
+    {
+      "axis": "X",
+      "force_at_camera_CoG_N": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "summary": {
+        "max_displacement_mm": 0.1783325743498441,
+        "max_von_mises_MPa": 1.7819360269473115,
+        "volume_weighted_p95_von_mises_MPa": 0.22321761500606316,
+        "volume_weighted_p99_von_mises_MPa": 0.36122098937773817,
+        "mean_von_mises_MPa": 0.06403768194136455,
+        "max_stress_location_mm": [
+          -13.249999999999996,
+          58.0,
+          15.5
+        ],
+        "raw_peak_warning": "Raw integration-point peaks near sharp/reentrant corners and ideal clamps may be singular; no failure or release force is inferred.",
+        "regions": {
+          "2mm_bearing_web": {
+            "volume_mm3": 2745.8461103141217,
+            "max_von_mises_MPa": 0.7454100323279551,
+            "p95_MPa": 0.2984328580264094,
+            "p99_MPa": 0.3809680431543968
+          },
+          "tray_perimeter": {
+            "volume_mm3": 7516.702400708149,
+            "max_von_mises_MPa": 0.4393930304121947,
+            "p95_MPa": 0.17623792619034734,
+            "p99_MPa": 0.23536696582471048
+          },
+          "short_45deg_arms": {
+            "volume_mm3": 1904.3967881609153,
+            "max_von_mises_MPa": 1.7819360269473115,
+            "p95_MPa": 0.4665005715201369,
+            "p99_MPa": 0.6683741975199549
+          },
+          "root_mounting_foot": {
+            "volume_mm3": 1233.5751778934714,
+            "max_von_mises_MPa": 1.7819360269473115,
+            "p95_MPa": 0.29727099886568437,
+            "p99_MPa": 0.5326774826637868
+          },
+          "guard_posts": {
+            "volume_mm3": 9646.601571713198,
+            "max_von_mises_MPa": 1.1451909195406649,
+            "p95_MPa": 0.020769370349667034,
+            "p99_MPa": 0.282825580405275
+          }
+        }
+      },
+      "solver": {
+        "solve_seconds": 26.218868635000035,
+        "iterations": 169,
+        "relative_free_residual": 9.623353182125854e-10,
+        "strain_energy_Nmm": 0.07730093198665701,
+        "compliance_Nmm": 0.15460186397597048,
+        "applied_wrench": {
+          "force_N": [
+            0.9999999999999926,
+            2.255140518769849e-16,
+            1.5612511283791264e-16
+          ],
+          "moment_Nmm": [
+            -4.9384107914107744e-14,
+            25.305086527633172,
+            -112.3050865276326
+          ]
+        },
+        "support_reaction_wrench": {
+          "force_N": [
+            -0.9999999999614188,
+            9.541867296292139e-12,
+            -1.5305812173238564e-13
+          ],
+          "moment_Nmm": [
+            -3.180178759221164e-10,
+            -25.305086527251156,
+            112.30508652347939
+          ]
+        },
+        "force_balance_error_N": [
+          3.8573810812181364e-11,
+          9.542092810344016e-12,
+          -1.5290199661954773e-13
+        ],
+        "moment_balance_error_Nmm": [
+          -3.180672600300305e-10,
+          3.8201619645406026e-10,
+          -4.153207555646077e-09
+        ]
+      },
+      "camera_CoG_displacement_mm_per_N": 0.15463290263641039,
+      "meaning": "Static unit external force; not a transient collision simulation"
+    },
+    {
+      "axis": "Y",
+      "force_at_camera_CoG_N": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "summary": {
+        "max_displacement_mm": 0.26256984105051984,
+        "max_von_mises_MPa": 1.0380192563273762,
+        "volume_weighted_p95_von_mises_MPa": 0.14208271934256525,
+        "volume_weighted_p99_von_mises_MPa": 0.3047792620936606,
+        "mean_von_mises_MPa": 0.03941193777983573,
+        "max_stress_location_mm": [
+          -13.859149133249794,
+          64.8073801774078,
+          8.960632931583628
+        ],
+        "raw_peak_warning": "Raw integration-point peaks near sharp/reentrant corners and ideal clamps may be singular; no failure or release force is inferred.",
+        "regions": {
+          "2mm_bearing_web": {
+            "volume_mm3": 2745.8461103141217,
+            "max_von_mises_MPa": 0.829336400019786,
+            "p95_MPa": 0.30457523776008305,
+            "p99_MPa": 0.4113094008607745
+          },
+          "tray_perimeter": {
+            "volume_mm3": 7516.702400708149,
+            "max_von_mises_MPa": 0.376570502242773,
+            "p95_MPa": 0.0975738385645694,
+            "p99_MPa": 0.1298416290987708
+          },
+          "short_45deg_arms": {
+            "volume_mm3": 1904.3967881609153,
+            "max_von_mises_MPa": 1.0380192563273762,
+            "p95_MPa": 0.3475274062942431,
+            "p99_MPa": 0.47821476843230504
+          },
+          "root_mounting_foot": {
+            "volume_mm3": 1233.5751778934714,
+            "max_von_mises_MPa": 0.6457952864471067,
+            "p95_MPa": 0.13501508075315583,
+            "p99_MPa": 0.2532805280912615
+          },
+          "guard_posts": {
+            "volume_mm3": 9646.601571713198,
+            "max_von_mises_MPa": 0.5481653781092422,
+            "p95_MPa": 0.014613021131163752,
+            "p99_MPa": 0.17135671997576635
+          }
