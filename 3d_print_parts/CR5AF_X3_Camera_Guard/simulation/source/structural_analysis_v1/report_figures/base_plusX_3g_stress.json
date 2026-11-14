@@ -1,0 +1,10 @@
+{
+  "source_vtu": "structural_analysis_v1/service_results/base/fine/plusX_3g.vtu",
+  "quantity": "stress",
+  "surface_triangles": 77448,
+  "surface_numeric_max": 11.466894861669337,
+  "color_scale_max": 7.345241829617193,
+  "color_scale_percentile": 99.5,
+  "deformation_scale": 0.0,
+  "note": "Stress is element averaged and is not the raw integration-point peak reported in JSON."
+}
