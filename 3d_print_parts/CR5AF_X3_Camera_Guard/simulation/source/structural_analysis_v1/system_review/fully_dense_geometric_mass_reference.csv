@@ -1,0 +1,15 @@
+<PARSED TEXT FOR SHEET: 1 / 1 TABS
+TAB NAME: simulation__source__structural_analysis_v1__system_review__fully_dense_geometric_mass_reference.csv>
+index,part,solid_CAD_volume_mm3,assumed_material,density_g_cm3,fully_dense_geometric_mass_g,actual_printed_mass
+0,01_Direct_Base,53484.70110737708,Bambu PLA Basic,1.24,66.32102937314758,False
+1,01_Direct_Base,53484.70110737708,Bambu PETG HF,1.28,68.46041741744266,False
+2,01_Direct_Base,53484.70110737708,Bambu PETG Basic,1.25,66.85587638422135,False
+3,02_Fuse_Cartridge_D8,3605.131537944488,Bambu PLA Basic,1.24,4.470363107051165,False
+4,02_Fuse_Cartridge_D8,3605.131537944488,Bambu PETG HF,1.28,4.6145683685689445,False
+5,02_Fuse_Cartridge_D8,3605.131537944488,Bambu PETG Basic,1.25,4.50641442243061,False
+6,03_Cartridge_Retaining_Pin,176.00254028227795,Bambu PLA Basic,1.24,0.2182431499500246,False
+7,03_Cartridge_Retaining_Pin,176.00254028227795,Bambu PETG HF,1.28,0.2252832515613157,False
+8,03_Cartridge_Retaining_Pin,176.00254028227795,Bambu PETG Basic,1.25,0.2200031753528474,False
+9,04_Camera_Module_Short45,28790.32513769369,Bambu PLA Basic,1.24,35.70000317074017,False
+10,04_Camera_Module_Short45,28790.32513769369,Bambu PETG HF,1.28,36.85161617624792,False
+11,04_Camera_Module_Short45,28790.32513769369,Bambu PETG Basic,1.25,35.987906422117106,False

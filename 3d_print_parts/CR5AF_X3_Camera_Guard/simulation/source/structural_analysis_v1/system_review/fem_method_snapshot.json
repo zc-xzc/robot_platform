@@ -1,0 +1,1000 @@
+{
+  "review_UTC": "2026-11-12T06:44:42.100056+00:00",
+  "scope": "Independent source-code inspection plus arithmetic on available report snapshots; no rerun FEM solves.",
+  "critical_input_checks": [
+    {
+      "source": "<redacted-workspace-path>",
+      "analysis_copy": "<redacted-workspace-path>",
+      "expected_sha256": "9dcf662a3aaa9255a787e54e102e2afc089d1f95c0fd694f5c75996adf7f22df",
+      "original_matches": true,
+      "copy_matches": true
+    },
+    {
+      "source": "<redacted-workspace-path>",
+      "analysis_copy": "<redacted-workspace-path>",
+      "expected_sha256": "7856917e070c34f9ab04f5dc9718c8766f943a605d720650ff11424fd87cd6ca",
+      "original_matches": true,
+      "copy_matches": true
+    },
+    {
+      "source": "<redacted-workspace-path>",
+      "analysis_copy": "<redacted-workspace-path>",
+      "expected_sha256": "ca6ec19d860b428681eed5b09e7b5715c12e760299a35d2acc0977f4f5494976",
+      "original_matches": true,
+      "copy_matches": true
+    },
+    {
+      "source": "<redacted-workspace-path>",
+      "analysis_copy": "<redacted-workspace-path>",
+      "expected_sha256": "60ad2070bb2afdbc100a668c3bd0c13e970ca3707dcdc82e22a27777375d27a6",
+      "original_matches": true,
+      "copy_matches": true
+    }
+  ],
+  "code_snapshot": [
+    {
+      "file": "<redacted-workspace-path>",
+      "sha256": "95f364061b88871cee449d9e61f9c3b8fa514e791000cf68fa4eeaf3a417966b"
+    },
+    {
+      "file": "<redacted-workspace-path>",
+      "sha256": "69a6e7f709b2fad99b284fde396808d045c67cfafa83e3629816de2ae994da7c"
+    },
+    {
+      "file": "<redacted-workspace-path>",
+      "sha256": "493397033854cb39be98ec1dd2b5ebbbef3ec5618cbe2062cd813521f1a9f532"
+    },
+    {
+      "file": "<redacted-workspace-path>",
+      "sha256": "48607f9e1de387053a3969aa961406fc066d07a3269c53b233a9f5cc77e65d98"
+    },
+    {
+      "file": "<redacted-workspace-path>",
+      "sha256": "a68ae29f64ee89f17dbd570718f1c7b86cf641b6b4f2c8ca94e6882c0e1e46ee"
+    },
+    {
+      "file": "<redacted-workspace-path>",
+      "sha256": "8ceae09fe3c665b015e18b1ff64922cedf40cbb6df728afceefc4780b82dd607"
+    },
+    {
+      "file": "<redacted-workspace-path>",
+      "sha256": "b140f826fcbb8dc6942d4785dd8ff4945b929634cf52af9a520214e85ab69605"
+    },
+    {
+      "file": "<redacted-workspace-path>",
+      "sha256": "87aee5d4630fc1649d593e8922ba5769dd083c7d21421adfc5cb57645471cb1e"
+    },
+    {
+      "file": "<redacted-workspace-path>",
+      "sha256": "ec21642f6f573ff4d5560b685b3f8e71fe6adff25cff793bf49bfef49f192d4b"
+    }
+  ],
+  "available_report_snapshots": [
+    {
+      "file": "<redacted-workspace-path>",
+      "sha256_at_review": "15c2cf418cba086b2d0ff004fdfe69b30876e78c7b9a62357539a36a7c81b126",
+      "complete_at_review": true,
+      "case_count_at_review": 19,
+      "source_sha256": "9dcf662a3aaa9255a787e54e102e2afc089d1f95c0fd694f5c75996adf7f22df",
+      "mesh_sha256": "895f07c03b240bf29f39669b5c5768313c1f785e2ec38a121303569c66ca5397",
+      "mesh_volume_relative_error": 6.221136210404765e-06,
+      "folded_elements_at_integration_points": 0,
+      "load_path_state": "PRE_BREAK_intact",
+      "support_idealization": "Rigidly fixed all three translations on bottom z=0 annular pad facets whose centroids are within radius6mm of the four PCD50 M6 axes. All other mounting surfaces are free. No bolt preload/contact/friction."
+    },
+    {
+      "file": "<redacted-workspace-path>",
+      "sha256_at_review": "96764da0fc8e2d36709b751dd2b958d12c8bce42dfd8083acea0f6160e79a2f2",
+      "complete_at_review": true,
+      "case_count_at_review": 19,
+      "source_sha256": "9dcf662a3aaa9255a787e54e102e2afc089d1f95c0fd694f5c75996adf7f22df",
+      "mesh_sha256": "7910510799be42c9fedfd6ddb352b7fcba98997f1bd6b25dc10d108d4db39e17",
+      "mesh_volume_relative_error": 1.525109177613615e-06,
+      "folded_elements_at_integration_points": 0,
+      "load_path_state": "PRE_BREAK_intact",
+      "support_idealization": "Rigidly fixed all three translations on bottom z=0 annular pad facets whose centroids are within radius6mm of the four PCD50 M6 axes. All other mounting surfaces are free. No bolt preload/contact/friction."
+    },
+    {
+      "file": "<redacted-workspace-path>",
+      "sha256_at_review": "6afb44950bf3ad9d8f2fdc216470beeda96b6b9a8169706d9a0a3570f1eb3a15",
+      "complete_at_review": true,
+      "case_count_at_review": 19,
+      "source_sha256": "9dcf662a3aaa9255a787e54e102e2afc089d1f95c0fd694f5c75996adf7f22df",
+      "mesh_sha256": "c32a51eff03f61e0c57c6976c6f898403cbfef01dd8b19defc6c85976c6c0086",
+      "mesh_volume_relative_error": 5.480357837539529e-06,
+      "folded_elements_at_integration_points": 0,
+      "load_path_state": "PRE_BREAK_intact",
+      "support_idealization": "Rigidly fixed all three translations on bottom z=0 annular pad facets whose centroids are within radius6mm of the four PCD50 M6 axes. All other mounting surfaces are free. No bolt preload/contact/friction."
+    },
+    {
+      "file": "<redacted-workspace-path>",
+      "sha256_at_review": "1d27c3efc268c585d3be5b058ca396689d726bdf0659cce024408600119c22a9",
+      "complete_at_review": true,
+      "case_count_at_review": 19,
+      "source_sha256": "7856917e070c34f9ab04f5dc9718c8766f943a605d720650ff11424fd87cd6ca",
+      "mesh_sha256": "2339cd728392eeae8a24b6a2677a7bf15e4a97be4af2f16804b6e000955fdf91",
+      "mesh_volume_relative_error": -6.224496098550247e-07,
+      "folded_elements_at_integration_points": 0,
+      "load_path_state": "PRE_BREAK_intact",
+      "support_idealization": "Rigidly fixed all three translations on all exposed lower-dovetail facets at or below z6.7. Carrier top within camera foot plus stud shanks/underheads receive equivalent distributed bonded load. Existing clearances/slip/opening/friction/contact are not solved."
+    },
+    {
+      "file": "<redacted-workspace-path>",
+      "sha256_at_review": "3c469aeb7f0fb21c9a75e6741af5ce4d955720c7f48be36e689e40d8b82b7301",
+      "complete_at_review": true,
+      "case_count_at_review": 19,
+      "source_sha256": "7856917e070c34f9ab04f5dc9718c8766f943a605d720650ff11424fd87cd6ca",
+      "mesh_sha256": "a0d056bcbd036b3be17355d12f71cd22115a40029b830c133d7d780624128c6a",
+      "mesh_volume_relative_error": -4.9119359912808136e-08,
+      "folded_elements_at_integration_points": 0,
+      "load_path_state": "PRE_BREAK_intact",
+      "support_idealization": "Rigidly fixed all three translations on all exposed lower-dovetail facets at or below z6.7. Carrier top within camera foot plus stud shanks/underheads receive equivalent distributed bonded load. Existing clearances/slip/opening/friction/contact are not solved."
+    },
+    {
+      "file": "<redacted-workspace-path>",
+      "sha256_at_review": "c1cacc36900fb9797d57042d726e622f7e01478851a7fbba60bbcb5861661d67",
+      "complete_at_review": true,
+      "case_count_at_review": 19,
+      "source_sha256": "7856917e070c34f9ab04f5dc9718c8766f943a605d720650ff11424fd87cd6ca",
+      "mesh_sha256": "b182087e752e4e4aea9bbcd8531f065fdcb7089b85f0c3d1ca218fdfb2060371",
+      "mesh_volume_relative_error": -2.1890640977684228e-07,
+      "folded_elements_at_integration_points": 0,
+      "load_path_state": "PRE_BREAK_intact",
+      "support_idealization": "Rigidly fixed all three translations on all exposed lower-dovetail facets at or below z6.7. Carrier top within camera foot plus stud shanks/underheads receive equivalent distributed bonded load. Existing clearances/slip/opening/friction/contact are not solved."
+    },
+    {
+      "file": "<redacted-workspace-path>",
+      "sha256_at_review": "72cb6e68852414e8c6e7489a8c4536f138f5cb233b3b07bf4ff6ccbec247d86c",
+      "complete_at_review": true,
+      "case_count_at_review": 4,
+      "source_sha256": "7856917e070c34f9ab04f5dc9718c8766f943a605d720650ff11424fd87cd6ca",
+      "mesh_sha256": "2339cd728392eeae8a24b6a2677a7bf15e4a97be4af2f16804b6e000955fdf91",
+      "mesh_volume_relative_error": -6.224496098550247e-07,
+      "folded_elements_at_integration_points": 0,
+      "load_path_state": "POST_BREAK_local_lug",
+      "support_idealization": "POST_BREAK equivalent local lug submodel: lower dovetail is completely free; carrier/stud interface fixed instead as an idealized camera-side inertial reaction. Original uncut CAD is retained; no fracture/contact process is simulated. Fixed interface replaces the remaining moving assembly; unused lower geometry bears no imposed support reaction."
+    },
+    {
+      "file": "<redacted-workspace-path>",
+      "sha256_at_review": "85f43688e5ff1507689e970e7aa2dfd585fb81107ad468b885e840b1a8a6b5ee",
+      "complete_at_review": true,
+      "case_count_at_review": 4,
+      "source_sha256": "7856917e070c34f9ab04f5dc9718c8766f943a605d720650ff11424fd87cd6ca",
+      "mesh_sha256": "b182087e752e4e4aea9bbcd8531f065fdcb7089b85f0c3d1ca218fdfb2060371",
+      "mesh_volume_relative_error": -2.1890640977684228e-07,
+      "folded_elements_at_integration_points": 0,
+      "load_path_state": "POST_BREAK_local_lug",
+      "support_idealization": "POST_BREAK equivalent local lug submodel: lower dovetail is completely free; carrier/stud interface fixed instead as an idealized camera-side inertial reaction. Original uncut CAD is retained; no fracture/contact process is simulated. Fixed interface replaces the remaining moving assembly; unused lower geometry bears no imposed support reaction."
+    }
+  ],
+  "case_arithmetic_checks": [
+    {
+      "report": "mount_fea/base/coarse/results.json",
+      "case": "motor_FX_1N_at_z100",
+      "relative_free_residual": 9.756608775899488e-10,
+      "force_equilibrium_error_norm_N": 1.2272183315420568e-11,
+      "moment_equilibrium_error_norm_Nmm": 1.107716732144797e-09,
+      "work_minus_twice_strain_energy_Nmm": -3.122502256758253e-16,
+      "requested_to_assembled_force_error_N": 6.6973807122470445e-16,
+      "requested_to_assembled_global_moment_error_Nmm": 1.2793961335679368e-13
+    },
+    {
+      "report": "mount_fea/base/coarse/results.json",
+      "case": "motor_MX_1Nmm",
+      "relative_free_residual": 9.581270899807246e-10,
+      "force_equilibrium_error_norm_N": 6.824804840125869e-13,
+      "moment_equilibrium_error_norm_Nmm": 1.2407220500887911e-11,
+      "work_minus_twice_strain_energy_Nmm": 1.359487880343152e-19,
+      "requested_to_assembled_force_error_N": 9.517366503125182e-18,
+      "requested_to_assembled_global_moment_error_Nmm": 1.332460237004438e-15
+    },
+    {
+      "report": "mount_fea/base/coarse/results.json",
+      "case": "receiver_FX_1N",
+      "relative_free_residual": 7.838679848478461e-10,
+      "force_equilibrium_error_norm_N": 6.370755041509882e-12,
+      "moment_equilibrium_error_norm_Nmm": 5.683227267759863e-10,
+      "work_minus_twice_strain_energy_Nmm": 9.031404096804252e-17,
+      "requested_to_assembled_force_error_N": 2.0816681711721685e-17,
+      "requested_to_assembled_global_moment_error_Nmm": 1.6274633054071422e-15
+    },
+    {
+      "report": "mount_fea/base/coarse/results.json",
+      "case": "receiver_MX_1Nmm",
+      "relative_free_residual": 7.898671185119256e-10,
+      "force_equilibrium_error_norm_N": 2.355466270494488e-12,
+      "moment_equilibrium_error_norm_Nmm": 3.489647456140767e-11,
+      "work_minus_twice_strain_energy_Nmm": -3.8529834704703614e-17,
+      "requested_to_assembled_force_error_N": 4.0549619709068165e-16,
+      "requested_to_assembled_global_moment_error_Nmm": 1.955258598746627e-14
+    },
+    {
+      "report": "mount_fea/base/coarse/results.json",
+      "case": "motor_FY_1N_at_z100",
+      "relative_free_residual": 7.503757288776506e-10,
+      "force_equilibrium_error_norm_N": 3.055652851421245e-11,
+      "moment_equilibrium_error_norm_Nmm": 4.159469113115906e-10,
+      "work_minus_twice_strain_energy_Nmm": -1.033895191682177e-15,
+      "requested_to_assembled_force_error_N": 6.826351786325139e-16,
+      "requested_to_assembled_global_moment_error_Nmm": 9.949308244466741e-14
+    },
+    {
+      "report": "mount_fea/base/coarse/results.json",
+      "case": "motor_MY_1Nmm",
+      "relative_free_residual": 8.568556099658235e-10,
+      "force_equilibrium_error_norm_N": 9.163886349684165e-14,
+      "moment_equilibrium_error_norm_Nmm": 5.797181845225931e-12,
+      "work_minus_twice_strain_energy_Nmm": 2.3166351107405114e-19,
+      "requested_to_assembled_force_error_N": 9.28875096913875e-18,
+      "requested_to_assembled_global_moment_error_Nmm": 2.2208490405213404e-15
+    },
+    {
+      "report": "mount_fea/base/coarse/results.json",
+      "case": "receiver_FY_1N",
+      "relative_free_residual": 8.943796404342311e-10,
+      "force_equilibrium_error_norm_N": 1.3889579365283515e-11,
+      "moment_equilibrium_error_norm_Nmm": 5.073382141761202e-10,
+      "work_minus_twice_strain_energy_Nmm": 1.0284741808197495e-15,
+      "requested_to_assembled_force_error_N": 1.3722418495795368e-15,
+      "requested_to_assembled_global_moment_error_Nmm": 7.22090858437897e-14
+    },
+    {
+      "report": "mount_fea/base/coarse/results.json",
+      "case": "receiver_MY_1Nmm",
+      "relative_free_residual": 6.80010916522967e-10,
+      "force_equilibrium_error_norm_N": 1.1710657346526128e-12,
+      "moment_equilibrium_error_norm_Nmm": 2.6277967343085532e-11,
+      "work_minus_twice_strain_energy_Nmm": 5.005964718272915e-18,
+      "requested_to_assembled_force_error_N": 5.104105558283346e-18,
+      "requested_to_assembled_global_moment_error_Nmm": 1.0534869301605985e-15
+    },
+    {
+      "report": "mount_fea/base/coarse/results.json",
+      "case": "motor_FZ_1N_at_z100",
+      "relative_free_residual": 9.853985006422783e-10,
+      "force_equilibrium_error_norm_N": 2.913522797636653e-12,
+      "moment_equilibrium_error_norm_Nmm": 1.5034125860305655e-10,
+      "work_minus_twice_strain_energy_Nmm": 3.3881317890172014e-17,
+      "requested_to_assembled_force_error_N": 2.877539330505803e-32,
+      "requested_to_assembled_global_moment_error_Nmm": 1.775677772350706e-15
+    },
+    {
+      "report": "mount_fea/base/coarse/results.json",
+      "case": "motor_MZ_1Nmm",
+      "relative_free_residual": 8.228758185545549e-10,
+      "force_equilibrium_error_norm_N": 1.617587321690834e-13,
+      "moment_equilibrium_error_norm_Nmm": 5.036060960217059e-12,
+      "work_minus_twice_strain_energy_Nmm": -3.536362554786704e-20,
+      "requested_to_assembled_force_error_N": 7.203266990002872e-19,
+      "requested_to_assembled_global_moment_error_Nmm": 2.3151727756854714e-16
+    },
+    {
+      "report": "mount_fea/base/coarse/results.json",
+      "case": "receiver_FZ_1N",
+      "relative_free_residual": 8.325364709834396e-10,
+      "force_equilibrium_error_norm_N": 2.866615033365022e-11,
+      "moment_equilibrium_error_norm_Nmm": 1.5588271240254062e-10,
+      "work_minus_twice_strain_energy_Nmm": 3.483758420630423e-15,
+      "requested_to_assembled_force_error_N": 3.469446951953614e-18,
+      "requested_to_assembled_global_moment_error_Nmm": 7.128949175986483e-15
+    },
+    {
+      "report": "mount_fea/base/coarse/results.json",
+      "case": "receiver_MZ_1Nmm",
+      "relative_free_residual": 8.882748798900103e-10,
+      "force_equilibrium_error_norm_N": 4.808375263472656e-13,
+      "moment_equilibrium_error_norm_Nmm": 1.3433672896411981e-11,
+      "work_minus_twice_strain_energy_Nmm": 4.5422141796511856e-20,
+      "requested_to_assembled_force_error_N": 9.159438805094857e-17,
+      "requested_to_assembled_global_moment_error_Nmm": 4.451856277459385e-15
+    },
+    {
+      "report": "mount_fea/base/coarse/results.json",
+      "case": "tether_minusX_1N",
+      "relative_free_residual": 7.235945705438242e-10,
+      "force_equilibrium_error_norm_N": 3.2086878156866924e-12,
+      "moment_equilibrium_error_norm_Nmm": 1.607260956950421e-10,
+      "work_minus_twice_strain_energy_Nmm": 6.179952383167375e-18,
+      "requested_to_assembled_force_error_N": 1.0074602931719883e-20,
+      "requested_to_assembled_global_moment_error_Nmm": 3.552713679262704e-15
+    },
+    {
+      "report": "mount_fea/base/coarse/results.json",
+      "case": "tether_plusZ_1N",
+      "relative_free_residual": 8.233873250429733e-10,
+      "force_equilibrium_error_norm_N": 1.464454774598959e-11,
+      "moment_equilibrium_error_norm_Nmm": 1.6241336864665787e-10,
+      "work_minus_twice_strain_energy_Nmm": 1.973247953923618e-17,
+      "requested_to_assembled_force_error_N": 6.386884290519658e-22,
+      "requested_to_assembled_global_moment_error_Nmm": 1.004859173561331e-14
+    },
+    {
+      "report": "mount_fea/base/coarse/results.json",
+      "case": "tether_minusZ_1N",
+      "relative_free_residual": 8.233873250429733e-10,
+      "force_equilibrium_error_norm_N": 1.464454774598959e-11,
+      "moment_equilibrium_error_norm_Nmm": 1.6241336864665787e-10,
+      "work_minus_twice_strain_energy_Nmm": 1.973247953923618e-17,
+      "requested_to_assembled_force_error_N": 6.386884290519658e-22,
+      "requested_to_assembled_global_moment_error_Nmm": 1.004859173561331e-14
+    },
+    {
+      "report": "mount_fea/base/coarse/results.json",
+      "case": "tether_minusX_bearing_half_1N",
+      "relative_free_residual": 8.414655979572138e-10,
+      "force_equilibrium_error_norm_N": 6.6039848217498e-12,
+      "moment_equilibrium_error_norm_Nmm": 5.495675968152916e-10,
+      "work_minus_twice_strain_energy_Nmm": -3.0899761915836876e-18,
+      "requested_to_assembled_force_error_N": 1.280862627286393e-17,
+      "requested_to_assembled_global_moment_error_Nmm": 1.4238646234485627e-14
+    },
+    {
+      "report": "mount_fea/base/coarse/results.json",
+      "case": "self_weight_X_1g",
+      "relative_free_residual": 8.136494185727316e-10,
+      "force_equilibrium_error_norm_N": 3.6429440531967664e-13,
+      "moment_equilibrium_error_norm_Nmm": 2.5854971331866668e-11,
+      "work_minus_twice_strain_energy_Nmm": 1.9312351197398048e-19,
+      "body_force_units_error_N": 1.1102230246251565e-16
+    },
+    {
+      "report": "mount_fea/base/coarse/results.json",
+      "case": "self_weight_Y_1g",
+      "relative_free_residual": 8.048184176779577e-10,
+      "force_equilibrium_error_norm_N": 1.4500213513989055e-12,
+      "moment_equilibrium_error_norm_Nmm": 1.5918351418132998e-11,
+      "work_minus_twice_strain_energy_Nmm": 4.70950318673391e-19,
+      "body_force_units_error_N": 1.1102230246251565e-16
+    },
+    {
+      "report": "mount_fea/base/coarse/results.json",
+      "case": "self_weight_Z_1g",
+      "relative_free_residual": 8.488335508679757e-10,
+      "force_equilibrium_error_norm_N": 3.011395289110073e-13,
+      "moment_equilibrium_error_norm_Nmm": 3.2333412934123794e-11,
+      "work_minus_twice_strain_energy_Nmm": 5.353248226647178e-18,
+      "body_force_units_error_N": 1.1102230246251565e-16
+    },
+    {
+      "report": "mount_fea/base/fine/results.json",
+      "case": "motor_FX_1N_at_z100",
+      "relative_free_residual": 9.733080731393189e-10,
+      "force_equilibrium_error_norm_N": 2.788986224724966e-11,
+      "moment_equilibrium_error_norm_Nmm": 8.886330143899928e-10,
+      "work_minus_twice_strain_energy_Nmm": 6.314393452555578e-15,
+      "requested_to_assembled_force_error_N": 4.458779292305356e-16,
+      "requested_to_assembled_global_moment_error_Nmm": 2.842246439417762e-13
+    },
+    {
+      "report": "mount_fea/base/fine/results.json",
+      "case": "motor_MX_1Nmm",
+      "relative_free_residual": 7.208632922410977e-10,
+      "force_equilibrium_error_norm_N": 9.403934190748044e-14,
+      "moment_equilibrium_error_norm_Nmm": 5.011355282845994e-12,
+      "work_minus_twice_strain_energy_Nmm": -3.5151867311053464e-19,
+      "requested_to_assembled_force_error_N": 9.157482072843202e-18,
+      "requested_to_assembled_global_moment_error_Nmm": 2.8867266875220728e-15
+    },
+    {
+      "report": "mount_fea/base/fine/results.json",
+      "case": "receiver_FX_1N",
+      "relative_free_residual": 7.636883631963698e-10,
+      "force_equilibrium_error_norm_N": 2.9216732657515285e-12,
+      "moment_equilibrium_error_norm_Nmm": 4.3434699292248663e-10,
+      "work_minus_twice_strain_energy_Nmm": -4.672911363412524e-17,
+      "requested_to_assembled_force_error_N": 2.0383000842727483e-17,
+      "requested_to_assembled_global_moment_error_Nmm": 9.241584881433253e-14
+    },
+    {
+      "report": "mount_fea/base/fine/results.json",
+      "case": "receiver_MX_1Nmm",
+      "relative_free_residual": 7.885219086958958e-10,
+      "force_equilibrium_error_norm_N": 1.2999172566287205e-12,
+      "moment_equilibrium_error_norm_Nmm": 7.164745609700601e-11,
+      "work_minus_twice_strain_energy_Nmm": -7.450501804048826e-17,
+      "requested_to_assembled_force_error_N": 1.267330637774596e-16,
+      "requested_to_assembled_global_moment_error_Nmm": 2.664540061641366e-15
+    },
+    {
+      "report": "mount_fea/base/fine/results.json",
+      "case": "motor_FY_1N_at_z100",
+      "relative_free_residual": 7.536663453015069e-10,
+      "force_equilibrium_error_norm_N": 7.113238576751868e-12,
+      "moment_equilibrium_error_norm_Nmm": 3.43697602320066e-10,
+      "work_minus_twice_strain_energy_Nmm": -1.4953316362920077e-15,
+      "requested_to_assembled_force_error_N": 6.663596519452762e-16,
+      "requested_to_assembled_global_moment_error_Nmm": 8.537261312901937e-14
+    },
+    {
+      "report": "mount_fea/base/fine/results.json",
+      "case": "motor_MY_1Nmm",
+      "relative_free_residual": 8.686554511507154e-10,
+      "force_equilibrium_error_norm_N": 2.670247058331335e-13,
+      "moment_equilibrium_error_norm_Nmm": 1.2292155700495749e-11,
+      "work_minus_twice_strain_energy_Nmm": -1.5077186461126546e-19,
+      "requested_to_assembled_force_error_N": 9.19286434536494e-18,
+      "requested_to_assembled_global_moment_error_Nmm": 1.998411303248345e-15
+    },
+    {
+      "report": "mount_fea/base/fine/results.json",
+      "case": "receiver_FY_1N",
+      "relative_free_residual": 8.547292892985834e-10,
+      "force_equilibrium_error_norm_N": 9.767854086254206e-12,
+      "moment_equilibrium_error_norm_Nmm": 2.1614021087480933e-10,
+      "work_minus_twice_strain_energy_Nmm": -3.02622510384154e-15,
+      "requested_to_assembled_force_error_N": 4.595284462673569e-16,
+      "requested_to_assembled_global_moment_error_Nmm": 1.0670832006715419e-14
+    },
+    {
+      "report": "mount_fea/base/fine/results.json",
+      "case": "receiver_MY_1Nmm",
+      "relative_free_residual": 6.514768872764064e-10,
+      "force_equilibrium_error_norm_N": 7.452532947872763e-13,
+      "moment_equilibrium_error_norm_Nmm": 3.1031727570844414e-11,
+      "work_minus_twice_strain_energy_Nmm": -5.3007321839174115e-18,
+      "requested_to_assembled_force_error_N": 8.393293539772078e-18,
+      "requested_to_assembled_global_moment_error_Nmm": 2.8835515804502336e-16
+    },
+    {
+      "report": "mount_fea/base/fine/results.json",
+      "case": "motor_FZ_1N_at_z100",
+      "relative_free_residual": 9.456630310406801e-10,
+      "force_equilibrium_error_norm_N": 3.913959583726331e-12,
+      "moment_equilibrium_error_norm_Nmm": 2.0439178669936812e-10,
+      "work_minus_twice_strain_energy_Nmm": 4.6349642873755315e-17,
+      "requested_to_assembled_force_error_N": 2.220446049250313e-16,
+      "requested_to_assembled_global_moment_error_Nmm": 1.4147422365325966e-15
+    },
+    {
+      "report": "mount_fea/base/fine/results.json",
+      "case": "motor_MZ_1Nmm",
+      "relative_free_residual": 7.513979032367354e-10,
+      "force_equilibrium_error_norm_N": 1.9604965939398286e-13,
+      "moment_equilibrium_error_norm_Nmm": 3.093712129071254e-12,
+      "work_minus_twice_strain_energy_Nmm": 4.298692207315574e-20,
+      "requested_to_assembled_force_error_N": 5.285485590866834e-19,
+      "requested_to_assembled_global_moment_error_Nmm": 2.302061007893806e-16
+    },
+    {
+      "report": "mount_fea/base/fine/results.json",
+      "case": "receiver_FZ_1N",
+      "relative_free_residual": 7.4112710727865e-10,
+      "force_equilibrium_error_norm_N": 8.801138029559406e-12,
+      "moment_equilibrium_error_norm_Nmm": 1.8972436533779264e-10,
+      "work_minus_twice_strain_energy_Nmm": -6.52516235488676e-15,
+      "requested_to_assembled_force_error_N": 7.806255641895632e-18,
+      "requested_to_assembled_global_moment_error_Nmm": 4.974643115168006e-14
+    },
+    {
+      "report": "mount_fea/base/fine/results.json",
+      "case": "receiver_MZ_1Nmm",
+      "relative_free_residual": 9.955329361779665e-10,
+      "force_equilibrium_error_norm_N": 7.79942168978511e-13,
+      "moment_equilibrium_error_norm_Nmm": 2.3732613302417976e-11,
+      "work_minus_twice_strain_energy_Nmm": -1.223962608782464e-19,
+      "requested_to_assembled_force_error_N": 2.953178001341417e-17,
+      "requested_to_assembled_global_moment_error_Nmm": 1.1154968783952563e-16
+    },
+    {
+      "report": "mount_fea/base/fine/results.json",
+      "case": "tether_minusX_1N",
+      "relative_free_residual": 7.157605610376804e-10,
+      "force_equilibrium_error_norm_N": 3.396469094495072e-12,
+      "moment_equilibrium_error_norm_Nmm": 2.6894256729199185e-10,
+      "work_minus_twice_strain_energy_Nmm": -5.664956351236761e-18,
+      "requested_to_assembled_force_error_N": 1.4135836611939287e-22,
+      "requested_to_assembled_global_moment_error_Nmm": 2.842517866562397e-14
+    },
+    {
+      "report": "mount_fea/base/fine/results.json",
+      "case": "tether_plusZ_1N",
+      "relative_free_residual": 6.805194880307154e-10,
+      "force_equilibrium_error_norm_N": 2.71320418828149e-12,
+      "moment_equilibrium_error_norm_Nmm": 2.553670314529569e-10,
+      "work_minus_twice_strain_energy_Nmm": -8.868773770931426e-17,
+      "requested_to_assembled_force_error_N": 2.220446049250343e-16,
+      "requested_to_assembled_global_moment_error_Nmm": 4.83221303281861e-14
+    },
+    {
+      "report": "mount_fea/base/fine/results.json",
+      "case": "tether_minusZ_1N",
+      "relative_free_residual": 6.805194880307154e-10,
+      "force_equilibrium_error_norm_N": 2.71320418828149e-12,
+      "moment_equilibrium_error_norm_Nmm": 2.553670314529569e-10,
+      "work_minus_twice_strain_energy_Nmm": -8.868773770931426e-17,
+      "requested_to_assembled_force_error_N": 2.220446049250343e-16,
+      "requested_to_assembled_global_moment_error_Nmm": 4.83221303281861e-14
+    },
+    {
+      "report": "mount_fea/base/fine/results.json",
+      "case": "tether_minusX_bearing_half_1N",
+      "relative_free_residual": 8.575136675774908e-10,
+      "force_equilibrium_error_norm_N": 8.154305240671388e-12,
+      "moment_equilibrium_error_norm_Nmm": 5.421348435238596e-10,
+      "work_minus_twice_strain_energy_Nmm": 5.854691731421724e-18,
+      "requested_to_assembled_force_error_N": 1.2323965531411362e-18,
+      "requested_to_assembled_global_moment_error_Nmm": 7.588707627356028e-15
+    },
+    {
+      "report": "mount_fea/base/fine/results.json",
+      "case": "self_weight_X_1g",
+      "relative_free_residual": 9.573081736074957e-10,
+      "force_equilibrium_error_norm_N": 5.656457082818052e-13,
+      "moment_equilibrium_error_norm_Nmm": 2.8718101917227977e-11,
+      "work_minus_twice_strain_energy_Nmm": -2.2632720350634905e-18,
+      "body_force_units_error_N": 0.0
+    },
+    {
+      "report": "mount_fea/base/fine/results.json",
+      "case": "self_weight_Y_1g",
+      "relative_free_residual": 8.215476189113135e-10,
+      "force_equilibrium_error_norm_N": 8.261039874315555e-13,
+      "moment_equilibrium_error_norm_Nmm": 2.2436198151229833e-11,
+      "work_minus_twice_strain_energy_Nmm": -2.558039500707987e-19,
+      "body_force_units_error_N": 0.0
+    },
+    {
+      "report": "mount_fea/base/fine/results.json",
+      "case": "self_weight_Z_1g",
+      "relative_free_residual": 6.76008952957339e-10,
+      "force_equilibrium_error_norm_N": 6.729160764849501e-13,
+      "moment_equilibrium_error_norm_Nmm": 3.784476806611146e-11,
+      "work_minus_twice_strain_energy_Nmm": 1.3518645838178633e-17,
+      "body_force_units_error_N": 0.0
+    },
+    {
+      "report": "mount_fea/base/medium/results.json",
+      "case": "motor_FX_1N_at_z100",
+      "relative_free_residual": 9.23238519127971e-10,
+      "force_equilibrium_error_norm_N": 1.1516813082246326e-11,
+      "moment_equilibrium_error_norm_Nmm": 1.5639521379955205e-09,
+      "work_minus_twice_strain_energy_Nmm": -2.609024107869118e-15,
+      "requested_to_assembled_force_error_N": 6.766494553370989e-16,
+      "requested_to_assembled_global_moment_error_Nmm": 1.2791348579215714e-13
+    },
+    {
+      "report": "mount_fea/base/medium/results.json",
+      "case": "motor_MX_1Nmm",
+      "relative_free_residual": 8.060054637680418e-10,
+      "force_equilibrium_error_norm_N": 6.151757265555581e-13,
+      "moment_equilibrium_error_norm_Nmm": 5.879029866338165e-12,
+      "work_minus_twice_strain_energy_Nmm": 3.646476837929763e-19,
+      "requested_to_assembled_force_error_N": 9.028572167729562e-18,
+      "requested_to_assembled_global_moment_error_Nmm": 3.1088489951403413e-15
+    },
+    {
+      "report": "mount_fea/base/medium/results.json",
+      "case": "receiver_FX_1N",
+      "relative_free_residual": 9.011789465839707e-10,
+      "force_equilibrium_error_norm_N": 1.024416289796864e-11,
+      "moment_equilibrium_error_norm_Nmm": 7.243617730369681e-10,
+      "work_minus_twice_strain_energy_Nmm": -1.6067876196235176e-16,
+      "requested_to_assembled_force_error_N": 1.1709383462843448e-17,
+      "requested_to_assembled_global_moment_error_Nmm": 2.1490296512305797e-14
+    },
+    {
+      "report": "mount_fea/base/medium/results.json",
+      "case": "receiver_MX_1Nmm",
+      "relative_free_residual": 9.30421837242879e-10,
+      "force_equilibrium_error_norm_N": 1.5672511894474587e-12,
+      "moment_equilibrium_error_norm_Nmm": 1.4384741757379048e-10,
+      "work_minus_twice_strain_energy_Nmm": -4.635641913733335e-17,
+      "requested_to_assembled_force_error_N": 1.2911770613307603e-16,
+      "requested_to_assembled_global_moment_error_Nmm": 3.4540455115421215e-15
+    },
+    {
+      "report": "mount_fea/base/medium/results.json",
+      "case": "motor_FY_1N_at_z100",
+      "relative_free_residual": 8.426869625777172e-10,
+      "force_equilibrium_error_norm_N": 3.162307182415399e-11,
+      "moment_equilibrium_error_norm_Nmm": 6.055094515558103e-10,
+      "work_minus_twice_strain_energy_Nmm": -5.901529265273098e-15,
+      "requested_to_assembled_force_error_N": 6.837913801110315e-16,
+      "requested_to_assembled_global_moment_error_Nmm": 2.8538572100805994e-14
+    },
+    {
+      "report": "mount_fea/base/medium/results.json",
+      "case": "motor_MY_1Nmm",
+      "relative_free_residual": 8.66582361361118e-10,
+      "force_equilibrium_error_norm_N": 1.1397395025981474e-13,
+      "moment_equilibrium_error_norm_Nmm": 1.4496503470449523e-11,
+      "work_minus_twice_strain_energy_Nmm": -2.1218175328720223e-19,
+      "requested_to_assembled_force_error_N": 9.116719163533374e-18,
+      "requested_to_assembled_global_moment_error_Nmm": 1.9985113269761648e-15
+    },
+    {
+      "report": "mount_fea/base/medium/results.json",
+      "case": "receiver_FY_1N",
+      "relative_free_residual": 9.969557444650716e-10,
+      "force_equilibrium_error_norm_N": 9.319918881439308e-12,
+      "moment_equilibrium_error_norm_Nmm": 7.437668745305771e-10,
+      "work_minus_twice_strain_energy_Nmm": 4.417039650705945e-16,
+      "requested_to_assembled_force_error_N": 4.419581631496171e-16,
+      "requested_to_assembled_global_moment_error_Nmm": 1.3418613731401586e-14
+    },
+    {
+      "report": "mount_fea/base/medium/results.json",
+      "case": "receiver_MY_1Nmm",
+      "relative_free_residual": 9.9437026263084e-10,
+      "force_equilibrium_error_norm_N": 1.2676696972703508e-12,
+      "moment_equilibrium_error_norm_Nmm": 1.603773829151466e-11,
+      "work_minus_twice_strain_energy_Nmm": 7.414926420264145e-18,
+      "requested_to_assembled_force_error_N": 6.679952511598719e-18,
+      "requested_to_assembled_global_moment_error_Nmm": 2.8239234086152403e-16
+    },
+    {
+      "report": "mount_fea/base/medium/results.json",
+      "case": "motor_FZ_1N_at_z100",
+      "relative_free_residual": 6.431034707845256e-10,
+      "force_equilibrium_error_norm_N": 4.673272504517419e-12,
+      "moment_equilibrium_error_norm_Nmm": 1.3895240982400285e-10,
+      "work_minus_twice_strain_energy_Nmm": -8.077306185017008e-18,
+      "requested_to_assembled_force_error_N": 1.9755117235077827e-32,
+      "requested_to_assembled_global_moment_error_Nmm": 7.371668282667828e-16
+    },
+    {
+      "report": "mount_fea/base/medium/results.json",
+      "case": "motor_MZ_1Nmm",
+      "relative_free_residual": 7.943842958936763e-10,
+      "force_equilibrium_error_norm_N": 2.657523431712602e-13,
+      "moment_equilibrium_error_norm_Nmm": 1.390496233069535e-11,
+      "work_minus_twice_strain_energy_Nmm": 3.494010907423989e-20,
+      "requested_to_assembled_force_error_N": 1.775461879359866e-18,
+      "requested_to_assembled_global_moment_error_Nmm": 6.681196624347591e-16
+    },
+    {
+      "report": "mount_fea/base/medium/results.json",
+      "case": "receiver_FZ_1N",
+      "relative_free_residual": 7.291418063546329e-10,
+      "force_equilibrium_error_norm_N": 1.0195781142408297e-11,
+      "moment_equilibrium_error_norm_Nmm": 2.72035619746572e-10,
+      "work_minus_twice_strain_energy_Nmm": -7.532169332691296e-15,
+      "requested_to_assembled_force_error_N": 1.1110697347012682e-16,
+      "requested_to_assembled_global_moment_error_Nmm": 4.263871902044265e-14
+    },
+    {
+      "report": "mount_fea/base/medium/results.json",
+      "case": "receiver_MZ_1Nmm",
+      "relative_free_residual": 7.896609418900451e-10,
+      "force_equilibrium_error_norm_N": 2.811469739403802e-12,
+      "moment_equilibrium_error_norm_Nmm": 3.751327138800462e-11,
+      "work_minus_twice_strain_energy_Nmm": -4.235164736271502e-21,
+      "requested_to_assembled_force_error_N": 2.6963381339625467e-17,
+      "requested_to_assembled_global_moment_error_Nmm": 2.4441124227343814e-15
+    },
+    {
+      "report": "mount_fea/base/medium/results.json",
+      "case": "tether_minusX_1N",
+      "relative_free_residual": 7.481968550830381e-10,
+      "force_equilibrium_error_norm_N": 2.9429995493203454e-11,
+      "moment_equilibrium_error_norm_Nmm": 3.1943063299283775e-10,
+      "work_minus_twice_strain_energy_Nmm": -9.75781955236954e-19,
+      "requested_to_assembled_force_error_N": 4.3595855575897964e-21,
+      "requested_to_assembled_global_moment_error_Nmm": 1.42731681408499e-14
+    },
+    {
+      "report": "mount_fea/base/medium/results.json",
+      "case": "tether_plusZ_1N",
+      "relative_free_residual": 8.467786725170509e-10,
+      "force_equilibrium_error_norm_N": 1.8787700714874903e-12,
+      "moment_equilibrium_error_norm_Nmm": 2.700809788249098e-10,
+      "work_minus_twice_strain_energy_Nmm": -1.7997756063259374e-17,
+      "requested_to_assembled_force_error_N": 1.0209409481893394e-21,
+      "requested_to_assembled_global_moment_error_Nmm": 2.7747580858459628e-14
+    },
+    {
+      "report": "mount_fea/base/medium/results.json",
+      "case": "tether_minusZ_1N",
+      "relative_free_residual": 8.467786725170509e-10,
+      "force_equilibrium_error_norm_N": 1.8787700714874903e-12,
+      "moment_equilibrium_error_norm_Nmm": 2.700809788249098e-10,
+      "work_minus_twice_strain_energy_Nmm": -1.7997756063259374e-17,
+      "requested_to_assembled_force_error_N": 1.0209409481893394e-21,
+      "requested_to_assembled_global_moment_error_Nmm": 2.7747580858459628e-14
+    },
+    {
+      "report": "mount_fea/base/medium/results.json",
+      "case": "tether_minusX_bearing_half_1N",
+      "relative_free_residual": 8.70998399736927e-10,
+      "force_equilibrium_error_norm_N": 4.645006907609456e-11,
+      "moment_equilibrium_error_norm_Nmm": 4.166802740298673e-10,
+      "work_minus_twice_strain_energy_Nmm": -4.9873299934333204e-18,
+      "requested_to_assembled_force_error_N": 1.110456699753221e-16,
+      "requested_to_assembled_global_moment_error_Nmm": 1.421792122134989e-14
+    },
+    {
+      "report": "mount_fea/base/medium/results.json",
+      "case": "self_weight_X_1g",
+      "relative_free_residual": 8.161004626960447e-10,
+      "force_equilibrium_error_norm_N": 1.0507109013387472e-12,
+      "moment_equilibrium_error_norm_Nmm": 1.767230331054847e-11,
+      "work_minus_twice_strain_energy_Nmm": 3.9471735342050396e-19,
+      "body_force_units_error_N": 1.1102230246251565e-16
+    },
+    {
+      "report": "mount_fea/base/medium/results.json",
+      "case": "self_weight_Y_1g",
+      "relative_free_residual": 9.701858486458928e-10,
+      "force_equilibrium_error_norm_N": 2.0693556296001047e-12,
+      "moment_equilibrium_error_norm_Nmm": 4.435967042934455e-11,
+      "work_minus_twice_strain_energy_Nmm": 4.912791094074942e-20,
+      "body_force_units_error_N": 1.1102230246251565e-16
+    },
+    {
+      "report": "mount_fea/base/medium/results.json",
+      "case": "self_weight_Z_1g",
+      "relative_free_residual": 9.30896146418664e-10,
+      "force_equilibrium_error_norm_N": 1.027872053034591e-12,
+      "moment_equilibrium_error_norm_Nmm": 1.467613630741708e-11,
+      "work_minus_twice_strain_energy_Nmm": 1.4738373282224826e-18,
+      "body_force_units_error_N": 1.1102230246251565e-16
+    },
+    {
+      "report": "mount_fea/cartridge/coarse/results.json",
+      "case": "carrier_FX_1N",
+      "relative_free_residual": 7.83914418273849e-10,
+      "force_equilibrium_error_norm_N": 5.717167153105754e-12,
+      "moment_equilibrium_error_norm_Nmm": 1.6629033842940107e-10,
+      "work_minus_twice_strain_energy_Nmm": 1.6479873021779667e-17,
+      "requested_to_assembled_force_error_N": 8.673617379884035e-19,
+      "requested_to_assembled_global_moment_error_Nmm": 1.1691974077717997e-13
+    },
+    {
+      "report": "mount_fea/cartridge/coarse/results.json",
+      "case": "carrier_MX_1Nmm",
+      "relative_free_residual": 9.901253180125685e-10,
+      "force_equilibrium_error_norm_N": 1.2324211528836784e-12,
+      "moment_equilibrium_error_norm_Nmm": 5.053458977189465e-11,
+      "work_minus_twice_strain_energy_Nmm": 1.2986709147302933e-17,
+      "requested_to_assembled_force_error_N": 1.6097540590052263e-16,
+      "requested_to_assembled_global_moment_error_Nmm": 7.0316458281377015e-16
+    },
+    {
+      "report": "mount_fea/cartridge/coarse/results.json",
+      "case": "cameraCoG_FX_1N",
+      "relative_free_residual": 6.843992303305794e-10,
+      "force_equilibrium_error_norm_N": 8.139873005711299e-12,
+      "moment_equilibrium_error_norm_Nmm": 4.337590562495429e-10,
+      "work_minus_twice_strain_energy_Nmm": -1.607047828144914e-14,
+      "requested_to_assembled_force_error_N": 3.554881421804571e-15,
+      "requested_to_assembled_global_moment_error_Nmm": 1.074338561416585e-13
+    },
+    {
+      "report": "mount_fea/cartridge/coarse/results.json",
+      "case": "carrier_FY_1N",
+      "relative_free_residual": 7.23772333273413e-10,
+      "force_equilibrium_error_norm_N": 4.754087686358453e-12,
+      "moment_equilibrium_error_norm_Nmm": 1.9167472933349446e-10,
+      "work_minus_twice_strain_energy_Nmm": 2.42861286636753e-17,
+      "requested_to_assembled_force_error_N": 1.2214874005128802e-16,
+      "requested_to_assembled_global_moment_error_Nmm": 4.4670897205174016e-14
+    },
+    {
+      "report": "mount_fea/cartridge/coarse/results.json",
+      "case": "carrier_MY_1Nmm",
+      "relative_free_residual": 7.107565862977969e-10,
+      "force_equilibrium_error_norm_N": 3.006379598150165e-13,
+      "moment_equilibrium_error_norm_Nmm": 1.3214584828982553e-11,
+      "work_minus_twice_strain_energy_Nmm": -1.5951324462692984e-17,
+      "requested_to_assembled_force_error_N": 1.2796915907707214e-17,
+      "requested_to_assembled_global_moment_error_Nmm": 4.138010253174499e-15
+    },
+    {
+      "report": "mount_fea/cartridge/coarse/results.json",
+      "case": "cameraCoG_FY_1N",
+      "relative_free_residual": 1.0365791003703768e-09,
+      "force_equilibrium_error_norm_N": 1.7376299728669358e-11,
+      "moment_equilibrium_error_norm_Nmm": 6.932834343831728e-10,
+      "work_minus_twice_strain_energy_Nmm": -2.3245294578089215e-15,
+      "requested_to_assembled_force_error_N": 1.9822690549212057e-15,
+      "requested_to_assembled_global_moment_error_Nmm": 3.033030986211748e-14
+    },
+    {
+      "report": "mount_fea/cartridge/coarse/results.json",
+      "case": "carrier_FZ_1N",
+      "relative_free_residual": 9.873958698665395e-10,
+      "force_equilibrium_error_norm_N": 4.1197097814531065e-12,
+      "moment_equilibrium_error_norm_Nmm": 1.79664791234358e-10,
+      "work_minus_twice_strain_energy_Nmm": -1.618713843520858e-16,
+      "requested_to_assembled_force_error_N": 2.2640302003738455e-16,
+      "requested_to_assembled_global_moment_error_Nmm": 1.3515139164555372e-13
+    },
+    {
+      "report": "mount_fea/cartridge/coarse/results.json",
+      "case": "carrier_MZ_1Nmm",
+      "relative_free_residual": 6.870154455862837e-10,
+      "force_equilibrium_error_norm_N": 9.751340098082314e-14,
+      "moment_equilibrium_error_norm_Nmm": 5.079718723581572e-12,
+      "work_minus_twice_strain_energy_Nmm": 9.512179997665793e-18,
+      "requested_to_assembled_force_error_N": 5.4565310323229185e-17,
+      "requested_to_assembled_global_moment_error_Nmm": 1.5867334613331761e-15
+    },
+    {
+      "report": "mount_fea/cartridge/coarse/results.json",
+      "case": "cameraCoG_FZ_1N",
+      "relative_free_residual": 6.860978716527857e-10,
+      "force_equilibrium_error_norm_N": 5.361939378296516e-11,
+      "moment_equilibrium_error_norm_Nmm": 2.3239051579355024e-09,
+      "work_minus_twice_strain_energy_Nmm": -5.828670879282072e-16,
+      "requested_to_assembled_force_error_N": 1.0784316000503593e-14,
+      "requested_to_assembled_global_moment_error_Nmm": 6.169251122433497e-14
+    },
+    {
+      "report": "mount_fea/cartridge/coarse/results.json",
+      "case": "tether_minusX_1N",
+      "relative_free_residual": 9.708673828142757e-10,
+      "force_equilibrium_error_norm_N": 4.735494105849917e-12,
+      "moment_equilibrium_error_norm_Nmm": 1.7808092089603842e-10,
+      "work_minus_twice_strain_energy_Nmm": -5.4643789493269423e-17,
+      "requested_to_assembled_force_error_N": 1.5371154815827927e-23,
+      "requested_to_assembled_global_moment_error_Nmm": 2.467793789664406e-14
+    },
+    {
+      "report": "mount_fea/cartridge/coarse/results.json",
+      "case": "tether_plusZ_1N",
+      "relative_free_residual": 9.935733633318878e-10,
+      "force_equilibrium_error_norm_N": 1.2012697826510218e-11,
+      "moment_equilibrium_error_norm_Nmm": 4.1549199054306336e-10,
+      "work_minus_twice_strain_energy_Nmm": -1.4707679518721761e-13,
+      "requested_to_assembled_force_error_N": 1.1102230246392833e-16,
+      "requested_to_assembled_global_moment_error_Nmm": 2.1316282072828587e-14
+    },
+    {
+      "report": "mount_fea/cartridge/coarse/results.json",
+      "case": "tether_minusZ_1N",
+      "relative_free_residual": 9.935733633318878e-10,
+      "force_equilibrium_error_norm_N": 1.2012697826510218e-11,
+      "moment_equilibrium_error_norm_Nmm": 4.1549199054306336e-10,
+      "work_minus_twice_strain_energy_Nmm": -1.4707679518721761e-13,
+      "requested_to_assembled_force_error_N": 1.1102230246392833e-16,
+      "requested_to_assembled_global_moment_error_Nmm": 2.1316282072828587e-14
+    },
+    {
+      "report": "mount_fea/cartridge/coarse/results.json",
+      "case": "tether_minusX_bearing_half_1N",
+      "relative_free_residual": 6.445011305609286e-10,
+      "force_equilibrium_error_norm_N": 1.0728737778919295e-11,
+      "moment_equilibrium_error_norm_Nmm": 4.97282986454748e-10,
+      "work_minus_twice_strain_energy_Nmm": 8.630249292984615e-17,
+      "requested_to_assembled_force_error_N": 1.5937213229726617e-16,
+      "requested_to_assembled_global_moment_error_Nmm": 2.2025125369196104e-14
+    },
+    {
+      "report": "mount_fea/cartridge/coarse/results.json",
+      "case": "self_weight_X_1g",
+      "relative_free_residual": 8.223645861241696e-10,
+      "force_equilibrium_error_norm_N": 1.135345686687221e-13,
+      "moment_equilibrium_error_norm_Nmm": 5.737011951906773e-12,
+      "work_minus_twice_strain_energy_Nmm": -4.780230437829644e-18,
+      "body_force_units_error_N": 0.0
+    },
+    {
+      "report": "mount_fea/cartridge/coarse/results.json",
+      "case": "self_weight_Y_1g",
+      "relative_free_residual": 9.745946352748729e-10,
+      "force_equilibrium_error_norm_N": 1.7545863421291002e-13,
+      "moment_equilibrium_error_norm_Nmm": 1.0213093834182318e-11,
+      "work_minus_twice_strain_energy_Nmm": -3.4512357435876467e-18,
+      "body_force_units_error_N": 0.0
+    },
+    {
+      "report": "mount_fea/cartridge/coarse/results.json",
+      "case": "self_weight_Z_1g",
+      "relative_free_residual": 1.1891663699272552e-09,
+      "force_equilibrium_error_norm_N": 2.762895832171997e-13,
+      "moment_equilibrium_error_norm_Nmm": 1.3427970395528427e-11,
+      "work_minus_twice_strain_energy_Nmm": 1.0851847307043194e-16,
+      "body_force_units_error_N": 0.0
+    },
+    {
+      "report": "mount_fea/cartridge/coarse/results.json",
+      "case": "cameraPlusFrameCoG_FX_1N",
+      "relative_free_residual": 6.853197138198697e-10,
+      "force_equilibrium_error_norm_N": 7.750350196212186e-12,
+      "moment_equilibrium_error_norm_Nmm": 4.126241299804905e-10,
+      "work_minus_twice_strain_energy_Nmm": -8.465450562766819e-16,
+      "requested_to_assembled_force_error_N": 3.3320854635495133e-15,
+      "requested_to_assembled_global_moment_error_Nmm": 2.578977113157447e-13
+    },
+    {
+      "report": "mount_fea/cartridge/coarse/results.json",
+      "case": "cameraPlusFrameCoG_FY_1N",
+      "relative_free_residual": 1.034674721432837e-09,
+      "force_equilibrium_error_norm_N": 1.2608131690386436e-11,
+      "moment_equilibrium_error_norm_Nmm": 4.987702677086373e-10,
+      "work_minus_twice_strain_energy_Nmm": -4.636048489548017e-15,
+      "requested_to_assembled_force_error_N": 1.254136165166595e-15,
+      "requested_to_assembled_global_moment_error_Nmm": 8.998968874250541e-15
+    },
+    {
+      "report": "mount_fea/cartridge/coarse/results.json",
+      "case": "cameraPlusFrameCoG_FZ_1N",
+      "relative_free_residual": 1.0091655916335092e-09,
+      "force_equilibrium_error_norm_N": 6.653541233118631e-11,
+      "moment_equilibrium_error_norm_Nmm": 2.7485668687404e-09,
+      "work_minus_twice_strain_energy_Nmm": 9.950373858202965e-15,
+      "requested_to_assembled_force_error_N": 9.124451067215278e-15,
+      "requested_to_assembled_global_moment_error_Nmm": 7.499608405944004e-14
+    },
+    {
+      "report": "mount_fea/cartridge/fine/results.json",
+      "case": "carrier_FX_1N",
+      "relative_free_residual": 8.353408925480909e-10,
+      "force_equilibrium_error_norm_N": 3.9971827603366926e-12,
+      "moment_equilibrium_error_norm_Nmm": 1.5164755469239475e-10,
+      "work_minus_twice_strain_energy_Nmm": -5.732176885930862e-16,
+      "requested_to_assembled_force_error_N": 1.1107395945469098e-16,
+      "requested_to_assembled_global_moment_error_Nmm": 3.3616832836944693e-13
+    },
+    {
+      "report": "mount_fea/cartridge/fine/results.json",
+      "case": "carrier_MX_1Nmm",
+      "relative_free_residual": 8.985347574086789e-10,
+      "force_equilibrium_error_norm_N": 3.3789105336810914e-12,
+      "moment_equilibrium_error_norm_Nmm": 1.4527680098537586e-10,
+      "work_minus_twice_strain_energy_Nmm": 1.6097014129620724e-17,
+      "requested_to_assembled_force_error_N": 2.269047359362725e-16,
+      "requested_to_assembled_global_moment_error_Nmm": 5.6890636293931115e-15
+    },
+    {
+      "report": "mount_fea/cartridge/fine/results.json",
+      "case": "carrier_FY_1N",
+      "relative_free_residual": 8.03151761469075e-10,
+      "force_equilibrium_error_norm_N": 1.0720704923084442e-11,
+      "moment_equilibrium_error_norm_Nmm": 4.6160462004572586e-10,
+      "work_minus_twice_strain_energy_Nmm": -1.0175237388776459e-16,
+      "requested_to_assembled_force_error_N": 1.6571862627730872e-16,
+      "requested_to_assembled_global_moment_error_Nmm": 3.768773881979653e-14
+    },
+    {
+      "report": "mount_fea/cartridge/fine/results.json",
+      "case": "carrier_MY_1Nmm",
+      "relative_free_residual": 9.26418036718191e-10,
+      "force_equilibrium_error_norm_N": 2.571125388789593e-13,
+      "moment_equilibrium_error_norm_Nmm": 1.545668485833889e-11,
+      "work_minus_twice_strain_energy_Nmm": -3.262770912823565e-18,
+      "requested_to_assembled_force_error_N": 1.0853926589726555e-17,
+      "requested_to_assembled_global_moment_error_Nmm": 8.951490249052763e-15
+    },
+    {
+      "report": "mount_fea/cartridge/fine/results.json",
+      "case": "carrier_FZ_1N",
+      "relative_free_residual": 8.111458003303705e-10,
+      "force_equilibrium_error_norm_N": 8.084342122072126e-12,
+      "moment_equilibrium_error_norm_Nmm": 3.7020443150086464e-10,
+      "work_minus_twice_strain_energy_Nmm": 1.463672932855431e-17,
+      "requested_to_assembled_force_error_N": 3.346229426141243e-16,
+      "requested_to_assembled_global_moment_error_Nmm": 2.4904936515528705e-13
+    },
+    {
+      "report": "mount_fea/cartridge/fine/results.json",
+      "case": "carrier_MZ_1Nmm",
+      "relative_free_residual": 7.317286029989887e-10,
+      "force_equilibrium_error_norm_N": 4.664162776856253e-13,
+      "moment_equilibrium_error_norm_Nmm": 1.9387590732656185e-11,
+      "work_minus_twice_strain_energy_Nmm": 5.243133943504119e-18,
+      "requested_to_assembled_force_error_N": 7.602734487394433e-17,
+      "requested_to_assembled_global_moment_error_Nmm": 1.75853052305501e-15
+    },
+    {
+      "report": "mount_fea/cartridge/fine/results.json",
+      "case": "tether_minusX_1N",
+      "relative_free_residual": 6.543906940343416e-10,
+      "force_equilibrium_error_norm_N": 1.2466306635294802e-11,
+      "moment_equilibrium_error_norm_Nmm": 5.085645179963357e-10,
+      "work_minus_twice_strain_energy_Nmm": -6.808789643208968e-17,
+      "requested_to_assembled_force_error_N": 1.765861776550514e-23,
+      "requested_to_assembled_global_moment_error_Nmm": 5.5495161716881504e-14
+    },
+    {
+      "report": "mount_fea/cartridge/fine/results.json",
+      "case": "tether_plusZ_1N",
+      "relative_free_residual": 8.564182198991293e-10,
+      "force_equilibrium_error_norm_N": 1.3449503272941617e-11,
+      "moment_equilibrium_error_norm_Nmm": 5.086336712098903e-10,
+      "work_minus_twice_strain_energy_Nmm": -5.051514762044462e-15,
+      "requested_to_assembled_force_error_N": 4.40797665236361e-24,
+      "requested_to_assembled_global_moment_error_Nmm": 3.03543989777123e-14
+    },
+    {
+      "report": "mount_fea/cartridge/fine/results.json",
