@@ -1,0 +1,13 @@
+{
+  "camera_official_box_geometric_center_F_mm": [
+    -8.698779995000831e-16,
+    112.30508652763281,
+    25.30508652763746
+  ],
+  "expected_F_z_from_transform_mm": 25.305086527633208,
+  "positive_Z_confirmed": true,
+  "actual_camera_mass_center_measured": false,
+  "interpretation": "Uniform official-dimension envelope center. This is a clearly labelled COM assumption if used with the official180g mass; not a measured mass center.",
+  "system_sensitivity_uses_camera_CoG": false,
+  "source_root_check_sha256": "f075b3d699eea47f34a21e541332088230afdae95ef37ce8688425b7a68fcf39"
+}
