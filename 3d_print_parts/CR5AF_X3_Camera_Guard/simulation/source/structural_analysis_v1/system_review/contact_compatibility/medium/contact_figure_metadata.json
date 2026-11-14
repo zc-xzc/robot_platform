@@ -1,0 +1,19 @@
+{
+  "level": "medium",
+  "source_reference_step_sha256": "1d3a3583ffc07d3c13785cb2501a5b98d9e137e2ac62beab8e73d8979bdc4a2b",
+  "contact_report_sha256": "a6cdb1dcb3adeb9d79dd2a0e7611818db1e957ffebe9947cc558d528c0555bc0",
+  "calculation": "Exact OCCT point-to-entered-solid-boundary distance for every new IN node in the two displayed cases; no stress field, no contact reaction force.",
+  "display_coordinates": "Original boundary node Cx/Cy coordinates, not an exaggerated deformed geometry.",
+  "cases": [
+    {
+      "case": "minusX_1g",
+      "all_new_inside_nodes_evaluated": 382,
+      "max_exact_boundary_distance_mm": 0.012491057405491576
+    },
+    {
+      "case": "minusX_3g",
+      "all_new_inside_nodes_evaluated": 383,
+      "max_exact_boundary_distance_mm": 0.03740339062673763
+    }
+  ]
+}
