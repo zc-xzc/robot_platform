@@ -1,28 +1,26 @@
-<PARSED TEXT FOR SHEET: 1 / 1 TABS
-TAB NAME: simulation__data__KEY_RESULTS.csv>
-index,category,metric,value,unit,case_or_scope,evidence,qualification
-0,geometry,named_component_instances,95,count,full assembly geometry audit,report p2,does not establish load capacity
-1,geometry,native_solids,103,count,full assembly geometry audit,report p2,does not establish all-pair zero interference
-2,clearance,quick_release_lateral_total,0.6,mm,nominal 4.2 mm slot - 3.6 mm post,report p14,free play; manufacturing tolerance not included
-3,clearance,quick_release_lift,0.3,mm,nominal stud-head to foot clearance,report p14,not a real contact solution
-4,camera,camera_CoG_displacement,1.084,mm,"+Z total 1g, fine mesh",report p12,"camera submodel, idealized root support"
-5,camera,camera_frame_max_node_displacement,2.021,mm,"+Z total 1g, fine mesh",report p12,not the camera CoG displacement
-6,camera,camera_CoG_displacement_3g,3.251,mm,"+Z total 3g, linear scaling",report p12,not a transient collision solve
-7,assembly_estimate,serial_substructure_CoG_displacement_Z,1.908,mm,+Z total 1g,report p13,"linear substructure estimate, not full contact FE"
-8,assembly_estimate,worst_direction_CoG_displacement,1.966,mm,total 1g; assumed 2 kg branch at z=100 mm,report p13,small-motion serial estimate
-9,assembly_estimate,worst_direction_linear_3g_extrapolation,5.899,mm,total 3g,report p13,linear extrapolation only
-10,modal,camera_first_mode,12.673,Hz,camera module + 180 g equivalent mass; coarse mesh,report p17,dynamic mesh convergence incomplete
-11,harmonic,excitation_amplitude,0.1,g,sinusoidal input,report p18,"assumed, not measured robot excitation"
-12,harmonic,Z_peak_displacement_2pct_damping,2.621,mm,at 12.673 Hz,report p18,modal superposition; coarse mesh
-13,harmonic,Z_peak_displacement_5pct_damping,1.048,mm,at 12.673 Hz,report p18,modal superposition; coarse mesh
-14,harmonic,Z_peak_displacement_10pct_damping,0.526,mm,at 12.598 Hz,report p18,modal superposition; coarse mesh
-15,buckling,base_first_positive_eigen_factor,69.681,factor,"-Z total 3g, coarse",report p19,ideal linear eigen-buckling screening
-16,buckling,cartridge_first_positive_eigen_factor_coarse,75.189,factor,"-Z total 3g, coarse",report p19,not allowable load or release factor
-17,buckling,cartridge_first_positive_eigen_factor_medium,67.407,factor,"-Z total 3g, medium",report p19,coarse-to-medium change about -10.35%; not converged
-18,fastener,X3_screw_nominal_projection,3,mm,5 mm under-head length - 2 mm bearing layer,report p20,actual usable X3 thread depth unknown
-19,fastener,rear_recess_width,44,mm,"44 x 32 mm recess, R4, 6 mm deep",report p20,tool and head fit need physical check
-20,tether,moving_lug_minimum_net_edge,0.9,mm,moving tether lug,report p23,requires physical tear-out and dynamic catch tests
-21,tether,fixed_lug_minimum_net_edge,1.9,mm,fixed tether lug,report p23,requires physical validation
-22,fuse,D8_neck_diameter,8,mm,nominal neck geometry,report p11,not a calibrated breakaway force
-23,validation,physical_hardware_tests_performed,0,count,V2R1 report scope,report p2/p26,"no physical load, release, tether or impact tests"
-24,validation,dynamic_mesh_convergence_completed,false,boolean,camera modal/harmonic,report p17,only coarse dynamic mesh accepted
+category,metric,value,unit,case_or_scope,evidence,qualification
+geometry,named_component_instances,95,count,full assembly geometry audit,report p2,geometry completeness only
+geometry,native_solids,103,count,full assembly geometry audit,report p2,does not establish all-pair zero interference
+clearance,quick_release_lateral_total,0.6,mm,nominal 4.2 mm slot minus 3.6 mm post,report p14,free play; manufacturing tolerance not included
+clearance,quick_release_lift,0.3,mm,nominal stud-head underside to camera-frame foot,report p14,not a real contact solution
+camera,CoG_displacement,1.084,mm,+Z total 1g fine mesh,report p12,camera submodel with idealized root support
+camera,frame_max_nodal_displacement,2.021,mm,+Z total 1g fine mesh,report p12,different measurement point from camera CoG
+camera,CoG_displacement_3g,3.251,mm,+Z total 3g linear scaling,report p12,not a transient collision solve
+assembly_estimate,serial_substructure_CoG_displacement_Z,1.908,mm,+Z total 1g,report p13,linear substructure estimate not full contact FE
+assembly_estimate,worst_direction_CoG_displacement,1.966,mm,total 1g with assumed 2 kg branch at z=100 mm,report p13,small-motion serial estimate
+assembly_estimate,worst_direction_linear_3g_extrapolation,5.899,mm,total 3g,report p13,linear extrapolation only
+modal,camera_first_mode,12.673,Hz,camera module plus 180 g equivalent mass coarse mesh,report p17,dynamic mesh convergence incomplete
+harmonic,excitation_amplitude,0.1,g,assumed sinusoidal input,report p18,not measured robot excitation
+harmonic,Z_peak_displacement_2pct_damping,2.621,mm,near 12.673 Hz,report p18,modal superposition coarse mesh
+harmonic,Z_peak_displacement_5pct_damping,1.048,mm,near 12.673 Hz,report p18,modal superposition coarse mesh
+harmonic,Z_peak_displacement_10pct_damping,0.526,mm,near 12.598 Hz,report p18,modal superposition coarse mesh
+buckling,base_first_positive_eigen_factor,69.681,factor,-Z total 3g coarse mesh,report p19,ideal linear eigen-buckling screen
+buckling,cartridge_first_positive_eigen_factor_coarse,75.189,factor,-Z total 3g coarse mesh,report p19,not allowable load or release factor
+buckling,cartridge_first_positive_eigen_factor_medium,67.407,factor,-Z total 3g medium mesh,report p19,coarse-to-medium change about -10.35%; not converged
+fastener,X3_screw_nominal_projection,3,mm,5 mm under-head length minus 2 mm bearing layer,report p20,actual X3 usable thread depth unknown
+fastener,rear_recess_width,44,mm,44 x 32 mm recess R4 6 mm deep,report p20,tool and head fit need physical check
+tether,moving_lug_minimum_net_edge,0.9,mm,moving tether lug,report p23,requires physical tear-out and dynamic catch tests
+tether,fixed_lug_minimum_net_edge,1.9,mm,fixed tether lug,report p23,requires physical validation
+fuse,D8_neck_diameter,8,mm,nominal neck geometry,report p11,not a calibrated breakaway force
+validation,physical_hardware_tests_performed,0,count,V2R1 report scope,report p2/p26,no physical load release tether or impact tests
+validation,dynamic_mesh_convergence_completed,false,boolean,camera modal and harmonic,scope_completion.json,false

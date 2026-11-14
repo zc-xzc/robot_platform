@@ -1,9 +1,0 @@
-<PARSED TEXT FOR SHEET: 1 / 1 TABS
-TAB NAME: simulation__source__structural_analysis_v1__system_review__manufacturer_material_inputs.csv>
-index,material,version,axis,tensile_Young_modulus_MPa,tensile_E_published_plusminus_MPa,tensile_strength_MPa,tensile_strength_published_plusminus_MPa,flexural_modulus_MPa,flexural_strength_MPa,density_g_per_cm3,HDT_1p8MPa_C,HDT_0p45MPa_C,specimen_infill_percent,specimen_nozzle_C,specimen_bed_C,specimen_speed_mm_s,specimen_post_treatment,property_page_PDF,print_condition_page_PDF,source_file
-0,Bambu PLA Basic,TDS V3.0,XY,2580,220,35,4,2750,76,1.24,54,57,100,220,35,200,Annealed and dried 55 C for 8 h,2,3,Bambu_PLA_Basic_TDS_V3_0.pdf
-1,Bambu PLA Basic,TDS V3.0,Z,2060,170,31,3,2370,59,1.24,54,57,100,220,35,200,Annealed and dried 55 C for 8 h,2,3,Bambu_PLA_Basic_TDS_V3_0.pdf
-2,Bambu PETG HF,TDS V1.0,XY,1810,190,34,4,2050,64,1.28,62,69,100,255,70,200,Annealed and dried 75 C for 8 h,2,3,Bambu_PETG_HF_TDS_V1_0.pdf
-3,Bambu PETG HF,TDS V1.0,Z,1540,130,23,4,1810,48,1.28,62,69,100,255,70,200,Annealed and dried 75 C for 8 h,2,3,Bambu_PETG_HF_TDS_V1_0.pdf
-4,Bambu PETG Basic,TDS V3.0 current retrieved formulation,XY,2780,65,51,1,1950,75,1.25,68,71,100,255,70,150,No pre-test annealing stated in specimen section; X1-Carbon stated,2,3,Bambu_PETG_Basic_TDS_V3_0.pdf
-5,Bambu PETG Basic,TDS V3.0 current retrieved formulation,Z,2550,100,35,6,1740,56,1.25,68,71,100,255,70,150,No pre-test annealing stated in specimen section; X1-Carbon stated,2,3,Bambu_PETG_Basic_TDS_V3_0.pdf

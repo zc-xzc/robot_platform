@@ -1,12 +1,10 @@
-<PARSED TEXT FOR SHEET: 1 / 1 TABS
-TAB NAME: simulation__data__CAMERA_MODAL_HARMONIC.csv>
-index,result_type,mode_or_damping_pct,frequency_Hz,input_acceleration_g,camera_CoG_peak_displacement_mm,mesh_method,qualification
-0,mode,1,,12.673,,coarse eigsh,first mode
-1,mode,2,,25.721,,coarse eigsh,
-2,mode,3,,61.041,,coarse eigsh,
-3,mode,4,,61.86,,coarse eigsh,
-4,mode,5,,69.135,,coarse eigsh,
-5,mode,6,,117.369,,coarse eigsh,
-6,harmonic_Z,2,12.673,0.1,2.621,coarse 12-mode,2% assumed damping
-7,harmonic_Z,5,12.673,0.1,1.048,coarse 12-mode,5% assumed damping
-8,harmonic_Z,10,12.598,0.1,0.526,coarse 12-mode,10% assumed damping
+result_type,mode_or_damping_pct,frequency_Hz,input_acceleration_g,camera_CoG_peak_displacement_mm,mesh_method,qualification
+mode,1,12.672676,,,coarse eigsh,first mode
+mode,2,25.720634,,,coarse eigsh,
+mode,3,61.040882,,,coarse eigsh,
+mode,4,61.859927,,,coarse eigsh,
+mode,5,69.134769,,,coarse eigsh,
+mode,6,117.368528,,,coarse eigsh,
+harmonic_Z,2,12.672676,0.1,2.620943,coarse 12-mode,2 percent assumed damping
+harmonic_Z,5,12.672676,0.1,1.048375,coarse 12-mode,5 percent assumed damping
+harmonic_Z,10,12.597907,0.1,0.526371,coarse 12-mode,10 percent assumed damping
