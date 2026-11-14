@@ -1,0 +1,104 @@
+{
+  "axis": "Y",
+  "force_at_camera_CoG_N": [
+    0.0,
+    1.0,
+    0.0
+  ],
+  "camera_rigid_motion_about_CoG": [
+    0.0006418547048423092,
+    0.0752616572617846,
+    -0.16286778707007876,
+    -0.0033725988496045964,
+    2.8919040052134425e-05,
+    -5.895280666853665e-06
+  ],
+  "camera_CoG_displacement_mm_per_N": 0.17941751613584717,
+  "summary": {
+    "max_displacement_mm": 0.2649921329805598,
+    "max_von_mises_MPa": 1.0685568212594272,
+    "volume_weighted_p95_von_mises_MPa": 0.14326871570853944,
+    "volume_weighted_p99_von_mises_MPa": 0.3028381363881473,
+    "mean_von_mises_MPa": 0.0395214433497619,
+    "max_stress_location_mm": [
+      -13.869055335606197,
+      64.80439730184419,
+      8.841654195417371
+    ],
+    "raw_peak_warning": "Raw integration-point peaks near sharp/reentrant corners and ideal clamps may be singular; no failure or release force is inferred.",
+    "regions": {
+      "2mm_bearing_web": {
+        "volume_mm3": 2745.526744062384,
+        "max_von_mises_MPa": 0.8207848501125105,
+        "p95_MPa": 0.30223247618888494,
+        "p99_MPa": 0.41262432072464234
+      },
+      "tray_perimeter": {
+        "volume_mm3": 7513.263716439149,
+        "max_von_mises_MPa": 0.3926853537708672,
+        "p95_MPa": 0.09775040710450167,
+        "p99_MPa": 0.13057366822759592
+      },
+      "short_45deg_arms": {
+        "volume_mm3": 1901.4470715726948,
+        "max_von_mises_MPa": 1.0685568212594272,
+        "p95_MPa": 0.3527278289625907,
+        "p99_MPa": 0.4798302891461897
+      },
+      "root_mounting_foot": {
+        "volume_mm3": 1233.276591711811,
+        "max_von_mises_MPa": 0.7335207789061245,
+        "p95_MPa": 0.13572605680219257,
+        "p99_MPa": 0.25789578936330454
+      },
+      "guard_posts": {
+        "volume_mm3": 9647.739092970083,
+        "max_von_mises_MPa": 0.5637551809395817,
+        "p95_MPa": 0.014365248431977735,
+        "p99_MPa": 0.17385849477309193
+      }
+    }
+  },
+  "solver": {
+    "solve_seconds": 38.7109240109985,
+    "iterations": 134,
+    "relative_free_residual": 1.0702824226077183e-09,
+    "strain_energy_Nmm": 0.03763082863684003,
+    "compliance_Nmm": 0.07526165726178466,
+    "applied_wrench": {
+      "force_N": [
+        -3.686287386450715e-18,
+        0.9999999999999972,
+        -9.853229343548264e-16
+      ],
+      "moment_Nmm": [
+        -25.30508652763341,
+        -3.0062757838678067e-15,
+        1.5178830414797062e-15
+      ]
+    },
+    "support_reaction_wrench": {
+      "force_N": [
+        -7.904399357272496e-12,
+        -1.0000000000343208,
+        7.0321526379757415e-12
+      ],
+      "moment_Nmm": [
+        25.30508652854924,
+        6.650529896755353e-10,
+        2.9015856384262406e-09
+      ]
+    },
+    "force_balance_error_N": [
+      -7.904403043559882e-12,
+      -3.432354400700888e-11,
+      7.031167315041387e-12
+    ],
+    "moment_balance_error_Nmm": [
+      9.158291902622295e-10,
+      6.650499833997514e-10,
+      2.901587156309282e-09
+    ]
+  },
+  "meaning": "Static 1N external force at camera CoG, not a transient collision"
+}
