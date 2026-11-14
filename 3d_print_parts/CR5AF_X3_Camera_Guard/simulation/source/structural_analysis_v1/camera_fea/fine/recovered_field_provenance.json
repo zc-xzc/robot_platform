@@ -1,0 +1,26 @@
+{
+  "recovered_from_actual_saved_fields": [
+    {
+      "axis": "X",
+      "source_vtu": "<redacted-workspace-path>",
+      "sha256": "732f696802b6882250a8aa6da177d0bab67651ab52c2d1ef1e23b81495f2039d",
+      "max_coordinate_mapping_distance_mm": 0.0,
+      "saved_displacement_dtype": "float64"
+    },
+    {
+      "axis": "Y",
+      "source_vtu": "<redacted-workspace-path>",
+      "sha256": "774d26d7bb548242d66b67b328123167a4a728bb503fb01f42f7745414a60c11",
+      "max_coordinate_mapping_distance_mm": 0.0,
+      "saved_displacement_dtype": "float64"
+    },
+    {
+      "axis": "Z",
+      "source_vtu": "<redacted-workspace-path>",
+      "sha256": "22af37d864e740790c8f768b38d84122aba32bb0779f922964a5f4bc488bfd81",
+      "max_coordinate_mapping_distance_mm": 0.0,
+      "saved_displacement_dtype": "float64"
+    }
+  ],
+  "note": "Original solved VTU displacement retained; no displacement fabricated or inferred from printed scalar results. K is rebuilt to check residuals and reactions."
+}
