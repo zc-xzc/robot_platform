@@ -1,0 +1,486 @@
+{
+  "revision": "V2R1_RECOVERED_FROM_CONFIRMED_PARAMETERS",
+  "source_file": "reference/Insta360_X3_OngXeno_v6.step",
+  "source_sha256": "1d3a3583ffc07d3c13785cb2501a5b98d9e137e2ac62beab8e73d8979bdc4a2b",
+  "original_source_bytes": 307535,
+  "source_url": "https://files.printables.com/media/prints/361256/stls/3068470_242be7c2-5bb0-476e-9e8f-1427e5c01e8f/x3-v6.step",
+  "model_page": "https://www.printables.com/model/361256-insta360-x3-reference-3d-model",
+  "author": "OngXeno (@OngXeno_259056)",
+  "license": "Creative Commons \u2014 Attribution; version not independently confirmed",
+  "units": "mm",
+  "source_C_axes": "X left/right, screen toward -Y, body top +Z, bottom mount datum Z=0",
+  "camera_C_to_flange_F": [
+    [
+      -1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      -0.7071067811865476,
+      0.7071067811865476,
+      72.0
+    ],
+    [
+      0.0,
+      0.7071067811865476,
+      0.7071067811865476,
+      -15.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "body_count": 8,
+  "face_count": 137,
+  "instances": [
+    {
+      "name": "C00_X3_Battery_Cap",
+      "category": "camera_reference",
+      "native_solid_index_zero_based": 0,
+      "source_3MF_name": "cap",
+      "C_step": "reference/parts_C/C00_X3_Battery_Cap.step",
+      "F_brep": "reference/instances_F/C00_X3_Battery_Cap.brep",
+      "native_C_geometry": {
+        "valid": true,
+        "solids": 1,
+        "volume_mm3": 1641.4377298257643,
+        "bbox_mm": [
+          [
+            -23.00000009999206,
+            -6.6000001,
+            7.599999899999999
+          ],
+          [
+            -20.499999899992098,
+            6.6000001,
+            63.4000001000001
+          ]
+        ],
+        "extents_mm": [
+          2.5000001999999633,
+          13.2000002,
+          55.8000002000001
+        ]
+      },
+      "placed_F_geometry": {
+        "valid": true,
+        "solids": 1,
+        "volume_mm3": 1641.437729825765,
+        "bbox_mm": [
+          [
+            20.499999899992098,
+            73.49411068346713,
+            -13.505887550304575
+          ],
+          [
+            23.000000099992064,
+            120.71046901454943,
+            33.710469014549446
+          ]
+        ],
+        "extents_mm": [
+          2.500000199999967,
+          47.216358331082304,
+          47.216356564854024
+        ]
+      },
+      "module_overlap_mm3": 0,
+      "outside_official_box_mm3": 0,
+      "nominal_D6p35_shaft_Zminus2_to3_overlap_mm3": 0
+    },
+    {
+      "name": "C01_X3_Battery",
+      "category": "camera_reference",
+      "native_solid_index_zero_based": 1,
+      "source_3MF_name": "battery",
+      "C_step": "reference/parts_C/C01_X3_Battery.step",
+      "F_brep": "reference/instances_F/C01_X3_Battery.brep",
+      "native_C_geometry": {
+        "valid": true,
+        "solids": 1,
+        "volume_mm3": 18780.788000000004,
+        "bbox_mm": [
+          [
+            -20.4999999999921,
+            -5.6,
+            8.999999999999986
+          ],
+          [
+            20.0000000000079,
+            3.6000000000000005,
+            62.0
+          ]
+        ],
+        "extents_mm": [
+          40.5,
+          9.2,
+          53.000000000000014
+        ]
+      },
+      "placed_F_geometry": {
+        "valid": true,
+        "solids": 1,
+        "volume_mm3": 18780.78800000002,
+        "bbox_mm": [
+          [
+            -20.0000000000079,
+            75.81837661840734,
+            -12.595836943965747
+          ],
+          [
+            20.499999999992102,
+            119.80041840821062,
+            31.386204845837526
+          ]
+        ],
+        "extents_mm": [
+          40.5,
+          43.982041789803276,
+          43.982041789803276
+        ]
+      },
+      "module_overlap_mm3": 0,
+      "outside_official_box_mm3": 0,
+      "nominal_D6p35_shaft_Zminus2_to3_overlap_mm3": 0
+    },
+    {
+      "name": "C02_X3_USB_Cap",
+      "category": "camera_reference",
+      "native_solid_index_zero_based": 2,
+      "source_3MF_name": "usb-c cap",
+      "C_step": "reference/parts_C/C02_X3_USB_Cap.step",
+      "F_brep": "reference/instances_F/C02_X3_USB_Cap.brep",
+      "native_C_geometry": {
+        "valid": true,
+        "solids": 1,
+        "volume_mm3": 640.3254290315385,
+        "bbox_mm": [
+          [
+            -23.000000099992093,
+            -6.100000100000001,
+            66.4299999
+          ],
+          [
+            -19.399999899992096,
+            6.100000100000001,
+            82.4300001
+          ]
+        ],
+        "extents_mm": [
+          3.6000001999999967,
+          12.200000200000002,
+          16.000000200000002
+        ]
+      },
+      "placed_F_geometry": {
+        "valid": true,
+        "solids": 1,
+        "volume_mm3": 640.3254290315386,
+        "bbox_mm": [
+          [
+            19.3999998999921,
+            115.23965099630674,
+            28.23965099630675
+          ],
+          [
+            23.000000099992093,
+            134.60016343844504,
+            47.60016343844506
+          ]
+        ],
+        "extents_mm": [
+          3.600000199999993,
+          19.3605124421383,
+          19.360512442138308
+        ]
+      },
+      "module_overlap_mm3": 0,
+      "outside_official_box_mm3": 0,
+      "nominal_D6p35_shaft_Zminus2_to3_overlap_mm3": 0
+    },
+    {
+      "name": "C03_X3_Lens",
+      "category": "camera_reference",
+      "native_solid_index_zero_based": 3,
+      "source_3MF_name": "lens",
+      "C_step": "reference/parts_C/C03_X3_Lens.step",
+      "F_brep": "reference/instances_F/C03_X3_Lens.brep",
+      "native_C_geometry": {
+        "valid": true,
+        "solids": 1,
+        "volume_mm3": 16755.297683980418,
+        "bbox_mm": [
+          [
+            -16.455573523885555,
+            -15.29,
+            76.63576799045526
+          ],
+          [
+            16.455573523885448,
+            15.29,
+            109.40855121905014
+          ]
+        ],
+        "extents_mm": [
+          32.911147047771,
+          30.58,
+          32.772783228594875
+        ]
+      },
+      "placed_F_geometry": {
+        "valid": true,
+        "solids": 1,
+        "volume_mm3": 16755.297683980432,
+        "bbox_mm": [
+          [
+            -16.455573523885445,
+            122.13219906237367,
+            35.13219906237369
+          ],
+          [
+            16.45557352388556,
+            153.42100065190226,
+            66.42100065190225
+          ]
+        ],
+        "extents_mm": [
+          32.911147047771,
+          31.28880158952859,
+          31.28880158952856
+        ]
+      },
+      "module_overlap_mm3": 0,
+      "outside_official_box_mm3": 0,
+      "nominal_D6p35_shaft_Zminus2_to3_overlap_mm3": 0
+    },
+    {
+      "name": "C04_X3_Screen",
+      "category": "camera_reference",
+      "native_solid_index_zero_based": 4,
+      "source_3MF_name": "screen",
+      "C_step": "reference/parts_C/C04_X3_Screen.step",
+      "F_brep": "reference/instances_F/C04_X3_Screen.brep",
+      "native_C_geometry": {
+        "valid": true,
+        "solids": 1,
+        "volume_mm3": 6454.2567736623205,
+        "bbox_mm": [
+          [
+            -19.964999873631726,
+            -11.375,
+            18.5999999999999
+          ],
+          [
+            19.9649998736397,
+            -8.375,
+            74.255245021
+          ]
+        ],
+        "extents_mm": [
+          39.929999747271424,
+          3.0,
+          55.6552450210001
+        ]
+      },
+      "placed_F_geometry": {
+        "valid": true,
+        "solids": 1,
+        "volume_mm3": 6454.256773662324,
+        "bbox_mm": [
+          [
+            -19.964999873639698,
+            91.07420542250712,
+            -9.891153505927267
+          ],
+          [
+            19.96499987363173,
+            132.5497269290147,
+            31.584368000580383
+          ]
+        ],
+        "extents_mm": [
+          39.929999747271424,
+          41.475521506507576,
+          41.47552150650765
+        ]
+      },
+      "module_overlap_mm3": 0,
+      "outside_official_box_mm3": 0,
+      "nominal_D6p35_shaft_Zminus2_to3_overlap_mm3": 0
+    },
+    {
+      "name": "C05_X3_Body",
+      "category": "camera_reference",
+      "native_solid_index_zero_based": 5,
+      "source_3MF_name": "body",
+      "C_step": "reference/parts_C/C05_X3_Body.step",
+      "F_brep": "reference/instances_F/C05_X3_Body.brep",
+      "native_C_geometry": {
+        "valid": true,
+        "solids": 1,
+        "volume_mm3": 80541.69008655,
+        "bbox_mm": [
+          [
+            -23.000000099992132,
+            -11.375000000000007,
+            -0.5852445839696977
+          ],
+          [
+            23.000000100000026,
+            11.375000000000007,
+            113.50000009999968
+          ]
+        ],
+        "extents_mm": [
+          46.00000019999216,
+          22.750000000000014,
+          114.08524468396938
+        ]
+      },
+      "placed_F_geometry": {
+        "valid": true,
+        "solids": 1,
+        "volume_mm3": 80541.69008655,
+        "bbox_mm": [
+          [
+            -23.000000100000026,
+            65.94264234234846,
+            -21.05735765765153
+          ],
+          [
+            23.000000099992135,
+            157.90014707905655,
+            70.90014697905647
+          ]
+        ],
+        "extents_mm": [
+          46.00000019999216,
+          91.95750473670809,
+          91.957504636708
+        ]
+      },
+      "module_overlap_mm3": 0,
+      "outside_official_box_mm3": 0,
+      "nominal_D6p35_shaft_Zminus2_to3_overlap_mm3": 0
+    },
+    {
+      "name": "C06_X3_USB_Cap_Anchor",
+      "category": "camera_reference",
+      "native_solid_index_zero_based": 6,
+      "source_3MF_name": "usb-c anchor",
+      "C_step": "reference/parts_C/C06_X3_USB_Cap_Anchor.step",
+      "F_brep": "reference/instances_F/C06_X3_USB_Cap_Anchor.brep",
+      "native_C_geometry": {
+        "valid": true,
+        "solids": 1,
+        "volume_mm3": 9.73893722612824,
+        "bbox_mm": [
+          [
+            -21.5199999999921,
+            -6.2,
+            81.43
+          ],
+          [
+            -20.519999999992102,
+            6.2,
+            82.43
+          ]
+        ],
+        "extents_mm": [
+          0.9999999999999964,
+          12.4,
+          1.0
+        ]
+      },
+      "placed_F_geometry": {
+        "valid": true,
+        "solids": 1,
+        "volume_mm3": 9.73893722612826,
+        "bbox_mm": [
+          [
+            20.519999999992105,
+            125.19564314866396,
+            38.19564314866398
+          ],
+          [
+            21.519999999992102,
+            134.67087401656372,
+            47.67087401656371
+          ]
+        ],
+        "extents_mm": [
+          0.9999999999999964,
+          9.475230867899754,
+          9.475230867899725
+        ]
+      },
+      "module_overlap_mm3": 0,
+      "outside_official_box_mm3": 0,
+      "nominal_D6p35_shaft_Zminus2_to3_overlap_mm3": 0
+    },
+    {
+      "name": "C07_X3_Threaded_Insert",
+      "category": "camera_reference",
+      "native_solid_index_zero_based": 7,
+      "source_3MF_name": "mount",
+      "C_step": "reference/parts_C/C07_X3_Threaded_Insert.step",
+      "F_brep": "reference/instances_F/C07_X3_Threaded_Insert.brep",
+      "native_C_geometry": {
+        "valid": true,
+        "solids": 1,
+        "volume_mm3": 273.4898633458831,
+        "bbox_mm": [
+          [
+            -4.2500001,
+            -4.2500001,
+            -1.0000000112151369e-07
+          ],
+          [
+            4.2500001,
+            4.2500001,
+            7.605
+          ]
+        ],
+        "extents_mm": [
+          8.5000002,
+          8.5000002,
+          7.605000100000002
+        ]
+      },
+      "placed_F_geometry": {
+        "valid": true,
+        "solids": 1,
+        "volume_mm3": 273.48986334588363,
+        "bbox_mm": [
+          [
+            -4.2500001,
+            68.99479607995718,
+            -18.005203920042828
+          ],
+          [
+            4.2500001,
+            80.38275089096652,
+            -6.617249109033479
+          ]
+        ],
+        "extents_mm": [
+          8.5000002,
+          11.387954811009337,
+          11.387954811009347
+        ]
+      },
+      "module_overlap_mm3": 0,
+      "outside_official_box_mm3": 0,
+      "nominal_D6p35_shaft_Zminus2_to3_overlap_mm3": 19.499220633066514
+    }
+  ],
+  "native_source_Lens_Body_overlap_mm3": 15291.83523969561,
+  "native_source_Lens_Body_overlap_interpretation": "Retained internal overlap in author reference; not a new module collision",
+  "bbox_caveat": "Default OCCT box of trimmed body splines gives conservative Zmin about -0.585; do not shift camera on that basis. Exact containment and overlap checks are provided.",
+  "precision_limit": "Community reference undersizes total lens depth versus official 33.1 mm. No manufacturer mechanical tolerance or blind-thread-depth certification."
+}

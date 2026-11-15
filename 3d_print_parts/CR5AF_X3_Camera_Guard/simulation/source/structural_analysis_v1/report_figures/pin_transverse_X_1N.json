@@ -1,0 +1,10 @@
+{
+  "source_vtu": "structural_analysis_v1/pin_fea/fine/transverse_X_1N.vtu",
+  "quantity": "stress",
+  "surface_triangles": 13464,
+  "surface_numeric_max": 1.592836915138476,
+  "color_scale_max": 1.2233066826658774,
+  "color_scale_percentile": 99.5,
+  "deformation_scale": 0.0,
+  "note": "Stress is element averaged and is not the raw integration-point peak reported in JSON."
+}

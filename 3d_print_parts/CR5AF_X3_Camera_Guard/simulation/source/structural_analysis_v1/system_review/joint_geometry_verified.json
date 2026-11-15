@@ -1,0 +1,297 @@
+{
+  "frame": "F: physical CR5AF flange; length mm",
+  "source_manifest_sha256": "921adacbf737331cd045d41e7c2477f54a01bb1806446f50c9e8dd79d16ec72a",
+  "evidence_method": "Native BRep cylindrical surfaces; centerline thin-strip intersections; source code dimensions cross-check. No mesh fitting or CAD modifications.",
+  "moving_tether_lug": {
+    "hole_diameter_mm": 4.2,
+    "hole_axis_F_mm": [
+      -21.0,
+      56.5,
+      10.4
+    ],
+    "thickness_mm": 2.5,
+    "nearest_outward_edge_F_X_mm": -24.0,
+    "minimum_nominal_ligament_mm": 0.9,
+    "thin_strip_measured_ligament_mm": 0.900000238095366,
+    "shear_out_area_two_planes_mm2": 4.5,
+    "net_tension_area_for_minusX_pull_mm2": 7.0,
+    "warning": "Thin lug is part of the moving carrier. Its integrity is required after the D8 neck breaks; it has no published/proven catch rating."
+  },
+  "fixed_tether_lug": {
+    "hole_diameter_mm": 4.2,
+    "hole_axis_F_mm": [
+      -25.0,
+      35.0,
+      -0.1
+    ],
+    "thickness_mm": 7.5,
+    "nearest_outward_edge_F_Y_mm": 39.0,
+    "minimum_nominal_ligament_mm": 1.9,
+    "thin_strip_measured_ligament_mm": 1.9000002380952594,
+    "shear_out_area_two_planes_mm2": 28.5,
+    "net_tension_area_for_plusY_pull_mm2": 58.5,
+    "warning": "Shortest-ligament screen only, not full pull-direction failure analysis or rope contact model."
+  },
+  "D8_fuse_neck": {
+    "diameter_mm": 8,
+    "straight_zone_F_Z_mm": [
+      8.1,
+      9.1
+    ],
+    "area_mm2": 50.26548245743669,
+    "second_moment_mm4": 201.06192982974676,
+    "polar_moment_mm4": 402.1238596594935,
+    "bending_section_modulus_mm3": 50.26548245743669,
+    "nominal_bending_stress_MPa_per_Nm": 19.89436788648692,
+    "nominal_axial_stress_MPa_per_N": 0.019894367886486918,
+    "nominal_max_transverse_shear_MPa_per_N": 0.026525823848649224,
+    "warning": "Nominal gross-section formulas, no stress concentration, print anisotropy, notch sensitivity, fatigue or fracture law. D8 alone does not specify release force."
+  },
+  "quick_release": {
+    "stud_stem_diameter_mm": 3.6,
+    "slot_width_mm": 4.2,
+    "nominal_lateral_diametral_clearance_mm": 0.6,
+    "per_side_nominal_clearance_mm": 0.3,
+    "stud_underhead_F_Z_mm": 16.3,
+    "module_foot_top_F_Z_mm": 16.0,
+    "nominal_vertical_free_clearance_mm": 0.3000000000000007,
+    "stud_axis_spacing_mm": 16,
+    "entry_diameter_mm": 7.4,
+    "head_diameter_mm": 7,
+    "warning": "Local dimensional clearance is confirmed; actual six-DOF play depends on foot contacts, hook force and print tolerance. No explicit preload/wedge removes this clearance in the CAD."
+  },
+  "actual_analytic_surface_evidence": {
+    "moving_lug": {
+      "radius_mm": 2.1,
+      "axis_point_mm": [
+        -21.0,
+        56.5,
+        10.4
+      ],
+      "axis_direction": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "face_bounds_mm": [
+        [
+          -23.1,
+          54.4,
+          10.5
+        ],
+        [
+          -18.9,
+          58.6,
+          13.0
+        ]
+      ]
+    },
+    "fixed_lug": {
+      "radius_mm": 2.1,
+      "axis_point_mm": [
+        -25.0,
+        35.0,
+        -0.1
+      ],
+      "axis_direction": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "face_bounds_mm": [
+        [
+          -27.1,
+          32.9,
+          0.0
+        ],
+        [
+          -22.9,
+          37.1,
+          7.5
+        ]
+      ]
+    },
+    "neck": {
+      "radius_mm": 4.0,
+      "axis_point_mm": [
+        0.0,
+        47.0,
+        8.1
+      ],
+      "axis_direction": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "face_bounds_mm": [
+        [
+          -4.0,
+          43.0,
+          8.1
+        ],
+        [
+          4.0,
+          51.0,
+          9.1
+        ]
+      ]
+    },
+    "stems": [
+      {
+        "radius_mm": 1.8,
+        "axis_point_mm": [
+          8.0,
+          50.0,
+          13.0
+        ],
+        "axis_direction": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "face_bounds_mm": [
+          [
+            6.2,
+            48.2,
+            13.0
+          ],
+          [
+            9.8,
+            51.8,
+            16.3
+          ]
+        ]
+      },
+      {
+        "radius_mm": 1.8,
+        "axis_point_mm": [
+          -8.0,
+          50.0,
+          13.0
+        ],
+        "axis_direction": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "face_bounds_mm": [
+          [
+            -9.8,
+            48.2,
+            13.0
+          ],
+          [
+            -6.2,
+            51.8,
+            16.3
+          ]
+        ]
+      }
+    ],
+    "heads": [
+      {
+        "radius_mm": 3.5,
+        "axis_point_mm": [
+          8.0,
+          50.0,
+          16.3
+        ],
+        "axis_direction": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "face_bounds_mm": [
+          [
+            4.5,
+            46.5,
+            16.3
+          ],
+          [
+            11.5,
+            53.5,
+            17.900000000000002
+          ]
+        ]
+      },
+      {
+        "radius_mm": 3.5,
+        "axis_point_mm": [
+          -8.0,
+          50.0,
+          16.3
+        ],
+        "axis_direction": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "face_bounds_mm": [
+          [
+            -11.5,
+            46.5,
+            16.3
+          ],
+          [
+            -4.5,
+            53.5,
+            17.900000000000002
+          ]
+        ]
+      }
+    ],
+    "slot_ends": [
+      {
+        "radius_mm": 2.1,
+        "axis_point_mm": [
+          8.0,
+          50.0,
+          12.7
+        ],
+        "axis_direction": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "face_bounds_mm": [
+          [
+            5.9,
+            50.0,
+            13.0
+          ],
+          [
+            10.1,
+            52.1,
+            16.0
+          ]
+        ]
+      },
+      {
+        "radius_mm": 2.1,
+        "axis_point_mm": [
+          -8.0,
+          50.0,
+          12.7
+        ],
+        "axis_direction": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "face_bounds_mm": [
+          [
+            -10.1,
+            50.0,
+            13.0
+          ],
+          [
+            -5.9,
+            52.1,
+            16.0
+          ]
+        ]
+      }
+    ]
+  },
+  "shapes_valid": true
+}

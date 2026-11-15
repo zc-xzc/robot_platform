@@ -1,0 +1,155 @@
+{
+  "load_point_F_mm": [
+    0,
+    112.3050865,
+    25.3050865
+  ],
+  "force_magnitude_N": 1,
+  "scope": "Camera-only point force; no selfweight in these unit states. Same reference point permits comparison with camera module root/arms. No failure-order prediction.",
+  "levels": {
+    "coarse": {
+      "tetrahedra": 11884,
+      "dofs": 64626,
+      "cases": {
+        "cameraCoG_FX_1N": {
+          "minimum_D8_neck": {
+            "volume_mm3": 50.43763009442883,
+            "max_von_mises_MPa": 1.7751059987027207,
+            "p95_MPa": 1.4429914067045013,
+            "p99_MPa": 1.57133411831512
+          },
+          "studs": {
+            "volume_mm3": 191.71978708412183,
+            "max_von_mises_MPa": 0.902535371550223,
+            "p95_MPa": 0.2088307930427753,
+            "p99_MPa": 0.3325201078514113
+          }
+        },
+        "cameraCoG_FY_1N": {
+          "minimum_D8_neck": {
+            "volume_mm3": 50.43763009442883,
+            "max_von_mises_MPa": 0.5419384004384872,
+            "p95_MPa": 0.30927272629732905,
+            "p99_MPa": 0.4085255431436268
+          },
+          "studs": {
+            "volume_mm3": 191.71978708412183,
+            "max_von_mises_MPa": 0.40719827317711516,
+            "p95_MPa": 0.08081664382212608,
+            "p99_MPa": 0.13971722078043958
+          }
+        },
+        "cameraCoG_FZ_1N": {
+          "minimum_D8_neck": {
+            "volume_mm3": 50.43763009442883,
+            "max_von_mises_MPa": 2.387445951353989,
+            "p95_MPa": 1.1999800841143942,
+            "p99_MPa": 1.6318931950867797
+          },
+          "studs": {
+            "volume_mm3": 191.71978708412183,
+            "max_von_mises_MPa": 1.6153187367968602,
+            "p95_MPa": 0.2966231626996533,
+            "p99_MPa": 0.5329855084295624
+          }
+        }
+      }
+    },
+    "medium": {
+      "tetrahedra": 26837,
+      "dofs": 137481,
+      "cases": {
+        "cameraCoG_FX_1N": {
+          "minimum_D8_neck": {
+            "volume_mm3": 50.07265435618746,
+            "max_von_mises_MPa": 1.9806004787389244,
+            "p95_MPa": 1.450533601021534,
+            "p99_MPa": 1.6295980941856398
+          },
+          "studs": {
+            "volume_mm3": 191.32949911158613,
+            "max_von_mises_MPa": 1.1106508637366648,
+            "p95_MPa": 0.20857101319378035,
+            "p99_MPa": 0.32119962605801594
+          }
+        },
+        "cameraCoG_FY_1N": {
+          "minimum_D8_neck": {
+            "volume_mm3": 50.07265435618746,
+            "max_von_mises_MPa": 0.5932248320871216,
+            "p95_MPa": 0.3173561120525823,
+            "p99_MPa": 0.4282282675227235
+          },
+          "studs": {
+            "volume_mm3": 191.32949911158613,
+            "max_von_mises_MPa": 0.5022004629155482,
+            "p95_MPa": 0.07983529144129113,
+            "p99_MPa": 0.13229209208705336
+          }
+        },
+        "cameraCoG_FZ_1N": {
+          "minimum_D8_neck": {
+            "volume_mm3": 50.07265435618746,
+            "max_von_mises_MPa": 2.5727455324816257,
+            "p95_MPa": 1.242406571953087,
+            "p99_MPa": 1.701454006070542
+          },
+          "studs": {
+            "volume_mm3": 191.32949911158613,
+            "max_von_mises_MPa": 1.992236012303917,
+            "p95_MPa": 0.29348145792851027,
+            "p99_MPa": 0.49316121244325434
+          }
+        }
+      }
+    },
+    "fine": {
+      "tetrahedra": 68193,
+      "dofs": 329091,
+      "cases": {
+        "cameraCoG_FX_1N": {
+          "minimum_D8_neck": {
+            "volume_mm3": 50.49959604736368,
+            "max_von_mises_MPa": 2.1509124383808764,
+            "p95_MPa": 1.425641131989143,
+            "p99_MPa": 1.6078066074134327
+          },
+          "studs": {
+            "volume_mm3": 191.0492713879626,
+            "max_von_mises_MPa": 1.285254082035977,
+            "p95_MPa": 0.20965788021290366,
+            "p99_MPa": 0.31813424159923537
+          }
+        },
+        "cameraCoG_FY_1N": {
+          "minimum_D8_neck": {
+            "volume_mm3": 50.49959604736368,
+            "max_von_mises_MPa": 0.6360553440695094,
+            "p95_MPa": 0.31613178494424504,
+            "p99_MPa": 0.41569768920907435
+          },
+          "studs": {
+            "volume_mm3": 191.0492713879626,
+            "max_von_mises_MPa": 0.6097337239630218,
+            "p95_MPa": 0.07970873553773074,
+            "p99_MPa": 0.12834352008791108
+          }
+        },
+        "cameraCoG_FZ_1N": {
+          "minimum_D8_neck": {
+            "volume_mm3": 50.49959604736368,
+            "max_von_mises_MPa": 2.7927394200773596,
+            "p95_MPa": 1.2423828625269433,
+            "p99_MPa": 1.6680930964590992
+          },
+          "studs": {
+            "volume_mm3": 191.0492713879626,
+            "max_von_mises_MPa": 2.333895544586502,
+            "p95_MPa": 0.2904577378036268,
+            "p99_MPa": 0.47466492567433355
+          }
+        }
+      }
+    }
+  }
+}

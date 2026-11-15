@@ -1,0 +1,71 @@
+{
+  "files": [
+    {
+      "path": "structural_analysis_v1/system_review/check_camera_contact_compatibility.py",
+      "bytes": 19325,
+      "sha256": "721933541998905a7ab4bec2567a6256b887b27566dfa3dcd2a054694340fc79"
+    },
+    {
+      "path": "structural_analysis_v1/system_review/make_contact_figure.py",
+      "bytes": 6384,
+      "sha256": "0f15f58110a402edb320bacc27646e05fec49164efa43098e884eca860569021"
+    },
+    {
+      "path": "structural_analysis_v1/system_review/contact_compatibility/medium/CONTACT_SCREEN_zh.md",
+      "bytes": 2175,
+      "sha256": "e39675bea29ac8c5e2077345ce8208844a63df0dd736f2efca237bd6c37ad240"
+    },
+    {
+      "path": "structural_analysis_v1/system_review/contact_compatibility/medium/case_summary.csv",
+      "bytes": 1435,
+      "sha256": "0ba4dc8dd0ee81e2929923f62903940e28ef3798305f40a2577d9e7819ec7d53"
+    },
+    {
+      "path": "structural_analysis_v1/system_review/contact_compatibility/medium/contact_bottom_node_depths.csv",
+      "bytes": 133838,
+      "sha256": "7ebd9db8a6a7176e4ba292a69362b6c17da997b335a8051e7e1143c846c90cb1"
+    },
+    {
+      "path": "structural_analysis_v1/system_review/contact_compatibility/medium/contact_bottom_nodes_1g_3g.png",
+      "bytes": 467875,
+      "sha256": "f8ce0236ee400fcdbdd15157ac6c8fca3ef3c160ab1b657828246a8ab72aa30c"
+    },
+    {
+      "path": "structural_analysis_v1/system_review/contact_compatibility/medium/contact_bottom_nodes_1g_3g.svg",
+      "bytes": 505596,
+      "sha256": "b9abb5d6fa4de7a918ff077dbb592f8d7299f7ee88a5ede4ef256363d08f4522"
+    },
+    {
+      "path": "structural_analysis_v1/system_review/contact_compatibility/medium/contact_compatibility.json",
+      "bytes": 165490,
+      "sha256": "a6cdb1dcb3adeb9d79dd2a0e7611818db1e957ffebe9947cc558d528c0555bc0"
+    },
+    {
+      "path": "structural_analysis_v1/system_review/contact_compatibility/medium/contact_figure_metadata.json",
+      "bytes": 802,
+      "sha256": "d19c6ed7a6f24307471ee1bc90816b526afda1be690da24836abdb95f90a24e4"
+    },
+    {
+      "path": "structural_analysis_v1/system_review/contact_compatibility/medium/contact_screen_figure.png",
+      "bytes": 467875,
+      "sha256": "f8ce0236ee400fcdbdd15157ac6c8fca3ef3c160ab1b657828246a8ab72aa30c"
+    },
+    {
+      "path": "structural_analysis_v1/system_review/contact_compatibility/medium/contact_screen_figure.svg",
+      "bytes": 505596,
+      "sha256": "b9abb5d6fa4de7a918ff077dbb592f8d7299f7ee88a5ede4ef256363d08f4522"
+    },
+    {
+      "path": "structural_analysis_v1/system_review/contact_compatibility/medium/new_intrusion_nodes.csv",
+      "bytes": 785552,
+      "sha256": "3142ef632019e418d9fc5e1079e6cb4efecfac6512a2c5dcf8daa4e8b8f34168"
+    },
+    {
+      "path": "structural_analysis_v1/system_review/contact_compatibility/medium/node_screen_fields.npz",
+      "bytes": 9135308,
+      "sha256": "71aff9382d925bd7bf39cba38c18ff70816e1da627157dde0c1fc946817b73ba"
+    }
+  ],
+  "FEM_solved": false,
+  "CAD_modified": false
+}

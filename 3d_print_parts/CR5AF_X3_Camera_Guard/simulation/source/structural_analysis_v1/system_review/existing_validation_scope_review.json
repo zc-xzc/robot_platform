@@ -1,0 +1,107 @@
+{
+  "frozen_manifest_matches_existing_export_readback": true,
+  "export_integrity": [
+    {
+      "file": "deliverable/CR5AF_DM4310_X3_V2R1_COMPLETE.step",
+      "sha256_matches_current": true,
+      "instances": 95,
+      "native_solids": 103,
+      "all_BRep_valid_in_existing_readback": true
+    },
+    {
+      "file": "deliverable/V2R1_END_EFFECTOR_COMPLETE_F_FRAME.step",
+      "sha256_matches_current": true,
+      "instances": 88,
+      "native_solids": 96,
+      "all_BRep_valid_in_existing_readback": true
+    }
+  ],
+  "new_interface_review": {
+    "revision": "V2R1",
+    "scope": "All instance pairs with at least one new custom part, pad, added screw/washer or cord envelope; source-vs-source internals excluded",
+    "manifest_sha256": "921adacbf737331cd045d41e7c2477f54a01bb1806446f50c9e8dd79d16ec72a",
+    "checked_pairs": 1980,
+    "candidate_boolean_pairs": 69,
+    "classification_counts": {
+      "separated_or_boundary_only": 1911,
+      "clear": 60,
+      "expected_M6_thread_envelope": 4,
+      "expected_M3_thread_envelope": 4,
+      "expected_camera_thread_major_diameter_envelope": 1
+    },
+    "all_new_interfaces_no_unexpected_positive_overlap": true,
+    "elapsed_seconds": 7.099700306000159,
+    "physical_validation": false
+  },
+  "robot_pair_review": {
+    "revision": "V2R1_reconstructed",
+    "manifest_sha256": "921adacbf737331cd045d41e7c2477f54a01bb1806446f50c9e8dd79d16ec72a",
+    "scope": "All637 unordered pairs containing at least one of7 robot_purchased instances in frozen95-instance assembly. Actual B-Rep bounds and Boolean common; no CAD edits.",
+    "units": "mm",
+    "positive_volume_tolerance_mm3": 1e-05,
+    "completed": true,
+    "checked_pairs": 637,
+    "AABB_excluded": 624,
+    "Boolean_candidates": 13,
+    "classification_counts": {
+      "clear_by_BRep_common": 8,
+      "clear_by_AABB": 624,
+      "source_robot_assembly_positive_overlap": 1,
+      "expected_M6_simplified_thread_overlap": 4
+    },
+    "source_robot_overlaps": [
+      {
+        "i": 5,
+        "j": 6,
+        "a": "R05_LINK5_CR5AF",
+        "b": "R06_LINK6_CR5AF",
+        "categories": [
+          "robot_purchased",
+          "robot_purchased"
+        ],
+        "AABB_overlap_mm": [
+          82.00000020000002,
+          84.49940412409816,
+          4.300000100000084
+        ],
+        "AABB_candidate": true,
+        "intersection_volume_mm3": 17507.46753992534,
+        "classification": "source_robot_assembly_positive_overlap",
+        "unexpected_new_interference": false,
+        "source_issue": true,
+        "note": "Preexisting official LINK5/LINK6 relation retained. Not counted as a zero-overlap pass."
+      }
+    ],
+    "sources_unchanged": true,
+    "elapsed_seconds": 24.58097743988037,
+    "new_design_vs_robot_no_unexpected_overlap": true,
+    "all_pairs_unqualified_zero_overlap": false
+  },
+  "gripper_external_review": {
+    "static": {
+      "pair_count": 224,
+      "AABB_candidate_count": 2,
+      "BRep_common_computed_count": 3,
+      "positive_pair_count": 0,
+      "all_no_intersection_above_threshold": true
+    },
+    "jaw_continuous_translation": {
+      "moving_instances": 20,
+      "pair_count": 80,
+      "all_continuous_clear": true,
+      "minimum_distance_lower_bound_mm": 8.040584543446087
+    },
+    "output_group_external_rotation_envelope": {
+      "rotating_instances": 10,
+      "pair_count": 40,
+      "all_continuous_clear_for_any_angle": true,
+      "minimum_distance_lower_bound_mm": 14.251262658433397
+    }
+  },
+  "camera_source_Lens_Body_overlap_mm3": 15291.83523969561,
+  "historical_supplier_internal_report": "recovery_v2/gripper/known_source_issues_HISTORICAL_NOT_RERUN.json",
+  "unqualified_all_4465_pairs_zero_intersection_claim": false,
+  "structural_or_dynamic_certification": false,
+  "all_freeze_file_hashes_unchanged": true,
+  "all_95_instance_hashes_unchanged": true
+}

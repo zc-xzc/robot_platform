@@ -1,0 +1,207 @@
+{
+  "created_UTC": "2026-11-12T06:44:21.207712+00:00",
+  "requested_level": "auto",
+  "camera_dynamic_level": "coarse",
+  "available_completed_camera_dynamic_levels": [
+    "coarse"
+  ],
+  "read_only_results": true,
+  "FEM_solved": false,
+  "CAD_modified": false,
+  "font": "<redacted-workspace-path>",
+  "FRF": {
+    "level": "coarse",
+    "first_mode_Hz": 12.672676250432405,
+    "retained_modes": 12,
+    "excitation_g": 0.1,
+    "frequency_plot_span_Hz": [
+      0,
+      80
+    ],
+    "row_count": 1935
+  },
+  "mesh_sensitivity": {
+    "parts": {
+      "base": {
+        "completed_levels": [
+          "coarse",
+          "medium",
+          "fine"
+        ],
+        "latest_level": "fine",
+        "last_step_response_change_percent": {
+          "X": 1.345125514354617,
+          "Y": 1.4290776615910161,
+          "Z": 1.3212795615849204
+        },
+        "convergence_certified": false
+      },
+      "cartridge": {
+        "completed_levels": [
+          "coarse",
+          "medium",
+          "fine"
+        ],
+        "latest_level": "fine",
+        "last_step_response_change_percent": {
+          "X": 0.6768003500132735,
+          "Y": 0.7435752123863715,
+          "Z": 0.5053063073908737
+        },
+        "convergence_certified": false
+      },
+      "camera": {
+        "completed_levels": [
+          "coarse",
+          "medium",
+          "fine"
+        ],
+        "latest_level": "fine",
+        "last_step_response_change_percent": {
+          "X": 0.7570705413676659,
+          "Y": 0.7291738441566054,
+          "Z": 0.8418296155077165
+        },
+        "convergence_certified": false
+      }
+    },
+    "excluded_incomplete_or_missing": [],
+    "included_rows": 27
+  },
+  "first6_modes": {
+    "level": "coarse",
+    "displayed_modes": 6,
+    "retained_modes": 12,
+    "first6_cumulative_effective_mass_fraction_XYZ": [
+      0.7006159231484229,
+      0.7660550563918246,
+      0.6419549853949369
+    ],
+    "all_retained_effective_mass_fraction_XYZ": [
+      0.9030967478449845,
+      0.9286937220305159,
+      0.8759175767786186
+    ],
+    "actual_total_mass_measurement": false
+  },
+  "source_files": {
+    "camera_fea/coarse/static_results.json": {
+      "bytes": 35565,
+      "sha256": "9a7cda5df8b2a1a3dde32337a4b40aa9c0ece52cac45d54fc94ff79bf56cc322",
+      "mtime_ns": 1794462866689601879
+    },
+    "camera_fea/coarse/modal_results.json": {
+      "bytes": 6532,
+      "sha256": "2d27afc87629a6d05bd6b3dd1f455c136e02a0ee8f967d787945ee40823c6453",
+      "mtime_ns": 1794462891183073570
+    },
+    "camera_fea/coarse/harmonic_summary.json": {
+      "bytes": 2238,
+      "sha256": "2e2b9f9dd75fb3ad71d2587709159924d871b8c53b2635b6dc6687687c9d410d",
+      "mtime_ns": 1794462893185439413
+    },
+    "camera_fea/coarse/harmonic_camera_CoG_0p1g.csv": {
+      "bytes": 1652600,
+      "sha256": "f4be86c20285f747fd7ddf57732ed81a4cda447a993ed617f03ef248a03fdeda",
+      "mtime_ns": 1794462893181727273
+    },
+    "mount_fea/base/coarse/results.json": {
+      "bytes": 86194,
+      "sha256": "15c2cf418cba086b2d0ff004fdfe69b30876e78c7b9a62357539a36a7c81b126",
+      "mtime_ns": 1794462764857883715
+    },
+    "mount_fea/base/medium/results.json": {
+      "bytes": 86255,
+      "sha256": "6afb44950bf3ad9d8f2fdc216470beeda96b6b9a8169706d9a0a3570f1eb3a15",
+      "mtime_ns": 1794462756655839556
+    },
+    "mount_fea/base/fine/results.json": {
+      "bytes": 86333,
+      "sha256": "96764da0fc8e2d36709b751dd2b958d12c8bce42dfd8083acea0f6160e79a2f2",
+      "mtime_ns": 1794463646786111009
+    },
+    "mount_fea/cartridge/coarse/results.json": {
+      "bytes": 90782,
+      "sha256": "1d27c3efc268c585d3be5b058ca396689d726bdf0659cce024408600119c22a9",
+      "mtime_ns": 1794463789867780005
+    },
+    "mount_fea/cartridge/medium/results.json": {
+      "bytes": 99748,
+      "sha256": "c1cacc36900fb9797d57042d726e622f7e01478851a7fbba60bbcb5861661d67",
+      "mtime_ns": 1794463796964606359
+    },
+    "mount_fea/cartridge/fine/results.json": {
+      "bytes": 99782,
+      "sha256": "3c469aeb7f0fb21c9a75e6741af5ce4d955720c7f48be36e689e40d8b82b7301",
+      "mtime_ns": 1794463819312632076
+    },
+    "camera_fea/medium/static_results.json": {
+      "bytes": 35519,
+      "sha256": "58f25676c6d55c69a4307974f6c8336226500dc6888f878302081b0b20419477",
+      "mtime_ns": 1794463367754769821
+    },
+    "camera_fea/fine/static_results.json": {
+      "bytes": 36321,
+      "sha256": "8a2048f0802416e6f110403cffe5c0363715316f6944f4b80e7e519675df37d6",
+      "mtime_ns": 1794465713425955530
+    }
+  },
+  "warnings": [],
+  "outputs": [
+    {
+      "path": "<redacted-workspace-path>",
+      "bytes": 257558,
+      "sha256": "bae9d08c7a8ba0a8ab74caa22dc7957e5c243d0b1dcc2628418cea9a9085a57e"
+    },
+    {
+      "path": "<redacted-workspace-path>",
+      "bytes": 165390,
+      "sha256": "6bf20433a85627f82196af50de03215996c668ca602dd862d0f20f5ed9c3c27e"
+    },
+    {
+      "path": "<redacted-workspace-path>",
+      "bytes": 236599,
+      "sha256": "6961d383e996c67c11fc222ec1da8c0715b4aebf3f76ebd5c1173cbf3dda3f56"
+    },
+    {
+      "path": "<redacted-workspace-path>",
+      "bytes": 204292,
+      "sha256": "7996bc037688964f64a50f47b872ec26f8a879e2284d51acc09ed3fb37538927"
+    },
+    {
+      "path": "<redacted-workspace-path>",
+      "bytes": 246558,
+      "sha256": "48d70722fc0ce1a591e46b3031d4a9f4923707a01e37fb4db5a9aa5e17097c57"
+    },
+    {
+      "path": "<redacted-workspace-path>",
+      "bytes": 204812,
+      "sha256": "5fa10b9240ccffe4fa2638fef3fc171d62bce32ccb1773598d5d87c99f8ddd71"
+    },
+    {
+      "path": "<redacted-workspace-path>",
+      "bytes": 203373,
+      "sha256": "644472e2b237531151ada48c18b72fbb51e30b4ef44600258dd1f672e4fb99ee"
+    },
+    {
+      "path": "<redacted-workspace-path>",
+      "bytes": 125928,
+      "sha256": "d9bc251d54814402cc5649797f6adc93e97c1b8752ddce06afebb842e9d62bed"
+    },
+    {
+      "path": "<redacted-workspace-path>",
+      "bytes": 227881,
+      "sha256": "f3773954e30db0390acddc77b02168747ed062de5b5879ffdd7e36369172f767"
+    },
+    {
+      "path": "<redacted-workspace-path>",
+      "bytes": 4268,
+      "sha256": "dc8d67a70fdc9e94ba668ea0f627eb4460554abfdfc03157f0d5b1e2002ca2f8"
+    },
+    {
+      "path": "<redacted-workspace-path>",
+      "bytes": 1855,
+      "sha256": "e220be351d63420bd4b50e503415b6326bc089f161c3eeb6bfce7b17037dcfab"
+    }
+  ]
+}

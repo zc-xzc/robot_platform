@@ -1,0 +1,666 @@
+{
+  "manifest_version": 1,
+  "hash_algorithm": "Git blob SHA-1",
+  "files": [
+    {
+      "path": "DESIGN_VALIDATION_SUMMARY_CN.md",
+      "size_bytes": 9327,
+      "git_blob_sha": "2a3815de82d9896573c3475ada28ab514c543c70"
+    },
+    {
+      "path": "DESIGN_VALIDATION_SUMMARY_EN.md",
+      "size_bytes": 10626,
+      "git_blob_sha": "dc999f83f24085d0478bea9b332baa668bb60c76"
+    },
+    {
+      "path": "PUBLICATION_SCOPE.md",
+      "size_bytes": 1995,
+      "git_blob_sha": "db7d2964f800cecccfebbf5e178e1e2027f98954"
+    },
+    {
+      "path": "README.md",
+      "size_bytes": 2935,
+      "git_blob_sha": "644058b71f648dbcbb8e8779e547d2f94b830683"
+    },
+    {
+      "path": "README_CN.md",
+      "size_bytes": 2561,
+      "git_blob_sha": "634b5073b5122c1bf4fd8c3610a01bc702152103"
+    },
+    {
+      "path": "data/CAMERA_MODAL_HARMONIC.csv",
+      "size_bytes": 566,
+      "git_blob_sha": "87c8ffa82375faa0182962511c9b7125e8b895b3"
+    },
+    {
+      "path": "data/KEY_RESULTS.csv",
+      "size_bytes": 3091,
+      "git_blob_sha": "1d227b647743ce9552885f14cd54ffddc93f00e6"
+    },
+    {
+      "path": "data/MESH_LEVELS.csv",
+      "size_bytes": 352,
+      "git_blob_sha": "6564eb02cfc5158df7a1f2011a24245fe886008f"
+    },
+    {
+      "path": "figures/assembly/X3_5mm_screw_and_large_recess_V2R1.jpg",
+      "size_bytes": 108406,
+      "git_blob_sha": "d1d2ec8e48869e98f510461621cfa5521f63eae4"
+    },
+    {
+      "path": "figures/fea/base_plusX_3g_stress.jpg",
+      "size_bytes": 106441,
+      "git_blob_sha": "5beaa79e34facd25ad94408df9ef738c980eb2f9"
+    },
+    {
+      "path": "figures/fea/camera_mode1.jpg",
+      "size_bytes": 63281,
+      "git_blob_sha": "c737cdba63e8051dc87976249f2c6fa2cece652f"
+    },
+    {
+      "path": "figures/fea/camera_plusZ_3g_stress.jpg",
+      "size_bytes": 61783,
+      "git_blob_sha": "b37c520012e133edf46c4906018811a39b4367ba"
+    },
+    {
+      "path": "figures/fea/cartridge_plusZ_3g_stress.jpg",
+      "size_bytes": 75213,
+      "git_blob_sha": "9d1e87780bb17c06cef4964c24d2830d80f0b42e"
+    },
+    {
+      "path": "figures/fea/pin_transverse_X_1N.jpg",
+      "size_bytes": 53457,
+      "git_blob_sha": "0c6fb0ab852d88dc02d7a43077069af883fd0aa5"
+    },
+    {
+      "path": "figures/fea/postbreak_lug_plusZ_1N.jpg",
+      "size_bytes": 68063,
+      "git_blob_sha": "b5db706554d6bcb51367a82412ef63a2d5b08a3f"
+    },
+    {
+      "path": "reproducibility/README.md",
+      "size_bytes": 3588,
+      "git_blob_sha": "5e028ee6ffe621805a8280e173d28658e53b74de"
+    },
+    {
+      "path": "reproducibility/README_CN.md",
+      "size_bytes": 3402,
+      "git_blob_sha": "363888719338078665be00d7e758eeaa4b6bfe0b"
+    },
+    {
+      "path": "source/recovery_v2/camera/04_Camera_Module_Short45_F.brep",
+      "size_bytes": 112098,
+      "git_blob_sha": "3665af50a569b3ba6657893d99d31ec57871c4a4"
+    },
+    {
+      "path": "source/recovery_v2/camera/camera_module_validation.json",
+      "size_bytes": 4424,
+      "git_blob_sha": "d190b749db8d924d93f990167320f05000f40b1a"
+    },
+    {
+      "path": "source/recovery_v2/camera/camera_reference_manifest.json",
+      "size_bytes": 12748,
+      "git_blob_sha": "3cc5a26bf97ad7c4069efb3d16866ba1905ff0eb"
+    },
+    {
+      "path": "source/recovery_v2/camera/reference/PROVENANCE_AND_LIMITS.md",
+      "size_bytes": 2778,
+      "git_blob_sha": "70d277733ea99c19733638821899921f07c32b3b"
+    },
+    {
+      "path": "source/recovery_v2/camera/reference/PUBLIC_DOWNLOAD_NOTE.md",
+      "size_bytes": 635,
+      "git_blob_sha": "2d0a05244a6bc118ada588554987ab873f8c3c43"
+    },
+    {
+      "path": "source/recovery_v2/camera/reference/license_response.json",
+      "size_bytes": 100,
+      "git_blob_sha": "ee07437b356860c2c9f952545c0b022a06530b3c"
+    },
+    {
+      "path": "source/recovery_v2/camera/reference/original_step_provenance.json",
+      "size_bytes": 742,
+      "git_blob_sha": "4bf2644e16022cf8ff8da60e958007ccad4e2d2a"
+    },
+    {
+      "path": "source/recovery_v2/mount/01_Direct_Base.brep",
+      "size_bytes": 57377,
+      "git_blob_sha": "7e4b37ddf87daea8dbee15c741e426fc77bfb0b0"
+    },
+    {
+      "path": "source/recovery_v2/mount/02_Fuse_Cartridge_D8.brep",
+      "size_bytes": 39746,
+      "git_blob_sha": "c04a1818a78ef720890c4d45e8dfbd4dbae3f3ff"
+    },
+    {
+      "path": "source/recovery_v2/mount/03_Cartridge_Retaining_Pin.brep",
+      "size_bytes": 13665,
+      "git_blob_sha": "582fd4fe9aefd64b0b6b0981815499520f91c4fc"
+    },
+    {
+      "path": "source/structural_analysis_v1/camera_fea/CAMERA_FEA_METHOD_zh.txt",
+      "size_bytes": 8454,
+      "git_blob_sha": "d3942c2298bb72bd100fe21dd257aac3d3bde6a2"
+    },
+    {
+      "path": "source/structural_analysis_v1/camera_fea/camera_setup.py",
+      "size_bytes": 7418,
+      "git_blob_sha": "f3d5a8dad210f2bd4af4a4f91035fdde365a0ffc"
+    },
+    {
+      "path": "source/structural_analysis_v1/camera_fea/coarse/EXECUTION_METHOD.json",
+      "size_bytes": 742,
+      "git_blob_sha": "e813b0f7bba7d159742093bc06eaa456fb196a7b"
+    },
+    {
+      "path": "source/structural_analysis_v1/camera_fea/coarse/harmonic_summary.json",
+      "size_bytes": 2238,
+      "git_blob_sha": "33ba7cb204cc574483b9b2e9e05cb547d27ed8cc"
+    },
+    {
+      "path": "source/structural_analysis_v1/camera_fea/coarse/mesh_and_BC.json",
+      "size_bytes": 9510,
+      "git_blob_sha": "1e8680264e4f4da43b4d4121cd4ab8e6e9234a8d"
+    },
+    {
+      "path": "source/structural_analysis_v1/camera_fea/coarse/modal_results.json",
+      "size_bytes": 6532,
+      "git_blob_sha": "c751d37b570f5204156a60ad0eb33670964994e5"
+    },
+    {
+      "path": "source/structural_analysis_v1/camera_fea/delivery_manifest.json",
+      "size_bytes": 11742,
+      "git_blob_sha": "d4c057e70a57f39453a1c8c549f77a069af9d3be"
+    },
+    {
+      "path": "source/structural_analysis_v1/camera_fea/fine/mesh_and_BC.json",
+      "size_bytes": 9514,
+      "git_blob_sha": "03fb01d941f380e9e6d05263982ea5aba362c530"
+    },
+    {
+      "path": "source/structural_analysis_v1/camera_fea/fine/recovered_field_provenance.json",
+      "size_bytes": 993,
+      "git_blob_sha": "cc77b546318a8ee8ac1e47359a9cbb023677ba5b"
+    },
+    {
+      "path": "source/structural_analysis_v1/camera_fea/fine/unit_force_X_1N.json",
+      "size_bytes": 3000,
+      "git_blob_sha": "d2b20f04566bf1cdf835519c40b9727a337a6f9e"
+    },
+    {
+      "path": "source/structural_analysis_v1/camera_fea/fine/unit_force_Y_1N.json",
+      "size_bytes": 3048,
+      "git_blob_sha": "769a0817a304b68aedf975f554d87e0d0c899c14"
+    },
+    {
+      "path": "source/structural_analysis_v1/camera_fea/fine/unit_force_Z_1N.json",
+      "size_bytes": 2997,
+      "git_blob_sha": "a86b6f853272180f23d5de3c7992c81222fc84ad"
+    },
+    {
+      "path": "source/structural_analysis_v1/camera_fea/generate_mesh.py",
+      "size_bytes": 832,
+      "git_blob_sha": "63ea7d540f576af42cf6c93c72d44e44f3c4df6b"
+    },
+    {
+      "path": "source/structural_analysis_v1/camera_fea/geometry_BC_load_definitions.json",
+      "size_bytes": 4060,
+      "git_blob_sha": "3e5dc2d0494a84aea97bfe271b860aa9d8b57122"
+    },
+    {
+      "path": "source/structural_analysis_v1/camera_fea/medium/captured_stud_support/results.json",
+      "size_bytes": 11271,
+      "git_blob_sha": "75e8a4fa0cebd1063781f2abe17a5fe23e41430e"
+    },
+    {
+      "path": "source/structural_analysis_v1/camera_fea/medium/mesh_and_BC.json",
+      "size_bytes": 9502,
+      "git_blob_sha": "05ffb4b3906d2fc2c392ad2760daf9e73b0718d3"
+    },
+    {
+      "path": "source/structural_analysis_v1/camera_fea/meshes/camera_coarse.mesh.json",
+      "size_bytes": 658,
+      "git_blob_sha": "5efb5ff17edca003c977dc6cbd667b0ac846329c"
+    },
+    {
+      "path": "source/structural_analysis_v1/camera_fea/meshes/camera_fine.mesh.json",
+      "size_bytes": 644,
+      "git_blob_sha": "ba7380211b72665f709d4095b5081a22473109ab"
+    },
+    {
+      "path": "source/structural_analysis_v1/camera_fea/meshes/camera_medium.mesh.json",
+      "size_bytes": 642,
+      "git_blob_sha": "e1c5e44beb09e5c870c8a848e04596889998b4fe"
+    },
+    {
+      "path": "source/structural_analysis_v1/camera_fea/recover_static_vtu.py",
+      "size_bytes": 5958,
+      "git_blob_sha": "4e1cc17cec67d7b306e774f75aa50259e7943fee"
+    },
+    {
+      "path": "source/structural_analysis_v1/camera_fea/reproduce_coarse_eigsh.py",
+      "size_bytes": 3224,
+      "git_blob_sha": "a938366c70b3f81b0e1e22b4b07f4c8e4d5e8611"
+    },
+    {
+      "path": "source/structural_analysis_v1/camera_fea/resume_checkpoint.py",
+      "size_bytes": 1122,
+      "git_blob_sha": "8e6fcf0571f1875f90681f58e72883ae3fe7f1e6"
+    },
+    {
+      "path": "source/structural_analysis_v1/camera_fea/run_camera_fea.py",
+      "size_bytes": 19110,
+      "git_blob_sha": "fdbd6da21790859bc6adc896d77e7882141e7635"
+    },
+    {
+      "path": "source/structural_analysis_v1/camera_fea/scope_completion.json",
+      "size_bytes": 4275,
+      "git_blob_sha": "76fd1fd40a18d512b089ec0cf255cb1b8dcd6fc3"
+    },
+    {
+      "path": "source/structural_analysis_v1/camera_fea/summarize_camera.py",
+      "size_bytes": 6024,
+      "git_blob_sha": "978662924f9f0026f20ed3ccd5b6a6d47d5a4422"
+    },
+    {
+      "path": "source/structural_analysis_v1/delivery_meta/README_zh.md",
+      "size_bytes": 12022,
+      "git_blob_sha": "6b03707c119bf2f2102e30a0aa2599eea29d414e"
+    },
+    {
+      "path": "source/structural_analysis_v1/delivery_meta/requirements.txt",
+      "size_bytes": 288,
+      "git_blob_sha": "2755158770c031143861bf25475193419983d346"
+    },
+    {
+      "path": "source/structural_analysis_v1/delivery_meta/runtime_versions.json",
+      "size_bytes": 512,
+      "git_blob_sha": "2ae0e32e57d0c97d6248c95caee27997184971e6"
+    },
+    {
+      "path": "source/structural_analysis_v1/delivery_meta/technical_delivery_review_zh.md",
+      "size_bytes": 2698,
+      "git_blob_sha": "159705cba00854dd193cf806190348e0fbe5e768"
+    },
+    {
+      "path": "source/structural_analysis_v1/fem_core/README.md",
+      "size_bytes": 3651,
+      "git_blob_sha": "60b9a56a6cdd35928b2c4bddecc192bbbd76f1ca"
+    },
+    {
+      "path": "source/structural_analysis_v1/fem_core/solid_fem.py",
+      "size_bytes": 17799,
+      "git_blob_sha": "1c42332b4f0390246938d6d6fb0b060698cf323d"
+    },
+    {
+      "path": "source/structural_analysis_v1/fem_core/validate_chunked_assembly.py",
+      "size_bytes": 1414,
+      "git_blob_sha": "c13051f26fc5f9db1f5cb310ccf329a9c05ed1f2"
+    },
+    {
+      "path": "source/structural_analysis_v1/fem_core/validate_core.py",
+      "size_bytes": 1917,
+      "git_blob_sha": "a5728447fe034df29af07099483e361cc8166859"
+    },
+    {
+      "path": "source/structural_analysis_v1/fem_core/validation/chunked_assembly_validation.json",
+      "size_bytes": 434,
+      "git_blob_sha": "b9eb3ad4dc55a39e83fa4416da9bcc43ab8d9652"
+    },
+    {
+      "path": "source/structural_analysis_v1/fem_core/validation/core_validation.json",
+      "size_bytes": 3772,
+      "git_blob_sha": "2ad4ef0d6b84c9ab4804b471df0a9d083418e1bc"
+    },
+    {
+      "path": "source/structural_analysis_v1/final_plot_helpers/README_zh.txt",
+      "size_bytes": 2018,
+      "git_blob_sha": "08b95abbc5d01d9abf3b990b26b80dfa96a43858"
+    },
+    {
+      "path": "source/structural_analysis_v1/final_plot_helpers/outputs/plot_manifest.json",
+      "size_bytes": 6335,
+      "git_blob_sha": "3c229c5bba92f056603b7f0f2e99b9026745344d"
+    },
+    {
+      "path": "source/structural_analysis_v1/final_plot_helpers/plot_final_results.py",
+      "size_bytes": 20730,
+      "git_blob_sha": "cab8830b7774ebdd6b9ca06c09d81b5c68be6d8e"
+    },
+    {
+      "path": "source/structural_analysis_v1/inputs/01_Direct_Base.brep",
+      "size_bytes": 57377,
+      "git_blob_sha": "7e4b37ddf87daea8dbee15c741e426fc77bfb0b0"
+    },
+    {
+      "path": "source/structural_analysis_v1/inputs/02_Fuse_Cartridge_D8.brep",
+      "size_bytes": 39746,
+      "git_blob_sha": "c04a1818a78ef720890c4d45e8dfbd4dbae3f3ff"
+    },
+    {
+      "path": "source/structural_analysis_v1/inputs/03_Cartridge_Retaining_Pin.brep",
+      "size_bytes": 13665,
+      "git_blob_sha": "582fd4fe9aefd64b0b6b0981815499520f91c4fc"
+    },
+    {
+      "path": "source/structural_analysis_v1/inputs/04_Camera_Module_Short45_F.brep",
+      "size_bytes": 112098,
+      "git_blob_sha": "3665af50a569b3ba6657893d99d31ec57871c4a4"
+    },
+    {
+      "path": "source/structural_analysis_v1/inputs/frozen_inputs.json",
+      "size_bytes": 1291,
+      "git_blob_sha": "f7701bf601b14c2cbfe994f7197e603168683354"
+    },
+    {
+      "path": "source/structural_analysis_v1/mount_fea/audit_results.py",
+      "size_bytes": 2746,
+      "git_blob_sha": "a6d01cb8fa866bec37a3896fea97be50743b7b07"
+    },
+    {
+      "path": "source/structural_analysis_v1/mount_fea/base/coarse/01_Direct_Base.mesh.json",
+      "size_bytes": 474,
+      "git_blob_sha": "f6d144707126abe288d47a09ce63cf047b206338"
+    },
+    {
+      "path": "source/structural_analysis_v1/mount_fea/base/fine/01_Direct_Base.mesh.json",
+      "size_bytes": 472,
+      "git_blob_sha": "2e69b43e4f19003bcea56636cbf7f8ac91e5fc13"
+    },
+    {
+      "path": "source/structural_analysis_v1/mount_fea/base/medium/01_Direct_Base.mesh.json",
+      "size_bytes": 472,
+      "git_blob_sha": "0189ecf0bf08919e5e9e6bb583b8fae4a486ef36"
+    },
+    {
+      "path": "source/structural_analysis_v1/mount_fea/cartridge/coarse/02_Fuse_Cartridge_D8.mesh.json",
+      "size_bytes": 668,
+      "git_blob_sha": "345e87569ea9450284c8517f92b8c483900cc6bd"
+    },
+    {
+      "path": "source/structural_analysis_v1/mount_fea/cartridge/fine/02_Fuse_Cartridge_D8.mesh.json",
+      "size_bytes": 668,
+      "git_blob_sha": "94370329d54aee91f51a49d8c98e9c9176278399"
+    },
+    {
+      "path": "source/structural_analysis_v1/mount_fea/cartridge/medium/02_Fuse_Cartridge_D8.mesh.json",
+      "size_bytes": 670,
+      "git_blob_sha": "4c8150c479a8196b0e02b8da69ef92321468ff56"
+    },
+    {
+      "path": "source/structural_analysis_v1/mount_fea/cartridge_common_cog_region_comparison.json",
+      "size_bytes": 4931,
+      "git_blob_sha": "31703454eac6d75f20cf99fe1e76c1dc216cf5c9"
+    },
+    {
+      "path": "source/structural_analysis_v1/mount_fea/cartridge_postbreak/coarse/results.json",
+      "size_bytes": 22343,
+      "git_blob_sha": "3d317f1b20cf9f8d05b915a06513e896f5b1501e"
+    },
+    {
+      "path": "source/structural_analysis_v1/mount_fea/cartridge_postbreak/medium/results.json",
+      "size_bytes": 22315,
+      "git_blob_sha": "7f85a450c2d7f18b3c53dfbd3335a5c590cafa2d"
+    },
+    {
+      "path": "source/structural_analysis_v1/mount_fea/compare_cartridge_regions.py",
+      "size_bytes": 2812,
+      "git_blob_sha": "23db72b7a4f671364d9fb3233b9b91b7a9605d44"
+    },
+    {
+      "path": "source/structural_analysis_v1/mount_fea/numerical_audit.json",
+      "size_bytes": 5301,
+      "git_blob_sha": "775cd3aa27edf2deeae5a971247b413b2dbc607b"
+    },
+    {
+      "path": "source/structural_analysis_v1/mount_fea/run_mount.py",
+      "size_bytes": 12019,
+      "git_blob_sha": "338e6e9047846fc88ec149ba46ac118ec65c215c"
+    },
+    {
+      "path": "source/structural_analysis_v1/mount_fea/summarize_convergence.py",
+      "size_bytes": 3011,
+      "git_blob_sha": "e5aacdb5c74bd5aeba837469ead85463d4f774ad"
+    },
+    {
+      "path": "source/structural_analysis_v1/pin_fea/coarse/pin.mesh.json",
+      "size_bytes": 473,
+      "git_blob_sha": "8a4d1ab63d3a1515fda616e9d3279bc43797315a"
+    },
+    {
+      "path": "source/structural_analysis_v1/pin_fea/coarse/results.json",
+      "size_bytes": 13709,
+      "git_blob_sha": "ac85a0e6a7be298244430d31d3acf1a5ae648959"
+    },
+    {
+      "path": "source/structural_analysis_v1/pin_fea/fine/pin.mesh.json",
+      "size_bytes": 473,
+      "git_blob_sha": "15352e9ced57fd410d48d63b26e857d81ed7cc62"
+    },
+    {
+      "path": "source/structural_analysis_v1/pin_fea/fine/results.json",
+      "size_bytes": 13728,
+      "git_blob_sha": "8766f5cdc2aa617e6e1a3731283bc0006c97130d"
+    },
+    {
+      "path": "source/structural_analysis_v1/pin_fea/medium/pin.mesh.json",
+      "size_bytes": 476,
+      "git_blob_sha": "479d2b988833c824701db25e88d8074f1e7d068f"
+    },
+    {
+      "path": "source/structural_analysis_v1/pin_fea/medium/results.json",
+      "size_bytes": 13755,
+      "git_blob_sha": "fe35b8e24273d69e2482e224ba800b42fe12945e"
+    },
+    {
+      "path": "source/structural_analysis_v1/report_figures/base_plusX_3g_stress.json",
+      "size_bytes": 384,
+      "git_blob_sha": "0d16b02b001297fa6a223ddbb0b4bc7680cabc93"
+    },
+    {
+      "path": "source/structural_analysis_v1/report_figures/camera_mode1.json",
+      "size_bytes": 355,
+      "git_blob_sha": "217bde7e884577df3889336d5251015990a4e0fe"
+    },
+    {
+      "path": "source/structural_analysis_v1/report_figures/camera_plusZ_3g_stress.json",
+      "size_bytes": 348,
+      "git_blob_sha": "73806873670e823813e18138523039693fe17f79"
+    },
+    {
+      "path": "source/structural_analysis_v1/report_figures/cartridge_plusZ_3g_stress.json",
+      "size_bytes": 389,
+      "git_blob_sha": "bcd1ef07cb1ae468becdc392dc05b2390c69ed94"
+    },
+    {
+      "path": "source/structural_analysis_v1/report_figures/pin_transverse_X_1N.json",
+      "size_bytes": 378,
+      "git_blob_sha": "b176f2bccc9871caa26b2e6ae839f8cf4d82a33f"
+    },
+    {
+      "path": "source/structural_analysis_v1/report_figures/postbreak_lug_plusZ_1N.json",
+      "size_bytes": 403,
+      "git_blob_sha": "a1fe0dee44854fab12baae90e3942706732cd808"
+    },
+    {
+      "path": "source/structural_analysis_v1/root_checks/beam_validation/validation.json",
+      "size_bytes": 4795,
+      "git_blob_sha": "caee692f53a8155fd93b5cb4bc407d693daf52b8"
+    },
+    {
+      "path": "source/structural_analysis_v1/root_checks/make_camera_figures.py",
+      "size_bytes": 1383,
+      "git_blob_sha": "bb2c91e61a5a8fea0814e8145720947bda2d4976"
+    },
+    {
+      "path": "source/structural_analysis_v1/root_checks/plot_fea.py",
+      "size_bytes": 4669,
+      "git_blob_sha": "134fe592df5e98dd2ad1b2eeadf494d0ac8a7965"
+    },
+    {
+      "path": "source/structural_analysis_v1/root_checks/postprocess_service_loads.py",
+      "size_bytes": 7460,
+      "git_blob_sha": "7f4be7dda88a6fb7ad6ecb85e8e9392099c1d823"
+    },
+    {
+      "path": "source/structural_analysis_v1/root_checks/run_actual_buckling.py",
+      "size_bytes": 4095,
+      "git_blob_sha": "752bb472240fbf7aefc5e52c8f6260c8d1e4bf6f"
+    },
+    {
+      "path": "source/structural_analysis_v1/root_checks/run_pin_fea.py",
+      "size_bytes": 5048,
+      "git_blob_sha": "5dd26412926b2410b85fdf18281d330ddf1bfb1c"
+    },
+    {
+      "path": "source/structural_analysis_v1/root_checks/source_mass_geometry.json",
+      "size_bytes": 2489,
+      "git_blob_sha": "58e6cea3cebf9a3d49a6abc0667c20ac58aa42a6"
+    },
+    {
+      "path": "source/structural_analysis_v1/root_checks/validate_beam_and_buckling.py",
+      "size_bytes": 4798,
+      "git_blob_sha": "5b9c84b6bebf6aecccf1b6e026d63f832c890d0d"
+    },
+    {
+      "path": "source/structural_analysis_v1/service_results/base/fine/results.json",
+      "size_bytes": 16209,
+      "git_blob_sha": "4e57e267cc0d1840393fc631f72261d6e30f4246"
+    },
+    {
+      "path": "source/structural_analysis_v1/service_results/base/medium/results.json",
+      "size_bytes": 16219,
+      "git_blob_sha": "1dbcaa24472297a9b5b6dcea76f4c72d38dd5ee6"
+    },
+    {
+      "path": "source/structural_analysis_v1/service_results/camera/fine/plusZ_3g.json",
+      "size_bytes": 319,
+      "git_blob_sha": "552adf807fc57e504835d4c3e3fe0fbf995a2903"
+    },
+    {
+      "path": "source/structural_analysis_v1/service_results/cartridge/fine/results.json",
+      "size_bytes": 8846,
+      "git_blob_sha": "6fcbc66d899e8d68865e1c9d480f2df211090103"
+    },
+    {
+      "path": "source/structural_analysis_v1/service_results/cartridge/medium/results.json",
+      "size_bytes": 8846,
+      "git_blob_sha": "941b7f3e36b461bea4f0a66b3a4069f2d1bfe9ea"
+    },
+    {
+      "path": "source/structural_analysis_v1/service_results/serial_assembly_estimate.json",
+      "size_bytes": 3151,
+      "git_blob_sha": "801a2fc4d6431ef8ab751d9ad75987c96b26536b"
+    },
+    {
+      "path": "source/structural_analysis_v1/system_review/SYSTEM_REVIEW_zh.txt",
+      "size_bytes": 15362,
+      "git_blob_sha": "163a394406f04fc0c2ed3faa3f9be8a807d384c2"
+    },
+    {
+      "path": "source/structural_analysis_v1/system_review/audit_fem_methods.py",
+      "size_bytes": 13402,
+      "git_blob_sha": "26548c3fe0c75ea9280404a1eee5ee380aa6db6f"
+    },
+    {
+      "path": "source/structural_analysis_v1/system_review/camera_CoG_sign_review.json",
+      "size_bytes": 583,
+      "git_blob_sha": "a0929370915ae00b3f8ddf5aa202ec62e24d4bc4"
+    },
+    {
+      "path": "source/structural_analysis_v1/system_review/check_camera_contact_compatibility.py",
+      "size_bytes": 19324,
+      "git_blob_sha": "e8a0d583dceb8577aed616774b18b53553cbe949"
+    },
+    {
+      "path": "source/structural_analysis_v1/system_review/contact_compatibility/medium/CONTACT_SCREEN_zh.md",
+      "size_bytes": 2174,
+      "git_blob_sha": "31b0d475a1399484481f4efc052ce16b07bcdcca"
+    },
+    {
+      "path": "source/structural_analysis_v1/system_review/contact_compatibility/medium/contact_figure_metadata.json",
+      "size_bytes": 802,
+      "git_blob_sha": "3c196f4ca3d3b167930cd24e99f9f92db4387300"
+    },
+    {
+      "path": "source/structural_analysis_v1/system_review/contact_compatibility/medium/delivery_manifest.json",
+      "size_bytes": 2973,
+      "git_blob_sha": "ae1174b2c01d9884cc3fb34e57d306c19c79b6cd"
+    },
+    {
+      "path": "source/structural_analysis_v1/system_review/existing_validation_scope_review.json",
+      "size_bytes": 3863,
+      "git_blob_sha": "b2dfb8ade11cf0b45e5412f1cbaac1f8aed59a6b"
+    },
+    {
+      "path": "source/structural_analysis_v1/system_review/fastener_stack_and_preload.json",
+      "size_bytes": 9691,
+      "git_blob_sha": "7817ae85fb436777a103862031ea87149232963c"
+    },
+    {
+      "path": "source/structural_analysis_v1/system_review/figures/figure_metadata.json",
+      "size_bytes": 1309,
+      "git_blob_sha": "549bd6f5fb3d0836b2f8145e6240ab59d856589b"
+    },
+    {
+      "path": "source/structural_analysis_v1/system_review/joint_geometry_verified.json",
+      "size_bytes": 6267,
+      "git_blob_sha": "db6728b6b08c283c1605e0dacfe37fafec262c37"
+    },
+    {
+      "path": "source/structural_analysis_v1/system_review/make_contact_figure.py",
+      "size_bytes": 6383,
+      "git_blob_sha": "74350c563022e0d77700607101eb66fc3f75f9a0"
+    },
+    {
+      "path": "source/structural_analysis_v1/system_review/make_review_figures.py",
+      "size_bytes": 12666,
+      "git_blob_sha": "9283d77cf1769996565836479e15917c00faa6a1"
+    },
+    {
+      "path": "source/structural_analysis_v1/system_review/manufacturer_material_inputs.json",
+      "size_bytes": 5223,
+      "git_blob_sha": "065145e1b1b6d95d259728c88baed8b1438ccc2c"
+    },
+    {
+      "path": "source/structural_analysis_v1/system_review/primary_sources.json",
+      "size_bytes": 10858,
+      "git_blob_sha": "9f706ba6ddd3fcaa75543b4efd5e08caddca583c"
+    },
+    {
+      "path": "source/structural_analysis_v1/system_review/review.md",
+      "size_bytes": 6670,
+      "git_blob_sha": "1c9fdad21a2bba5bca79808f5f24f1bdb838cfdb"
+    },
+    {
+      "path": "source/structural_analysis_v1/system_review/review_fem_methods.md",
+      "size_bytes": 14663,
+      "git_blob_sha": "65d347e76c71391fb0a31dfa4b84039e34b10b62"
+    },
+    {
+      "path": "source/structural_analysis_v1/system_review/review_system.py",
+      "size_bytes": 19067,
+      "git_blob_sha": "d1a23fbd70ac9d3b8cf51057765770de8f588b78"
+    },
+    {
+      "path": "source/structural_analysis_v1/system_review/source_freeze.json",
+      "size_bytes": 34253,
+      "git_blob_sha": "cf9b6411db0e8befdb46ddeade0c05cee4cc2701"
+    },
+    {
+      "path": "source/structural_analysis_v1/system_review/sources.json",
+      "size_bytes": 10858,
+      "git_blob_sha": "9f706ba6ddd3fcaa75543b4efd5e08caddca583c"
+    },
+    {
+      "path": "source/structural_analysis_v1/system_review/system_quantitative_summary.json",
+      "size_bytes": 1035,
+      "git_blob_sha": "0c376246d1859d7f99837cf8641c20615ac3e22f"
+    },
+    {
+      "path": "source/structural_analysis_v1/system_review/tether_energy_model.json",
+      "size_bytes": 1425,
+      "git_blob_sha": "895216602718b425cd9532d0c51384657b79a24c"
+    }
+  ]
+}

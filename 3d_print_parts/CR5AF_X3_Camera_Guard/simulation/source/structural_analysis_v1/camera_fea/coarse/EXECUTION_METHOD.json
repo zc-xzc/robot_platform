@@ -1,0 +1,13 @@
+{
+  "actual_completed_eigensolver": "scipy.sparse.linalg.eigsh",
+  "k": 12,
+  "sigma": 0,
+  "which": "LM",
+  "tolerance": 2e-08,
+  "mass_implementation": "Explicit sparse Mframe + G M_camera G.T, symmetrized",
+  "largest_recorded_relative_eigen_residual": 2.4898978647352316e-09,
+  "source_script_full_original_hash_recorded": false,
+  "reproduction_entry": "../reproduce_coarse_eigsh.py",
+  "reproduction_entry_note": "Reconstructed from recorded executed implementation; not an archived bit-identical original script. Not executed as an additional result.",
+  "later_code_route": "run_camera_fea.py was subsequently changed to low-rank mass LinearOperator and AMG-preconditioned LOBPCG; no accepted medium/fine modal result was produced."
+}

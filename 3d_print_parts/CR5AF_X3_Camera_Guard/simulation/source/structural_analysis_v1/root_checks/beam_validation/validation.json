@@ -1,0 +1,178 @@
+{
+  "purpose": "independent formulation checks, not hardware validation",
+  "units": {
+    "force": "N",
+    "length": "mm",
+    "stress": "MPa",
+    "mass": "tonne",
+    "time": "s"
+  },
+  "geometry": {
+    "length_mm": 100.0,
+    "width_mm": 10.0,
+    "height_mm": 10.0
+  },
+  "mesh": {
+    "source": "<redacted-workspace-path>",
+    "source_sha256": "c38fd4526741989b199406079dc4cbad221fceb55e778afdf57703a30ece9cd1",
+    "mesh": "<redacted-workspace-path>",
+    "mesh_sha256": "2a7e529a76fadbd06a23fed6b3a42e1a7e5ac114614db821aedf2c6e4f27a19d",
+    "hmax_mm": 5.0,
+    "hmin_mm": 2.5,
+    "curvature_segments": 12,
+    "refinement_boxes": [],
+    "cad_volume_mm3": 9999.999999999998,
+    "element_type_counts": {
+      "11": 442
+    },
+    "meshing_seconds": 0.03129127300053369
+  },
+  "mesh_info": {
+    "tetrahedra": 442,
+    "geometry_nodes": 1009,
+    "displacement_dofs": 3027,
+    "integration_order": 5,
+    "integration_points": 14,
+    "volume_mm3": 9999.999999999993,
+    "folded_elements": 0,
+    "min_abs_mapping_determinant": 26.991914893075133,
+    "E_MPa": 2000.0,
+    "nu": 0.35,
+    "density_tonne_per_mm3": 1.24e-09,
+    "mass_kg": 0.012399999999999991,
+    "length_unit": "mm",
+    "force_unit": "N",
+    "stress_unit": "MPa=N/mm2",
+    "time_unit": "s"
+  },
+  "solver": {
+    "assembly_seconds": 0.19340098600059719,
+    "preconditioner_seconds": 0.025528092999593355,
+    "free_dofs": 2916,
+    "fixed_dofs": 111,
+    "K_nnz": 192189
+  },
+  "static_bending": {
+    "applied_force_N": 1,
+    "FE_tip_work_conjugate_displacement_mm": 0.19895274662724693,
+    "Euler_Bernoulli_mm": 0.2,
+    "Timoshenko_mm": 0.20162000000000002,
+    "relative_error_to_Timoshenko": -0.013229111064145815,
+    "equilibrium": {
+      "solve_seconds": 0.00205861599988566,
+      "iterations": 0,
+      "relative_free_residual": 8.729015739749836e-11,
+      "strain_energy_Nmm": 0.09947637331335642,
+      "compliance_Nmm": 0.19895274662724693,
+      "applied_wrench": {
+        "force_N": [
+          -1.9290114322982554e-30,
+          -2.112104202385576e-45,
+          -1.0
+        ],
+        "moment_Nmm": [
+          -5.000000000000002,
+          99.99999999999994,
+          -3.42229553096861e-30
+        ]
+      },
+      "support_reaction_wrench": {
+        "force_N": [
+          5.226929999935237e-12,
+          -3.1601526950808534e-12,
+          0.9999999999979114
+        ],
+        "moment_Nmm": [
+          4.999999999960591,
+          -100.00000000002265,
+          -2.8876501190211457e-10
+        ]
+      },
+      "force_balance_error_N": [
+        5.226929999935237e-12,
+        -3.1601526950808534e-12,
+        -2.0885515539248445e-12
+      ],
+      "moment_balance_error_Nmm": [
+        -3.941114101735366e-11,
+        -2.2708945834892802e-11,
+        -2.8876501190211457e-10
+      ]
+    }
+  },
+  "modal_unit_check": {
+    "FE_first_frequencies_Hz": [
+      205.27231302493024,
+      205.30654376058948,
+      1230.4138234540924,
+      1231.3991553501307
+    ],
+    "Euler_Bernoulli_first_bending_Hz": 205.15609133292693,
+    "relative_error_first_mode_to_EB": 0.0005665037350253144
+  },
+  "buckling": {
+    "reference_compression_N": 1.0,
+    "FE_positive_factors": [
+      411.37062250226853,
+      411.4506761734873,
+      3476.633983994037,
+      3482.6958736512574
+    ],
+    "Euler_N": 411.2335167120566,
+    "Timoshenko_corrected_N": 408.5120166140332,
+    "relative_error_to_Timoshenko": 0.006997605387300432,
+    "eigen_residuals": [
+      1.1896146892544552e-10,
+      1.1845101068877822e-10,
+      1.8349236158851724e-11,
+      8.268540003805457e-12
+    ],
+    "preload_equilibrium": {
+      "solve_seconds": 0.0015972909995980444,
+      "iterations": 0,
+      "relative_free_residual": 2.9976744857388523e-13,
+      "strain_energy_Nmm": 0.00024875326648362813,
+      "compliance_Nmm": 0.0004975065329672402,
+      "applied_wrench": {
+        "force_N": [
+          -1.0,
+          0.0,
+          0.0
+        ],
+        "moment_Nmm": [
+          0.0,
+          -5.0,
+          5.000000000000002
+        ]
+      },
+      "support_reaction_wrench": {
+        "force_N": [
+          0.9999999999999831,
+          -1.6274308289876416e-14,
+          1.5638532135930916e-15
+        ],
+        "moment_Nmm": [
+          4.5154418398807294e-14,
+          5.000000000000007,
+          -5.000000000001379
+        ]
+      },
+      "force_balance_error_N": [
+        -1.687538997430238e-14,
+        -1.6274308289876416e-14,
+        1.5638532135930916e-15
+      ],
+      "moment_balance_error_Nmm": [
+        4.5154418398807294e-14,
+        7.105427357601002e-15,
+        -1.3775647289548942e-12
+      ]
+    }
+  },
+  "acceptance": {
+    "static_relative_error_limit": 0.04,
+    "modal_relative_error_limit": 0.04,
+    "buckling_relative_error_limit": 0.04
+  },
+  "passed": true
+}

@@ -1,0 +1,10 @@
+{
+  "test": "Same curved-P2 discretization, full versus 150-element-block stiffness assembly",
+  "elements": 1138,
+  "dofs": 6261,
+  "relative_Frobenius_difference": 9.079424154395302e-17,
+  "max_absolute_coefficient_difference": 5.4569682106375694e-12,
+  "mass_matrix_relative_Frobenius_difference": 8.73557631240826e-17,
+  "rigid_translation_mass_tonne": 1.2399999999999994e-06,
+  "expected_rigid_translation_mass_tonne": 1.24e-06
+}

@@ -1,0 +1,238 @@
+{
+  "part": "cartridge",
+  "mesh_level": "fine",
+  "source_sha256": "7856917e070c34f9ab04f5dc9718c8766f943a605d720650ff11424fd87cd6ca",
+  "mesh_info": {
+    "tetrahedra": 68193,
+    "geometry_nodes": 109697,
+    "displacement_dofs": 329091,
+    "integration_order": 5,
+    "integration_points": 14,
+    "volume_mm3": 3605.1313608627343,
+    "folded_elements": 0,
+    "min_abs_mapping_determinant": 0.009150161494563613,
+    "E_MPa": 2000.0,
+    "nu": 0.35,
+    "density_tonne_per_mm3": 1.24e-09,
+    "mass_kg": 0.004470362887469791,
+    "length_unit": "mm",
+    "force_unit": "N",
+    "stress_unit": "MPa=N/mm2",
+    "time_unit": "s"
+  },
+  "material_assumptions": {
+    "E_MPa": 2000,
+    "nu": 0.35,
+    "density_tonne_per_mm3": 1.24e-09,
+    "material": "Hypothetical homogeneous isotropic linear elastic print baseline, not measured PETG properties",
+    "fixed_support": "Rigidly fixed all three translations on all exposed lower-dovetail facets at or below z6.7. Carrier top within camera foot plus stud shanks/underheads receive equivalent distributed bonded load. Existing clearances/slip/opening/friction/contact are not solved.",
+    "small_displacement": true,
+    "load_type": "Static consistent surface traction; unit resultant/wrench",
+    "contact_limitations": "No contact opening, gaps, plasticity, fatigue, creep, fracture or collision release simulation"
+  },
+  "load_definition": {
+    "g_m_s2": 9.80665,
+    "effective_acceleration_definition": "Each X/Y/Z case has total effective acceleration 1g or 3g along that axis, including gravity. The three axes are separate cases, not simultaneous 3g each.",
+    "motor_gripper_object_branch_mass_kg_assumed": null,
+    "motor_branch_CoG_F_mm_assumed": null,
+    "camera_mass_kg": 0.18,
+    "camera_CoG_F_mm_assumed": [
+      0.0,
+      112.3050865276,
+      25.3050865276
+    ],
+    "camera_and_frame_mass_kg": 0.21570000317074017,
+    "camera_and_frame_CoG_F_mm": [
+      2.509648764662971e-16,
+      107.31977292803235,
+      21.24670250857536
+    ],
+    "total_camera_side_mass_kg": 0.22038860942774136,
+    "total_camera_side_CoG_F_mm": [
+      -0.0570866540833769,
+      106.06918816017834,
+      20.97170155863935
+    ],
+    "additional_note": "Printed geometry is assumed fully dense at 1.24g/cm3; camera CoG is a uniform-envelope assumption, not measured."
+  },
+  "q_camera_1g_columns_XYZ": [
+    [
+      0.12926723689242253,
+      0.00017188296152613274,
+      -0.0007462725937868745
+    ],
+    [
+      0.00025660941146718263,
+      0.009046769033559292,
+      -0.04533141807197562
+    ],
+    [
+      -0.0012145703268468938,
+      -0.03617949087089309,
+      0.19293516551271847
+    ],
+    [
+      -2.4105891569225735e-05,
+      -0.0005548663891508484,
+      0.002948899443140066
+    ],
+    [
+      0.0004624411560834441,
+      -1.21441577282991e-05,
+      0.00012976141527376445
+    ],
+    [
+      -0.001858800523638707,
+      -5.2718387314391816e-06,
+      3.9850010441740517e-05
+    ]
+  ],
+  "q_definition": "First 3 rows: work-conjugate virtual camera CoG displacement in mm; last 3 rows: rotation in radians. This part contribution only, using the equivalent interface load distributor.",
+  "cases": {
+    "plusX_3g": {
+      "max_displacement_mm": 0.1976574466181979,
+      "max_von_mises_MPa": 16.953252722327402,
+      "volume_weighted_p95_von_mises_MPa": 2.467440389774852,
+      "volume_weighted_p99_von_mises_MPa": 5.325320233566361,
+      "mean_von_mises_MPa": 0.5540621727730514,
+      "max_stress_location_mm": [
+        -4.453994798417308,
+        47.6418179926362,
+        6.7
+      ],
+      "raw_peak_warning": "Raw integration-point peaks near sharp/reentrant corners and ideal clamps may be singular; no failure or release force is inferred.",
+      "regions": {
+        "minimum_D8_neck": {
+          "volume_mm3": 50.49959604736368,
+          "max_von_mises_MPa": 12.64122965388915,
+          "p95_MPa": 8.326595592186846,
+          "p99_MPa": 9.3454509072792
+        },
+        "moving_tether_lug": {
+          "volume_mm3": 122.8602182320537,
+          "max_von_mises_MPa": 0.42758092914640106,
+          "p95_MPa": 0.06541829924307782,
+          "p99_MPa": 0.09753115950810547
+        },
+        "upper_features_z_band": {
+          "volume_mm3": 212.08319814244902,
+          "max_von_mises_MPa": 7.504617250619315,
+          "p95_MPa": 1.2023037229335252,
+          "p99_MPa": 1.8048006629221096
+        }
+      },
+      "max_principal_tension_MPa": 15.319121140845812,
+      "most_compressive_principal_MPa": -11.847991982927681,
+      "p99_positive_principal_MPa": 3.157069456340987,
+      "camera_virtual_translation_mm": [
+        0.3878017106772676,
+        0.0007698282344015478,
+        -0.0036437109805406813
+      ],
+      "camera_virtual_rotation_rad": [
+        -7.23176747076772e-05,
+        0.0013873234682503324,
+        -0.005576401570916121
+      ],
+      "strain_energy_Nmm": 1.1252247273771023
+    },
+    "plusY_3g": {
+      "max_displacement_mm": 0.03775226948034925,
+      "max_von_mises_MPa": 3.1123028930917336,
+      "volume_weighted_p95_von_mises_MPa": 0.546744122835896,
+      "volume_weighted_p99_von_mises_MPa": 0.8276027032189189,
+      "mean_von_mises_MPa": 0.15221440463656905,
+      "max_stress_location_mm": [
+        1.4921397450962104e-13,
+        42.6,
+        6.7
+      ],
+      "raw_peak_warning": "Raw integration-point peaks near sharp/reentrant corners and ideal clamps may be singular; no failure or release force is inferred.",
+      "regions": {
+        "minimum_D8_neck": {
+          "volume_mm3": 50.49959604736368,
+          "max_von_mises_MPa": 2.9611372124891844,
+          "p95_MPa": 1.526047664137397,
+          "p99_MPa": 2.0058476182516096
+        },
+        "moving_tether_lug": {
+          "volume_mm3": 122.8602182320537,
+          "max_von_mises_MPa": 0.33261586515503416,
+          "p95_MPa": 0.06282226586475716,
+          "p99_MPa": 0.09767901766187032
+        },
+        "upper_features_z_band": {
+          "volume_mm3": 212.08319814244902,
+          "max_von_mises_MPa": 3.0248279559605424,
+          "p95_MPa": 0.4320733674149732,
+          "p99_MPa": 0.6818207825442381
+        }
+      },
+      "max_principal_tension_MPa": 4.529424415662548,
+      "most_compressive_principal_MPa": -4.131515828143463,
+      "p99_positive_principal_MPa": 0.7974753549434274,
+      "camera_virtual_translation_mm": [
+        0.0005156488845783982,
+        0.027140307100677878,
+        -0.10853847261267927
+      ],
+      "camera_virtual_rotation_rad": [
+        -0.001664599167452545,
+        -3.64324731848973e-05,
+        -1.5815516194317546e-05
+      ],
+      "strain_energy_Nmm": 0.06486119561566638
+    },
+    "plusZ_3g": {
+      "max_displacement_mm": 0.23195151078320475,
+      "max_von_mises_MPa": 16.404432142340475,
+      "volume_weighted_p95_von_mises_MPa": 2.704613425875035,
+      "volume_weighted_p99_von_mises_MPa": 4.372542324954655,
+      "mean_von_mises_MPa": 0.7995420786821331,
+      "max_stress_location_mm": [
+        -1.5307337294603727,
+        50.695518130045144,
+        9.1
+      ],
+      "raw_peak_warning": "Raw integration-point peaks near sharp/reentrant corners and ideal clamps may be singular; no failure or release force is inferred.",
+      "regions": {
+        "minimum_D8_neck": {
+          "volume_mm3": 50.49959604736368,
+          "max_von_mises_MPa": 16.404432142340475,
+          "p95_MPa": 7.288777731243148,
+          "p99_MPa": 9.791878628136917
+        },
+        "moving_tether_lug": {
+          "volume_mm3": 122.8602182320537,
+          "max_von_mises_MPa": 2.087428846810798,
+          "p95_MPa": 0.40688004256397203,
+          "p99_MPa": 0.6327770052680605
+        },
+        "upper_features_z_band": {
+          "volume_mm3": 212.08319814244902,
+          "max_von_mises_MPa": 13.668010832457737,
+          "p95_MPa": 2.05134100521368,
+          "p99_MPa": 3.360493967542397
+        }
+      },
+      "max_principal_tension_MPa": 22.392961431332726,
+      "most_compressive_principal_MPa": -18.504076349958364,
+      "p99_positive_principal_MPa": 4.442232073224419,
+      "camera_virtual_translation_mm": [
+        -0.0022388177813606235,
+        -0.13599425421592687,
+        0.5788054965381554
+      ],
+      "camera_virtual_rotation_rad": [
+        0.008846698329420198,
+        0.0003892842458212934,
+        0.00011955003132522156
+      ],
+      "strain_energy_Nmm": 1.697609077652865
+    }
+  },
+  "region_definitions": {
+    "upper_features_z_band": "All integration points with 13 <= Fz <= 17.9 mm; includes studs and hook/other upper features. This is not the isolated two-stud region."
+  },
+  "metadata_correction_note": "The former region label studs described a z-only band. It was renamed upper_features_z_band without changing any numerical values. Isolated two-stud results are provided by mount_fea cartridge unit-load reports."
+}

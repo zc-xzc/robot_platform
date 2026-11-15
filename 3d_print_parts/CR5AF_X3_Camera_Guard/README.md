@@ -4,7 +4,7 @@ A development-stage end-effector camera mounting and protection project for a Do
 
 > **Status: engineering prototype / analysis release. Not safety-certified and not yet validated by physical collision testing.**
 >
-> This directory is being introduced first as a documentation and provenance landing page. CAD binaries and the full simulation report are not included in this initial PR because the release package contains third-party reference geometry that must not be redistributed without checking its license and provenance.
+> The repository includes a curated simulation package: concise Markdown analysis, selected figures, key result tables, project-authored FEM source, frozen project-owned BREP inputs and reproduction notes. The original 28-page PDF, full internal archive, manufacturer CAD and third-party X3 reference STEP are intentionally not redistributed.
 
 ## Design goals
 
@@ -35,7 +35,7 @@ Important limits:
 - Actual printed-material properties, slicer settings, fastener preload, camera thread engagement, release force, and impact response require physical measurement.
 - A linear static or harmonic model is not a substitute for nonlinear transient impact testing.
 
-See [VALIDATION_STATUS.md](VALIDATION_STATUS.md) for the evidence boundary and proposed test gates.
+See [VALIDATION_STATUS.md](VALIDATION_STATUS.md) for the evidence boundary and proposed test gates. The simulation details are in [simulation/](simulation/), beginning with the [design-validation summary](simulation/DESIGN_VALIDATION_SUMMARY_EN.md) and [reproduction guide](simulation/reproducibility/README.md).
 
 ## Planned directory structure
 
@@ -47,10 +47,14 @@ CR5AF_X3_Camera_Guard/
 ├── CAD/                 # only project-owned, provenance-cleared CAD exports
 ├── drawings/            # dimensioned drawings and fit notes
 ├── BOM/                 # hardware and print-part bill of materials
-├── simulation/          # report, scripts, input snapshots, result tables
+├── simulation/          # concise analysis, figures, result data, FEM source and reproduction notes
 ├── validation/          # mesh, interference, fit and physical-test records
 └── images/              # project-owned renders and photographs
 ```
+
+## Simulation and reproducibility
+
+The public simulation package uses a concise Markdown analysis summary instead of the original 28-page internal PDF. It includes selected stress/mode/response figures, key CSV/JSON results, FEM source modules, frozen project-owned BREP inputs and reproduction instructions. Third-party reference CAD is excluded; see the provenance notes in `simulation/source/recovery_v2/camera/reference/`.
 
 ## Manufacturing notes
 

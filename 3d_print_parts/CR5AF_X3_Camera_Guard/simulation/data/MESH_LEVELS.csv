@@ -1,0 +1,13 @@
+component,mesh_level,tetrahedra,degrees_of_freedom
+base,coarse,15261,84903
+base,medium,23847,128487
+base,fine,52326,267279
+cartridge,coarse,11884,64626
+cartridge,medium,26837,137481
+cartridge,fine,68193,329091
+camera,coarse,14050,83667
+camera,medium,25258,144804
+camera,fine,45630,248673
+pin,coarse,2075,12072
+pin,medium,4369,23841
+pin,fine,8759,45345

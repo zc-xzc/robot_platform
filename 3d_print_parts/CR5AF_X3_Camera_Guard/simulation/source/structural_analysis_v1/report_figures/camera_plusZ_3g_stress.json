@@ -1,0 +1,10 @@
+{
+  "source_vtu": "<redacted-workspace-path>",
+  "quantity": "stress",
+  "surface_triangles": 86912,
+  "surface_numeric_max": 16.421773196780975,
+  "color_scale_max": 8.417472755188196,
+  "color_scale_percentile": 99.5,
+  "deformation_scale": 0.0,
+  "note": "Stress is element averaged and is not the raw integration-point peak reported in JSON."
+}

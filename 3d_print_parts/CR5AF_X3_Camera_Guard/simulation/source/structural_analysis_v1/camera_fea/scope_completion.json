@@ -1,0 +1,108 @@
+{
+  "revision": "Frozen V2R1 camera-module structural analysis v1",
+  "source_CAD_sha256_current": "60ad2070bb2afdbc100a668c3bd0c13e970ca3707dcdc82e22a27777375d27a6",
+  "source_CAD_sha256_recorded": "60ad2070bb2afdbc100a668c3bd0c13e970ca3707dcdc82e22a27777375d27a6",
+  "source_CAD_unchanged": true,
+  "static_three_meshes_completed": [
+    {
+      "mesh": "coarse",
+      "tetrahedra": 14050,
+      "dofs": 83667,
+      "positive_axis_1g_cases": 3,
+      "camera_CoG_unit_force_cases": 3,
+      "negative_axes": "Exact linear sign reversal, not additional contact solves",
+      "total_3g_10g": "Linear stress/displacement scaling and square energy scaling, not separate nonlinear solutions",
+      "results": "coarse/static_results.json"
+    },
+    {
+      "mesh": "medium",
+      "tetrahedra": 25258,
+      "dofs": 144804,
+      "positive_axis_1g_cases": 3,
+      "camera_CoG_unit_force_cases": 3,
+      "negative_axes": "Exact linear sign reversal, not additional contact solves",
+      "total_3g_10g": "Linear stress/displacement scaling and square energy scaling, not separate nonlinear solutions",
+      "results": "medium/static_results.json"
+    },
+    {
+      "mesh": "fine",
+      "tetrahedra": 45630,
+      "dofs": 248673,
+      "positive_axis_1g_cases": 3,
+      "camera_CoG_unit_force_cases": 3,
+      "negative_axes": "Exact linear sign reversal, not additional contact solves",
+      "total_3g_10g": "Linear stress/displacement scaling and square energy scaling, not separate nonlinear solutions",
+      "results": "fine/static_results.json"
+    }
+  ],
+  "engaged_root_support_sensitivity": {
+    "completed": true,
+    "mesh": "medium",
+    "cases": 3,
+    "file": "medium/captured_stud_support/results.json"
+  },
+  "modal": {
+    "completed": true,
+    "mesh": "coarse",
+    "modes": 12,
+    "actual_algorithm": "eigsh, sigma=0, k=12, tol=2e-8; explicit sparse attached-camera mass",
+    "maximum_relative_eigen_residual": 2.4898978647352316e-09,
+    "execution_method_metadata": "coarse/EXECUTION_METHOD.json",
+    "reproduction_entry": "reproduce_coarse_eigsh.py",
+    "reproduction_output_directory": "coarse_eigsh_reproduction",
+    "dynamic_mesh_convergence_completed": false,
+    "medium_completed": false,
+    "fine_attempted": false,
+    "medium_stop_reason": "First direct LU attempt ended with exit137. Subsequent low-memory LOBPCG session later became unavailable without accepted modal outputs; no result inferred."
+  },
+  "harmonic_response": {
+    "completed": true,
+    "modal_mesh": "coarse",
+    "retained_modes": 12,
+    "excitation_amplitude_g": 0.1,
+    "assumed_damping_ratios": [
+      0.02,
+      0.05,
+      0.1
+    ],
+    "input_axes": [
+      "X",
+      "Y",
+      "Z"
+    ],
+    "curves": 9,
+    "file": "coarse/harmonic_camera_CoG_0p1g.csv"
+  },
+  "not_completed_supplemental_cases": [
+    {
+      "case": "Nominal 1N screw clamp preload",
+      "executed_result": false,
+      "reason": "Not run to an accepted output; code configuration only, no stress/torque conclusion."
+    },
+    {
+      "case": "Single rear guard-post tip 1N force",
+      "executed_result": false,
+      "reason": "Not run to an accepted output; code configuration only, no collision/failure conclusion."
+    }
+  ],
+  "fine_recovery": {
+    "completed": true,
+    "source": "Actual stored double-precision solved VTU",
+    "validation": "Rebuilt original K and original F; recovered residual, reactions and energy verified",
+    "provenance": "fine/recovered_field_provenance.json",
+    "recovery_script": "recover_static_vtu.py",
+    "fine_unit_force_cases_completed_separately": true,
+    "recovery_process_exit_code": 0
+  },
+  "scope_limits": [
+    "Rigid engaged root, no gap closure or unilateral contact/slip/preload solution",
+    "Rigid camera mass/inertia proxy, not elastic camera internals",
+    "Isotropic linear elasticity, no printed-material strength/fatigue/creep/fracture law",
+    "Camera-submodel modes only, not whole mount or full robot dynamics",
+    "Static unit collision-force sensitivity only, no transient impact/release/catch simulation",
+    "No accepted dynamic mesh-convergence result"
+  ],
+  "latest_summary": "camera_FEA_summary.json",
+  "method_notes": "CAMERA_FEA_METHOD_zh.txt",
+  "further_solver_jobs_planned": false
+}

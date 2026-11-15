@@ -1,0 +1,362 @@
+{
+  "scope": "camera_fea only, original source CAD external and read-only",
+  "file_count": 71,
+  "total_bytes": 374054291,
+  "files": [
+    {
+      "path": "CAMERA_FEA_METHOD_zh.txt",
+      "bytes": 8455,
+      "sha256": "cbe859f319036247a2b9ebab6424e0cb5d4cf2631d2773d1d77781113391c6f5"
+    },
+    {
+      "path": "camera_FEA_summary.json",
+      "bytes": 45365,
+      "sha256": "e85419082f78626a08ee611c8e9cf9452bc6078e825cb62f1f7d6cad02494716"
+    },
+    {
+      "path": "camera_setup.py",
+      "bytes": 7419,
+      "sha256": "493397033854cb39be98ec1dd2b5ebbbef3ec5618cbe2062cd813521f1a9f532"
+    },
+    {
+      "path": "coarse/EXECUTION_METHOD.json",
+      "bytes": 742,
+      "sha256": "dd26abcf5ba5220a3473ed3a4d9be4ea1c887f5509ce1164aeee4373ef0faacf"
+    },
+    {
+      "path": "coarse/camera_acceleration_plus_X_1g.vtu",
+      "bytes": 2909441,
+      "sha256": "2841e826c73e49b70320a276d611379b305028c60f7a9fb90262f1894da925c7"
+    },
+    {
+      "path": "coarse/camera_acceleration_plus_Y_1g.vtu",
+      "bytes": 2907909,
+      "sha256": "61fcb8fdeb77372f6789c17c7cb7c2e9460db0274699f0329f293bf917ea4fd7"
+    },
+    {
+      "path": "coarse/camera_acceleration_plus_Z_1g.vtu",
+      "bytes": 2907121,
+      "sha256": "a969e5bfbad1c922174a02ed82c121cef3fe0397c555e56e0d3597fa4eefc18f"
+    },
+    {
+      "path": "coarse/camera_worst_CoG_direction_1g.vtu",
+      "bytes": 2907389,
+      "sha256": "40facc4683ddc28dea34f1a990946f23f265de09a1ec5960a1a38e044a6ff8e4"
+    },
+    {
+      "path": "coarse/harmonic_camera_CoG_0p1g.csv",
+      "bytes": 1652600,
+      "sha256": "f4be86c20285f747fd7ddf57732ed81a4cda447a993ed617f03ef248a03fdeda"
+    },
+    {
+      "path": "coarse/harmonic_summary.json",
+      "bytes": 2238,
+      "sha256": "2e2b9f9dd75fb3ad71d2587709159924d871b8c53b2635b6dc6687687c9d410d"
+    },
+    {
+      "path": "coarse/mesh_and_BC.json",
+      "bytes": 9510,
+      "sha256": "2342e6e2a072f6972dca7269ad285e4b81add7bb7523f5f4981064c784180126"
+    },
+    {
+      "path": "coarse/modal_fields.npz",
+      "bytes": 7567490,
+      "sha256": "320e5330a1ed27c20d21d4b7941e800c713594e1ad9a5023a77cfc110bac388a"
+    },
+    {
+      "path": "coarse/modal_frequencies.csv",
+      "bytes": 1395,
+      "sha256": "b1be8c72a4aa143fa3b667045dfd12dfb57292b78266c31f6812757ea87a1079"
+    },
+    {
+      "path": "coarse/modal_results.json",
+      "bytes": 6532,
+      "sha256": "2d27afc87629a6d05bd6b3dd1f455c136e02a0ee8f967d787945ee40823c6453"
+    },
+    {
+      "path": "coarse/mode_01_shape_max1mm.vtu",
+      "bytes": 2907845,
+      "sha256": "b9c8917511b1768732b8f763e83603dc87e80149892b6a5e2b206883a8aab7a2"
+    },
+    {
+      "path": "coarse/mode_02_shape_max1mm.vtu",
+      "bytes": 2908645,
+      "sha256": "beef7ab8a4c558f833b6da2fffa517fa1020d5230dc0ad2f153cf96b94ecc4f8"
+    },
+    {
+      "path": "coarse/mode_03_shape_max1mm.vtu",
+      "bytes": 2910089,
+      "sha256": "bf5340124f54be20b14cb4d15f71a645cdf2ab705ff5e2a1eab4a22fc4c598b7"
+    },
+    {
+      "path": "coarse/static_fields.npz",
+      "bytes": 6389637,
+      "sha256": "01070438a36d31575eb9ccc988a2ad3f387143699d33c3016bb77f1a0d182d56"
+    },
+    {
+      "path": "coarse/static_results.json",
+      "bytes": 35565,
+      "sha256": "9a7cda5df8b2a1a3dde32337a4b40aa9c0ece52cac45d54fc94ff79bf56cc322"
+    },
+    {
+      "path": "coarse/stiffness_K.npz",
+      "bytes": 37775496,
+      "sha256": "75d66a1db2bd0b43fb464245c7049fd7bbc7a93683f10ddd9837d02dd8fe7c14"
+    },
+    {
+      "path": "coarse_run.log",
+      "bytes": 1215,
+      "sha256": "b6c105363a6dd45e44b8b3bd46308d38d189c1e67b8f2246e8a832bad6ae6f3d"
+    },
+    {
+      "path": "convergence_modes.csv",
+      "bytes": 675,
+      "sha256": "1361a01bdab493f4813ed4bbbf7dec7e370f92b4c3e35ac9f566de943670d05d"
+    },
+    {
+      "path": "convergence_static.csv",
+      "bytes": 1471,
+      "sha256": "8893da80af6f57ee1c5062d8571ac79deb8e4e76e0c6d46cc87f77e4d5b471bb"
+    },
+    {
+      "path": "fine/camera_acceleration_plus_X_1g.vtu",
+      "bytes": 9321145,
+      "sha256": "732f696802b6882250a8aa6da177d0bab67651ab52c2d1ef1e23b81495f2039d"
+    },
+    {
+      "path": "fine/camera_acceleration_plus_Y_1g.vtu",
+      "bytes": 9318049,
+      "sha256": "774d26d7bb548242d66b67b328123167a4a728bb503fb01f42f7745414a60c11"
+    },
+    {
+      "path": "fine/camera_acceleration_plus_Z_1g.vtu",
+      "bytes": 9314573,
+      "sha256": "22af37d864e740790c8f768b38d84122aba32bb0779f922964a5f4bc488bfd81"
+    },
+    {
+      "path": "fine/camera_worst_CoG_direction_1g.vtu",
+      "bytes": 9314385,
+      "sha256": "65361aa2d0aa8819a6a44ddac873e878435dda1bd267a4dc39660bbfddea766d"
+    },
+    {
+      "path": "fine/mesh_and_BC.json",
+      "bytes": 9514,
+      "sha256": "9c5541948c82d675424aaea47d4ee443af21ce2fadc5dd97123670b7940a5323"
+    },
+    {
+      "path": "fine/recovered_field_provenance.json",
+      "bytes": 1230,
+      "sha256": "9fd2cd9005486f1d63541c63e66fe54fc82565682d41944f713c4676588580c3"
+    },
+    {
+      "path": "fine/static_fields.npz",
+      "bytes": 19100667,
+      "sha256": "ce080a87d39fbc13acf12fd3f418c1d2de64f2220c7acdfd64daf28c43a9bd2b"
+    },
+    {
+      "path": "fine/static_results.json",
+      "bytes": 36321,
+      "sha256": "8a2048f0802416e6f110403cffe5c0363715316f6944f4b80e7e519675df37d6"
+    },
+    {
+      "path": "fine/stiffness_K.npz",
+      "bytes": 117977938,
+      "sha256": "b35d489fbecd0230d396cf521205b5948ed9926f08477401fef1d932c61699e1"
+    },
+    {
+      "path": "fine/unit_force_X_1N.json",
+      "bytes": 3000,
+      "sha256": "55a32912dd361cdf3187a2b9d61a0251367b267c423c756d608dc3d08a15e21f"
+    },
+    {
+      "path": "fine/unit_force_X_1N_fields.npz",
+      "bytes": 1982493,
+      "sha256": "ff322732069fbf79125456d7058fa9f30e5f54c97c6d28ceb79501bbc41740a6"
+    },
+    {
+      "path": "fine/unit_force_Y_1N.json",
+      "bytes": 3048,
+      "sha256": "181dd4d16c11ccdaec782b485916fe59ff585b305429dd111fee6c1e4fa75b61"
+    },
+    {
+      "path": "fine/unit_force_Y_1N_fields.npz",
+      "bytes": 1977245,
+      "sha256": "07c93bf037884fb6aac7bef0aaf3a307f3f7b4eaee65f1c077cbf970a79ecff4"
+    },
+    {
+      "path": "fine/unit_force_Z_1N.json",
+      "bytes": 2997,
+      "sha256": "86bd0463892172dd986312dcb1c89352d03657d4dd3969d659da159b7207e665"
+    },
+    {
+      "path": "fine/unit_force_Z_1N_fields.npz",
+      "bytes": 1974854,
+      "sha256": "e95809dc382414591de971afce2475c5d3b22d42ff3a4cfed7fc967558b24381"
+    },
+    {
+      "path": "fine_recovery.log",
+      "bytes": 501,
+      "sha256": "d5eee8b0942f1f83f44e0a9aa072541a477690c03dd3638e5b4092ec4348b575"
+    },
+    {
+      "path": "fine_run.log",
+      "bytes": 910,
+      "sha256": "36d71ec6cc563aba3537650dbd3796e50725543f016bb5291a683f7efe250c68"
+    },
+    {
+      "path": "generate_mesh.py",
+      "bytes": 833,
+      "sha256": "48607f9e1de387053a3969aa961406fc066d07a3269c53b233a9f5cc77e65d98"
+    },
+    {
+      "path": "geometry_BC_load_definitions.json",
+      "bytes": 4117,
+      "sha256": "6fbc372f06de0df089135bb67ad97d62e6833d1efca7a6bab715e298a5067dcc"
+    },
+    {
+      "path": "medium/camera_acceleration_plus_X_1g.vtu",
+      "bytes": 5222569,
+      "sha256": "bf239bcc733b9d6c933c4683e0ea6ba83ecc70ebb61f28f723d1c51e33566a4a"
+    },
+    {
+      "path": "medium/camera_acceleration_plus_Y_1g.vtu",
+      "bytes": 5221149,
+      "sha256": "15361741349faa8dee803a7a7f4d9ec33d029ad373eb69ee527afe7db3f95493"
+    },
+    {
+      "path": "medium/camera_acceleration_plus_Z_1g.vtu",
+      "bytes": 5219293,
+      "sha256": "d278041fcb1f0b2c3ea47d552088f7da9432cb2dfcd8df08caa0b9eb051592b3"
+    },
+    {
+      "path": "medium/camera_worst_CoG_direction_1g.vtu",
+      "bytes": 5219489,
+      "sha256": "b1830ef37753a0f1501559c2b6b9f687e84e399a9fd71849b716bb8239e8ac31"
+    },
+    {
+      "path": "medium/captured_stud_support/camera_acceleration_plus_Z_1g.vtu",
+      "bytes": 5241285,
+      "sha256": "6924208589ba1964b0ab142f59be08fb50fc93ab77416ca85594b99071fb518e"
+    },
+    {
+      "path": "medium/captured_stud_support/fields.npz",
+      "bytes": 3523926,
+      "sha256": "d94604e80c9916a5ca11daadd6b3509d3190854e4b3bc27bac88db93930074d0"
+    },
+    {
+      "path": "medium/captured_stud_support/results.json",
+      "bytes": 11271,
+      "sha256": "81fee47487d27610e12e8d9f8b1d740948395a890ee37dac218bfe96f6e2e69b"
+    },
+    {
+      "path": "medium/mesh_and_BC.json",
+      "bytes": 9502,
+      "sha256": "d1fb2590f76c670b2f7c0a82365a14f38f39344409c9c45cecca4cac0b9e57a0"
+    },
+    {
+      "path": "medium/static_fields.npz",
+      "bytes": 11105922,
+      "sha256": "ffe2a8113863e7cae48c4cf6ba730281c4cd839ca2346d2868a58a155433bde9"
+    },
+    {
+      "path": "medium/static_results.json",
+      "bytes": 35519,
+      "sha256": "58f25676c6d55c69a4307974f6c8336226500dc6888f878302081b0b20419477"
+    },
+    {
+      "path": "medium/stiffness_K.npz",
+      "bytes": 66719242,
+      "sha256": "66bde56e396dc5612b1b710e0e93a8e006ea40cf1bcf6f48aecaca6127cb2ef7"
+    },
+    {
+      "path": "medium_resume.log",
+      "bytes": 906,
+      "sha256": "4b61ee10fc7d5f641bb18036199127b86ee0db179d6bc2d205c35649f6625937"
+    },
+    {
+      "path": "medium_run.log",
+      "bytes": 1161,
+      "sha256": "dac14495838f9378906abd6a2a3897c9f109530ea441f7c76caf7a23b95f0436"
+    },
+    {
+      "path": "mesh_fine.log",
+      "bytes": 765,
+      "sha256": "f1c4225efacd59c1be04697ab795aa44fac66996f20d5955040be8519beaf7e2"
+    },
+    {
+      "path": "mesh_medium.log",
+      "bytes": 765,
+      "sha256": "8bce33d707d683390c1cbca6a25f1398bf1e0d495266ebf02c81225d40214f02"
+    },
+    {
+      "path": "meshes/camera_coarse.mesh.json",
+      "bytes": 780,
+      "sha256": "228e7ba6d0cbafb9d12a213e4f0d948e37387aa341b6eb1c44371a177db201cc"
+    },
+    {
+      "path": "meshes/camera_coarse.msh",
+      "bytes": 2162290,
+      "sha256": "40147d7bcaa9eefe10f991c15505dd8e3323cadc32af301a96e6b132b713c2b6"
+    },
+    {
+      "path": "meshes/camera_fine.mesh.json",
+      "bytes": 764,
+      "sha256": "8091e786c007e26337736d4ce13bb3d737ab49dcf02f4ade87209db1f40acfc8"
+    },
+    {
+      "path": "meshes/camera_fine.msh",
+      "bytes": 6372666,
+      "sha256": "44568f3e4112f81ecf7137aa005988b89cff06325d9c774e8fd66978c1d9e2e6"
+    },
+    {
+      "path": "meshes/camera_medium.mesh.json",
+      "bytes": 764,
+      "sha256": "341f3359d3e9c677c9eda6ed7663c59517ac447a635d5605a794b068cc4dc9fe"
+    },
+    {
+      "path": "meshes/camera_medium.msh",
+      "bytes": 3723910,
+      "sha256": "00ce318ae03f4661935cced13ce5efab806d0d53087102e4e2551ce5d4cb2782"
+    },
+    {
+      "path": "recover_static_vtu.py",
+      "bytes": 5959,
+      "sha256": "8ceae09fe3c665b015e18b1ff64922cedf40cbb6df728afceefc4780b82dd607"
+    },
+    {
+      "path": "regional_stress.csv",
+      "bytes": 9726,
+      "sha256": "b8ab511c9ab4208239785e76079730c2027e700977bc897a23cb95b53a3b9da2"
+    },
+    {
+      "path": "reproduce_coarse_eigsh.py",
+      "bytes": 3225,
+      "sha256": "b140f826fcbb8dc6942d4785dd8ff4945b929634cf52af9a520214e85ab69605"
+    },
+    {
+      "path": "resume_checkpoint.py",
+      "bytes": 1123,
+      "sha256": "51eb67d09ed75a772fc9b0a46f6d3c80782001504da2988c6dc208d8793852eb"
+    },
+    {
+      "path": "run_camera_fea.py",
+      "bytes": 19111,
+      "sha256": "a68ae29f64ee89f17dbd570718f1c7b86cf641b6b4f2c8ca94e6882c0e1e46ee"
+    },
+    {
+      "path": "scope_completion.json",
+      "bytes": 4275,
+      "sha256": "c079f55077b4f4a476c3c21cd935e4f75542753ee07becb2e99f31fca5025f2e"
+    },
+    {
+      "path": "summarize_camera.py",
+      "bytes": 6025,
+      "sha256": "261090f568b6ef9548b56b19e93eb1091b59a089865e576b0a67de4040560cdd"
+    },
+    {
+      "path": "summary.log",
+      "bytes": 2845,
+      "sha256": "13be6b939018a499e5890089e73ae3ea8fdb49d5c26d9220528d9bdb5e7f73e5"
+    }
+  ]
+}

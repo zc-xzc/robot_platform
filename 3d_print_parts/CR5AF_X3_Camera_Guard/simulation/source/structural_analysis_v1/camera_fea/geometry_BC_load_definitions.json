@@ -1,0 +1,162 @@
+{
+  "source_CAD": "<redacted-workspace-path>",
+  "source_sha256": "60ad2070bb2afdbc100a668c3bd0c13e970ca3707dcdc82e22a27777375d27a6",
+  "source_volume_mm3": 28790.325137693686,
+  "source_valid": true,
+  "source_solids": 1,
+  "source_frame_mass_kg_assumed_density": 0.03570000317074017,
+  "source_frame_CoG_F_mm": [
+    1.516333889121118e-15,
+    82.18374020471734,
+    0.7842638939154606
+  ],
+  "camera_C_to_F": [
+    [
+      -1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      -0.7071067811865476,
+      0.7071067811865476,
+      72.0
+    ],
+    [
+      0.0,
+      0.7071067811865476,
+      0.7071067811865476,
+      -15.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "camera_mass_kg": 0.18,
+  "camera_CoG_C_mm": [
+    0.0,
+    0.0,
+    57.0
+  ],
+  "camera_CoG_F_mm": [
+    0.0,
+    112.30508652763322,
+    25.305086527633215
+  ],
+  "camera_inertia_C_tonne_mm2": [
+    [
+      0.21137415,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.22668,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.048174150000000006
+    ]
+  ],
+  "camera_inertia_F_tonne_mm2": [
+    [
+      0.21137415,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.13742707500000004,
+      -0.08925292500000002
+    ],
+    [
+      0.0,
+      -0.08925292500000002,
+      0.13742707500000004
+    ]
+  ],
+  "inertia_basis": "Uniform rectangular proxy 46 x 33.1 x 114 mm, not measured mass distribution",
+  "material_assumptions": {
+    "E_MPa": 2000.0,
+    "nu": 0.35,
+    "density_tonne_mm3": 1.24e-09,
+    "constitutive_model": "Homogeneous isotropic linear elastic; not measured printed material or tensile/failure strength"
+  },
+  "reference_bottom_contact_faces": [
+    {
+      "area_mm2": 294.6180250749859,
+      "bounds_C_mm": [
+        -16.1639422224377,
+        -5.694838113175701,
+        -1.0000014654943925e-07,
+        16.1639422224613,
+        5.694838113175701,
+        1.0000000101111375e-07
+      ]
+    },
+    {
+      "area_mm2": 31.586647141628035,
+      "bounds_C_mm": [
+        -4.2500001,
+        -4.2500001,
+        -1.0000000112151369e-07,
+        4.2500001,
+        4.2500001,
+        1.0000000077523221e-07
+      ]
+    }
+  ],
+  "actual_platform_top_faces": [
+    {
+      "area_mm2": 560.9880560024068,
+      "bounds_F_mm": [
+        -24.0,
+        39.0,
+        13.0,
+        16.0,
+        61.0,
+        13.0
+      ]
+    }
+  ],
+  "root_interface_nominal_gaps": {
+    "head_bottom_Fz": 16.3,
+    "foot_top_Fz": 16.0,
+    "axial_gap_mm": 0.3,
+    "slot_width_mm": 4.2,
+    "stem_diameter_mm": 3.6,
+    "diametral_gap_mm": 0.6,
+    "gap_contact_solved": false
+  },
+  "screw_assumptions": {
+    "thread": "1/4-20 UNC nominal",
+    "underhead_length_mm": 5,
+    "bearing_web_mm": 2,
+    "nominal_camera_projection_mm": 3,
+    "head_diameter_mm": 20,
+    "head_height_mm": 3,
+    "actual_user_head_dimensions_known": false,
+    "actual_camera_allowed_thread_depth_known": false,
+    "axial_pad_or_washer_mm": 0
+  },
+  "boundary_conditions": {
+    "baseline": "Fix all translations on actual foot-bottom/cartridge-top overlap faces at Fz13. Engaged rigid-root support idealization; does not model friction/contact free play.",
+    "sensitivity": "Restrain only foot faces inside two diameter7 head projections around (\u00b18,50). Also an engaged restraint idealization.",
+    "load_transfer": "Equilibrated resultant force/moment on original camera bottom reference contact plus nominal screw-head underside annulus. No tray face is fixed.",
+    "rigid_camera_mass_mapping": "6-column RBE3-like wrench matrix G; q=G.T u; attached mass G M_camera G.T. Verify G.T times rigid-body modes = I6."
+  },
+  "scope_limits": [
+    "No preload/contact opening/closing or slip model",
+    "No failure/fracture or fatigue model",
+    "No printed anisotropy or temperature dependence",
+    "Modes/FRF are linearized engaged-support sensitivity",
+    "1g and 3g mean total resultant effective acceleration, not gravity plus an extra 3g",
+    "10g and quasi-static collision loads are sensitivity cases, not transient impact validation"
+  ]
+}

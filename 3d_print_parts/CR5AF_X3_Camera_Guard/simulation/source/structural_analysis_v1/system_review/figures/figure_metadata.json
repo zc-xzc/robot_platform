@@ -1,0 +1,47 @@
+{
+  "font": "<redacted-workspace-path>",
+  "native_CAD_modified": false,
+  "stress_clouds_generated": false,
+  "figures": [
+    {
+      "name": "01_tether_energy_h_stop_sensitivity",
+      "type": "Analytical energy sensitivity, not impact simulation",
+      "m_kg": 0.25,
+      "v0_m_s": 0.5,
+      "g_m_s2": 9.80665,
+      "data": "01_tether_energy_grid.csv"
+    },
+    {
+      "name": "02_fastener_preload_bearing_sensitivity",
+      "type": "Torque/preload/average pressure sensitivity, no torque recommendation",
+      "K_range": [
+        0.15,
+        0.25
+      ],
+      "data": "02_fastener_curve_data.csv"
+    },
+    {
+      "name": "03_actual_CAD_clearance_ligament",
+      "type": "Actual analytical BRep sections, no deformation/stress simulation",
+      "section_planes_F_mm": [
+        {
+          "Y": 50
+        },
+        {
+          "Z": 11.75
+        }
+      ],
+      "source_files": {
+        "cartridge": {
+          "path": "<redacted-workspace-path>",
+          "sha256": "2f0989d260c548bd0ba3e070597b87f5603662a5dacac4cc767d9b57d692bde4"
+        },
+        "camera_module": {
+          "path": "<redacted-workspace-path>",
+          "sha256": "d5320ffbbbe2d4a643958fe39b1b9103084fde44c333e191961b45504e0dc837"
+        }
+      },
+      "data": "03_native_section_edges.csv"
+    }
+  ]
+}
